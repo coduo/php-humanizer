@@ -1,0 +1,11 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+
+script:
+    - composer self-update
+    - composer update -n --prefer-source
+    - ./bin/phpspec run -f progress
