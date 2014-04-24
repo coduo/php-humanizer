@@ -7,7 +7,7 @@ use Prophecy\Argument;
 
 class StringSpec extends ObjectBehavior
 {
-    function it_humanize_strings()
+    function it_humanize_string()
     {
         $this->humanize('news_count')->shouldReturn('News count');
     }
