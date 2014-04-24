@@ -78,7 +78,7 @@ Number can be also formatted for specific locale
 ```php
 use PHPHumanizer\Number;
 
-echo Number::binarySuffix(1536, 'pl'); "1,5 kB"
+echo Number::binarySuffix(1536, 'pl'); // "1,5 kB"
 ```
 
 # Credits
