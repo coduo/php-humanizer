@@ -25,7 +25,7 @@ use PHPHumanizer\String;
 
 echo String::humanize('field_name'); // "Field Name"
 echo String::humanize('user_id'); // "User"
-echo String::humanize('field_name', true); // "field name"
+echo String::humanize('field_name', false); // "field name"
 ```
 
 ## Number
