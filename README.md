@@ -101,7 +101,7 @@ Number can be also formatted for specific locale
 ```php
 use PHPHumanizer\Number;
 
-echo Number::metricSuffix(1240000, 'pl'); "1,24M"
+echo Number::metricSuffix(1240000, 'pl'); // "1,24M"
 ```
 
 # Credits
