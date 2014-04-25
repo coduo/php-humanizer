@@ -75,4 +75,38 @@ class NumberSpec extends ObjectBehavior
         $this->shouldThrow(new \InvalidArgumentException("Metric suffix converter accept only numeric values."))
             ->during('metricSuffix', array('as12'));
     }
+
+    function it_converts_numbers_to_roman()
+    {
+        $this->toRoman(1)->shouldReturn("I");
+        $this->toRoman(5)->shouldReturn("V");
+        $this->toRoman(9)->shouldReturn("IX");
+        $this->toRoman(10)->shouldReturn("X");
+        $this->toRoman(125)->shouldReturn("CXXV");
+        $this->toRoman(1300)->shouldReturn("MCCC");
+        $this->toRoman(3999)->shouldReturn("MMMCMXCIX");
+    }
+
+    function it_throws_exception_when_converting_number_is_out_of_range()
+    {
+        $this->shouldThrow(new \InvalidArgumentException())->during('toRoman', array(-1));
+        $this->shouldThrow(new \InvalidArgumentException())->during('toRoman', array(4000));
+    }
+
+    function it_converts_roman_numbers_to_arabic()
+    {
+        $this->fromRoman("I")->shouldReturn(1);
+        $this->fromRoman("V")->shouldReturn(5);
+        $this->fromRoman("IX")->shouldReturn(9);
+        $this->fromRoman("CXXV")->shouldReturn(125);
+        $this->fromRoman("MCCC")->shouldReturn(1300);
+        $this->fromRoman("MMMCMXCIX")->shouldReturn(3999);
+    }
+
+    function it_throws_exception_when_converting_roman_number_is_invalid()
+    {
+        $this->shouldThrow(new \InvalidArgumentException())->during('fromRoman', array(1234));
+        $this->shouldThrow(new \InvalidArgumentException())->during('fromRoman', array(""));
+        $this->shouldThrow(new \InvalidArgumentException())->during('fromRoman', array("foobar"));
+    }
 }

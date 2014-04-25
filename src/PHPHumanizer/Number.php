@@ -3,6 +3,7 @@
 namespace PHPHumanizer;
 
 use PHPHumanizer\Number\Ordinal;
+use PHPHumanizer\Number\RomanNumeral;
 use PHPHumanizer\String\BinarySuffix;
 use PHPHumanizer\String\MetricSuffix;
 
@@ -28,5 +29,17 @@ class Number
     {
         $binarySuffix = new MetricSuffix($number, $locale);
         return $binarySuffix->convert();
+    }
+
+    public static function toRoman($number)
+    {
+        $romanNumeral = new RomanNumeral();
+        return $romanNumeral->toRoman($number);
+    }
+
+    public function fromRoman($number)
+    {
+        $romanNumeral = new RomanNumeral();
+        return $romanNumeral->fromRoman($number);
     }
 }

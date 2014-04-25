@@ -57,6 +57,19 @@ echo Number::ordinal(1002); // "nd"
 echo Number::ordinal(-111); // "th"
 ```
 
+**Roman numbers**
+```php
+use PHPHumanizer\Number;
+
+echo Number::toRoman(1); // "I"
+echo Number::toRoman(5); // "V"
+echo Number::toRoman(1300); // "MCCC"
+
+echo Number::fromRoman("MMMCMXCIX"); // 3999
+echo Number::fromRoman("V"); // 5
+echo Number::fromRoman("CXXV"); // 125
+```
+
 **Binary Suffix**
 
 ```php
