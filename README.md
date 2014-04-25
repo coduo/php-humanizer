@@ -1,6 +1,6 @@
 #PHP Humanizer
 
-[![Build Status](https://travis-ci.org/norzechowicz/php-humanizer.svg?branch=master)](https://travis-ci.org/norzechowicz/php-humanizer)
+[![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=master)](https://travis-ci.org/coduo/php-humanizer)
 
 Humanize values to make them readable for regular people ;)
 
@@ -10,7 +10,7 @@ Add to your composer.json
 
 ```
 require: {
-   "norzechowicz/php-humanizer": "dev-master"
+   "coduo/php-humanizer": "dev-master"
 }
 ```
 
@@ -21,7 +21,7 @@ require: {
 **Humanize**
 
 ```php
-use PHPHumanizer\String;
+use Coduo\PHPHumanizer\String;
 
 echo String::humanize('field_name'); // "Field Name"
 echo String::humanize('user_id'); // "User"
@@ -33,7 +33,7 @@ echo String::humanize('field_name', false); // "field name"
 **Ordinalize**
 
 ```php
-use PHPHumanizer\Number;
+use Coduo\PHPHumanizer\Number;
 
 echo Number::ordinalize(0); // "0th"
 echo Number::ordinalize(1); // "1st"
@@ -47,7 +47,7 @@ echo Number::ordinalize(-111); // "-111th"
 **Ordinal**
 
 ```php
-use PHPHumanizer\Number;
+use Coduo\PHPHumanizer\Number;
 
 echo Number::ordinal(0); // "th"
 echo Number::ordinal(1); // "st"
@@ -59,7 +59,7 @@ echo Number::ordinal(-111); // "th"
 
 **Roman numbers**
 ```php
-use PHPHumanizer\Number;
+use Coduo\PHPHumanizer\Number;
 
 echo Number::toRoman(1); // "I"
 echo Number::toRoman(5); // "V"
@@ -73,7 +73,7 @@ echo Number::fromRoman("CXXV"); // 125
 **Binary Suffix**
 
 ```php
-use PHPHumanizer\Number;
+use Coduo\PHPHumanizer\Number;
 
 echo Number::binarySuffix(0); // "0 bytes"
 echo Number::binarySuffix(1); // "1 bytes"
@@ -89,7 +89,7 @@ echo Number::binarySuffix(1325899906842624); // "1.18 PB"
 Number can be also formatted for specific locale
 
 ```php
-use PHPHumanizer\Number;
+use Coduo\PHPHumanizer\Number;
 
 echo Number::binarySuffix(1536, 'pl'); // "1,5 kB"
 ```
@@ -97,7 +97,7 @@ echo Number::binarySuffix(1536, 'pl'); // "1,5 kB"
 **Metric Suffix**
 
 ```php
-use PHPHumanizer\Number;
+use Coduo\PHPHumanizer\Number;
 
 echo Number::metricSuffix(-1); // "-1"
 echo Number::metricSuffix(0); // "0"
@@ -112,7 +112,7 @@ echo Number::metricSuffix(3500000); // "3.5M"
 Number can be also formatted for specific locale
 
 ```php
-use PHPHumanizer\Number;
+use Coduo\PHPHumanizer\Number;
 
 echo Number::metricSuffix(1240000, 'pl'); // "1,24M"
 ```

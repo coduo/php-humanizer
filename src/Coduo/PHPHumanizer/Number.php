@@ -1,11 +1,11 @@
 <?php
 
-namespace PHPHumanizer;
+namespace Coduo\PHPHumanizer;
 
-use PHPHumanizer\Number\Ordinal;
-use PHPHumanizer\Number\RomanNumeral;
-use PHPHumanizer\String\BinarySuffix;
-use PHPHumanizer\String\MetricSuffix;
+use Coduo\PHPHumanizer\Number\Ordinal;
+use Coduo\PHPHumanizer\Number\RomanNumeral;
+use Coduo\PHPHumanizer\String\BinarySuffix;
+use Coduo\PHPHumanizer\String\MetricSuffix;
 
 class Number
 {

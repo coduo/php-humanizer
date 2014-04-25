@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPHumanizer\Number;
+namespace Coduo\PHPHumanizer\Number;
 
 class RomanNumeral
 {

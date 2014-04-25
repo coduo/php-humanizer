@@ -1,8 +1,8 @@
 <?php
 
-namespace PHPHumanizer;
+namespace Coduo\PHPHumanizer;
 
-use PHPHumanizer\String\Humanize;
+use Coduo\PHPHumanizer\String\Humanize;
 
 class String
 {

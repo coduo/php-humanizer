@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\PHPHumanizer;
+namespace spec\Coduo\PHPHumanizer;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;

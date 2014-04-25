@@ -1,5 +1,5 @@
 {
-    "name": "norzechowicz/php-humanizer",
+    "name": "coduo/php-humanizer",
     "type": "library",
     "keywords": ["php", "humanize", "humanizer"],
     "license": "MIT",

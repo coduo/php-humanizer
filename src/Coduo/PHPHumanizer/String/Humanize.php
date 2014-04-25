@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPHumanizer\String;
+namespace Coduo\PHPHumanizer\String;
 
 class Humanize
 {
