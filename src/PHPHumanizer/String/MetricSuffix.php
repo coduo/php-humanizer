@@ -2,9 +2,9 @@
 
 namespace PHPHumanizer\String;
 
-class BinarySuffix
+class MetricSuffix
 {
-    const CONVERT_THRESHOLD = 1024;
+    const CONVERT_THRESHOLD = 1000;
 
     /**
      * @var int
@@ -20,12 +20,12 @@ class BinarySuffix
      * @var array
      */
     private $binaryPrefixes = array(
-        1125899906842624 => '#.## PB',
-        1099511627776 => '#.## TB',
-        1073741824 => '#.## GB',
-        1048576 => '#.## MB',
-        1024 => '#.# kB',
-        0 => '# bytes'
+        1000000000000000 => '#.##P',
+        1000000000000 => '#.##T',
+        1000000000 => '#.##G',
+        1000000 => '#.##M',
+        1000 => '#.#k',
+        0 => '#.#'
     );
 
     /**
@@ -36,7 +36,7 @@ class BinarySuffix
     public function __construct($number, $locale = 'en')
     {
         if (!is_numeric($number)) {
-            throw new \InvalidArgumentException("Binary suffix converter accept only numeric values.");
+            throw new \InvalidArgumentException("Metric suffix converter accept only numeric values.");
         }
 
         $this->number = (int) $number;
@@ -46,9 +46,6 @@ class BinarySuffix
     public function convert()
     {
         $formatter = new \NumberFormatter($this->locale, \NumberFormatter::PATTERN_DECIMAL);
-        if ($this->number < 0) {
-            return $this->number;
-        }
 
         foreach ($this->binaryPrefixes as $size => $unitPattern) {
             if ($size <= $this->number) {

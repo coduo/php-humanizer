@@ -47,7 +47,32 @@ class NumberSpec extends ObjectBehavior
 
     function it_throw_exception_when_converting_to_string_with_binary_suffix_non_numeric_values()
     {
-        $this->shouldThrow(new \RuntimeException("binarySuffix converter accept only numeric values."))
+        $this->shouldThrow(new \InvalidArgumentException("Binary suffix converter accept only numeric values."))
             ->during('binarySuffix', array('as12'));
+    }
+
+    function it_convert_number_to_string_with_metric_suffix()
+    {
+        $this->metricSuffix(-1)->shouldReturn("-1");
+        $this->metricSuffix(0)->shouldReturn("0");
+        $this->metricSuffix(1)->shouldReturn("1");
+        $this->metricSuffix(101)->shouldReturn("101");
+        $this->metricSuffix(1000)->shouldReturn("1k");
+        $this->metricSuffix(1240)->shouldReturn("1.2k");
+        $this->metricSuffix(1240000)->shouldReturn("1.24M");
+        $this->metricSuffix(3500000)->shouldReturn("3.5M");
+    }
+
+    function it_convert_number_to_string_with_metric_suffix_for_specific_locale()
+    {
+        $this->metricSuffix(1240, 'pl')->shouldReturn("1,2k");
+        $this->metricSuffix(1240000, 'pl')->shouldReturn("1,24M");
+        $this->metricSuffix(3500000, 'pl')->shouldReturn("3,5M");
+    }
+
+    function it_throw_exception_when_converting_to_string_with_metric_suffix_non_numeric_values()
+    {
+        $this->shouldThrow(new \InvalidArgumentException("Metric suffix converter accept only numeric values."))
+            ->during('metricSuffix', array('as12'));
     }
 }

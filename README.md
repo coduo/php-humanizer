@@ -81,6 +81,29 @@ use PHPHumanizer\Number;
 echo Number::binarySuffix(1536, 'pl'); "1,5 kB"
 ```
 
+**Metric Suffix**
+
+```php
+use PHPHumanizer\Number;
+
+echo Number::metricSuffix(-1); // "-1"
+echo Number::metricSuffix(0); // "0"
+echo Number::metricSuffix(1); // "1"
+echo Number::metricSuffix(101); // "101"
+echo Number::metricSuffix(1000); // "1k"
+echo Number::metricSuffix(1240); // "1.2k"
+echo Number::metricSuffix(1240000); // "1.24M"
+echo Number::metricSuffix(3500000); // "3.5M"
+```
+
+Number can be also formatted for specific locale
+
+```php
+use PHPHumanizer\Number;
+
+echo Number::metricSuffix(1240000, 'pl'); "1,24M"
+```
+
 # Credits
 
 This lib was inspired by [Java Humanize Lib](https://github.com/mfornos/humanize) && [Rails Active Support](https://github.com/rails/rails/tree/master/activesupport/lib/active_support)
