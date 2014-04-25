@@ -37,10 +37,11 @@ class Truncate
             return $this->text;
         }
 
-        $word = \IntlBreakIterator::createWordInstance(\Locale::getDefault());
-        $word->setText($this->text);
-        $word->following($this->charactersCount);
+        $length = $this->charactersCount;
+        if (false !== ($breakpoint = mb_strpos($this->text, ' ', $this->charactersCount))) {
+            $length = $breakpoint;
+        }
 
-        return substr($this->text, 0, $word->current()) . $this->append;
+        return rtrim(mb_substr($this->text, 0, $length)) . $this->append;
     }
 }
