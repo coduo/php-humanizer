@@ -16,13 +16,13 @@ class NumberSpec extends ObjectBehavior
         $this->ordinalize(-111)->shouldReturn("-111th");
     }
 
-    function it_returns_oridinal_suffix()
+    function it_returns_ordinal_suffix()
     {
-        $this->oridinal(1)->shouldReturn("st");
-        $this->oridinal(2)->shouldReturn("nd");
-        $this->oridinal(23)->shouldReturn("rd");
-        $this->oridinal(1002)->shouldReturn("nd");
-        $this->oridinal(-111)->shouldReturn("th");
+        $this->ordinal(1)->shouldReturn("st");
+        $this->ordinal(2)->shouldReturn("nd");
+        $this->ordinal(23)->shouldReturn("rd");
+        $this->ordinal(1002)->shouldReturn("nd");
+        $this->ordinal(-111)->shouldReturn("th");
     }
 
     function it_convert_number_to_string_with_binary_suffix()

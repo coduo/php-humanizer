@@ -10,10 +10,10 @@ class Number
 {
     public static function ordinalize($number)
     {
-        return $number . self::oridinal($number);
+        return $number . self::ordinal($number);
     }
 
-    public static function oridinal($number)
+    public static function ordinal($number)
     {
         return (string) new Ordinal($number);
     }
