@@ -1,0 +1,90 @@
+<?php
+
+namespace PHPHumanizer\Number;
+
+class RomanNumeral
+{
+    const MIN_VALUE = 1;
+    const MAX_VALUE = 3999;
+    const ROMAN_STRING_MATCHER = "/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/";
+
+    private $map = array(
+        'M'  => 1000,
+        'CM' => 900,
+        'D'  => 500,
+        'CD' => 400,
+        'C'  => 100,
+        'XC' => 90,
+        'L'  => 50,
+        'XL' => 40,
+        'X'  => 10,
+        'IX' => 9,
+        'V'  => 5,
+        'IV' => 4,
+        'I'  => 1
+    );
+
+
+    /**
+     * @param $number
+     * @return string
+     * @throws \InvalidArgumentException
+     */
+    public function toRoman($number)
+    {
+        if (($number < self::MIN_VALUE) || ($number > self::MAX_VALUE)) {
+            throw new \InvalidArgumentException();
+        }
+
+        $romanString = '';
+
+        while($number > 0)
+        {
+            foreach($this->map as $key => $value)
+            {
+                if($number >= $value)
+                {
+                    $romanString .= $key;
+                    $number -= $value;
+                    break;
+                }
+            }
+        }
+
+        return $romanString;
+    }
+
+    /**
+     * @param $string
+     * @return int
+     * @throws \InvalidArgumentException
+     */
+    public function fromRoman($string)
+    {
+        if (strlen($string) === 0 || 0 === preg_match(self::ROMAN_STRING_MATCHER, $string)) {
+            throw new \InvalidArgumentException();
+        }
+
+        $total = 0;
+        $i     = strlen($string);
+
+        while ($i > 0)
+        {
+            $digit = $this->map[$string{--$i}];
+
+            if ($i > 0) {
+                $previousDigit = $this->map[$string{$i - 1}];
+
+                if ($previousDigit < $digit) {
+                    $digit -= $previousDigit;
+                    $i--;
+                }
+            }
+
+            $total += $digit;
+        }
+
+        return $total;
+    }
+
+}
