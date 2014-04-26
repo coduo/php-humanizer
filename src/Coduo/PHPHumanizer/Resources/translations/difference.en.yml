@@ -1,0 +1,12 @@
+just_now:
+  past: "just now"
+  future: "just now"
+second:
+  past: "{1} %count% second ago|[2,Inf] %count% seconds ago"
+  future:  "{1} %count% second from now|[2,Inf] %count% seconds from now"
+minute:
+  past: "{1} %count% minute ago|[2,Inf] %count% minutes ago"
+  future:  "{1} %count% minute from now|[2,Inf] %count% minutes from now"
+hour:
+  past: "{1} %count% hour ago|[2,Inf] %count% hours ago"
+  future:  "{1} %count% hour from now|[2,Inf] %count% hours from now"
