@@ -28,6 +28,22 @@ echo String::humanize('user_id'); // "User"
 echo String::humanize('field_name', false); // "field name"
 ```
 
+**Truncate**
+
+Truncate string to word closest to a certain length
+
+```php
+use Coduo\PHPHumanizer\String;
+
+$text = 'Lorem ipsum dolorem si amet, lorem ipsum. Dolorem sic et nunc.';
+
+echo String::truncate($text, 8); // "Lorem ipsum"
+echo String::truncate($text, 8, '...'); // "Lorem ipsum..."
+echo String::truncate($text, 2); // "Lorem"
+echo String::truncate($text, strlen($text)); // "Lorem ipsum dolorem si amet, lorem ipsum. Dolorem sic et nunc."
+
+```
+
 ## Number
 
 **Ordinalize**

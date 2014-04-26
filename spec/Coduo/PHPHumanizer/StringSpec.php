@@ -21,4 +21,16 @@ class StringSpec extends ObjectBehavior
     {
         $this->humanize('news_id')->shouldReturn('News');
     }
+
+    function it_truncate_string_to_word_closest_to_a_certain_number_of_characters()
+    {
+        $text = 'Lorem ipsum dolorem si amet, lorem ipsum. Dolorem sic et nunc.';
+
+        $this->truncate($text, 2)->shouldReturn("Lorem");
+        $this->truncate($text, 10, '...')->shouldReturn("Lorem ipsum...");
+        $this->truncate($text, 30)->shouldReturn("Lorem ipsum dolorem si amet, lorem");
+        $this->truncate($text, 0)->shouldReturn("Lorem");
+        $this->truncate($text, 0, '...')->shouldReturn("Lorem...");
+        $this->truncate($text, -2)->shouldReturn($text);
+    }
 }
