@@ -17,14 +17,6 @@ class Week implements Unit
     public function getMilliseconds()
     {
         $day = new Day();
-        return $day->getMilliseconds() * $day->getThresholdQuantity();
-    }
-
-    /**
-     * @return int
-     */
-    public function getThresholdQuantity()
-    {
-        return 4;
+        return $day->getMilliseconds() * 7;
     }
 }

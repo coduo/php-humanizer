@@ -19,12 +19,4 @@ class Year implements Unit
         $day = new Day();
         return $day->getMilliseconds() * 356;
     }
-
-    /**
-     * @return int
-     */
-    public function getThresholdQuantity()
-    {
-        return 10;
-    }
 }

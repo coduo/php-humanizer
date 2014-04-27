@@ -17,14 +17,6 @@ class Hour implements Unit
     public function getMilliseconds()
     {
         $minute = new Minute();
-        return $minute->getMilliseconds() * $minute->getThresholdQuantity();
-    }
-
-    /**
-     * @return int
-     */
-    public function getThresholdQuantity()
-    {
-        return 24;
+        return $minute->getMilliseconds() * 60;
     }
 }

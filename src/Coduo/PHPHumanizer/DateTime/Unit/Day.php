@@ -17,14 +17,6 @@ class Day implements Unit
     public function getMilliseconds()
     {
         $hour = new Hour();
-        return $hour->getMilliseconds() * $hour->getThresholdQuantity();
-    }
-
-    /**
-     * @return int
-     */
-    public function getThresholdQuantity()
-    {
-        return 7;
+        return $hour->getMilliseconds() * 24;
     }
 }

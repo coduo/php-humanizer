@@ -18,12 +18,4 @@ class JustNow implements Unit
     {
         return 0;
     }
-
-    /**
-     * @return int
-     */
-    public function getThresholdQuantity()
-    {
-        return 1000;
-    }
 }

@@ -15,9 +15,4 @@ interface Unit
      * @return int
      */
     public function getMilliseconds();
-
-    /**
-     * @return int
-     */
-    public function getThresholdQuantity();
 }

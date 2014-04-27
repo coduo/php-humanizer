@@ -18,14 +18,6 @@ class Minute implements Unit
     {
         $second = new Second();
 
-        return $second->getMilliseconds() * $second->getThresholdQuantity();
-    }
-
-    /**
-     * @return int
-     */
-    public function getThresholdQuantity()
-    {
-        return 60;
+        return $second->getMilliseconds() * 60;
     }
 }

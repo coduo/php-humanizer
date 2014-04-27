@@ -18,12 +18,4 @@ class Second implements Unit
     {
         return 1000;
     }
-
-    /**
-     * @return int
-     */
-    public function getThresholdQuantity()
-    {
-        return 60;
-    }
 }
