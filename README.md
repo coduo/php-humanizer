@@ -160,6 +160,10 @@ echo DateTime::difference(new \DateTime("2014-05-01"), new \DateTime("2016-04-01
 
 ```
 
+Currently we support following languages:
+* [English](src/Coduo/PHPHumanizer/Resources/translations/difference.en.yml)
+* [Polish](src/Coduo/PHPHumanizer/Resources/translations/difference.pl.yml)
+
 # Credits
 
 This lib was inspired by [Java Humanize Lib](https://github.com/mfornos/humanize) && [Rails Active Support](https://github.com/rails/rails/tree/master/activesupport/lib/active_support)
