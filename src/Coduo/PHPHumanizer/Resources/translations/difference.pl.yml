@@ -1,0 +1,24 @@
+just_now:
+  past: "w tym momencie"
+  future: "w tym momencie"
+second:
+  past: "{1} sekundę temu|[2, 4] %count% sekundy temu|[5,Inf] %count% sekund temu"
+  future: "{1} za sekundę|[2, 4] za %count% sekund|[5,Inf] za %count% sekund"
+minute:
+  past: "{1} minutę temu|[2, 4] %count% minuty temu|[5,Inf] %count% minut temu"
+  future: "{1} za minutę|[2, 4] za %count% minuty|[5,Inf] za %count% minut"
+hour:
+  past: "{1} godzinę temu|[2, 4] %count% godziny temu|[5,Inf] %count% godzin temu"
+  future: "{1} za godzinę|[2, 4] za %count% godziny|[5,Inf] za %count% godzin"
+day:
+  past: "{1} wczoraj|[2, Inf] %count% dni temu"
+  future: "{1} jutro|[2, Inf] za %count% dni"
+week:
+  past: "{1} tydzień temu|[2, 4] %count% tygodnie temu|[5,Inf] %count% tygodni temu"
+  future: "{1} za tydzień|[2, 4] za %count% tygodnie|[5,Inf] za %count% tygodni"
+month:
+  past: "{1} miesiąc temu|[2, 4] %count% miesiące temu|[5,Inf] %count% miesięcy temu"
+  future: "{1} za miesiąc|[2, 4] za %count% miesiące|[5,Inf] za %count% miesięcy"
+year:
+  past: "{1} rok temu|[2, 4] %count% lata temu|[5,Inf] %count% lat temu"
+  future: "{1} za rok|[2, 4] za %count% lata|[5,Inf] za %count% lat"

@@ -1,0 +1,66 @@
+<?php
+
+namespace spec\Coduo\PHPHumanizer;
+
+use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
+
+class DateTimeSpec extends ObjectBehavior
+{
+    function it_humanize_difference_between_dates()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'just now'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", '5 seconds from now'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", '1 minute ago'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", '15 minutes ago'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", '15 minutes from now'),
+            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", '1 hour from now'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", '2 hours from now'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", '1 hour ago'),
+            array("2014-04-26", "2014-04-25", '1 day ago'),
+            array("2014-04-26", "2014-04-24", '2 days ago'),
+            array("2014-04-26", "2014-04-28", '2 days from now'),
+            array("2014-04-01", "2014-04-15", '2 weeks from now'),
+            array("2014-04-15", "2014-04-07", '1 week ago'),
+            array("2014-01-01", "2014-04-01", '3 months from now'),
+            array("2014-05-01", "2014-04-01", '1 month ago'),
+            array("2015-05-01", "2014-04-01", '1 year ago'),
+            array("2014-05-01", "2016-04-01", '2 years from now'),
+        );
+
+        foreach ($examples as $example) {
+            $this->difference(new \DateTime($example[0]), new \DateTime($example[1]))->shouldReturn($example[2]);
+        }
+    }
+
+    function it_humanize_difference_between_dates_for_pl_locale()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'w tym momencie'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", 'za 5 sekund'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", 'minutę temu'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", '15 minut temu'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", 'za 15 minut'),
+            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", 'za godzinę'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", 'za 2 godziny'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", 'godzinę temu'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", 'za 2 godziny'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", 'godzinę temu'),
+            array("2014-04-26", "2014-04-25", 'wczoraj'),
+            array("2014-04-26", "2014-04-24", '2 dni temu'),
+            array("2014-04-26", "2014-04-28", 'za 2 dni'),
+            array("2014-04-01", "2014-04-15", 'za 2 tygodnie'),
+            array("2014-04-15", "2014-04-07", 'tydzień temu'),
+            array("2014-01-01", "2014-04-01", 'za 3 miesiące'),
+            array("2014-05-01", "2014-04-01", 'miesiąc temu'),
+            array("2015-05-01", "2014-04-01", 'rok temu'),
+            array("2014-05-01", "2016-04-01", 'za 2 lata'),
+            array("2014-05-01", "2009-04-01", '5 lat temu'),
+        );
+
+        foreach ($examples as $example) {
+            $this->difference(new \DateTime($example[0]), new \DateTime($example[1]), 'pl')->shouldReturn($example[2]);
+        }
+    }
+}
