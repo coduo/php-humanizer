@@ -10,8 +10,9 @@ use Coduo\PHPHumanizer\DateTime\Unit\Month;
 use Coduo\PHPHumanizer\DateTime\Unit\Second;
 use Coduo\PHPHumanizer\DateTime\Unit\Week;
 use Coduo\PHPHumanizer\DateTime\Unit\Year;
+use Coduo\PHPHumanizer\DateTime\Difference\CompoundResult;
 
-class Difference
+class PreciseDifference
 {
     /**
      * @var \DateTime
@@ -24,14 +25,14 @@ class Difference
     private $toDate;
 
     /**
-     * @var \Coduo\PHPHumanizer\DateTime\Unit
+     * @var \Coduo\PHPHumanizer\DateTime\Unit[]
      */
-    private $unit;
+    private $units;
 
     /**
-     * @var int
+     * @var \Coduo\PHPHumanizer\DateTime\Difference\CompoundResult[]
      */
-    private $quantity;
+    private $compoundResults;
 
     public function __construct(\DateTime $fromDate, \DateTime $toDate)
     {
@@ -41,19 +42,11 @@ class Difference
     }
 
     /**
-     * @return Unit
+     * @return \Coduo\PHPHumanizer\DateTime\Difference\CompoundResult[]
      */
-    public function getUnit()
+    public function getCompoundResults()
     {
-        return $this->unit;
-    }
-
-    /**
-     * @return int
-     */
-    public function getQuantity()
-    {
-        return $this->quantity;
+        return $this->compoundResults;
     }
 
     private function calculate()
@@ -67,20 +60,27 @@ class Difference
             new Hour(),
             new Minute(),
             new Second(),
-            new JustNow()
         );
 
         $absoluteMilliSecondsDiff = abs($this->toDate->getTimestamp() - $this->fromDate->getTimestamp()) * 1000;
+
         foreach ($units as $unit) {
             if ($absoluteMilliSecondsDiff >= $unit->getMilliseconds()) {
-                $this->unit = $unit;
-                break;
+                $this->units[] = $unit;
             }
         }
 
-        $this->quantity = ($absoluteMilliSecondsDiff == 0)
-            ? $absoluteMilliSecondsDiff
-            : (int) round($absoluteMilliSecondsDiff / $this->unit->getMilliseconds());
+        foreach ($this->units as $unit) {
+            $quantity = (int) floor($absoluteMilliSecondsDiff / $unit->getMilliseconds());
+
+            if ($quantity === 0) {
+                continue;
+            }
+
+            $this->compoundResults[] = new CompoundResult($unit, $quantity);
+            $absoluteMilliSecondsDiff -= ($quantity * $unit->getMilliseconds());
+        }
+
     }
 
     public function isPast()
