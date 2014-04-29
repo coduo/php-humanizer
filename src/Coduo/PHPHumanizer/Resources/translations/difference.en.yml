@@ -22,3 +22,14 @@ month:
 year:
   past: "{1} %count% year ago|[2,Inf] %count% years ago"
   future: "{1} %count% year from now|[2,Inf] %count% years from now"
+
+compound:
+  second: "{1} %count% second|[2,Inf] %count% seconds"
+  minute: "{1} %count% minute|[2,Inf] %count% minutes"
+  hour: "{1} %count% hour|[2,Inf] %count% hours"
+  day: "{1} %count% day|[2,Inf] %count% days"
+  week: "{1} %count% week|[2,Inf] %count% weeks"
+  month: "{1} %count% month|[2,Inf] %count% months"
+  year: "{1} %count% year|[2,Inf] %count% years"
+  ago: "ago"
+  from_now: "from now"
