@@ -22,6 +22,6 @@ class Week implements Unit
 
     public function getDateIntervalSymbol()
     {
-        throw new \RuntimeException("JustNow doesn't have date interval symbol equivalent");
+        throw new \RuntimeException("Week doesn't have date interval symbol equivalent");
     }
 }
