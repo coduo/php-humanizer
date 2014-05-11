@@ -55,32 +55,21 @@ class PreciseDifference
         $units = array(
             new Year(),
             new Month(),
-            new Week(),
             new Day(),
             new Hour(),
             new Minute(),
             new Second(),
         );
 
-        $absoluteMilliSecondsDiff = abs($this->toDate->getTimestamp() - $this->fromDate->getTimestamp()) * 1000;
+        $diff = $this->fromDate->diff($this->toDate);
 
         foreach ($units as $unit) {
-            if ($absoluteMilliSecondsDiff >= $unit->getMilliseconds()) {
+
+            if ($diff->{$unit->getDateIntervalSymbol()} > 0) {
                 $this->units[] = $unit;
+                $this->compoundResults[] = new CompoundResult($unit, $diff->{$unit->getDateIntervalSymbol()});
             }
         }
-
-        foreach ($this->units as $unit) {
-            $quantity = (int) floor($absoluteMilliSecondsDiff / $unit->getMilliseconds());
-
-            if ($quantity === 0) {
-                continue;
-            }
-
-            $this->compoundResults[] = new CompoundResult($unit, $quantity);
-            $absoluteMilliSecondsDiff -= ($quantity * $unit->getMilliseconds());
-        }
-
     }
 
     public function isPast()

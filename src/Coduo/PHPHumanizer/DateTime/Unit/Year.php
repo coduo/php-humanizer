@@ -19,4 +19,9 @@ class Year implements Unit
         $day = new Day();
         return $day->getMilliseconds() * 356;
     }
+
+    public function getDateIntervalSymbol()
+    {
+        return 'y';
+    }
 }

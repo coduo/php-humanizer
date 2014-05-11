@@ -19,4 +19,9 @@ class Day implements Unit
         $hour = new Hour();
         return $hour->getMilliseconds() * 24;
     }
+
+    public function getDateIntervalSymbol()
+    {
+        return 'd';
+    }
 }

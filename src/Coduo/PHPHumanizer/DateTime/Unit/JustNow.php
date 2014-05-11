@@ -18,4 +18,9 @@ class JustNow implements Unit
     {
         return 0;
     }
+
+    public function getDateIntervalSymbol()
+    {
+        throw new \RuntimeException("JustNow doesn't have date interval symbol equivalent");
+    }
 }

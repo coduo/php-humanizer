@@ -20,4 +20,9 @@ class Minute implements Unit
 
         return $second->getMilliseconds() * 60;
     }
+
+    public function getDateIntervalSymbol()
+    {
+        return 'i';
+    }
 }

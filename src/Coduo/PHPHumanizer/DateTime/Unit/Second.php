@@ -18,4 +18,9 @@ class Second implements Unit
     {
         return 1000;
     }
+
+    public function getDateIntervalSymbol()
+    {
+        return 's';
+    }
 }
