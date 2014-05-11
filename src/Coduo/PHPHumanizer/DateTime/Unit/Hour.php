@@ -19,4 +19,9 @@ class Hour implements Unit
         $minute = new Minute();
         return $minute->getMilliseconds() * 60;
     }
+
+    public function getDateIntervalSymbol()
+    {
+        return 'h';
+    }
 }

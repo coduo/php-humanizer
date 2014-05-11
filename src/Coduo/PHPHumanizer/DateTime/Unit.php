@@ -15,4 +15,11 @@ interface Unit
      * @return int
      */
     public function getMilliseconds();
+
+    /**
+     * Returns symbol of \DateInterval equivalent
+     *
+     * @return string
+     */
+    public function getDateIntervalSymbol();
 }

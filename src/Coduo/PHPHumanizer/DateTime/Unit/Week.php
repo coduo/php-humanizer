@@ -19,4 +19,9 @@ class Week implements Unit
         $day = new Day();
         return $day->getMilliseconds() * 7;
     }
+
+    public function getDateIntervalSymbol()
+    {
+        throw new \RuntimeException("Week doesn't have date interval symbol equivalent");
+    }
 }

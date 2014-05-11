@@ -70,10 +70,11 @@ class DateTimeSpec extends ObjectBehavior
             array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minute, 45 seconds ago'),
             array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 hour, 40 minutes ago'),
             array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 day, 15 minutes from now'),
-            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '1 week, 2 hours from now'),
-            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 year, 1 week, 4 days, 4 hours from now'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 days, 2 hours from now'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 year, 2 days, 4 hours from now'),
             array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 days, 10 hours from now'),
             array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 day, 1 hour, 40 minutes ago'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 years, 1 day from now'),
         );
 
         foreach ($examples as $example) {

@@ -19,4 +19,9 @@ class Month implements Unit
         $day = new Day();
         return $day->getMilliseconds() * 30;
     }
+
+    public function getDateIntervalSymbol()
+    {
+        return 'm';
+    }
 }
