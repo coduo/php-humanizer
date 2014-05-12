@@ -157,7 +157,16 @@ echo DateTime::difference(new \DateTime("2014-01-01"), new \DateTime("2014-04-01
 echo DateTime::difference(new \DateTime("2014-05-01"), new \DateTime("2014-04-01"); // 1 month ago
 echo DateTime::difference(new \DateTime("2015-05-01"), new \DateTime("2014-04-01"); // 1 year ago
 echo DateTime::difference(new \DateTime("2014-05-01"), new \DateTime("2016-04-01"); // 2 years from now
+```
 
+**Precise difference**
+
+```php
+use Coduo\PHPHumanizer\DateTime;
+
+echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-25 11:20:00"); // 1 day, 1 hour, 40 minutes ago
+echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2015-04-28 17:00:00"); // 1 year, 2 days, 4 hours from now
+echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2016-04-27 13:00:00"); // 12 years, 1 day from now
 ```
 
 Currently we support following languages:
