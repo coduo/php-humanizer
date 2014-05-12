@@ -166,7 +166,7 @@ use Coduo\PHPHumanizer\DateTime;
 
 echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-25 11:20:00"); // 1 day, 1 hour, 40 minutes ago
 echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2015-04-28 17:00:00"); // 1 year, 2 days, 4 hours from now
-echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2016-04-27 13:00:00"); // 12 years, 1 day from now
+echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2016-04-27 13:00:00"); // 2 years, 1 day from now
 ```
 
 Currently we support following languages:
