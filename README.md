@@ -10,7 +10,7 @@ Add to your composer.json
 
 ```
 require: {
-   "coduo/php-humanizer": "dev-master"
+   "coduo/php-humanizer": "1.0.*"
 }
 ```
 
