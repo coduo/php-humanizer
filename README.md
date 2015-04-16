@@ -1,7 +1,7 @@
 #PHP Humanizer
 
 [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=master)](https://travis-ci.org/coduo/php-humanizer)
-[![Total Downloads](https://poser.pugx.org/leaphly/cart-bundle/downloads.svg)](https://packagist.org/packages/leaphly/cart-bundle)
+[![Total Downloads](https://poser.pugx.org/coduo/php-humanizer/downloads.svg)](https://packagist.org/packages/coduo/php-humanizer)
 
 
 Humanize values to make them readable for regular people ;)
