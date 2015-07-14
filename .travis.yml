@@ -9,9 +9,7 @@ matrix:
     - php: 5.5
     - php: 5.6
     - php: hhvm
-    - php: hhvm-nightly
   allow_failures:
-    - php: hhvm-nightly
     - env: DEPENDENCIES='low'
 
 before_install:
