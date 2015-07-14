@@ -1,6 +1,6 @@
 just_now:
-  past: "just now"
-  future: "just now"
+  past: "[0,Inf] just now"
+  future: "[0,Inf] just now"
 second:
   past: "{1} %count% second ago|[2,Inf] %count% seconds ago"
   future: "{1} %count% second from now|[2,Inf] %count% seconds from now"
