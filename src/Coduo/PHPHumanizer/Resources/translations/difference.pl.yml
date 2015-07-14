@@ -1,6 +1,6 @@
 just_now:
-  past: "w tym momencie"
-  future: "w tym momencie"
+  past: "[0,Inf] w tym momencie"
+  future: "[0,Inf] w tym momencie"
 second:
   past: "{1} sekundę temu|[2, 4] %count% sekundy temu|[5,Inf] %count% sekund temu"
   future: "{1} za sekundę|[2, 4] za %count% sekund|[5,Inf] za %count% sekund"
@@ -22,3 +22,14 @@ month:
 year:
   past: "{1} rok temu|[2, 4] %count% lata temu|[5,Inf] %count% lat temu"
   future: "{1} za rok|[2, 4] za %count% lata|[5,Inf] za %count% lat"
+  
+compound:
+  second: "{1} %count% sekunda|[2,4] %count% sekundy|[5,Inf] %count% sekund"
+  minute: "{1} %count% minuta|[2,4] %count% minuty|[5,Inf] %count% minut"
+  hour: "{1} %count% godzina|[2,4] %count% godziny|[5,Inf] %count% godzin"
+  day: "{1} %count% dzień|[2,Inf] %count% dni"
+  week: "{1} %count% tydzień|[2,4] %count% tygodnie|[5,Inf] %count% tygodni"
+  month: "{1} %count% miesiąc|[2,4] %count% miesiące|[5,Inf] %count% miesięcy"
+  year: "{1} %count% rok|[2,4] %count% lata|[5,Inf] %count% lat"
+  ago: "temu"
+  from_now: "od teraz"
