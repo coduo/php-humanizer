@@ -176,6 +176,7 @@ echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \Date
 Currently we support following languages:
 * [English](src/Coduo/PHPHumanizer/Resources/translations/difference.en.yml)
 * [Polish](src/Coduo/PHPHumanizer/Resources/translations/difference.pl.yml)
+* [German](src/Coduo/PHPHumanizer/Resources/translations/difference.de.yml)
 
 # Credits
 
