@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] jetzt gerade"
+  future: "[0,Inf] jetzt gerade"
+second:
+  past: "{1} vor %count% Sekunde|[2,Inf] vor %count% Sekunden"
+  future: "{1} in %count% Sekunde|[2,Inf] in %count% Sekunden"
+minute:
+  past: "{1} vor %count% Minute|[2,Inf] vor %count% Minuten"
+  future: "{1} in %count% Minute|[2,Inf] in %count% Minuten"
+hour:
+  past: "{1} vor %count% Stunde|[2,Inf] vor %count% Stunden"
+  future: "{1} in %count% Stunde|[2,Inf] in %count% Stunden"
+day:
+  past: "{1} vor %count% Tag|[2,Inf] vor %count% Tagen"
+  future: "{1} in %count% Tag|[2,Inf] in %count% Tagen"
+week:
+  past: "{1} vor %count% Woche|[2,Inf] vor %count% Wochen"
+  future: "{1} in %count% Woche|[2,Inf] in %count% Wochen"
+month:
+  past: "{1} vor %count% Monat|[2,Inf] vor %count% Monaten"
+  future: "{1} in %count% Monat|[2,Inf] in %count% Monaten"
+year:
+  past: "{1} vor %count% Jahr|[2,Inf] vor %count% Jahren"
+  future: "{1} in %count% Jahr|[2,Inf] in %count% Jahren"
+
+compound:
+  second: "{1} %count% Sekunde|[2,Inf] %count% Sekunden"
+  minute: "{1} %count% Minute|[2,Inf] %count% Minuten"
+  hour: "{1} %count% Stunde|[2,Inf] %count% Stunden"
+  day: "{1} %count% Tag|[2,Inf] %count% Tage"
+  week: "{1} %count% Woche|[2,Inf] %count% Wochen"
+  month: "{1} %count% Monat|[2,Inf] %count% Monate"
+  year: "{1} %count% Jahr|[2,Inf] %count% Jahre"
+  ago: "vor"
+  from_now: "ab jetzt"
