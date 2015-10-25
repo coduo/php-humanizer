@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] şimdi"
+  future: "[0,Inf] şimdi"
+second:
+  past: "{1} %count% saniye önce|[2,Inf] %count% saniye önce"
+  future: "{1} %count% saniye sonra|[2,Inf] %count% saniye sonra"
+minute:
+  past: "{1} %count% dakika önce|[2,Inf] %count% dakika önce"
+  future: "{1} %count% dakika sonra|[2,Inf] %count% minutes dakika sonra"
+hour:
+  past: "{1} %count% saat önce|[2,Inf] %count% saat önce"
+  future: "{1} %count% saat sonra|[2,Inf] %count% saat sonra"
+day:
+  past: "{1} %count% gün önce|[2,Inf] %count% gün önce"
+  future: "{1} %count% gün sonra|[2,Inf] %count% gün sonra"
+week:
+  past: "{1} %count% hafta önce|[2,Inf] %count% hafta önce"
+  future: "{1} %count% hafta sonra|[2,Inf] %count% hafta sonra"
+month:
+  past: "{1} %count% ay önce|[2,Inf] %count% ay önce"
+  future: "{1} %count% ay sonra|[2,Inf] %count% ay sonra"
+year:
+  past: "{1} %count% yıl önce|[2,Inf] %count% yıl önce"
+  future: "{1} %count% yıl sonra|[2,Inf] %count% yıl sonra"
+
+compound:
+  second: "{1} %count% saniye|[2,Inf] %count% saniye"
+  minute: "{1} %count% dakika|[2,Inf] %count% dakika"
+  hour: "{1} %count% saat|[2,Inf] %count% saat"
+  day: "{1} %count% gün|[2,Inf] %count% gün"
+  week: "{1} %count% hafta|[2,Inf] %count% hafta"
+  month: "{1} %count% ay|[2,Inf] %count% ay"
+  year: "{1} %count% yıl|[2,Inf] %count% yıl"
+  ago: "önce"
+  from_now: "sonra"
