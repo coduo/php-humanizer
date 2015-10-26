@@ -117,4 +117,23 @@ class DateTimeSpec extends ObjectBehavior
             $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'de')->shouldReturn($example[2]);
         }
     }
+
+
+    function it_humanizes_precise_difference_between_dates_for_tr_locale()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 dakika, 45 saniye önce'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 saat, 40 dakika önce'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 gün, 15 dakika sonra'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 gün, 2 saat sonra'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 yıl, 2 gün, 4 saat sonra'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 gün, 10 saat sonra'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 gün, 1 saat, 40 dakika önce'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 yıl, 1 gün sonra'),
+        );
+
+        foreach ($examples as $example) {
+            $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'tr')->shouldReturn($example[2]);
+        }
+    }
 }

@@ -6,7 +6,7 @@ second:
   future: "{1} %count% saniye sonra|[2,Inf] %count% saniye sonra"
 minute:
   past: "{1} %count% dakika önce|[2,Inf] %count% dakika önce"
-  future: "{1} %count% dakika sonra|[2,Inf] %count% minutes dakika sonra"
+  future: "{1} %count% dakika sonra|[2,Inf] %count% dakika sonra"
 hour:
   past: "{1} %count% saat önce|[2,Inf] %count% saat önce"
   future: "{1} %count% saat sonra|[2,Inf] %count% saat sonra"
