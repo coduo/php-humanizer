@@ -144,23 +144,23 @@ echo Number::metricSuffix(1240000, 'pl'); // "1,24M"
 ```php
 use Coduo\PHPHumanizer\DateTime;
 
-echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 13:00:00"); // just now
-echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 13:00:05"); // 5 seconds from now
-echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 12:59:00"); // 1 minute ago
-echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 12:45:00"); // 15 minutes ago
-echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 13:15:00"); // 15 minutes from now
-echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 14:00:00"); // 1 hour from now
-echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 15:00:00"); // 2 hours from now
-echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 12:00:00"); // 1 hour ago
-echo DateTime::difference(new \DateTime("2014-04-26"), new \DateTime("2014-04-25"); // 1 day ago
-echo DateTime::difference(new \DateTime("2014-04-26"), new \DateTime("2014-04-24"); // 2 days ago
-echo DateTime::difference(new \DateTime("2014-04-26"), new \DateTime("2014-04-28"); // 2 days from now
-echo DateTime::difference(new \DateTime("2014-04-01"), new \DateTime("2014-04-15"); // 2 weeks from now
-echo DateTime::difference(new \DateTime("2014-04-15"), new \DateTime("2014-04-07"); // 1 week ago
-echo DateTime::difference(new \DateTime("2014-01-01"), new \DateTime("2014-04-01"); // 3 months from now
-echo DateTime::difference(new \DateTime("2014-05-01"), new \DateTime("2014-04-01"); // 1 month ago
-echo DateTime::difference(new \DateTime("2015-05-01"), new \DateTime("2014-04-01"); // 1 year ago
-echo DateTime::difference(new \DateTime("2014-05-01"), new \DateTime("2016-04-01"); // 2 years from now
+echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 13:00:00")); // just now
+echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 13:00:05")); // 5 seconds from now
+echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 12:59:00")); // 1 minute ago
+echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 12:45:00")); // 15 minutes ago
+echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 13:15:00")); // 15 minutes from now
+echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 14:00:00")); // 1 hour from now
+echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 15:00:00")); // 2 hours from now
+echo DateTime::difference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-26 12:00:00")); // 1 hour ago
+echo DateTime::difference(new \DateTime("2014-04-26"), new \DateTime("2014-04-25")); // 1 day ago
+echo DateTime::difference(new \DateTime("2014-04-26"), new \DateTime("2014-04-24")); // 2 days ago
+echo DateTime::difference(new \DateTime("2014-04-26"), new \DateTime("2014-04-28")); // 2 days from now
+echo DateTime::difference(new \DateTime("2014-04-01"), new \DateTime("2014-04-15")); // 2 weeks from now
+echo DateTime::difference(new \DateTime("2014-04-15"), new \DateTime("2014-04-07")); // 1 week ago
+echo DateTime::difference(new \DateTime("2014-01-01"), new \DateTime("2014-04-01")); // 3 months from now
+echo DateTime::difference(new \DateTime("2014-05-01"), new \DateTime("2014-04-01")); // 1 month ago
+echo DateTime::difference(new \DateTime("2015-05-01"), new \DateTime("2014-04-01")); // 1 year ago
+echo DateTime::difference(new \DateTime("2014-05-01"), new \DateTime("2016-04-01")); // 2 years from now
 ```
 
 **Precise difference**
@@ -168,9 +168,9 @@ echo DateTime::difference(new \DateTime("2014-05-01"), new \DateTime("2016-04-01
 ```php
 use Coduo\PHPHumanizer\DateTime;
 
-echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-25 11:20:00"); // 1 day, 1 hour, 40 minutes ago
-echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2015-04-28 17:00:00"); // 1 year, 2 days, 4 hours from now
-echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2016-04-27 13:00:00"); // 2 years, 1 day from now
+echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2014-04-25 11:20:00")); // 1 day, 1 hour, 40 minutes ago
+echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2015-04-28 17:00:00")); // 1 year, 2 days, 4 hours from now
+echo DateTime::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2016-04-27 13:00:00")); // 2 years, 1 day from now
 ```
 
 Currently we support following languages:
