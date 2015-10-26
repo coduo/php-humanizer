@@ -14,7 +14,7 @@ Add to your composer.json
 
 ```
 require: {
-   "coduo/php-humanizer": "1.0.*"
+   "coduo/php-humanizer": "^1.0"
 }
 ```
 
