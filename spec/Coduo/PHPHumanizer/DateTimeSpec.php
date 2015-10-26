@@ -153,4 +153,22 @@ class DateTimeSpec extends ObjectBehavior
             $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'fr')->shouldReturn($example[2]);
         }
     }
+
+    function it_humanizes_precise_difference_between_dates_for_pt_BR_locale()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minuto, 45 segundos atrás'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 hora, 40 minutos atrás'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 dia, 15 minutos a partir de agora'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 dias, 2 horas a partir de agora'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 ano, 2 dias, 4 horas a partir de agora'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 dias, 10 horas a partir de agora'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 dia, 1 hora, 40 minutos atrás'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 anos, 1 dia a partir de agora'),
+        );
+
+        foreach ($examples as $example) {
+            $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'pt_BR')->shouldReturn($example[2]);
+        }
+    }
 }
