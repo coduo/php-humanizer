@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] à l'instant"
+  future: "[0,Inf] à l'instant"
+second:
+  past: "{1} il y'a %count% seconde|[2,Inf] il y'a %count% secondes"
+  future: "{1} il y'a maintenant %count% seconde|[2,Inf] il y'a maintenant %count% secondes"
+minute:
+  past: "{1} il y'a %count% minute|[2,Inf] il y'a %count% minutes"
+  future: "{1} il y'a maintenant %count% minute|[2,Inf] il y'a maintenant %count% minutes"
+hour:
+  past: "{1} il y'a %count% heure|[2,Inf] il y'a %count% heure"
+  future: "{1} il y'a maintenant %count% heure|[2,Inf] il y'a maintenant %count% heures"
+day:
+  past: "{1} il y'a %count% jour|[2,Inf] il y'a %count% jours"
+  future: "{1} il y'a maintenant %count% jour|[2,Inf] il y'a maintenant %count% jours"
+week:
+  past: "{1} il y'a %count% semaine|[2,Inf] il y'a %count% semaines"
+  future: "{1} il y'a maintenant %count% semaine|[2,Inf] il y'a maintenant %count% semaines"
+month:
+  past: "{1} il y'a %count% mois|[2,Inf] il y'a %count% mois"
+  future: "{1} %count% mois maintenant|[2,Inf] %count% mois maintenant"
+year:
+  past: "{1} il y'a %count% année|[2,Inf] il y'a %count% années"
+  future: "{1} il y'a maintenant %count% année|[2,Inf] il y'a maintenant %count% années"
+
+compound:
+  second: "{1} %count% seconde|[2,Inf] %count% secondes"
+  minute: "{1} %count% minute|[2,Inf] %count% minutes"
+  hour: "{1} %count% heure|[2,Inf] %count% heures"
+  day: "{1} %count% jour|[2,Inf] %count% jours"
+  week: "{1} %count% semaine|[2,Inf] %count% semaines"
+  month: "{1} %count% mois|[2,Inf] %count% mois"
+  year: "{1} %count% année|[2,Inf] %count% années"
+  ago: "il y'a"
+  from_now: "maintenant"
