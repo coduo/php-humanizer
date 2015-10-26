@@ -1,9 +1,9 @@
 #PHP Humanizer
 
 [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=master)](https://travis-ci.org/coduo/php-humanizer)
-[![Latest Stable Version](https://poser.pugx.org/coduo/php-humanizer/v/stable)](https://packagist.org/packages/coduo/php-humanizer) 
-[![Total Downloads](https://poser.pugx.org/coduo/php-humanizer/downloads)](https://packagist.org/packages/coduo/php-humanizer) 
-[![Latest Unstable Version](https://poser.pugx.org/coduo/php-humanizer/v/unstable)](https://packagist.org/packages/coduo/php-humanizer) 
+[![Latest Stable Version](https://poser.pugx.org/coduo/php-humanizer/v/stable)](https://packagist.org/packages/coduo/php-humanizer)
+[![Total Downloads](https://poser.pugx.org/coduo/php-humanizer/downloads)](https://packagist.org/packages/coduo/php-humanizer)
+[![Latest Unstable Version](https://poser.pugx.org/coduo/php-humanizer/v/unstable)](https://packagist.org/packages/coduo/php-humanizer)
 [![License](https://poser.pugx.org/coduo/php-humanizer/license)](https://packagist.org/packages/coduo/php-humanizer)
 
 Humanize values to make them readable for regular people ;)
@@ -180,6 +180,7 @@ Currently we support following languages:
 * [Turkish](src/Coduo/PHPHumanizer/Resources/translations/difference.tr.yml)
 * [French](src/Coduo/PHPHumanizer/Resources/translations/difference.fr.yml)
 * [Português - Brasil](src/Coduo/PHPHumanizer/Resources/translations/difference.pt_BR.yml)
+* [Italian](src/Coduo/PHPHumanizer/Resources/translations/difference.it.yml)
 
 # Credits
 
