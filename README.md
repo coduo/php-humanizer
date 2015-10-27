@@ -137,6 +137,20 @@ use Coduo\PHPHumanizer\Number;
 echo Number::metricSuffix(1240000, 'pl'); // "1,24M"
 ```
 
+## Collections
+
+**Oxford**
+
+```php
+use Coduo\PHPHumanizer\Collection;
+
+echo Collection::oxford(['Michal', 'Norbert', 'Lukasz', 'Pawel'], 2); // "Michal, Norbert, and 2 others"
+echo Collection::oxford(['Michal', 'Norbert', 'Lukasz'], 2); // "Michal, Norbert, and 1 other"
+echo Collection::oxford(['Michal', 'Norbert']); // "Michal and Norbert"
+```
+
+Oxford is using translator component, so you can use whatever string format you like.
+
 ## Date time
 
 **Difference**

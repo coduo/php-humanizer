@@ -67,7 +67,7 @@ class Difference
             new Hour(),
             new Minute(),
             new Second(),
-            new JustNow()
+            new JustNow(),
         );
 
         $absoluteMilliSecondsDiff = abs($this->toDate->getTimestamp() - $this->fromDate->getTimestamp()) * 1000;
@@ -86,6 +86,7 @@ class Difference
     public function isPast()
     {
         $diff = $this->toDate->getTimestamp() - $this->fromDate->getTimestamp();
+
         return ($diff > 0) ? false : true;
     }
 }

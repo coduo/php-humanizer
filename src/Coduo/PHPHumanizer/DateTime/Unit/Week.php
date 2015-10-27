@@ -17,6 +17,7 @@ class Week implements Unit
     public function getMilliseconds()
     {
         $day = new Day();
+
         return $day->getMilliseconds() * 7;
     }
 

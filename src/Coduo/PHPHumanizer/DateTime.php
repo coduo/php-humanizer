@@ -13,12 +13,14 @@ class DateTime
     public static function difference(\DateTime $fromDate, \DateTime $toDate, $locale = 'en')
     {
         $formatter = new Formatter(Builder::build($locale));
+
         return $formatter->formatDifference(new Difference($fromDate, $toDate), $locale);
     }
 
     public static function preciseDifference(\DateTime $fromDate, \DateTime $toDate, $locale = 'en')
     {
         $formatter = new PreciseFormatter(Builder::build($locale));
+
         return $formatter->formatDifference(new PreciseDifference($fromDate, $toDate), $locale);
     }
 }
