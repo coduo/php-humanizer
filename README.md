@@ -10,12 +10,10 @@ Humanize values to make them readable for regular people ;)
 
 #Installation
 
-Add to your composer.json
+Run the following command:
 
-```
-require: {
-   "coduo/php-humanizer": "^1.0"
-}
+```shell
+composer require coduo/php-humanizer
 ```
 
 #Usage
