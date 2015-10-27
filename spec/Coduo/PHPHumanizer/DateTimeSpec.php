@@ -139,13 +139,13 @@ class DateTimeSpec extends ObjectBehavior
     function it_humanizes_precise_difference_between_dates_for_fr_locale()
     {
         $examples = array(
-            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minute, 45 secondes il y\'a'),
-            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 heure, 40 minutes il y\'a'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minute, 45 secondes il y a'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 heure, 40 minutes il y a'),
             array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 jour, 15 minutes maintenant'),
             array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 jours, 2 heures maintenant'),
             array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 année, 2 jours, 4 heures maintenant'),
             array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 jours, 10 heures maintenant'),
-            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 jour, 1 heure, 40 minutes il y\'a'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 jour, 1 heure, 40 minutes il y a'),
             array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 années, 1 jour maintenant'),
         );
 
