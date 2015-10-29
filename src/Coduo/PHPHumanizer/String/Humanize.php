@@ -36,7 +36,7 @@ class Humanize
      */
     public function __toString()
     {
-        $humanized = trim(strtolower(preg_replace(array('/([A-Z])/', '/[_\s]+/'), array('_$1', ' '), $this->text)));
+        $humanized = trim(mb_strtolower(preg_replace(array('/([A-Z])/', '/[_\s]+/'), array('_$1', ' '), $this->text)));
         $humanized = trim(str_replace($this->forbiddenWords, '', $humanized));
 
         return $this->capitalize ?  ucfirst($humanized) : $humanized;
