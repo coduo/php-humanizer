@@ -64,6 +64,36 @@ class DateTimeSpec extends ObjectBehavior
         }
     }
 
+    function it_humanize_difference_between_dates_for_af_locale()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'nou nou'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", '5 sekondes van nou af'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", '1 minuut gelede'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", '15 minute gelede'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", '15 minute van nou af'),
+            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", '1 uur van nou af'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", '2 ure van nou af'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", '1 uur gelede'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:00:00", '2 ure gelede'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", '1 uur gelede'),
+            array("2014-04-26", "2014-04-25", '1 dag gelede'),
+            array("2014-04-26", "2014-04-24", '2 dae gelede'),
+            array("2014-04-26", "2014-04-28", '2 dae van nou af'),
+            array("2014-04-01", "2014-04-15", '2 weke van nou af'),
+            array("2014-04-15", "2014-04-07", '1 week gelede'),
+            array("2014-01-01", "2014-04-01", '3 maande van nou af'),
+            array("2014-05-01", "2014-04-01", '1 maand gelede'),
+            array("2015-05-01", "2014-04-01", '1 jaar gelede'),
+            array("2014-05-01", "2016-04-01", '2 jaar van nou af'),
+            array("2014-05-01", "2009-04-01", '5 jaar gelede'),
+        );
+
+        foreach ($examples as $example) {
+            $this->difference(new \DateTime($example[0]), new \DateTime($example[1]), 'af')->shouldReturn($example[2]);
+        }
+    }
+
     function it_humanizes_precise_difference_between_dates()
     {
         $examples = array(
@@ -97,6 +127,24 @@ class DateTimeSpec extends ObjectBehavior
 
         foreach ($examples as $example) {
             $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'pl')->shouldReturn($example[2]);
+        }
+    }
+
+    function it_humanizes_precise_difference_between_dates_for_af_locale()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minuut, 45 sekondes gelede'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 uur, 40 minute gelede'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 dag, 15 minute van nou af'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 dae, 2 ure van nou af'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 jaar, 2 dae, 4 ure van nou af'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 dae, 10 ure van nou af'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 dag, 1 uur, 40 minute gelede'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 jaar, 1 dag van nou af'),
+        );
+
+        foreach ($examples as $example) {
+            $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'af')->shouldReturn($example[2]);
         }
     }
 
