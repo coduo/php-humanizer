@@ -57,7 +57,7 @@ $text = '<p><b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b
 
 echo String::truncateHtml($text, 3); // "<b>HyperText</b>"
 echo String::truncateHtml($text, 12, ''); // "HyperText Markup"
-echo String::truncateHtml($text, 50, '', '...); // "HyperText Markup Language, commonly referred to as..."
+echo String::truncateHtml($text, 50, '', '...'); // "HyperText Markup Language, commonly referred to as..."
 echo String::truncateHtml($text, 75, '<b><i><u><em><strong><a><span>', '...'); // '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup...</a>'
 
 ```
