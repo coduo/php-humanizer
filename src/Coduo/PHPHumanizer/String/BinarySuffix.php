@@ -25,18 +25,19 @@ class BinarySuffix
         1073741824 => '#.## GB',
         1048576 => '#.## MB',
         1024 => '#.# kB',
-        0 => '# bytes'
+        0 => '# bytes',
     );
 
     /**
      * @param $number
      * @param string $locale
+     *
      * @throws \InvalidArgumentException
      */
     public function __construct($number, $locale = 'en')
     {
         if (!is_numeric($number)) {
-            throw new \InvalidArgumentException("Binary suffix converter accept only numeric values.");
+            throw new \InvalidArgumentException('Binary suffix converter accept only numeric values.');
         }
 
         $this->number = (int) $number;

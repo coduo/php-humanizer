@@ -17,7 +17,7 @@ interface Unit
     public function getMilliseconds();
 
     /**
-     * Returns symbol of \DateInterval equivalent
+     * Returns symbol of \DateInterval equivalent.
      *
      * @return string
      */

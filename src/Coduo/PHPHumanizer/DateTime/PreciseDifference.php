@@ -4,11 +4,9 @@ namespace Coduo\PHPHumanizer\DateTime;
 
 use Coduo\PHPHumanizer\DateTime\Unit\Day;
 use Coduo\PHPHumanizer\DateTime\Unit\Hour;
-use Coduo\PHPHumanizer\DateTime\Unit\JustNow;
 use Coduo\PHPHumanizer\DateTime\Unit\Minute;
 use Coduo\PHPHumanizer\DateTime\Unit\Month;
 use Coduo\PHPHumanizer\DateTime\Unit\Second;
-use Coduo\PHPHumanizer\DateTime\Unit\Week;
 use Coduo\PHPHumanizer\DateTime\Unit\Year;
 use Coduo\PHPHumanizer\DateTime\Difference\CompoundResult;
 
@@ -64,7 +62,6 @@ class PreciseDifference
         $diff = $this->fromDate->diff($this->toDate);
 
         foreach ($units as $unit) {
-
             if ($diff->{$unit->getDateIntervalSymbol()} > 0) {
                 $this->units[] = $unit;
                 $this->compoundResults[] = new CompoundResult($unit, $diff->{$unit->getDateIntervalSymbol()});
@@ -75,6 +72,7 @@ class PreciseDifference
     public function isPast()
     {
         $diff = $this->toDate->getTimestamp() - $this->fromDate->getTimestamp();
+
         return ($diff > 0) ? false : true;
     }
 }

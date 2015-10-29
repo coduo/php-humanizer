@@ -21,7 +21,8 @@ class Formatter
 
     /**
      * @param Difference $difference
-     * @param string $locale
+     * @param string     $locale
+     *
      * @return string
      */
     public function formatDifference(Difference $difference, $locale = 'en')
