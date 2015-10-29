@@ -18,6 +18,6 @@
 
 Try use similar coding standards to what you see in the project to keep things clear to the contributors. If you're unsure, it's always a safe bet to fall-back to the PSR standards.
 
-[PSR-1: Basic Coding Standard :: PSR-1](http://www.php-fig.org/psr/psr-1/)
+[PSR-1: Basic Coding Standard](http://www.php-fig.org/psr/psr-1/)
 
-[PSR-2: Coding Style Guide :: PSR-1](http://www.php-fig.org/psr/psr-2/)
+[PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/)
