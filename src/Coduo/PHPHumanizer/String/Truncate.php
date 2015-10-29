@@ -7,17 +7,17 @@ class Truncate
     /**
      * @var string
      */
-    private $text;
+    protected $text;
 
     /**
      * @var int
      */
-    private $charactersCount;
+    protected $charactersCount;
 
     /**
      * @var string
      */
-    private $append;
+    protected $append;
 
     /**
      * @param string $text
@@ -31,17 +31,22 @@ class Truncate
         $this->append = $append;
     }
 
+    protected function breakpoint($text, $charCount)
+    {
+        $length = $charCount;
+        if (false !== ($breakpoint = mb_strpos($text, ' ', $charCount))) {
+            $length = $breakpoint;
+        }
+        return $length;
+    }
+
     public function __toString()
     {
         if ($this->charactersCount < 0 || strlen($this->text) <= $this->charactersCount) {
             return $this->text;
         }
 
-        $length = $this->charactersCount;
-        if (false !== ($breakpoint = mb_strpos($this->text, ' ', $this->charactersCount))) {
-            $length = $breakpoint;
-        }
-
+        $length = $this->breakpoint($this->text, $this->charactersCount);
         return rtrim(mb_substr($this->text, 0, $length)) . $this->append;
     }
 }
