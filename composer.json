@@ -30,7 +30,7 @@
     "autoload": {
         "psr-4": {
             "": "src",
-            "Coduo\\PHPHumanizer\\Tests": "tests/"
+            "Coduo\\PHPHumanizer\\Tests\\": "tests/"
         }
     },
     "extra": {

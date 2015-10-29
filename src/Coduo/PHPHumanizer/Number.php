@@ -40,7 +40,7 @@ class Number
         return $romanNumeral->toRoman($number);
     }
 
-    public function fromRoman($number)
+    public static function fromRoman($number)
     {
         $romanNumeral = new RomanNumeral();
 
