@@ -32,5 +32,11 @@ class StringSpec extends ObjectBehavior
         $this->truncate($text, 0)->shouldReturn("Lorem");
         $this->truncate($text, 0, '...')->shouldReturn("Lorem...");
         $this->truncate($text, -2)->shouldReturn($text);
+
+        $textShort = 'Short text';
+        $this->truncate($textShort, 4, '...')->shouldReturn("Short...");
+        $this->truncate($textShort, 5, '...')->shouldReturn("Short...");
+        $this->truncate($textShort, 6, '...')->shouldReturn("Short...");
+        $this->truncate($textShort, 7, '...')->shouldReturn("Short text");
     }
 }
