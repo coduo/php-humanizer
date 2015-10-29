@@ -22,3 +22,4 @@ install:
 
 script:
   - ./bin/phpspec run --format=pretty
+  - ./bin/phpunit -vvv tests/
