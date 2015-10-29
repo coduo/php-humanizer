@@ -282,4 +282,21 @@ class DateTimeSpec extends ObjectBehavior
             $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'it')->shouldReturn($example[2]);
         }
     }
+
+    function it_humanizes_precise_difference_between_dates_for_no_locale()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minutt, 45 sekunder siden'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 time, 40 minutter siden'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 dag, 15 minutter fra nå'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 dager, 2 timer fra nå'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 år, 2 dager, 4 timer fra nå'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 dager, 10 timer fra nå'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 dag, 1 time, 40 minutter siden'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 år, 1 dag fra nå'),
+        );
+        foreach ($examples as $example) {
+            $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'no')->shouldReturn($example[2]);
+        }
+    }
 }
