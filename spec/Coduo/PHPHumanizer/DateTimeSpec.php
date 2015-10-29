@@ -237,4 +237,22 @@ class DateTimeSpec extends ObjectBehavior
             $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'it')->shouldReturn($example[2]);
         }
     }
+
+    function it_humanizes_precise_difference_between_dates_for_ru_locale()
+    {
+        $examples = array(
+            array("2015-02-01 12:00:00", "2015-02-01 10:57:55", '1 час, 2 минуты, 5 секунд назад'),
+            array("2015-02-01 12:00:00", "2015-02-01 09:54:59", '2 часа, 5 минут, 1 секунда назад'),
+            array("2015-02-01 12:00:00", "2015-02-01 06:58:58", '5 часов, 1 минута, 2 секунды назад'),
+            array("2015-02-01 12:00:00", "2015-02-01 14:01:05", 'через 2 часа, 1 минуту, 5 секунд'),
+            array("2015-02-01 12:00:00", "2014-01-30 07:00:00", '1 год, 2 дня, 5 часов назад'),
+            array("2015-02-01 12:00:00", "2013-01-27 11:00:00", '2 года, 5 дней, 1 час назад'),
+            array("2015-02-01 12:00:00", "2010-01-31 10:00:00", '5 лет, 1 день, 2 часа назад'),
+            array("2015-02-01 12:00:00", "2017-02-06 13:00:00", 'через 2 года, 5 дней, 1 час'),
+        );
+
+        foreach ($examples as $example) {
+            $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'ru')->shouldReturn($example[2]);
+        }
+    }
 }
