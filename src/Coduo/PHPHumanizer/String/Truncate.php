@@ -33,7 +33,7 @@ class Truncate
 
     public function __toString()
     {
-        if ($this->charactersCount < 0 || strlen($this->text) <= ($this->charactersCount + mb_strlen($this->append))) {
+        if ($this->charactersCount < 0 || mb_strlen($this->text) <= ($this->charactersCount + mb_strlen($this->append))) {
             return $this->text;
         }
 
