@@ -49,5 +49,4 @@ class CompoundResult
     {
         return $this->unit;
     }
-
 }

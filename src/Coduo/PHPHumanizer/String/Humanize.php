@@ -15,7 +15,7 @@ class Humanize
     private $text;
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $capitalize;
 
@@ -31,12 +31,14 @@ class Humanize
 
     /**
      * @internal param bool $capitalize
+     *
      * @return string
      */
     public function __toString()
     {
-        $humanized = trim(strtolower(preg_replace(array('/([A-Z])/', '/[_\s]+/'), array('_$1', ' '), $this->text)));
-        $humanized = trim(str_replace($this->forbiddenWords, "", $humanized));
+        $humanized = trim(mb_strtolower(preg_replace(array('/([A-Z])/', '/[_\s]+/'), array('_$1', ' '), $this->text)));
+        $humanized = trim(str_replace($this->forbiddenWords, '', $humanized));
+
         return $this->capitalize ?  ucfirst($humanized) : $humanized;
     }
 }

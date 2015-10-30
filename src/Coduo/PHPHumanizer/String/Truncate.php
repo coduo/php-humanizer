@@ -21,7 +21,7 @@ class Truncate
 
     /**
      * @param string $text
-     * @param int $charactersCount
+     * @param int    $charactersCount
      * @param string $append
      */
     public function __construct($text, $charactersCount, $append = '')
@@ -33,7 +33,7 @@ class Truncate
 
     public function __toString()
     {
-        if ($this->charactersCount < 0 || strlen($this->text) <= $this->charactersCount) {
+        if ($this->charactersCount < 0 || mb_strlen($this->text) <= ($this->charactersCount + mb_strlen($this->append))) {
             return $this->text;
         }
 
@@ -42,6 +42,6 @@ class Truncate
             $length = $breakpoint;
         }
 
-        return rtrim(mb_substr($this->text, 0, $length)) . $this->append;
+        return rtrim(mb_substr($this->text, 0, $length)).$this->append;
     }
 }

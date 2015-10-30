@@ -17,6 +17,7 @@ class Hour implements Unit
     public function getMilliseconds()
     {
         $minute = new Minute();
+
         return $minute->getMilliseconds() * 60;
     }
 

@@ -25,18 +25,19 @@ class MetricSuffix
         1000000000 => '#.##G',
         1000000 => '#.##M',
         1000 => '#.#k',
-        0 => '#.#'
+        0 => '#.#',
     );
 
     /**
      * @param $number
      * @param string $locale
+     *
      * @throws \InvalidArgumentException
      */
     public function __construct($number, $locale = 'en')
     {
         if (!is_numeric($number)) {
-            throw new \InvalidArgumentException("Metric suffix converter accept only numeric values.");
+            throw new \InvalidArgumentException('Metric suffix converter accept only numeric values.');
         }
 
         $this->number = (int) $number;

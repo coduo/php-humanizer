@@ -5,12 +5,12 @@ namespace Coduo\PHPHumanizer\Number;
 class Ordinal
 {
     /**
-     * @var int|double
+     * @var int|float
      */
     private $number;
 
     /**
-     * @param int|double $number
+     * @param int|float $number
      */
     public function __construct($number)
     {
@@ -21,7 +21,7 @@ class Ordinal
     {
         $absNumber = abs((integer) $this->number);
 
-        if (in_array(($absNumber % 100), array(11,12,13))) {
+        if (in_array(($absNumber % 100), array(11, 12, 13))) {
             return 'th';
         }
 
