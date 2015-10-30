@@ -4,8 +4,10 @@ namespace Coduo\PHPHumanizer;
 
 use Coduo\PHPHumanizer\Number\Ordinal;
 use Coduo\PHPHumanizer\Number\RomanNumeral;
+use Coduo\PHPHumanizer\Number\NumberSpeller;
 use Coduo\PHPHumanizer\String\BinarySuffix;
 use Coduo\PHPHumanizer\String\MetricSuffix;
+use Coduo\PHPHumanizer\Translator\Builder;
 
 class Number
 {
@@ -31,6 +33,13 @@ class Number
         $binarySuffix = new MetricSuffix($number, $locale);
 
         return $binarySuffix->convert();
+    }
+
+    public function spell($number, $locale = 'en')
+    {
+        $numberSpeller = new NumberSpeller(Builder::build($locale));
+
+        return $numberSpeller->spell($number, $locale);
     }
 
     public static function toRoman($number)

@@ -76,6 +76,44 @@ class NumberSpec extends ObjectBehavior
             ->during('metricSuffix', array('as12'));
     }
 
+    function it_converts_numbers_to_spelling()
+    {
+        $examples = array(
+            array(0, "zero"),
+            array(1, "one"),
+            array(12, "twelve"),
+            array(123, "one hundred and twenty-three"),
+            array(1234, "one thousand, two hundred and thirty-four"),
+            array(12345, "twelve thousand, three hundred and fourty-five"),
+            array(123456, "one hundred and twenty-three thousand, four hundred and fifty-six"),
+            array(1234567, "one million, two hundred and thirty-four thousand, five hundred and sixty-seven"),
+            array(12345678, "twelve million, three hundred and fourty-five thousand, six hundred and seventy-eight"),
+            array(123456789, "one hundred and twenty-three million, four hundred and fifty-six thousand, seven hundred and eighty-nine"),
+            array(123456789.123, "one hundred and twenty-three million, four hundred and fifty-six thousand, seven hundred and eighty-nine point one two three"),
+            array(-123.456, "negative one hundred and twenty-three point four five six"),
+        );
+
+        foreach ($examples as $example) {
+            $this->spell($example[0])->shouldReturn($example[1]);
+        }
+    }
+
+    function it_throws_exception_when_converting_number_to_spelling_is_invalid()
+    {
+        $this->shouldThrow(new \InvalidArgumentException("Spell number converter only accepts numeric values."))
+            ->during('spell', array("not_a_number"));
+        $this->shouldThrow(new \InvalidArgumentException("Spell number converter only accepts numeric values."))
+            ->during('spell', array(true));
+    }
+
+    function it_throws_exception_when_converting_number_to_spelling_is_outside_int_range()
+    {
+        $this->shouldThrow(new \InvalidArgumentException("Spell number converter only accepts numeric values between -" . PHP_INT_MAX . " and " . PHP_INT_MAX . "."))
+            ->during('spell', array(-PHP_INT_MAX - 1));
+        $this->shouldThrow(new \InvalidArgumentException("Spell number converter only accepts numeric values between -" . PHP_INT_MAX . " and " . PHP_INT_MAX . "."))
+            ->during('spell', array(PHP_INT_MAX + 1));
+    }
+
     function it_converts_numbers_to_roman()
     {
         $this->toRoman(1)->shouldReturn("I");
