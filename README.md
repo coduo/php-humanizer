@@ -112,6 +112,14 @@ use Coduo\PHPHumanizer\Number;
 echo Number::binarySuffix(1536, 'pl'); // "1,5 kB"
 ```
 
+Number can also be humanized with a specific number of decimal places by providing a precision parameter
+
+```php
+use Coduo\PHPHumanizer\Number;
+
+echo Number::binarySuffix(1325899906842624, 'en', 3); // "1.178 PB"
+```
+
 **Metric Suffix**
 
 ```php
