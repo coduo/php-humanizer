@@ -16,15 +16,11 @@ class String
 
     public static function truncate($text, $charactersCount, $append = '')
     {
-        $truncate = new TextTruncate($text, $charactersCount, $append);
-        $truncate->setBreakpoint(new WordBreakpoint());
-        return (string) $truncate;
+        return (string) new TextTruncate($text, $charactersCount,new WordBreakpoint(), $append);;
     }
 
     public static function truncateHtml($text, $charactersCount, $allowedTags = '<b><i><u><em><strong><a><span>', $append = '')
     {
-        $truncate = new HtmlTruncate($text, $charactersCount, $allowedTags, $append);
-        $truncate->setBreakpoint(new WordBreakpoint());
-        return (string) $truncate;
+        return (string) new HtmlTruncate($text, $charactersCount,new WordBreakpoint(), $allowedTags, $append);;
     }
 }

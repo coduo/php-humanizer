@@ -30,28 +30,19 @@ class HtmlTruncate implements Truncate
     private $breakpoint;
 
     /**
-     * @param string $text
-     * @param int    $charactersCount
-     * @param string $allowedTags
-     * @param string $append
+     * @param string     $text
+     * @param int        $charactersCount
+     * @param Breakpoint $breakpoint
+     * @param string     $allowedTags
+     * @param string     $append
      */
-    public function __construct($text, $charactersCount, $allowedTags = '<b><i><u><em><strong><a><span>', $append = '')
+    public function __construct($text, $charactersCount, $breakpoint, $allowedTags = '<b><i><u><em><strong><a><span>', $append = '')
     {
         $this->text            = $text;
         $this->charactersCount = $charactersCount;
         $this->append          = $append;
+        $this->breakpoint      = $breakpoint;
         $this->allowedTags     = $allowedTags;
-    }
-
-    /**
-     * @param Breakpoint $breakpoint
-     *
-     * @return TextTruncate
-     */
-    public function setBreakpoint($breakpoint)
-    {
-        $this->breakpoint = $breakpoint;
-        return $this;
     }
 
     /**

@@ -25,26 +25,17 @@ class TextTruncate implements Truncate
     private $breakpoint;
 
     /**
-     * @param string $text
-     * @param int    $charactersCount
-     * @param string $append
+     * @param string     $text
+     * @param int        $charactersCount
+     * @param Breakpoint $breakpoint
+     * @param string     $append
      */
-    public function __construct($text, $charactersCount, $append = '')
+    public function __construct($text, $charactersCount, $breakpoint, $append = '')
     {
         $this->text            = $text;
         $this->charactersCount = $charactersCount;
         $this->append          = $append;
-    }
-
-    /**
-     * @param Breakpoint $breakpoint
-     *
-     * @return TextTruncate
-     */
-    public function setBreakpoint($breakpoint)
-    {
-        $this->breakpoint = $breakpoint;
-        return $this;
+        $this->breakpoint      = $breakpoint;
     }
 
     /**
