@@ -57,7 +57,7 @@ class TextTruncate implements Truncate
     {
         $length = $this->charactersCount;
         if (!empty($this->breakpoint)) {
-            $length = $this->breakpoint->len($text, $charCount);
+            $length = $this->breakpoint->calculatePosition($text, $charCount);
         }
         return $length;
     }

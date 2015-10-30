@@ -13,5 +13,5 @@ interface Breakpoint
      *
      * @return int
      */
-    public function len($text, $charactersCount);
+    public function calculatePosition($text, $charactersCount);
 }
