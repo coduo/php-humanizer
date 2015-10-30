@@ -6,10 +6,20 @@ class WordBreakpoint implements Breakpoint
 {
     public function calculatePosition($text, $charactersCount)
     {
-        $length = $charactersCount;
-        if ($charactersCount >= 0 && false !== ($breakpoint = mb_strpos($text, ' ', $charactersCount))) {
-            $length = $breakpoint;
+        if ($charactersCount < 0) {
+            return mb_strlen($text);
         }
-        return $length;
+        
+        if ($charactersCount > mb_strlen($text)) {
+            return mb_strlen($text);
+        }
+
+        $breakpoint = mb_strpos($text, ' ', $charactersCount);
+        
+        if (false === $breakpoint) {
+            return mb_strlen($text);
+        }
+        
+        return $breakpoint;
     }
 }
