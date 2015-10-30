@@ -121,6 +121,33 @@ class DateTimeSpec extends ObjectBehavior
         }
     }
 
+    function it_humanize_difference_between_dates_for_ru_locale()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'сейчас'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", 'через 5 секунд'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", '1 минуту назад'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", '15 минут назад'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", 'через 15 минут'),
+            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", 'через 1 час'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", 'через 2 часа'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", '1 час назад'),
+            array("2014-04-26", "2014-04-25", '1 день назад'),
+            array("2014-04-26", "2014-04-24", '2 дня назад'),
+            array("2014-04-26", "2014-04-28", 'через 2 дня'),
+            array("2014-04-01", "2014-04-15", 'через 2 недели'),
+            array("2014-04-15", "2014-04-07", '1 неделю назад'),
+            array("2014-01-01", "2014-04-01", 'через 3 месяца'),
+            array("2014-05-01", "2014-04-01", '1 месяц назад'),
+            array("2015-05-01", "2014-04-01", '1 год назад'),
+            array("2014-05-01", "2016-04-01", 'через 2 года'),
+        );
+
+        foreach ($examples as $example) {
+            $this->difference(new \DateTime($example[0]), new \DateTime($example[1]), 'ru')->shouldReturn($example[2]);
+        }
+    }
+
     function it_humanizes_precise_difference_between_dates()
     {
         $examples = array(
@@ -297,6 +324,24 @@ class DateTimeSpec extends ObjectBehavior
         );
         foreach ($examples as $example) {
             $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'no')->shouldReturn($example[2]);
+        }
+    }
+
+    function it_humanizes_precise_difference_between_dates_for_ru_locale()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 минута, 45 секунд назад'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 час, 40 минут назад'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", 'через 1 день, 15 минут'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", 'через 7 дней, 2 часа'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", 'через 1 год, 2 дня, 4 часа'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", 'через 2 дня, 10 часов'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 день, 1 час, 40 минут назад'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", 'через 2 года, 1 день'),
+        );
+
+        foreach ($examples as $example) {
+            $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'ru')->shouldReturn($example[2]);
         }
     }
 }
