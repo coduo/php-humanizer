@@ -2,12 +2,27 @@
 
 namespace Coduo\PHPHumanizer\String;
 
-class TruncateHtml extends Truncate
+class HtmlTruncate extends TextTruncate
 {
     /**
      * @var string
      */
-    protected $allowedTags;
+    private $text;
+
+    /**
+     * @var int
+     */
+    private $charactersCount;
+
+    /**
+     * @var string
+     */
+    private $append;
+
+    /**
+     * @var string
+     */
+    private $allowedTags;
 
     /**
      * @param string $text
@@ -33,7 +48,7 @@ class TruncateHtml extends Truncate
      *
      * @return  string  the truncated string
      */
-    protected function truncateHtml($string)
+    private function truncateHtml($string)
     {
         $limit        = $this->charactersCount;
         $continuation = $this->append;
@@ -63,13 +78,16 @@ class TruncateHtml extends Truncate
             $offset += $match[1][1] - $match[0][1];
         }
 
-        $new_string = mb_substr($string, 0, $limit = min(mb_strlen($string), $this->breakpoint($string, $limit + $offset)));
+        $new_string = mb_substr($string, 0, $limit = min(mb_strlen($string), $this->getLength($string, $limit + $offset)));
         $new_string .= (mb_strlen($string) > $limit ? $continuation : '');
         $new_string .= (count($tags = array_reverse($tags)) ? '</'.implode('></', $tags).'>' : '');
         return $new_string;
     }
 
-    public function __toString()
+    /**
+     * @return string
+     */
+    public function truncate()
     {
         $string = strip_tags($this->text, $this->allowedTags);
         return $this->truncateHtml($string);
