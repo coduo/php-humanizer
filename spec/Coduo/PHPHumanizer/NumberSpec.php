@@ -39,6 +39,20 @@ class NumberSpec extends ObjectBehavior
         $this->binarySuffix(1325899906842624)->shouldReturn("1.18 PB");
     }
 
+    function it_convert_number_to_string_with_binary_suffix_with_precision()
+    {
+        $this->binarySuffix(-1, 'en', 3)->shouldReturn(-1);
+        $this->binarySuffix(0, 'en', 3)->shouldReturn("0 bytes");
+        $this->binarySuffix(1, 'en', 3)->shouldReturn("1 bytes");
+        $this->binarySuffix(1024, 'en', 3)->shouldReturn("1.000 kB");
+        $this->binarySuffix(1025, 'en', 3)->shouldReturn("1.001 kB");
+        $this->binarySuffix(1536, 'en', 3)->shouldReturn("1.500 kB");
+        $this->binarySuffix(1048576 * 5, 'en', 3)->shouldReturn("5.000 MB");
+        $this->binarySuffix(1073741824 * 2, 'en', 3)->shouldReturn("2.000 GB");
+        $this->binarySuffix(1099511627776 * 3, 'en', 3)->shouldReturn("3.000 TB");
+        $this->binarySuffix(1325899906842624, 'en', 3)->shouldReturn("1.178 PB");
+    }
+
     function it_convert_number_to_string_with_binary_suffix_for_specific_locale()
     {
         $this->binarySuffix(1536, 'pl')->shouldReturn("1,5 kB");
