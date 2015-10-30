@@ -19,9 +19,9 @@ class Number
         return (string) new Ordinal($number);
     }
 
-    public static function binarySuffix($number, $locale = 'en')
+    public static function binarySuffix($number, $locale = 'en', $precision = null)
     {
-        $binarySuffix = new BinarySuffix($number, $locale);
+        $binarySuffix = new BinarySuffix($number, $locale, $precision);
 
         return $binarySuffix->convert();
     }
