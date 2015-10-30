@@ -38,28 +38,13 @@ class TextTruncate implements Truncate
 
     /**
      * @param Breakpoint $breakpoint
+     *
      * @return TextTruncate
      */
-    public function setBreakpoint($breakpoint) {
+    public function setBreakpoint($breakpoint)
+    {
         $this->breakpoint = $breakpoint;
         return $this;
-    }
-
-    /**
-     * Return the length of the newly truncated string using the breakpoint
-     *
-     * @param string $text
-     * @param int    $charCount
-     *
-     * @return int
-     */
-    protected function getLength($text, $charCount)
-    {
-        $length = $this->charactersCount;
-        if (!empty($this->breakpoint)) {
-            $length = $this->breakpoint->calculatePosition($text, $charCount);
-        }
-        return $length;
     }
 
     /**
@@ -78,5 +63,22 @@ class TextTruncate implements Truncate
     public function __toString()
     {
         return $this->truncate();
+    }
+
+    /**
+     * Return the length of the newly truncated string using the breakpoint
+     *
+     * @param string $text
+     * @param int    $charCount
+     *
+     * @return int
+     */
+    private function getLength($text, $charCount)
+    {
+        $length = $this->charactersCount;
+        if (!empty($this->breakpoint)) {
+            $length = $this->breakpoint->calculatePosition($text, $charCount);
+        }
+        return $length;
     }
 }

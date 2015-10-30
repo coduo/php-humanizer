@@ -2,7 +2,7 @@
 
 namespace Coduo\PHPHumanizer\String;
 
-class HtmlTruncate extends TextTruncate
+class HtmlTruncate implements Truncate
 {
     /**
      * @var string
@@ -25,6 +25,11 @@ class HtmlTruncate extends TextTruncate
     private $allowedTags;
 
     /**
+     * @var Breakpoint
+     */
+    private $breakpoint;
+
+    /**
      * @param string $text
      * @param int    $charactersCount
      * @param string $allowedTags
@@ -36,6 +41,48 @@ class HtmlTruncate extends TextTruncate
         $this->charactersCount = $charactersCount;
         $this->append          = $append;
         $this->allowedTags     = $allowedTags;
+    }
+
+    /**
+     * @param Breakpoint $breakpoint
+     *
+     * @return TextTruncate
+     */
+    public function setBreakpoint($breakpoint)
+    {
+        $this->breakpoint = $breakpoint;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function truncate()
+    {
+        $string = strip_tags($this->text, $this->allowedTags);
+        return $this->truncateHtml($string);
+    }
+
+    public function __toString()
+    {
+        return $this->truncate();
+    }
+
+    /**
+     * Return the length of the newly truncated string using the breakpoint
+     *
+     * @param string $text
+     * @param int    $charCount
+     *
+     * @return int
+     */
+    private function getLength($text, $charCount)
+    {
+        $length = $this->charactersCount;
+        if (!empty($this->breakpoint)) {
+            $length = $this->breakpoint->calculatePosition($text, $charCount);
+        }
+        return $length;
     }
 
     /**
@@ -84,12 +131,4 @@ class HtmlTruncate extends TextTruncate
         return $new_string;
     }
 
-    /**
-     * @return string
-     */
-    public function truncate()
-    {
-        $string = strip_tags($this->text, $this->allowedTags);
-        return $this->truncateHtml($string);
-    }
 }
