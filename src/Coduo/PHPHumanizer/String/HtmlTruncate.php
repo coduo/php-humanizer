@@ -38,7 +38,7 @@ class HtmlTruncate implements TruncateInterface
     {
         $strippedText = strip_tags($text, $this->allowedTags);
 
-        return $this->truncateHtml($strippedText, $this->breakpoint->calculatePosition($strippedText, $charactersCount));
+        return $this->truncateHtml($strippedText, $charactersCount);
     }
 
     /**
@@ -84,7 +84,7 @@ class HtmlTruncate implements TruncateInterface
             $offset += $match[1][1] - $match[0][1];
         }
 
-        $newString = mb_substr($string, 0, $limit = min(mb_strlen($string),  $limit));
+        $newString = mb_substr($string, 0, $limit = min(mb_strlen($string),  $this->breakpoint->calculatePosition($string, $limit + $offset)));
         $newString .= (mb_strlen($string) > $limit ? $this->append : '');
         $newString .= (count($tags = array_reverse($tags)) ? '</'.implode('></', $tags).'>' : '');
         

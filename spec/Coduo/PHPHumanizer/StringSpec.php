@@ -53,7 +53,8 @@ class StringSpec extends ObjectBehavior
 
         // Test with allowed tags
         $this->truncateHtml($text, 3)->shouldReturn("<b>HyperText</b>");
-        $this->truncateHtml($text, 30)->shouldReturn("<b>HyperText Markup</b>");
+        $this->truncateHtml($text, 12)->shouldReturn("<b>HyperText Markup</b>");
+        $this->truncateHtml($text, 30)->shouldReturn("<b>HyperText Markup Language</b>, commonly");
         $this->truncateHtml($text, 50)->shouldReturn("<b>HyperText Markup Language</b>, commonly referred to as");
         $this->truncateHtml($text, 75)->shouldReturn('<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup</a>');
         $this->truncateHtml($text, 100)->shouldReturn('<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create');
