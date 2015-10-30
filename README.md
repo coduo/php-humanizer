@@ -194,6 +194,7 @@ Currently we support following languages:
 * [Português - Brasil](src/Coduo/PHPHumanizer/Resources/translations/difference.pt_BR.yml)
 * [Italian](src/Coduo/PHPHumanizer/Resources/translations/difference.it.yml)
 * [Dutch](src/Coduo/PHPHumanizer/Resources/translations/difference.nl.yml)
+* [Русский](src/Coduo/PHPHumanizer/Resources/translations/difference.ru.yml)
 
 # Credits
 
