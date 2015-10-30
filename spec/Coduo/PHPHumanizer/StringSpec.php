@@ -52,22 +52,22 @@ class StringSpec extends ObjectBehavior
         $text = '<p><b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create <a href="/wiki/Web_page" title="Web page">web pages</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> <a href="/wiki/Web_browser" title="Web browser">Web browsers</a> can read HTML files and render them into visible or audible web pages. HTML describes the structure of a <a href="/wiki/Website" title="Website">website</a> <a href="/wiki/Semantic" title="Semantic" class="mw-redirect">semantically</a> along with cues for presentation, making it a markup language, rather than a <a href="/wiki/Programming_language" title="Programming language">programming language</a>.</p>';
 
         // Test with allowed tags
-//        $this->truncateHtml($text, 3)->shouldReturn("<b>HyperText</b>");
+        $this->truncateHtml($text, 3)->shouldReturn("<b>HyperText</b>");
         $this->truncateHtml($text, 30)->shouldReturn("<b>HyperText Markup</b>");
-//        $this->truncateHtml($text, 50)->shouldReturn("<b>HyperText Markup Language</b>, commonly referred to as");
-//        $this->truncateHtml($text, 75)->shouldReturn('<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup</a>');
-//        $this->truncateHtml($text, 100)->shouldReturn('<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create');
-//
-//        // Test without tags
-//
-//        $this->truncateHtml($text, 3, '')->shouldReturn("HyperText");
-//        $this->truncateHtml($text, 12, '')->shouldReturn("HyperText Markup");
-//        $this->truncateHtml($text, 50, '')->shouldReturn("HyperText Markup Language, commonly referred to as");
-//        $this->truncateHtml($text, 75, '')->shouldReturn('HyperText Markup Language, commonly referred to as HTML, is the standard markup');
-//        $this->truncateHtml($text, 100, '')->shouldReturn('HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to create');
-//
-//        // Test with append
-//        $this->truncateHtml($text, 50, '', '...')->shouldReturn("HyperText Markup Language, commonly referred to as...");
-//        $this->truncateHtml($text, 75, '<b><i><u><em><strong><a><span>', '...')->shouldReturn('<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup...</a>');
+        $this->truncateHtml($text, 50)->shouldReturn("<b>HyperText Markup Language</b>, commonly referred to as");
+        $this->truncateHtml($text, 75)->shouldReturn('<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup</a>');
+        $this->truncateHtml($text, 100)->shouldReturn('<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create');
+
+        // Test without tags
+
+        $this->truncateHtml($text, 3, '')->shouldReturn("HyperText");
+        $this->truncateHtml($text, 12, '')->shouldReturn("HyperText Markup");
+        $this->truncateHtml($text, 50, '')->shouldReturn("HyperText Markup Language, commonly referred to as");
+        $this->truncateHtml($text, 75, '')->shouldReturn('HyperText Markup Language, commonly referred to as HTML, is the standard markup');
+        $this->truncateHtml($text, 100, '')->shouldReturn('HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to create');
+
+        // Test with append
+        $this->truncateHtml($text, 50, '', '...')->shouldReturn("HyperText Markup Language, commonly referred to as...");
+        $this->truncateHtml($text, 75, '<b><i><u><em><strong><a><span>', '...')->shouldReturn('<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup...</a>');
     }
 }
