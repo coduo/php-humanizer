@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] прямо сейчас"
+  future: "[0,Inf] прямо сейчас"
+second:
+  past: "{1} %count% секунду назад|[2,4] %count% секунды назад|[5,Inf] %count% секунд назад"
+  future: "{1} %count% секунду вперед|[2,4] %count% секунды вперед|[5,Inf] %count% секунд вперед"
+minute:
+  past: "{1} %count% минуту назад|[2,4] %count% минуты назад|[5,Inf] %count% минут назад"
+  future: "{1} %count% минуту вперед|[2,4] %count% минуты вперед|[5,Inf] %count% минут вперед"
+hour:
+  past: "{1} %count% час назад|[2,4] %count% часа назад|[5,Inf] %count% часов назад"
+  future: "{1} %count% час вперед|[2,4] %count% часа вперед|[5,Inf] %count% часов вперед"
+day:
+  past: "{1} %count% дней назад|[2,4] %count% дня назад|[5,Inf] %count% дней назад"
+  future: "{1} %count% дней вперед|[2,4] %count% дня вперед|[5,Inf] %count% дней вперед"
+week:
+  past: "{1} %count% неделю назад|[2,4] %count% недели назад|[5,Inf] %count% недель назад"
+  future: "{1} %count% неделю вперед|[2,4] %count% недели вперед|[5,Inf] %count% недель вперед"
+month:
+  past: "{1} %count% месяц назад|[2,4] %count% месяца назад|[5,Inf] %count% месяцев назад"
+  future: "{1} %count% месяц вперед|[2,4] %count% месяца вперед|[5,Inf] %count% месяцев вперед"
+year:
+  past: "{1} %count% год назад|[2,4] %count% года назад|[5,Inf] %count% лет назад"
+  future: "{1} %count% год вперед|[2,4] %count% года вперед|[5,Inf] %count% лет вперед"
+
+compound:
+  second: "{1} %count% секунда|[2,4] %count% секунды|[5,Inf] %count% секунд"
+  minute: "{1} %count% минута|[2,4] %count% минуты|[5,Inf] %count% минут"
+  hour: "{1} %count% час|[2,4] %count% часа|[5,Inf] %count% часов"
+  day: "{1} %count% день|[2,4] %count% дня|[5,Inf] %count% дней"
+  week: "{1} %count% неделя|[2,4] %count% недели|[5,Inf] %count% недель"
+  month: "{1} %count% месяц|[2,4] %count% месяца|[5,Inf] %count% месяцев"
+  year: "{1} %count% год|[2,4] %count% года|[5,Inf] %count% лет"
+  ago: "назад"
+  from_now: "вперед"
