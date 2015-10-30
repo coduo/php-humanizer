@@ -10,26 +10,23 @@ class Ordinal
     private $number;
 
     /**
-     * @param int|float $number
+     * @var callable
      */
-    public function __construct($number)
+    private $translator;
+
+    /**
+     * @param int|float $number
+     * @param string $locale
+     */
+    public function __construct($number, $locale = 'en')
     {
         $this->number = $number;
+        $this->translator = Ordinal\Builder::build($locale);
     }
 
     public function __toString()
     {
-        $absNumber = abs((integer) $this->number);
-
-        if (in_array(($absNumber % 100), array(11, 12, 13))) {
-            return 'th';
-        }
-
-        switch ($absNumber % 10) {
-            case 1:  return 'st';
-            case 2:  return 'nd';
-            case 3:  return 'rd';
-            default: return 'th';
-        }
+        $closure = $this->translator;
+        return (string) $closure($this->number);
     }
 }

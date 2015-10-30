@@ -109,4 +109,22 @@ class NumberSpec extends ObjectBehavior
         $this->shouldThrow(new \InvalidArgumentException())->during('fromRoman', array(""));
         $this->shouldThrow(new \InvalidArgumentException())->during('fromRoman', array("foobar"));
     }
+
+    function it_ordinalizes_numbers_for_dutch_locale()
+    {
+        $this->ordinalize(1, 'nl')->shouldReturn("1e");
+        $this->ordinalize(2, 'nl')->shouldReturn("2e");
+        $this->ordinalize(23, 'nl')->shouldReturn("23e");
+        $this->ordinalize(1002, 'nl')->shouldReturn("1002e");
+        $this->ordinalize(-111, 'nl')->shouldReturn("-111e");
+    }
+
+    function it_returns_ordinal_suffix_for_dutch_locale()
+    {
+        $this->ordinal(1, 'nl')->shouldReturn("e");
+        $this->ordinal(2, 'nl')->shouldReturn("e");
+        $this->ordinal(23, 'nl')->shouldReturn("e");
+        $this->ordinal(1002, 'nl')->shouldReturn("e");
+        $this->ordinal(-111, 'nl')->shouldReturn("e");
+    }
 }
