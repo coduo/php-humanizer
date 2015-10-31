@@ -54,7 +54,12 @@ class PreciseFormatter
     {
         $compound = $difference->isPast() ? 'compound.ago'.$suffixName : 'compound.from_now'.$suffixName;
         $compoundString = $this->translator->trans($compound, array(), 'difference', $this->locale);
-        $compoundRes = substr_compare($compoundString, 'compound', 0, 8) ? $compoundString:'';
+
+        if (strlen($compoundString) > 0) {
+            $compoundRes = substr_compare($compoundString, 'compound', 0, 8) ? $compoundString:'';
+        } else {
+            $compoundRes = '';
+        }
         return $compoundRes;
     }
 }
