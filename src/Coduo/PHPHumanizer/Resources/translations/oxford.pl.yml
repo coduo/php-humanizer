@@ -1,0 +1,3 @@
+only_two: "%first% i %second%"
+comma_separated: "%list% i %last%"
+comma_separated_with_limit: "{1} %list% i 1 inny|[2,Inf] %list% i %count% innych"

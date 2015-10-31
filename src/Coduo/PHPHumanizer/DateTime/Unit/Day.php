@@ -17,6 +17,7 @@ class Day implements Unit
     public function getMilliseconds()
     {
         $hour = new Hour();
+
         return $hour->getMilliseconds() * 24;
     }
 

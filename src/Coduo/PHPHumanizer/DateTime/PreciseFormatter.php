@@ -21,7 +21,8 @@ class PreciseFormatter
 
     /**
      * @param PreciseDifference $difference
-     * @param string $locale
+     * @param string            $locale
+     *
      * @return string
      */
     public function formatDifference(PreciseDifference $difference, $locale = 'en')
@@ -29,17 +30,16 @@ class PreciseFormatter
         $diff = array();
 
         foreach ($difference->getCompoundResults() as $result) {
-
             $diff[] = $this->translator->transChoice(
-                "compound." . $result->getUnit()->getName(),
+                'compound.'.$result->getUnit()->getName(),
                 $result->getQuantity(),
                 array('%count%' => $result->getQuantity()),
                 'difference',
                 $locale
             );
-
         }
         $suffix = $difference->isPast() ? 'compound.ago' : 'compound.from_now';
-        return join(", ", $diff) . ' '. $this->translator->trans($suffix, array(), 'difference', $locale);
+
+        return implode(', ', $diff).' '.$this->translator->trans($suffix, array(), 'difference', $locale);
     }
 }
