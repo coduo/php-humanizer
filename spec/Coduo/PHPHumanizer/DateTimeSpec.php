@@ -282,7 +282,7 @@ class DateTimeSpec extends ObjectBehavior
             $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'it')->shouldReturn($example[2]);
         }
     }
-	
+
     function it_humanize_difference_between_dates_for_bg_locale()
     {
         $examples = array(
@@ -309,7 +309,7 @@ class DateTimeSpec extends ObjectBehavior
             $this->difference(new \DateTime($example[0]), new \DateTime($example[1]), 'bg')->shouldReturn($example[2]);
         }
     }
-    
+
     function it_humanizes_precise_difference_between_dates_for_bg_locale()
     {
         $examples = array(
@@ -342,6 +342,23 @@ class DateTimeSpec extends ObjectBehavior
         );
         foreach ($examples as $example) {
             $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'no')->shouldReturn($example[2]);
+        }
+    }
+
+    function it_humanizes_precise_difference_between_dates_for_es_ES_locale()
+    {
+        $examples = array(
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minuto, 45 segundos atrás'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 hora, 40 minutos atrás'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 día, 15 minutos desde ahora'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 días, 2 horas desde ahora'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 año, 2 días, 4 horas desde ahora'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 días, 10 horas desde ahora'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 día, 1 hora, 40 minutos atrás'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 años, 1 día desde ahora'),
+        );
+        foreach ($examples as $example) {
+            $this->preciseDifference(new \DateTime($example[0]), new \DateTime($example[1]), 'es_ES')->shouldReturn($example[2]);
         }
     }
 }

@@ -50,4 +50,19 @@ class CollectionSpec extends ObjectBehavior
             $this->oxford($example[0], $example[1], 'nl')->shouldReturn($example[2]);
         }
     }
+
+    function it_humanizes_collections_for_spanish_locale()
+    {
+        $examples = array(
+            array(array("Michal"), null, 'Michal'),
+            array(array("Michal", "Norbert"), null, 'Michal y Norbert'),
+            array(array("Michal", "Norbert", "Lukasz"), 2, 'Michal, Norbert, y 1 más'),
+            array(array("Michal", "Norbert", "Lukasz", "Pawel"), 2, 'Michal, Norbert, y 2 más'),
+            array(array("Michal", "Norbert", "Lukasz", "Pawel"), null, 'Michal, Norbert, Lukasz, y Pawel'),
+        );
+
+        foreach ($examples as $example) {
+            $this->oxford($example[0], $example[1], 'es_ES')->shouldReturn($example[2]);
+        }
+    }
 }
