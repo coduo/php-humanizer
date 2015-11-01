@@ -43,7 +43,7 @@ class StringTest extends PHPUnit_Framework_TestCase
             array('news_count', 'News count', true, '_'),
             array('user', 'user', false, '_'),
             array('news_id', 'News', true, '_'),
-            array('news_count', 'News count', true),
+            array('news_count', 'News count', true, '_'),
             array('news-count', 'News count', true, '-'),
             array('news-count', 'news count', false, '-')
         );

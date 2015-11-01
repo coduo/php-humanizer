@@ -15,7 +15,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
      * @param        $expected
      * @param string $locale
      */
-    public function test_humanize_difference_between_dates($firstDate, $secondDate, $expected, $locale = 'en')
+    public function test_humanize_difference_between_dates($firstDate, $secondDate, $expected, $locale)
     {
         $this->assertEquals($expected, DateTime::difference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
     }
@@ -28,7 +28,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
      * @param        $expected
      * @param string $locale
      */
-    public function test_humanize_precise_difference_between_dates($firstDate, $secondDate, $expected, $locale = 'en')
+    public function test_humanize_precise_difference_between_dates($firstDate, $secondDate, $expected, $locale)
     {
         $this->assertEquals($expected, DateTime::preciseDifference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
     }
@@ -40,23 +40,23 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             // English
-            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'just now'),
-            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", '5 seconds from now'),
-            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", '1 minute ago'),
-            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", '15 minutes ago'),
-            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", '15 minutes from now'),
-            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", '1 hour from now'),
-            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", '2 hours from now'),
-            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", '1 hour ago'),
-            array("2014-04-26", "2014-04-25", '1 day ago'),
-            array("2014-04-26", "2014-04-24", '2 days ago'),
-            array("2014-04-26", "2014-04-28", '2 days from now'),
-            array("2014-04-01", "2014-04-15", '2 weeks from now'),
-            array("2014-04-15", "2014-04-07", '1 week ago'),
-            array("2014-01-01", "2014-04-01", '3 months from now'),
-            array("2014-05-01", "2014-04-01", '1 month ago'),
-            array("2015-05-01", "2014-04-01", '1 year ago'),
-            array("2014-05-01", "2016-04-01", '2 years from now'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'just now', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", '5 seconds from now', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", '1 minute ago', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", '15 minutes ago', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", '15 minutes from now', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", '1 hour from now', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", '2 hours from now', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", '1 hour ago', 'en'),
+            array("2014-04-26", "2014-04-25", '1 day ago', 'en'),
+            array("2014-04-26", "2014-04-24", '2 days ago', 'en'),
+            array("2014-04-26", "2014-04-28", '2 days from now', 'en'),
+            array("2014-04-01", "2014-04-15", '2 weeks from now', 'en'),
+            array("2014-04-15", "2014-04-07", '1 week ago', 'en'),
+            array("2014-01-01", "2014-04-01", '3 months from now', 'en'),
+            array("2014-05-01", "2014-04-01", '1 month ago', 'en'),
+            array("2015-05-01", "2014-04-01", '1 year ago', 'en'),
+            array("2014-05-01", "2016-04-01", '2 years from now', 'en'),
 
             // Polish 
             array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'w tym momencie', 'pl'),
@@ -89,15 +89,15 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array("2014-04-26 13:00:00", "2014-04-26 14:00:00", 'след 1 час', 'bg'),
             array("2014-04-26 13:00:00", "2014-04-26 15:00:00", 'след 2 часа', 'bg'),
             array("2014-04-26 13:00:00", "2014-04-26 12:00:00", 'преди 1 час', 'bg'),
-            array("2014-04-26", "2014-04-25", 'преди 1 ден'),
-            array("2014-04-26", "2014-04-24", 'преди 2 дни'),
-            array("2014-04-26", "2014-04-28", 'след 2 дни'),
-            array("2014-04-01", "2014-04-15", 'след 2 седмици'),
-            array("2014-04-15", "2014-04-07", 'преди 1 седмица'),
-            array("2014-01-01", "2014-04-01", 'след 3 месеца'),
-            array("2014-05-01", "2014-04-01", 'преди 1 месец'),
-            array("2015-05-01", "2014-04-01", 'преди 1 година'),
-            array("2014-05-01", "2016-04-01", 'след 2 години'),
+            array("2014-04-26", "2014-04-25", 'преди 1 ден', 'bg'),
+            array("2014-04-26", "2014-04-24", 'преди 2 дни', 'bg'),
+            array("2014-04-26", "2014-04-28", 'след 2 дни', 'bg'),
+            array("2014-04-01", "2014-04-15", 'след 2 седмици', 'bg'),
+            array("2014-04-15", "2014-04-07", 'преди 1 седмица', 'bg'),
+            array("2014-01-01", "2014-04-01", 'след 3 месеца', 'bg'),
+            array("2014-05-01", "2014-04-01", 'преди 1 месец', 'bg'),
+            array("2015-05-01", "2014-04-01", 'преди 1 година', 'bg'),
+            array("2014-05-01", "2016-04-01", 'след 2 години', 'bg'),
         );
     }
 
@@ -108,14 +108,14 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             // English
-            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minute, 45 seconds ago'),
-            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 hour, 40 minutes ago'),
-            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 day, 15 minutes from now'),
-            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 days, 2 hours from now'),
-            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 year, 2 days, 4 hours from now'),
-            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 days, 10 hours from now'),
-            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 day, 1 hour, 40 minutes ago'),
-            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 years, 1 day from now'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minute, 45 seconds ago', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 hour, 40 minutes ago', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 day, 15 minutes from now', 'en'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 days, 2 hours from now', 'en'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 year, 2 days, 4 hours from now', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 days, 10 hours from now', 'en'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 day, 1 hour, 40 minutes ago', 'en'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 years, 1 day from now', 'en'),
 
             // Polish
             array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minuta, 45 sekund temu', 'pl'),
