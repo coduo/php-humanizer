@@ -15,7 +15,7 @@ class StringSpec extends ObjectBehavior
 
     function it_humanize_string_with_special_character()
     {
-        $this->humanize('news-count', true, Humanize::SEPARATOR_DASH)->shouldReturn('News count');
+        $this->humanize('news-count', true, '-')->shouldReturn('News count');
     }
 
     function it_humanize_strings_without_capitalize()

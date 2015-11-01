@@ -7,7 +7,7 @@ use Coduo\PHPHumanizer\String\Truncate;
 
 class String
 {
-    public static function humanize($text, $capitalize = true, $separator = Humanize::SEPARATOR_UNDERSCORE)
+    public static function humanize($text, $capitalize = true, $separator = '_')
     {
         return (string) new Humanize($text, $capitalize, $separator);
     }

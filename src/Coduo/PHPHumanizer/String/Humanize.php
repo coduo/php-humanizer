@@ -4,9 +4,6 @@ namespace Coduo\PHPHumanizer\String;
 
 class Humanize
 {
-    const SEPARATOR_DASH = '-';
-    const SEPARATOR_UNDERSCORE = '_';
-
     /**
      * @var array
      */
@@ -32,7 +29,7 @@ class Humanize
      * @param bool $capitalize
      * @param string $separator
      */
-    public function __construct($text, $capitalize = true, $separator = self::SEPARATOR_UNDERSCORE)
+    public function __construct($text, $capitalize = true, $separator = '_')
     {
         $this->text = $text;
         $this->capitalize = $capitalize;
