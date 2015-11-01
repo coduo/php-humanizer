@@ -3,15 +3,8 @@
 namespace Coduo\PHPHumanizer\Tests;
 
 use Coduo\PHPHumanizer\Number;
-use InvalidArgumentException;
-use PHPUnit_Framework_TestCase;
 
-/**
- * Class NumberTest
- *
- * @package Coduo\PHPHumanizer\Tests
- */
-class NumberTest extends PHPUnit_Framework_TestCase
+class NumberTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider ordinalSuffixProvider
@@ -21,9 +14,6 @@ class NumberTest extends PHPUnit_Framework_TestCase
      */
     public function test_return_ordinal_suffix($expected, $number)
     {
-        $numberobj = new Number();
-
-        $this->assertEquals($expected, $numberobj->ordinal($number));
         $this->assertEquals($expected, Number::ordinal($number));
     }
 
@@ -36,9 +26,6 @@ class NumberTest extends PHPUnit_Framework_TestCase
      */
     public function test_ordinalize_numbers($expected, $number)
     {
-        $numberobj = new Number();
-
-        $this->assertEquals($expected, $numberobj->ordinalize($number));
         $this->assertEquals($expected, Number::ordinalize($number));
     }
 
@@ -51,24 +38,11 @@ class NumberTest extends PHPUnit_Framework_TestCase
      */
     public function test_convert_number_to_string_with_binary_suffix($expected, $number, $locale = 'en')
     {
-        $numberobj = new Number();
-
-        $this->assertEquals($expected, $numberobj->binarySuffix($number, $locale));
         $this->assertEquals($expected, Number::binarySuffix($number, $locale));
     }
 
     /**
-     * @expectedException InvalidArgumentException
-     */
-    public function test_non_statically_throw_exception_when_converting_to_string_with_binary_suffix_non_numeric_values()
-    {
-        $numberobj = new Number();
-
-        $numberobj->binarySuffix('as12');
-    }
-
-    /**
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
      */
     public function test_statically_throw_exception_when_converting_to_string_with_binary_suffix_non_numeric_values()
     {
@@ -84,23 +58,11 @@ class NumberTest extends PHPUnit_Framework_TestCase
      */
     public function test_convert_number_to_string_with_metric_suffix($expected, $number, $locale = 'en')
     {
-        $numberobj = new Number();
-
-        $this->assertEquals($expected, $numberobj->metricSuffix($number, $locale));
         $this->assertEquals($expected, Number::metricSuffix($number, $locale));
     }
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function test_non_statically_throw_exception_when_converting_to_string_with_metric_suffix_non_numeric_values()
-    {
-        $numberobj = new Number();
-
-        $numberobj->metricSuffix('as12');
-    }
 
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
      */
     public function test_statically_throw_exception_when_converting_to_string_with_metric_suffix_non_numeric_values()
     {
@@ -115,9 +77,6 @@ class NumberTest extends PHPUnit_Framework_TestCase
      */
     public function test_converts_numbers_to_roman($expected, $number)
     {
-        $numberobj = new Number();
-
-        $this->assertEquals($expected, $numberobj->toRoman($number));
         $this->assertEquals($expected, Number::toRoman($number));
     }
 
@@ -129,28 +88,12 @@ class NumberTest extends PHPUnit_Framework_TestCase
      */
     public function test_convert_roman_numbers_to_arabic($number, $expected)
     {
-        $numberobj = new Number();
-
-        $this->assertEquals($expected, $numberobj->fromRoman($number));
         $this->assertEquals($expected, Number::fromRoman($number));
     }
 
     /**
      * @dataProvider romanExceptionProvider
-     * @expectedException InvalidArgumentException
-     *
-     * @param $number
-     */
-    public function test_non_statically_throw_exception_when_converting_number_is_out_of_range($number)
-    {
-        $numberobj = new Number();
-
-        $numberobj->toRoman($number);
-    }
-
-    /**
-     * @dataProvider romanExceptionProvider
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
      *
      * @param $number
      */
@@ -161,20 +104,7 @@ class NumberTest extends PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider arabicExceptionProvider
-     * @expectedException InvalidArgumentException
-     *
-     * @param $number
-     */
-    public function test_non_statically_throw_exception_when_converting_roman_number_is_invalid($number)
-    {
-        $numberobj = new Number();
-
-        $numberobj->fromRoman($number);
-    }
-
-    /**
-     * @dataProvider arabicExceptionProvider
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
      *
      * @param $number
      */
