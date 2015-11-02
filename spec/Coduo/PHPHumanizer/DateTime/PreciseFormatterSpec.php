@@ -32,18 +32,11 @@ class PreciseFormatterSpec extends ObjectBehavior
         )->willReturn('5 hours');
 
         $translator->trans(
-            'compound.from_now',
-            array(),
+            'compound.future',
+            array('%value%' => '10 days, 5 hours'),
             'difference',
             'en'
-        )->willReturn('from now');
-
-        $translator->trans(
-            'compound.from_now_prefix',
-            array(),
-            'difference',
-            'en'
-        )->willReturn('');
+        )->willReturn('10 days, 5 hours from now');
 
         $translator->transChoice(
             'compound.day',
@@ -62,18 +55,11 @@ class PreciseFormatterSpec extends ObjectBehavior
         )->willReturn('5 часов');
 
         $translator->trans(
-            'compound.from_now',
-            array(),
+            'compound.future',
+            array('%value%' => '10 дней, 5 часов'),
             'difference',
             'ru'
-        )->willReturn('');
-
-        $translator->trans(
-            'compound.from_now_prefix',
-            array(),
-            'difference',
-            'ru'
-        )->willReturn('через');
+        )->willReturn('через 10 дней, 5 часов');
     }
 
     function it_format_compound_datetime_diff(PreciseDifference $diff, CompoundResult $dayResult,

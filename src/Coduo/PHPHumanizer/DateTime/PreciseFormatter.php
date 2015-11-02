@@ -10,7 +10,6 @@ class PreciseFormatter
      * @var \Symfony\Component\Translation\TranslatorInterface
      */
     private $translator;
-    private $locale = 'en';
 
     /**
      * @param TranslatorInterface $translator
@@ -30,8 +29,6 @@ class PreciseFormatter
     {
         $diff = array();
 
-        $this->locale = $locale;
-
         foreach ($difference->getCompoundResults() as $result) {
             $diff[] = $this->translator->transChoice(
                 'compound.'.$result->getUnit()->getName(),
@@ -41,25 +38,14 @@ class PreciseFormatter
                 $locale
             );
         }
-        $suffix = $this->calculateCompoud($difference);
-        $suffixString = empty($suffix) ? '':' '.$suffix;
 
-        $prefix = $this->calculateCompoud($difference, '_prefix');
-        $prefixString = empty($prefix) ? '':$prefix.' ';
+        $translationKey = $difference->isPast() ? 'past' : 'future';
 
-        return $prefixString . implode(', ', $diff) . $suffixString;
-    }
-
-    private function calculateCompoud(PreciseDifference $difference, $suffixName = '')
-    {
-        $compound = $difference->isPast() ? 'compound.ago'.$suffixName : 'compound.from_now'.$suffixName;
-        $compoundString = $this->translator->trans($compound, array(), 'difference', $this->locale);
-
-        if (strlen($compoundString) > 0) {
-            $compoundRes = substr_compare($compoundString, 'compound', 0, 8) ? $compoundString:'';
-        } else {
-            $compoundRes = '';
-        }
-        return $compoundRes;
+        return $this->translator->trans(
+            'compound.' . $translationKey,
+            array('%value%' => implode(', ', $diff)),
+            'difference',
+            $locale
+        );
     }
 }

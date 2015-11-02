@@ -31,5 +31,5 @@ compound:
   week: "{1} %count% week|[2,Inf] %count% weke"
   month: "{1} %count% maand|[2,Inf] %count% maande"
   year: "{1} %count% jaar|[2,Inf] %count% jaar"
-  ago: "gelede"
-  from_now: "van nou af"
+  past: "%value% gelede"
+  future: "%value% van nou af"

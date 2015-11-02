@@ -31,5 +31,5 @@ compound:
   week: "{1} %count% semana|[2,Inf] %count% semana"
   month: "{1} %count% mês|[2,Inf] %count% meses"
   year: "{1} %count% ano|[2,Inf] %count% anos"
-  ago: "atrás"
+  past: "%value% atrás"
   from_now: "a partir de agora"

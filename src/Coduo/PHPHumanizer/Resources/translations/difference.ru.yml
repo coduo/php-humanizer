@@ -31,5 +31,5 @@ compound:
   week: "%count% неделя|%count% недели|%count% недель"
   month: "%count% месяц|%count% месяца|%count% месяцев"
   year: "%count% год|%count% года|%count% лет"
-  ago: "назад"
-  from_now_prefix: "через"
+  past: "%value% назад"
+  future: "через %value%"
