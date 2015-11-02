@@ -39,7 +39,7 @@ class String
      * @param string $append
      * @return string
      */
-    public static function truncateHtml($text, $charactersCount, $allowedTags = '<b><i><u><em><strong><a><span>', $append = '')
+    public static function truncateHtml($text, $charactersCount, $allowedTags = '', $append = '')
     {
         $truncate = new HtmlTruncate(new WordBreakpoint(), $allowedTags, $append);
         

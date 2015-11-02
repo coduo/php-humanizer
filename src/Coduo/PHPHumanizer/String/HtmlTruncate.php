@@ -24,7 +24,7 @@ class HtmlTruncate implements TruncateInterface
      * @param string     $allowedTags
      * @param string     $append
      */
-    public function __construct(Breakpoint $breakpoint, $allowedTags = '<b><i><u><em><strong><a><span>', $append = '')
+    public function __construct(Breakpoint $breakpoint, $allowedTags = '', $append = '')
     {
         $this->breakpoint = $breakpoint;
         $this->append = $append;
