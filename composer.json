@@ -21,13 +21,17 @@
         "symfony/yaml": "~2.3"
     },
     "require-dev": {
-        "phpspec/phpspec": "2.0.*"
+        "phpspec/phpspec": "2.0.*",
+        "phpunit/phpunit": "^4.5|^5.0"
     },
     "config": {
         "bin-dir": "bin"
     },
     "autoload": {
-        "psr-0": {"": "src"}
+        "psr-4": {
+            "": "src",
+            "Coduo\\PHPHumanizer\\Tests\\": "tests/"
+        }
     },
     "extra": {
         "branch-alias": {

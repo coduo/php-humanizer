@@ -5,7 +5,7 @@ second:
   past: "{1} il y a %count% seconde|[2,Inf] il y a %count% secondes"
   future: "{1} il y a maintenant %count% seconde|[2,Inf] il y a maintenant %count% secondes"
 minute:
-  past: "{1} il y a %count% minute|[2,Inf] il y'a %count% minutes"
+  past: "{1} il y a %count% minute|[2,Inf] il y a %count% minutes"
   future: "{1} il y a maintenant %count% minute|[2,Inf] il y a maintenant %count% minutes"
 hour:
   past: "{1} il y a %count% heure|[2,Inf] il y a %count% heure"

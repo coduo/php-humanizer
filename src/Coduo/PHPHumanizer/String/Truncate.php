@@ -2,6 +2,9 @@
 
 namespace Coduo\PHPHumanizer\String;
 
+/**
+ * @deprecated since 1.0 use Coduo\PHPHumanizer\String\TextTruncate or Coduo\PHPHumanizer\String\HtmlTruncate instead
+ */
 class Truncate
 {
     /**
@@ -33,7 +36,7 @@ class Truncate
 
     public function __toString()
     {
-        if ($this->charactersCount < 0 || strlen($this->text) <= ($this->charactersCount + mb_strlen($this->append))) {
+        if ($this->charactersCount < 0 || mb_strlen($this->text) <= ($this->charactersCount + mb_strlen($this->append))) {
             return $this->text;
         }
 

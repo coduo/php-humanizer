@@ -61,12 +61,12 @@ class RomanNumeral
      */
     public function fromRoman($string)
     {
-        if (strlen($string) === 0 || 0 === preg_match(self::ROMAN_STRING_MATCHER, $string)) {
+        if (mb_strlen($string) === 0 || 0 === preg_match(self::ROMAN_STRING_MATCHER, $string)) {
             throw new \InvalidArgumentException();
         }
 
         $total = 0;
-        $i = strlen($string);
+        $i = mb_strlen($string);
 
         while ($i > 0) {
             $digit = $this->map[$string{--$i}];
