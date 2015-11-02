@@ -7,11 +7,24 @@ use Coduo\PHPHumanizer\String\Truncate;
 
 class String
 {
-    public static function humanize($text, $capitalize = true, $separator = '_')
+    /**
+     * @param $text
+     * @param bool|true $capitalize
+     * @param string $separator
+     * @param array $forbiddenWords
+     * @return string
+     */
+    public static function humanize($text, $capitalize = true, $separator = '_', array $forbiddenWords = array())
     {
-        return (string) new Humanize($text, $capitalize, $separator);
+        return (string) new Humanize($text, $capitalize, $separator, $forbiddenWords);
     }
 
+    /**
+     * @param $text
+     * @param $charactersCount
+     * @param string $append
+     * @return string
+     */
     public static function truncate($text, $charactersCount, $append = '')
     {
         return (string) new Truncate($text, $charactersCount, $append);
