@@ -34,6 +34,11 @@ class StringTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, String::truncate($text, $charactersCount, $append));
     }
 
+    function it_truncate_string_to_word_closest_to_a_certain_number_of_characters_with_html_tags($text, $charactersCount, $allowedTags, $expected, $append = '')
+    {
+        $this->assertEquals($expected, String::truncateHtml($text, $charactersCount, $allowedTags, $append));
+    }
+
     /**
      *
      * @return array
@@ -71,11 +76,32 @@ class StringTest extends PHPUnit_Framework_TestCase
             array($shortText, "Short...", 3,  '...'),
             array($shortText, "Short...", 4,  '...'),
             array($shortText, "Short...", 5,  '...'),
-            array($shortText, "Short...", 6,  '...'),
+            array($shortText, "Short text", 6,  '...'),
             array($shortText, "Short text", 7,  '...'),
             array($shortText, "Short text", 8,  '...'),
             array($shortText, "Short text", 9,  '...'),
             array($shortText, "Short text", 10, '...')
+        );
+    }
+    
+    public function truncateHtmlStringProvider()
+    {
+        $text = '<p><b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create <a href="/wiki/Web_page" title="Web page">web pages</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> <a href="/wiki/Web_browser" title="Web browser">Web browsers</a> can read HTML files and render them into visible or audible web pages. HTML describes the structure of a <a href="/wiki/Website" title="Website">website</a> <a href="/wiki/Semantic" title="Semantic" class="mw-redirect">semantically</a> along with cues for presentation, making it a markup language, rather than a <a href="/wiki/Programming_language" title="Programming language">programming language</a>.</p>';
+        
+        return array(
+            array($text, 3,  '<b><i><u><em><strong><a><span>',  "<b>HyperText</b>"), 
+            array($text, 12, '<b><i><u><em><strong><a><span>', "<b>HyperText Markup</b>"),
+            array($text, 30, '<b><i><u><em><strong><a><span>', "<b>HyperText Markup Language</b>, commonly"), 
+            array($text, 50, '<b><i><u><em><strong><a><span>', "<b>HyperText Markup Language</b>, commonly referred to as"),
+            array($text, 75, '<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup</a>'),
+            array($text, 100,'<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create'),
+            array($text, 3  , '', "HyperText"),
+            array($text, 12 , '', "HyperText Markup"),
+            array($text, 50 , '', "HyperText Markup Language, commonly referred to as"),
+            array($text, 75 , '', "HyperText Markup Language, commonly referred to as HTML, is the standard markup"),
+            array($text, 100, '', "HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to create"),
+            array($text, 50, '', "HyperText Markup Language, commonly referred to as...", '...'),
+            array($text, 75, '<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup...</a>', '...')
         );
     }
 }

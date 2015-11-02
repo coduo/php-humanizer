@@ -46,6 +46,22 @@ echo String::truncate($text, strlen($text)); // "Lorem ipsum dolorem si amet, lo
 
 ```
 
+**Truncate HTML**
+
+Truncate and HTML string to word closest to a certain length
+
+```php
+use Coduo\PHPHumanizer\String;
+
+$text = '<p><b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create <a href="/wiki/Web_page" title="Web page">web pages</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> <a href="/wiki/Web_browser" title="Web browser">Web browsers</a> can read HTML files and render them into visible or audible web pages. HTML describes the structure of a <a href="/wiki/Website" title="Website">website</a> <a href="/wiki/Semantic" title="Semantic" class="mw-redirect">semantically</a> along with cues for presentation, making it a markup language, rather than a <a href="/wiki/Programming_language" title="Programming language">programming language</a>.</p>';
+
+echo String::truncateHtml($text, 3); // "<b>HyperText</b>"
+echo String::truncateHtml($text, 12, ''); // "HyperText Markup"
+echo String::truncateHtml($text, 50, '', '...'); // "HyperText Markup Language, commonly referred to as..."
+echo String::truncateHtml($text, 75, '<b><i><u><em><strong><a><span>', '...'); // '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup...</a>'
+
+```
+
 ## Number
 
 **Ordinalize**

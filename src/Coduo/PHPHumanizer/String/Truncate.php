@@ -2,6 +2,9 @@
 
 namespace Coduo\PHPHumanizer\String;
 
+/**
+ * @deprecated since 1.0 use Coduo\PHPHumanizer\String\TextTruncate or Coduo\PHPHumanizer\String\HtmlTruncate instead
+ */
 class Truncate
 {
     /**
