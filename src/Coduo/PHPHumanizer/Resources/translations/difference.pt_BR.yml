@@ -32,4 +32,4 @@ compound:
   month: "{1} %count% mês|[2,Inf] %count% meses"
   year: "{1} %count% ano|[2,Inf] %count% anos"
   past: "%value% atrás"
-  from_now: "a partir de agora"
+  future: "%value% a partir de agora"

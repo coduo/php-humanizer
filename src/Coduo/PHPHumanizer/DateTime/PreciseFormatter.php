@@ -31,7 +31,7 @@ class PreciseFormatter
 
         foreach ($difference->getCompoundResults() as $result) {
             $diff[] = $this->translator->transChoice(
-                'compound.'.$result->getUnit()->getName(),
+                'compound.' . $result->getUnit()->getName(),
                 $result->getQuantity(),
                 array('%count%' => $result->getQuantity()),
                 'difference',
@@ -39,10 +39,8 @@ class PreciseFormatter
             );
         }
 
-        $translationKey = $difference->isPast() ? 'past' : 'future';
-
         return $this->translator->trans(
-            'compound.' . $translationKey,
+            'compound.' . ($difference->isPast() ? 'past' : 'future'),
             array('%value%' => implode(', ', $diff)),
             'difference',
             $locale
