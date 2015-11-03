@@ -42,16 +42,16 @@ class NumberTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider binarySuffixWithPrecisionDataProvider
+     * @dataProvider preciseBinarySuffixDataProvider
      *
      * @param         $expected
      * @param         $number
      * @param string  $locale
      * @param integer $precision
      */
-    public function test_convert_number_to_string_with_binary_suffix_precision($expected, $number, $locale = 'en', $precision)
+    public function test_convert_number_to_string_with_precise_binary_suffix($expected, $number, $precision, $locale = 'en')
     {
-        $this->assertEquals($expected, Number::binarySuffix($number, $locale, $precision));
+        $this->assertEquals($expected, Number::preciseBinarySuffix($number, $precision, $locale));
     }
 
     /**
@@ -179,22 +179,22 @@ class NumberTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function binarySuffixWithPrecisionDataProvider()
+    public function preciseBinarySuffixDataProvider()
     {
         return array(
-            array(-1, -1, 'en', 3),
-            array("0 bytes", 0, 'en', 3),
-            array("1 bytes", 1, 'en', 3),
-            array("1.000 kB", 1024, 'en', 3),
-            array("1.001 kB", 1025, 'en', 3),
-            array("1.500 kB", 1536, 'en', 3),
-            array("5.000 MB", 1048576 * 5, 'en', 3),
-            array("2.000 GB", 1073741824 * 2, 'en', 3),
-            array("3.000 TB", 1099511627776 * 3, 'en', 3),
-            array("1.178 PB", 1325899906842624, 'en', 3),
+            array(-1, -1, 3),
+            array("0 bytes", 0, 3),
+            array("1 bytes", 1, 3),
+            array("1.000 kB", 1024, 3),
+            array("1.001 kB", 1025, 3),
+            array("1.500 kB", 1536, 3),
+            array("5.000 MB", 1048576 * 5, 3),
+            array("2.000 GB", 1073741824 * 2, 3),
+            array("3.000 TB", 1099511627776 * 3, 3),
+            array("1.178 PB", 1325899906842624, 3),
 
-            array("1,500 kB", 1536, 'pl', 3),
-            array("1,178 PB", 1325899906842624, 'pl', 3),
+            array("1,500 kB", 1536, 3, 'pl'),
+            array("1,178 PB", 1325899906842624, 3, 'pl'),
         );
     }
 

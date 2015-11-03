@@ -19,7 +19,14 @@ class Number
         return (string) new Ordinal($number);
     }
 
-    public static function binarySuffix($number, $locale = 'en', $precision = null)
+    public static function binarySuffix($number, $locale = 'en')
+    {
+        $binarySuffix = new BinarySuffix($number, $locale);
+
+        return $binarySuffix->convert();
+    }
+
+    public static function preciseBinarySuffix($number, $precision, $locale = 'en')
     {
         $binarySuffix = new BinarySuffix($number, $locale, $precision);
 

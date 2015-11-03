@@ -106,6 +106,8 @@ echo Number::fromRoman("CXXV"); // 125
 
 **Binary Suffix**
 
+Convert a number of bytes in to the highest applicable data unit
+
 ```php
 use Coduo\PHPHumanizer\Number;
 
@@ -128,13 +130,22 @@ use Coduo\PHPHumanizer\Number;
 echo Number::binarySuffix(1536, 'pl'); // "1,5 kB"
 ```
 
-Number can also be humanized with a specific number of decimal places by providing a precision parameter (between 0 and 3)
+Number can also be humanized with a specific number of decimal places with ```preciseBinarySuffix($number, $precision, $locale = 'en')```
+The precision parameter must be between 0 and 3.
 
 ```php
 use Coduo\PHPHumanizer\Number;
 
-echo Number::binarySuffix(1024, 'en', 3); // "1.000 kB"
-echo Number::binarySuffix(1325899906842624, 'en', 3); // "1.178 PB"
+echo Number::preciseBinarySuffix(1024, 2); // "1.00 kB"
+echo Number::binarySuffix(1325899906842624, 3); // "1.178 PB"
+```
+
+This function also supports locale
+
+```php
+use Coduo\PHPHumanizer\Number;
+
+echo Number::binarySuffix(1325899906842624, 3, 'pl); // "1,178 PB"
 ```
 
 **Metric Suffix**
