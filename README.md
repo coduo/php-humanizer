@@ -130,14 +130,14 @@ use Coduo\PHPHumanizer\Number;
 echo Number::binarySuffix(1536, 'pl'); // "1,5 kB"
 ```
 
-Number can also be humanized with a specific number of decimal places with ```preciseBinarySuffix($number, $precision, $locale = 'en')```
+Number can also be humanized with a specific number of decimal places with `preciseBinarySuffix($number, $precision, $locale = 'en')`
 The precision parameter must be between 0 and 3.
 
 ```php
 use Coduo\PHPHumanizer\Number;
 
 echo Number::preciseBinarySuffix(1024, 2); // "1.00 kB"
-echo Number::binarySuffix(1325899906842624, 3); // "1.178 PB"
+echo Number::preciseBinarySuffix(1325899906842624, 3); // "1.178 PB"
 ```
 
 This function also supports locale
@@ -145,7 +145,7 @@ This function also supports locale
 ```php
 use Coduo\PHPHumanizer\Number;
 
-echo Number::binarySuffix(1325899906842624, 3, 'pl); // "1,178 PB"
+echo Number::preciseBinarySuffix(1325899906842624, 3, 'pl'); // "1,178 PB"
 ```
 
 **Metric Suffix**
