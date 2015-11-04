@@ -67,7 +67,11 @@ class BinarySuffix
                 'up to three decimal places');
         }
 
-        $icuFormat = str_pad('#.', (2+$precision), '0');
+        $icuFormat = '#';
+        if($precision > 0){
+            $icuFormat .= str_pad('#.', (2+$precision), '0');
+        }
+
         foreach ($this->binaryPrefixes as $size => $unitPattern) {
             if($size >= 1024){
                 $symbol = substr($unitPattern, strpos($unitPattern, ' '));
