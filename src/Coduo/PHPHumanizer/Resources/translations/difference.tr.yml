@@ -31,5 +31,5 @@ compound:
   week: "{1} %count% hafta|[2,Inf] %count% hafta"
   month: "{1} %count% ay|[2,Inf] %count% ay"
   year: "{1} %count% yıl|[2,Inf] %count% yıl"
-  ago: "önce"
-  from_now: "sonra"
+  past: "%value% önce"
+  future: "%value% sonra"

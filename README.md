@@ -230,6 +230,7 @@ Currently we support following languages:
 * [Português - Brasil](src/Coduo/PHPHumanizer/Resources/translations/difference.pt_BR.yml)
 * [Italian](src/Coduo/PHPHumanizer/Resources/translations/difference.it.yml)
 * [Dutch](src/Coduo/PHPHumanizer/Resources/translations/difference.nl.yml)
+* [Русский](src/Coduo/PHPHumanizer/Resources/translations/difference.ru.yml)
 * [Norwegian](src/Coduo/PHPHumanizer/Resources/translations/difference.no.yml)
 * [Afrikaans] (src/Coduo/PHPHumanizer/Resources/translations/difference.af.yml)
 * [Bulgarian] (src/Coduo/PHPHumanizer/Resources/translations/difference.bg.yml)

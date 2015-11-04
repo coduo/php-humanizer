@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] сейчас"
+  future: "[0,Inf] сейчас"
+second:
+  past: "%count% секунду назад|%count% секунды назад|%count% секунд назад"
+  future: "через %count% секунду|через %count% секунды|через %count% секунд"
+minute:
+  past: "%count% минуту назад|%count% минуты назад|%count% минут назад"
+  future: "через %count% минуту|через %count% минуты|через %count% минут"
+hour:
+  past: "%count% час назад|через %count% часа|%count% часов назад"
+  future: "через %count% час|через %count% часа|через %count% часов"
+day:
+  past: "%count% день назад|%count% дня назад|%count% дней назад"
+  future: "через %count% день|через %count% дня|через %count% дней"
+week:
+  past: "%count% неделю назад|%count% недели назад|%count% недель назад"
+  future: "через %count% неделю|через %count% недели|через %count% недель"
+month:
+  past: "%count% месяц назад|%count% месяца назад|%count% месяцев назад"
+  future: "через %count% месяц|через %count% месяца|через %count% месяцев"
+year:
+  past: "%count% год назад|%count% года назад|%count% лет назад"
+  future: "через %count% год|через %count% года|через %count% лет"
+
+compound:
+  second:  "%count% секунда|%count% секунды|%count% секунд"
+  minute: "%count% минута|%count% минуты|%count% минут"
+  hour: "%count% час|%count% часа|%count% часов"
+  day: "%count% день|%count% дня|%count% дней"
+  week: "%count% неделя|%count% недели|%count% недель"
+  month: "%count% месяц|%count% месяца|%count% месяцев"
+  year: "%count% год|%count% года|%count% лет"
+  past: "%value% назад"
+  future: "через %value%"

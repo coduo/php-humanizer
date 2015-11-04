@@ -31,5 +31,5 @@ compound:
   week: "{1} %count% седмица|[2,Inf] %count% седмица"
   month: "{1} %count% месец|[2,Inf] %count% месеца"
   year: "{1} %count% година|[2,Inf] %count% години"
-  ago: "преди това"
-  from_now: "след това"
+  past: "%value% преди това"
+  future: "%value% след това"
