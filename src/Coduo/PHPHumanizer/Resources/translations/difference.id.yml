@@ -12,7 +12,7 @@ hour:
   future: "{1} %count% jam dari sekarang|[2,Inf] %count% jam dari sekarang"
 day:
   past: "{1} %count% hari yang lalu|[2,Inf] %count% hari yang lalu"
-  future: "{1} %count% hari dari sekarang|[2,Inf] %count% dari sekarang"
+  future: "{1} %count% hari dari sekarang|[2,Inf] %count% hari dari sekarang"
 week:
   past: "{1} %count% minggu yang lalu|[2,Inf] %count% minggu yang lalu"
   future: "{1} %count% minggu dari sekarang|[2,Inf] %count% minggu dari sekarang"
