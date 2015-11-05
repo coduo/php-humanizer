@@ -50,6 +50,35 @@ class NumberTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider preciseBinarySuffixDataProvider
+     *
+     * @param         $expected
+     * @param         $number
+     * @param string  $locale
+     * @param integer $precision
+     */
+    public function test_convert_number_to_string_with_precise_binary_suffix($expected, $number, $precision, $locale = 'en')
+    {
+        $this->assertEquals($expected, Number::preciseBinarySuffix($number, $precision, $locale));
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_negative_precision()
+    {
+        Number::preciseBinarySuffix(1, -1);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_large_precision()
+    {
+        Number::preciseBinarySuffix(1, 4);
+    }
+
+    /**
      * @dataProvider metricSuffixDataProvider
      *
      * @param        $expected
@@ -160,6 +189,48 @@ class NumberTest extends \PHPUnit_Framework_TestCase
 
             array("1,5 kB", 1536, 'pl'),
             array("1,18 PB", 1325899906842624, 'pl'),
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function preciseBinarySuffixDataProvider()
+    {
+        return array(
+            // Negative case
+            array(-1, -1, 3),
+
+            // Byte Cases
+            array("0 bytes", 0, 3),
+            array("1 bytes", 1, 0),
+            array("1023 bytes", 1023, 3),
+
+            // Kilobyte Cases
+            array('1.000 kB', 1024, 3),
+            array("2 kB", 1588, 0),
+            array("1.6 kB", 1588, 1),
+            array("1.55 kB", 1588, 2),
+            array("1.551 kB", 1588, 3),
+
+            // Megabyte Cases
+            array("5.00 MB", (1048576 * 5), 2),
+            array("5.00 MB", (1048576 * 5) + 600, 2),
+            array("5.001 MB", (1048576 * 5) + 600, 3),
+
+            // Gigabyte Cases
+            array("2 GB", 1073741824 * 2, 0),
+            array("2.0 GB", 1073741824 * 2, 1),
+
+            // Terabyte Cases
+            array("3.00 TB", 1099511627776 * 3, 2),
+
+            // Petabyte Case
+            array("1.178 PB", 1325899906842624, 3),
+
+            // Locale Cases
+            array("1,500 kB", 1536, 3, 'pl'),
+            array("1,178 PB", 1325899906842624, 3, 'pl'),
         );
     }
 

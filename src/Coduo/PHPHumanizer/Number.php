@@ -26,6 +26,13 @@ class Number
         return $binarySuffix->convert();
     }
 
+    public static function preciseBinarySuffix($number, $precision, $locale = 'en')
+    {
+        $binarySuffix = new BinarySuffix($number, $locale, $precision);
+
+        return $binarySuffix->convert();
+    }
+
     public static function metricSuffix($number, $locale = 'en')
     {
         $binarySuffix = new MetricSuffix($number, $locale);
