@@ -1,0 +1,3 @@
+only_two: "%first% dan %second%"
+comma_separated: "%list%, dan %last%"
+comma_separated_with_limit: "{1} %list%, dan 1 lainnya|[2,Inf] %list%, dan %count% lainnya"
