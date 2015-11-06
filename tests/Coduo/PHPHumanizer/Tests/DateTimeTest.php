@@ -155,6 +155,25 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array("2014-05-01", "2014-04-01", '1 bulan yang lalu', 'id'),
             array("2015-05-01", "2014-04-01", '1 tahun yang lalu', 'id'),
             array("2014-05-01", "2016-04-01", '2 tahun dari sekarang', 'id'),
+            
+            // Spanish
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'ahora mismo', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", 'dentro de 5 segundos', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", 'hace 1 minuto', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", 'hace 15 minutos', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", 'dentro de 15 minutos', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", 'dentro de 1 hora', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", 'dentro de 2 horas', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", 'hace 1 hora', 'es'),
+            array("2014-04-26", "2014-04-25", 'hace 1 día', 'es'),
+            array("2014-04-26", "2014-04-24", 'hace 2 días', 'es'),
+            array("2014-04-26", "2014-04-28", 'dentro de 2 días', 'es'),
+            array("2014-04-01", "2014-04-15", 'dentro de 2 semanas', 'es'),
+            array("2014-04-15", "2014-04-07", 'hace 1 semana', 'es'),
+            array("2014-01-01", "2014-04-01", 'dentro de 3 meses', 'es'),
+            array("2014-05-01", "2014-04-01", 'hace 1 mes', 'es'),
+            array("2015-05-01", "2014-04-01", 'hace 1 año', 'es'),
+            array("2014-05-01", "2016-04-01", 'dentro de 2 años', 'es'),
         );
     }
 
@@ -293,6 +312,16 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 hari, 10 jam dari sekarang', 'id'),
             array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 hari, 1 jam, 40 menit yang lalu', 'id'),
             array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 tahun, 1 hari dari sekarang', 'id'),
+
+            // Spanish
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", 'hace 1 minuto, 45 segundos', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", 'hace 1 hora, 40 minutos', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", 'dentro de 1 día, 15 minutos', 'es'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", 'dentro de 7 días, 2 horas', 'es'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", 'dentro de 1 año, 2 días, 4 horas', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", 'dentro de 2 días, 10 horas', 'es'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", 'hace 1 día, 1 hora, 40 minutos', 'es'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", 'dentro de 2 años, 1 día', 'es'),
         );
     }
 }
