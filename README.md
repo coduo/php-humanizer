@@ -235,6 +235,7 @@ Currently we support following languages:
 * [Afrikaans] (src/Coduo/PHPHumanizer/Resources/translations/difference.af.yml)
 * [Bulgarian] (src/Coduo/PHPHumanizer/Resources/translations/difference.bg.yml)
 * [Indonesian] (src/Coduo/PHPHumanizer/Resources/translations/difference.id.yml)
+* [Українська] (src/Coduo/PHPHumanizer/Resources/translations/difference.uk.yml)
 
 # Credits
 
