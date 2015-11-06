@@ -13,7 +13,7 @@ final class CollectionTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($expectedResult, Collection::oxford($collection, $limit, $locale));
     }
-    
+
     public function oxfordCollectionProvider()
     {
         return array(
@@ -23,6 +23,13 @@ final class CollectionTest extends \PHPUnit_Framework_TestCase
             array(array("Michal", "Norbert", "Lukasz"), 2, 'en', 'Michal, Norbert, and 1 other'),
             array(array("Michal", "Norbert", "Lukasz", "Pawel"), 2, 'en', 'Michal, Norbert, and 2 others'),
             array(array("Michal", "Norbert", "Lukasz", "Pawel"), null, 'en', 'Michal, Norbert, Lukasz, and Pawel'),
+
+            // Chinese Simplified
+            array(array("Michal"), null, 'zh_CN', 'Michal'),
+            array(array("Michal", "Norbert"), null, 'zh_CN', 'Michal 和 Norbert'),
+            array(array("Michal", "Norbert", "Lukasz"), 2, 'zh_CN', 'Michal, Norbert 和另一个'),
+            array(array("Michal", "Norbert", "Lukasz", "Pawel"), 2, 'zh_CN', 'Michal, Norbert 和另 2 个'),
+            array(array("Michal", "Norbert", "Lukasz", "Pawel"), null, 'zh_CN', 'Michal, Norbert, Lukasz, 和 Pawel'),
 
             // Polish
             array(array("Michal"), null, 'pl', 'Michal'),
