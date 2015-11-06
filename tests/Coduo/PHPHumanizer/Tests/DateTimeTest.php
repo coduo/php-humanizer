@@ -117,6 +117,25 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array("2014-05-01", "2014-04-01", '1 месяц назад', 'ru'),
             array("2015-05-01", "2014-04-01", '1 год назад', 'ru'),
             array("2014-05-01", "2016-04-01", 'через 2 года', 'ru'),
+
+            // Indonesian
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'baru saja', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", '5 detik dari sekarang', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", '1 menit yang lalu', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", '15 menit yang lalu', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", '15 menit dari sekarang', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", '1 jam dari sekarang', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", '2 jam dari sekarang', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", '1 jam yang lalu', 'id'),
+            array("2014-04-26", "2014-04-25", '1 hari yang lalu', 'id'),
+            array("2014-04-26", "2014-04-24", '2 hari yang lalu', 'id'),
+            array("2014-04-26", "2014-04-28", '2 hari dari sekarang', 'id'),
+            array("2014-04-01", "2014-04-15", '2 minggu dari sekarang', 'id'),
+            array("2014-04-15", "2014-04-07", '1 minggu yang lalu', 'id'),
+            array("2014-01-01", "2014-04-01", '3 bulan dari sekarang', 'id'),
+            array("2014-05-01", "2014-04-01", '1 bulan yang lalu', 'id'),
+            array("2015-05-01", "2014-04-01", '1 tahun yang lalu', 'id'),
+            array("2014-05-01", "2016-04-01", '2 tahun dari sekarang', 'id'),
         );
     }
 
@@ -235,6 +254,16 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array("2014-04-26 13:00:00", "2014-04-28 23:00:00", 'через 2 дня, 10 часов', 'ru'),
             array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 день, 1 час, 40 минут назад', 'ru'),
             array("2014-04-26 13:00:00", "2016-04-27 13:00:00", 'через 2 года, 1 день', 'ru'),
+
+            // Indonesian
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 menit, 45 detik yang lalu', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 jam, 40 menit yang lalu', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 hari, 15 menit dari sekarang', 'id'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 hari, 2 jam dari sekarang', 'id'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 tahun, 2 hari, 4 jam dari sekarang', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 hari, 10 jam dari sekarang', 'id'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 hari, 1 jam, 40 menit yang lalu', 'id'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 tahun, 1 hari dari sekarang', 'id'),
         );
     }
 }
