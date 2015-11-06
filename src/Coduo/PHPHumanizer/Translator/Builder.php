@@ -13,7 +13,7 @@ class Builder
         $translator->addLoader('yml', new YamlFileLoader());
 
         $iterator = new \FilesystemIterator(__DIR__.'/../Resources/translations');
-        $filter = new \RegexIterator($iterator, '/[aA-zZ]+\.([a-z]{2}|[a-z]{2}\_[A-Z]{2,3})\.yml$/');
+        $filter = new \RegexIterator($iterator, '/[aA-zZ]+\.([a-z]{2}|[a-z]{2}\_[A-Z]{2})\.yml$/');
 
         foreach ($filter as $file) {
             /* @var $file \SplFileInfo */
