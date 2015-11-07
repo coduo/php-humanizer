@@ -2,31 +2,32 @@
 
 namespace Coduo\PHPHumanizer\Number;
 
+use Coduo\PHPHumanizer\Number\Ordinal\Builder;
+use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
+
 class Ordinal
 {
     /**
-     * @var int|float
+     * @var StrategyInterface
      */
-    private $number;
+    private $strategy;
 
     /**
-     * @var callable
-     */
-    private $translator;
-
-    /**
-     * @param int|float $number
      * @param string $locale
      */
-    public function __construct($number, $locale = 'en')
+    public function __construct($locale)
     {
-        $this->number = $number;
-        $this->translator = Ordinal\Builder::build($locale);
+        $this->strategy = Builder::build($locale);
     }
 
-    public function __toString()
+    /**
+     * @param $number
+     * @return string
+     */
+    public function ordinal($number)
     {
-        $closure = $this->translator;
-        return (string) $closure($this->number);
+        return $this
+            ->strategy
+            ->ordinalSuffix($number);
     }
 }

@@ -26,7 +26,8 @@ class Number
      */
     public static function ordinal($number, $locale = 'en')
     {
-        return (string) new Ordinal($number, $locale);
+        $ordinal = new Ordinal($locale);
+        return $ordinal->ordinal($number);
     }
 
     public static function binarySuffix($number, $locale = 'en')
