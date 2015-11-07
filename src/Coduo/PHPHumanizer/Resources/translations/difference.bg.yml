@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] в момента"
+  future: "[0,Inf] в момента"
+second:
+  past: "{1} преди %count% секунда|[2,Inf] преди %count% секунди"
+  future: "{1} след %count% секунда|[2,Inf] след %count% секунди"
+minute:
+  past: "{1} преди %count% минута|[2,Inf] преди %count% минути"
+  future: "{1} след %count% минута|[2,Inf] след %count% минути"
+hour:
+  past: "{1} преди %count% час|[2,Inf] преди %count% часа"
+  future: "{1} след %count% час|[2,Inf] след %count% часа"
+day:
+  past: "{1} преди %count% ден|[2,Inf] преди %count% дни"
+  future: "{1} след %count% ден|[2,Inf] след %count% дни"
+week:
+  past: "{1} преди %count% седмица|[2,Inf] преди %count% седмици"
+  future: "{1} след %count% седмица|[2,Inf] след %count% седмици"
+month:
+  past: "{1} преди %count% месец|[2,Inf] преди %count% месеца"
+  future: "{1} след %count% месец|[2,Inf] след %count% месеца"
+year:
+  past: "{1} преди %count% година|[2,Inf] преди %count% години"
+  future: "{1} след %count% година|[2,Inf] след %count% години"
+
+compound:
+  second: "{1} %count% секунда|[2,Inf] %count% секунди"
+  minute: "{1} %count% минута|[2,Inf] %count% минути"
+  hour: "{1} %count% час|[2,Inf] %count% часа"
+  day: "{1} %count% ден|[2,Inf] %count% дни"
+  week: "{1} %count% седмица|[2,Inf] %count% седмица"
+  month: "{1} %count% месец|[2,Inf] %count% месеца"
+  year: "{1} %count% година|[2,Inf] %count% години"
+  past: "%value% преди това"
+  future: "%value% след това"

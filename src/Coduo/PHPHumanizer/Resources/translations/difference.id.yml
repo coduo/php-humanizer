@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] baru saja"
+  future: "[0,Inf] baru saja"
+second:
+  past: "{1} %count% detik yang lalu|[2,Inf] %count% detik yang lalu"
+  future: "{1} %count% detik dari sekarang|[2,Inf] %count% detik dari sekarang"
+minute:
+  past: "{1} %count% menit yang lalu|[2,Inf] %count% menit yang lalu"
+  future: "{1} %count% menit dari sekarang|[2,Inf] %count% menit dari sekarang"
+hour:
+  past: "{1} %count% jam yang lalu|[2,Inf] %count% jam yang lalu"
+  future: "{1} %count% jam dari sekarang|[2,Inf] %count% jam dari sekarang"
+day:
+  past: "{1} %count% hari yang lalu|[2,Inf] %count% hari yang lalu"
+  future: "{1} %count% hari dari sekarang|[2,Inf] %count% hari dari sekarang"
+week:
+  past: "{1} %count% minggu yang lalu|[2,Inf] %count% minggu yang lalu"
+  future: "{1} %count% minggu dari sekarang|[2,Inf] %count% minggu dari sekarang"
+month:
+  past: "{1} %count% bulan yang lalu|[2,Inf] %count% bulan yang lalu"
+  future: "{1} %count% bulan dari sekarang|[2,Inf] %count% bulan dari sekarang"
+year:
+  past: "{1} %count% tahun yang lalu|[2,Inf] %count% tahun yang lalu"
+  future: "{1} %count% tahun dari sekarang|[2,Inf] %count% tahun dari sekarang"
+
+compound:
+  second: "{1} %count% detik|[2,Inf] %count% detik"
+  minute: "{1} %count% menit|[2,Inf] %count% menit"
+  hour: "{1} %count% jam|[2,Inf] %count% jam"
+  day: "{1} %count% hari|[2,Inf] %count% hari"
+  week: "{1} %count% minggu|[2,Inf] %count% minggu"
+  month: "{1} %count% bulan|[2,Inf] %count% bulan"
+  year: "{1} %count% tahun|[2,Inf] %count% tahun"
+  past: "%value% yang lalu"
+  future: "%value% dari sekarang"

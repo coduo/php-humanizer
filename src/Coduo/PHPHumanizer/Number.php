@@ -36,6 +36,13 @@ class Number
         return $binarySuffix->convert();
     }
 
+    public static function preciseBinarySuffix($number, $precision, $locale = 'en')
+    {
+        $binarySuffix = new BinarySuffix($number, $locale, $precision);
+
+        return $binarySuffix->convert();
+    }
+
     public static function metricSuffix($number, $locale = 'en')
     {
         $binarySuffix = new MetricSuffix($number, $locale);
@@ -50,7 +57,7 @@ class Number
         return $romanNumeral->toRoman($number);
     }
 
-    public function fromRoman($number)
+    public static function fromRoman($number)
     {
         $romanNumeral = new RomanNumeral();
 
