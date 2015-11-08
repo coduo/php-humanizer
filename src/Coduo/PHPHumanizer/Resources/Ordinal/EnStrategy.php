@@ -6,7 +6,7 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
 class EnStrategy implements StrategyInterface
 {
-
+    /** @inheritdoc */
     public function ordinalSuffix($number)
     {
         $absNumber = abs((integer) $number);
