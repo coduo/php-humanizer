@@ -34,7 +34,16 @@ class StringTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, String::truncate($text, $charactersCount, $append));
     }
 
-    function it_truncate_string_to_word_closest_to_a_certain_number_of_characters_with_html_tags($text, $charactersCount, $allowedTags, $expected, $append = '')
+    /**
+     * @dataProvider truncateHtmlStringProvider
+     *
+     * @param $text
+     * @param $charactersCount
+     * @param $allowedTags
+     * @param $expected
+     * @param $append
+     */
+    function test_truncate_string_to_word_closest_to_a_certain_number_of_characters_with_html_tags($text, $charactersCount, $allowedTags, $expected, $append = '')
     {
         $this->assertEquals($expected, String::truncateHtml($text, $charactersCount, $allowedTags, $append));
     }
@@ -57,6 +66,7 @@ class StringTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     *
      * @return array
      */
     public function truncateStringProvider()
@@ -84,6 +94,10 @@ class StringTest extends PHPUnit_Framework_TestCase
         );
     }
     
+    /**
+     *
+     * @return array
+     */
     public function truncateHtmlStringProvider()
     {
         $text = '<p><b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create <a href="/wiki/Web_page" title="Web page">web pages</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> <a href="/wiki/Web_browser" title="Web browser">Web browsers</a> can read HTML files and render them into visible or audible web pages. HTML describes the structure of a <a href="/wiki/Website" title="Website">website</a> <a href="/wiki/Semantic" title="Semantic" class="mw-redirect">semantically</a> along with cues for presentation, making it a markup language, rather than a <a href="/wiki/Programming_language" title="Programming language">programming language</a>.</p>';
