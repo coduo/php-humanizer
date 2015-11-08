@@ -7,14 +7,18 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
 class Ordinal
 {
-    /** @type float|int */
+    /**
+     * @type int|float
+     */
     private $number;
 
-    /** @var StrategyInterface */
+    /**
+     * @type StrategyInterface
+     */
     private $strategy;
 
     /**
-     * @param float|int $number
+     * @param int|float $number
      * @param string $locale
      */
     public function __construct($number, $locale)
@@ -23,9 +27,6 @@ class Ordinal
         $this->strategy = Builder::build($locale);
     }
 
-    /**
-     * @return string
-     */
     public function __toString()
     {
         return $this
