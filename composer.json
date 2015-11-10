@@ -24,18 +24,21 @@
         "phpspec/phpspec": "2.0.*",
         "phpunit/phpunit": "^4.5|^5.0"
     },
-    "config": {
-        "bin-dir": "bin"
-    },
     "autoload": {
         "psr-4": {
             "": "src",
             "Coduo\\PHPHumanizer\\Tests\\": "tests/"
         }
     },
+    "config": {
+        "bin-dir": "bin",
+        "preferred-install": "dist"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.1-dev"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
