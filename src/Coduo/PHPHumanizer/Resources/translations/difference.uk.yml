@@ -12,7 +12,7 @@ hour:
   future: "через %count% годину|через %count% години|через %count% годин"
 day:
   past: "%count% день тому|%count% дні тому|%count% днів тому"
-  future: "через %count% день|через %count% дни|через %count% днів"
+  future: "через %count% день|через %count% дні|через %count% днів"
 week:
   past: "%count% тиждень тому|%count% тижні тому|%count% тижнів тому"
   future: "через %count% тиждень|через %count% тижні|через %count% тижнів"
