@@ -236,7 +236,7 @@ Currently we support following languages:
 * [Bulgarian] (src/Coduo/PHPHumanizer/Resources/translations/difference.bg.yml)
 * [Indonesian] (src/Coduo/PHPHumanizer/Resources/translations/difference.id.yml)
 * [Chinese Simplified] (src/Coduo/PHPHumanizer/Resources/translations/difference.zh_CN.yml)
-* [Українська] (src/Coduo/PHPHumanizer/Resources/translations/difference.uk.yml)
+* [Spanish] (src/Coduo/PHPHumanizer/Resources/translations/difference.es.yml)
 
 # Credits
 
