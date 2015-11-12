@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] зараз"
+  future: "[0,Inf] зараз"
+second:
+  past: "%count% секунду тому|%count% секунди тому|%count% секунд тому"
+  future: "через %count% секунду|через %count% секунди|через %count% секунд"
+minute:
+  past: "%count% хвилину тому|%count% хвилини тому|%count% хвилин тому"
+  future: "через %count% хвилину|через %count% хвилини|через %count% хвилин"
+hour:
+  past: "%count% годину тому|%count% години тому|%count% годин тому"
+  future: "через %count% годину|через %count% години|через %count% годин"
+day:
+  past: "%count% день тому|%count% дні тому|%count% днів тому"
+  future: "через %count% день|через %count% дні|через %count% днів"
+week:
+  past: "%count% тиждень тому|%count% тижні тому|%count% тижнів тому"
+  future: "через %count% тиждень|через %count% тижні|через %count% тижнів"
+month:
+  past: "%count% місяць тому|%count% місяці тому|%count% місяців тому"
+  future: "через %count% місяць|через %count% місяці|через %count% місяців"
+year:
+  past: "%count% рік тому|%count% роки тому|%count% років тому"
+  future: "через %count% рік|через %count% роки|через %count% років"
+
+compound:
+  second:  "%count% секунда|%count% секунди|%count% секунд"
+  minute: "%count% хвилина|%count% хвилини|%count% хвилин"
+  hour: "%count% година|%count% години|%count% годин"
+  day: "%count% день|%count% дні|%count% днів"
+  week: "%count% тиждень|%count% тижні|%count% тижнів"
+  month: "%count% місяць|%count% місяця|%count% місяців"
+  year: "%count% рік|%count% роки|%count% років"
+  past: "%value% тому"
+  future: "через %value%"
