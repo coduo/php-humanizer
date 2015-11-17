@@ -11,10 +11,11 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      *
      * @param $expected
      * @param $number
+     * @param $locale
      */
-    public function test_return_ordinal_suffix($expected, $number)
+    public function test_return_ordinal_suffix($expected, $number, $locale = 'en')
     {
-        $this->assertEquals($expected, Number::ordinal($number));
+        $this->assertEquals($expected, Number::ordinal($number, $locale));
     }
 
     /**
@@ -23,10 +24,11 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      *
      * @param $expected
      * @param $number
+     * @param $locale
      */
-    public function test_ordinalize_numbers($expected, $number)
+    public function test_ordinalize_numbers($expected, $number, $locale = 'en')
     {
-        $this->assertEquals($expected, Number::ordinalize($number));
+        $this->assertEquals($expected, Number::ordinalize($number, $locale));
     }
 
     /**
@@ -153,6 +155,10 @@ class NumberTest extends \PHPUnit_Framework_TestCase
             array('23rd', 23),
             array('1002nd', 1002),
             array('-111th', -111),
+
+            //Locale cases
+            array('ke-2', 2, 'id'),
+            array('ke-41', 41, 'id'),
         );
     }
 
@@ -167,6 +173,10 @@ class NumberTest extends \PHPUnit_Framework_TestCase
             array('rd', 23),
             array('nd', 1002),
             array('th', -111),
+
+            //Locale cases
+            array('ke-', 2, 'id'),
+            array('ke-', 41, 'id'),
         );
     }
 
