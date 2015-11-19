@@ -18,6 +18,16 @@ class NumberTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider ordinalSuffixDutchProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_dutch($expected, $number)
+    {
+        $this->assertEquals($expected, Number::ordinal($number, 'nl'));
+    }
+
+    /**
      * @dataProvider ordinalizeDataProvider
      * @depends test_return_ordinal_suffix
      *
@@ -27,6 +37,18 @@ class NumberTest extends \PHPUnit_Framework_TestCase
     public function test_ordinalize_numbers($expected, $number)
     {
         $this->assertEquals($expected, Number::ordinalize($number));
+    }
+
+    /**
+     * @dataProvider ordinalizeDataDutchProvider
+     * @depends test_return_ordinal_suffix_dutch
+     *
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_dutch($expected, $number)
+    {
+        $this->assertEquals($expected, Number::ordinalize($number, 'nl'));
     }
 
     /**
@@ -159,6 +181,20 @@ class NumberTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
+    public function ordinalizeDataDutchProvider()
+    {
+        return array(
+            array('1e', 1),
+            array('2e', 2),
+            array('23e', 23),
+            array('1002e', 1002),
+            array('-111e', -111),
+        );
+    }
+
+    /**
+     * @return array
+     */
     public function ordinalSuffixProvider()
     {
         return array(
@@ -167,6 +203,20 @@ class NumberTest extends \PHPUnit_Framework_TestCase
             array('rd', 23),
             array('nd', 1002),
             array('th', -111),
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function ordinalSuffixDutchProvider()
+    {
+        return array(
+            array('e', 1),
+            array('e', 2),
+            array('e', 23),
+            array('e', 1002),
+            array('e', -111),
         );
     }
 

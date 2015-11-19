@@ -9,14 +9,25 @@ use Coduo\PHPHumanizer\String\MetricSuffix;
 
 class Number
 {
-    public static function ordinalize($number)
+    /**
+     * @param int|float $number
+     * @param string $locale
+     * @return string
+     */
+    public static function ordinalize($number, $locale = 'en')
     {
-        return $number.self::ordinal($number);
+        return $number.self::ordinal($number, $locale);
     }
 
-    public static function ordinal($number)
+    /**
+     * @param int|float $number
+     * @param string $locale
+     * @return string
+     */
+    public static function ordinal($number, $locale = 'en')
     {
-        return (string) new Ordinal($number);
+        $ordinal = new Ordinal($number, $locale);
+        return (string) $ordinal;
     }
 
     public static function binarySuffix($number, $locale = 'en')

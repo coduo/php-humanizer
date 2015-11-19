@@ -73,7 +73,7 @@ echo Number::ordinalize(0); // "0th"
 echo Number::ordinalize(1); // "1st"
 echo Number::ordinalize(2); // "2nd"
 echo Number::ordinalize(23); // "23rd"
-echo Number::ordinalize(1002); // "1002nd"
+echo Number::ordinalize(1002, 'nl'); // "1002e"
 echo Number::ordinalize(-111); // "-111th"
 
 ```
@@ -88,7 +88,7 @@ echo Number::ordinal(1); // "st"
 echo Number::ordinal(2); // "nd"
 echo Number::ordinal(23); // "rd"
 echo Number::ordinal(1002); // "nd"
-echo Number::ordinal(-111); // "th"
+echo Number::ordinal(-111, 'nl'); // "e"
 ```
 
 **Roman numbers**
