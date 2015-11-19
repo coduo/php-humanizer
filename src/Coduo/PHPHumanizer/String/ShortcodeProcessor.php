@@ -9,10 +9,6 @@ use Thunder\Shortcode\Shortcode\ShortcodeInterface;
 
 class ShortcodeProcessor
 {
-    public function __construct()
-    {
-    }
-
     /**
      * Removes all shortcodes from given text
      *
