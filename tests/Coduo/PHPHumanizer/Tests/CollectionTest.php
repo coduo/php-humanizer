@@ -64,6 +64,13 @@ final class CollectionTest extends \PHPUnit_Framework_TestCase
             array(array("Michal", "Norbert", "Lukasz"), 2, 'uk', 'Michal, Norbert і ще 1'),
             array(array("Michal", "Norbert", "Lukasz", "Pawel"), 2, 'uk', 'Michal, Norbert і ще 2'),
             array(array("Michal", "Norbert", "Lukasz", "Pawel"), null, 'uk', 'Michal, Norbert, Lukasz та Pawel'),
+
+            // French
+            array(array("Michal"), null, 'fr', 'Michal'),
+            array(array("Michal", "Norbert"), null, 'fr', 'Michal et Norbert'),
+            array(array("Michal", "Norbert", "Lukasz"), 2, 'fr', 'Michal, Norbert et 1 autre'),
+            array(array("Michal", "Norbert", "Lukasz", "Pawel"), 2, 'fr', 'Michal, Norbert et 2 autres'),
+            array(array("Michal", "Norbert", "Lukasz", "Pawel"), null, 'fr', 'Michal, Norbert, Lukasz et Pawel'),
         );
     }
 }

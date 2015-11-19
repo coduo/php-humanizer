@@ -3,25 +3,25 @@ just_now:
   future: "[0,Inf] à l'instant"
 second:
   past: "{1} il y a %count% seconde|[2,Inf] il y a %count% secondes"
-  future: "{1} il y a maintenant %count% seconde|[2,Inf] il y a maintenant %count% secondes"
+  future: "{1} dans %count% seconde|[2,Inf] dans %count% secondes"
 minute:
   past: "{1} il y a %count% minute|[2,Inf] il y a %count% minutes"
-  future: "{1} il y a maintenant %count% minute|[2,Inf] il y a maintenant %count% minutes"
+  future: "{1} dans %count% minute|[2,Inf] dans %count% minutes"
 hour:
   past: "{1} il y a %count% heure|[2,Inf] il y a %count% heure"
-  future: "{1} il y a maintenant %count% heure|[2,Inf] il y a maintenant %count% heures"
+  future: "{1} dans %count% heure|[2,Inf] dans %count% heures"
 day:
   past: "{1} il y a %count% jour|[2,Inf] il y a %count% jours"
-  future: "{1} il y a maintenant %count% jour|[2,Inf] il y a maintenant %count% jours"
+  future: "{1} dans %count% jour|[2,Inf] dans %count% jours"
 week:
   past: "{1} il y a %count% semaine|[2,Inf] il y a %count% semaines"
-  future: "{1} il y a maintenant %count% semaine|[2,Inf] il y a maintenant %count% semaines"
+  future: "{1} dans %count% semaine|[2,Inf] dans %count% semaines"
 month:
   past: "{1} il y a %count% mois|[2,Inf] il y a %count% mois"
-  future: "{1} %count% mois maintenant|[2,Inf] %count% mois maintenant"
+  future: "{1} dans %count% mois|[2,Inf] dans %count% mois"
 year:
-  past: "{1} il y a %count% année|[2,Inf] il y a %count% années"
-  future: "{1} il y a maintenant %count% année|[2,Inf] il y a maintenant %count% années"
+  past: "{1} il y a %count% an|[2,Inf] il y a %count% ans"
+  future: "{1} dans %count% an|[2,Inf] dans %count% ans"
 
 compound:
   second: "{1} %count% seconde|[2,Inf] %count% secondes"
@@ -30,6 +30,6 @@ compound:
   day: "{1} %count% jour|[2,Inf] %count% jours"
   week: "{1} %count% semaine|[2,Inf] %count% semaines"
   month: "{1} %count% mois|[2,Inf] %count% mois"
-  year: "{1} %count% année|[2,Inf] %count% années"
-  past: "%value% il y a"
-  future: "%value% maintenant"
+  year: "{1} %count% an|[2,Inf] %count% ans"
+  past: "il y a %value%"
+  future: "dans %value%"

@@ -155,7 +155,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array("2014-05-01", "2014-04-01", '1 bulan yang lalu', 'id'),
             array("2015-05-01", "2014-04-01", '1 tahun yang lalu', 'id'),
             array("2014-05-01", "2016-04-01", '2 tahun dari sekarang', 'id'),
-            
+
             // Spanish
             array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'ahora mismo', 'es'),
             array("2014-04-26 13:00:00", "2014-04-26 13:00:05", 'dentro de 5 segundos', 'es'),
@@ -193,6 +193,25 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array("2014-05-01", "2014-04-01", '1 місяць тому', 'uk'),
             array("2015-05-01", "2014-04-01", '1 рік тому', 'uk'),
             array("2014-05-01", "2016-04-01", 'через 2 роки', 'uk'),
+
+            // French
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'à l\'instant', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", 'dans 5 secondes', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", 'il y a 1 minute', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", 'il y a 15 minutes', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", 'dans 15 minutes', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", 'dans 1 heure', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", 'dans 2 heures', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", 'il y a 1 heure', 'fr'),
+            array("2014-04-26", "2014-04-25", 'il y a 1 jour', 'fr'),
+            array("2014-04-26", "2014-04-24", 'il y a 2 jours', 'fr'),
+            array("2014-04-26", "2014-04-28", 'dans 2 jours', 'fr'),
+            array("2014-04-01", "2014-04-15", 'dans 2 semaines', 'fr'),
+            array("2014-04-15", "2014-04-07", 'il y a 1 semaine', 'fr'),
+            array("2014-01-01", "2014-04-01", 'dans 3 mois', 'fr'),
+            array("2014-05-01", "2014-04-01", 'il y a 1 mois', 'fr'),
+            array("2015-05-01", "2014-04-01", 'il y a 1 an', 'fr'),
+            array("2014-05-01", "2016-04-01", 'dans 2 ans', 'fr'),
         );
     }
 
@@ -253,14 +272,14 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 yıl, 1 gün sonra', 'tr'),
 
             // French
-            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minute, 45 secondes il y a', 'fr'),
-            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 heure, 40 minutes il y a', 'fr'),
-            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 jour, 15 minutes maintenant', 'fr'),
-            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 jours, 2 heures maintenant', 'fr'),
-            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 année, 2 jours, 4 heures maintenant', 'fr'),
-            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 jours, 10 heures maintenant', 'fr'),
-            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 jour, 1 heure, 40 minutes il y a', 'fr'),
-            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 années, 1 jour maintenant', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", 'il y a 1 minute, 45 secondes', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", 'il y a 1 heure, 40 minutes', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", 'dans 1 jour, 15 minutes', 'fr'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", 'dans 7 jours, 2 heures', 'fr'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", 'dans 1 an, 2 jours, 4 heures', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", 'dans 2 jours, 10 heures', 'fr'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", 'il y a 1 jour, 1 heure, 40 minutes', 'fr'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", 'dans 2 ans, 1 jour', 'fr'),
 
             // Português - Brasil
             array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 minuto, 45 segundos atrás', 'pt_BR'),
