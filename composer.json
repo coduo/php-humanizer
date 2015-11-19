@@ -18,7 +18,8 @@
         "symfony/intl": "~2.3",
         "symfony/config": "~2.3",
         "symfony/translation": "~2.3",
-        "symfony/yaml": "~2.3"
+        "symfony/yaml": "~2.3",
+        "thunderer/shortcode": "~0.5"
     },
     "require-dev": {
         "phpspec/phpspec": "2.0.*",
