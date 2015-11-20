@@ -233,14 +233,14 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 lata, 1 dzień od teraz', 'pl'),
 
             // German
-            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 Minute, 45 Sekunden vor', 'de'),
-            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 Stunde, 40 Minuten vor', 'de'),
-            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 Tag, 15 Minuten ab jetzt', 'de'),
-            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 Tage, 2 Stunden ab jetzt', 'de'),
-            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 Jahr, 2 Tage, 4 Stunden ab jetzt', 'de'),
-            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 Tage, 10 Stunden ab jetzt', 'de'),
-            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 Tag, 1 Stunde, 40 Minuten vor', 'de'),
-            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 Jahre, 1 Tag ab jetzt', 'de'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", 'vor 1 Minute, 45 Sekunden', 'de'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", 'vor 1 Stunde, 40 Minuten', 'de'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", 'in 1 Tag, 15 Minuten', 'de'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", 'in 7 Tagen, 2 Stunden', 'de'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", 'in 1 Jahr, 2 Tagen, 4 Stunden', 'de'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", 'in 2 Tagen, 10 Stunden', 'de'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", 'vor 1 Tag, 1 Stunde, 40 Minuten', 'de'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", 'in 2 Jahren, 1 Tag', 'de'),
 
             // Turkish
             array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 dakika, 45 saniye önce', 'tr'),
