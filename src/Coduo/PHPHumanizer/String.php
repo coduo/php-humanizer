@@ -3,6 +3,7 @@
 namespace Coduo\PHPHumanizer;
 
 use Coduo\PHPHumanizer\String\Humanize;
+use Coduo\PHPHumanizer\String\ShortcodeProcessor;
 use Coduo\PHPHumanizer\String\TextTruncate;
 use Coduo\PHPHumanizer\String\HtmlTruncate;
 use Coduo\PHPHumanizer\String\WordBreakpoint;
@@ -14,7 +15,7 @@ class String
      * @param bool|true $capitalize
      * @param string $separator
      * @param array $forbiddenWords
-     * 
+     *
      * @return string
      */
     public static function humanize($text, $capitalize = true, $separator = '_', array $forbiddenWords = array())
@@ -26,13 +27,13 @@ class String
      * @param $text
      * @param $charactersCount
      * @param string $append
-     * 
+     *
      * @return string
      */
     public static function truncate($text, $charactersCount, $append = '')
     {
         $truncate = new TextTruncate(new WordBreakpoint(), $append);
-        
+
         return $truncate->truncate($text, $charactersCount);
     }
 
@@ -41,13 +42,27 @@ class String
      * @param $charactersCount
      * @param string $allowedTags
      * @param string $append
-     * 
+     *
      * @return string
      */
     public static function truncateHtml($text, $charactersCount, $allowedTags = '', $append = '')
     {
         $truncate = new HtmlTruncate(new WordBreakpoint(), $allowedTags, $append);
-        
+
         return $truncate->truncate($text, $charactersCount);
+    }
+
+    public static function removeShortcodes($text)
+    {
+        $processor = new ShortcodeProcessor();
+
+        return $processor->removeShortcodes($text);
+    }
+
+    public static function removeShortcodeTags($text)
+    {
+        $processor = new ShortcodeProcessor();
+
+        return $processor->removeShortcodeTags($text);
     }
 }

@@ -49,7 +49,44 @@ class StringTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider removeAllShortcodesProvider
      *
+     * @param $text
+     * @param $expected
+     */
+    function test_remove_all_shortcodes_from_text($text, $expected)
+    {
+        $this->assertEquals($expected, String::removeShortcodes($text));
+    }
+
+    /**
+     * @dataProvider removeShortcodeTagsProvider
+     *
+     * @param $text
+     * @param $expected
+     */
+    function test_remove_only_shortcode_tags_from_text($text, $expected)
+    {
+        $this->assertEquals($expected, String::removeShortcodeTags($text));
+    }
+
+    public function removeAllShortcodesProvider()
+    {
+        return array(
+            array('some [text] containing [shortcodes /] and [stuff]with[/stuff] content', 'some  containing  and  content'),
+            array('some [text] containing [shortcodes /] and [stuff]with[/stuff] content [/text]', 'some '),
+        );
+    }
+
+    public function removeShortcodeTagsProvider()
+    {
+        return array(
+            array('some [text] containing [shortcodes /] and [stuff]with[/stuff] content', 'some  containing  and with content'),
+            array('some [text] containing [shortcodes /] and [stuff]with[/stuff] content [/text]', 'some  containing  and with content '),
+        );
+    }
+
+    /**
      * @return array
      */
     public function humanizeStringProvider()
@@ -73,7 +110,7 @@ class StringTest extends PHPUnit_Framework_TestCase
     {
         $longText = 'Lorem ipsum dolorem si amet, lorem ipsum. Dolorem sic et nunc.';
         $shortText = 'Short text';
-        
+
         return array(
             array($longText, 'Lorem', 2),
             array($longText, 'Lorem ipsum...', 10, '...'),
@@ -93,7 +130,7 @@ class StringTest extends PHPUnit_Framework_TestCase
             array($shortText, "Short text", 10, '...')
         );
     }
-    
+
     /**
      *
      * @return array
@@ -101,11 +138,11 @@ class StringTest extends PHPUnit_Framework_TestCase
     public function truncateHtmlStringProvider()
     {
         $text = '<p><b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create <a href="/wiki/Web_page" title="Web page">web pages</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> <a href="/wiki/Web_browser" title="Web browser">Web browsers</a> can read HTML files and render them into visible or audible web pages. HTML describes the structure of a <a href="/wiki/Website" title="Website">website</a> <a href="/wiki/Semantic" title="Semantic" class="mw-redirect">semantically</a> along with cues for presentation, making it a markup language, rather than a <a href="/wiki/Programming_language" title="Programming language">programming language</a>.</p>';
-        
+
         return array(
-            array($text, 3,  '<b><i><u><em><strong><a><span>',  "<b>HyperText</b>"), 
+            array($text, 3,  '<b><i><u><em><strong><a><span>',  "<b>HyperText</b>"),
             array($text, 12, '<b><i><u><em><strong><a><span>', "<b>HyperText Markup</b>"),
-            array($text, 30, '<b><i><u><em><strong><a><span>', "<b>HyperText Markup Language</b>, commonly"), 
+            array($text, 30, '<b><i><u><em><strong><a><span>', "<b>HyperText Markup Language</b>, commonly"),
             array($text, 50, '<b><i><u><em><strong><a><span>', "<b>HyperText Markup Language</b>, commonly referred to as"),
             array($text, 75, '<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup</a>'),
             array($text, 100,'<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create'),
