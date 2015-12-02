@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] lige nu"
+  future: "[0,Inf] lige nu"
+second:
+  past: "{1} %count% sekund siden|[2,Inf] %count% sekunder siden"
+  future: "{1} %count% sekund fra nu|[2,Inf] %count% sekunder fra nu"
+minute:
+  past: "{1} %count% minut siden|[2,Inf] %count% minutter siden"
+  future: "{1} %count% minut fra nu|[2,Inf] %count% minutter fra nu"
+hour:
+  past: "{1} %count% time siden|[2,Inf] %count% timer siden"
+  future: "{1} %count% time fra nu|[2,Inf] %count% timer fra nu"
+day:
+  past: "{1} %count% dag siden|[2,Inf] %count% dage siden"
+  future: "{1} %count% dag fra nu|[2,Inf] %count% dage fra nu"
+week:
+  past: "{1} %count% uge siden|[2,Inf] %count% uger siden"
+  future: "{1} %count% uge fra nu|[2,Inf] %count% uger fra nu"
+month:
+  past: "{1} %count% måned siden|[2,Inf] %count% måneder siden"
+  future: "{1} %count% måned fra nu|[2,Inf] %count% måneder fra nu"
+year:
+  past: "{1} %count% år siden|[2,Inf] %count% år siden"
+  future: "{1} %count% år fra nu|[2,Inf] %count% år fra nu"
+
+compound:
+  second: "{1} %count% sekund|[2,Inf] %count% sekunder"
+  minute: "{1} %count% minut|[2,Inf] %count% minutter"
+  hour: "{1} %count% time|[2,Inf] %count% timer"
+  day: "{1} %count% dag|[2,Inf] %count% dage"
+  week: "{1} %count% uge|[2,Inf] %count% uger"
+  month: "{1} %count% måned|[2,Inf] %count% måneder"
+  year: "{1} %count% år|[2,Inf] %count% år"
+  past: "%value% siden"
+  future: "%value% fra nu"
