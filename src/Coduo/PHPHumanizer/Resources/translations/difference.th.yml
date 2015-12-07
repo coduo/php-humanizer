@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] เมื่อสักครู่"
+  future: "[0,Inf] เร็วๆนี้"
+second:
+  past: "[1,Inf] %count% วินาทีที่แล้ว"
+  future: "[1,Inf] อีก %count% วินาที"
+minute:
+  past: "[1,Inf] %count% นาทีที่แล้ว"
+  future: "[1,Inf] อีก %count% นาที"
+hour:
+  past: "[1,Inf] %count% ชั่วโมงที่แล้ว"
+  future: "[1,Inf] อีก %count% ชั่วโมง"
+day:
+  past: "[1,Inf] %count% วันที่แล้ว"
+  future: "[1,Inf] อีก %count% วัน"
+week:
+  past: "[1,Inf] %count% สัปดาห์ที่แล้ว"
+  future: "[1,Inf] อีก %count% สัปดาห์"
+month:
+  past: "[1,Inf] %count% เดือนที่แล้ว"
+  future: "[1,Inf] อีก %count% เดือน"
+year:
+  past: "[1,Inf] %count% ปีที่แล้ว"
+  future: "[1,Inf] อีก %count% ปี"
+
+compound:
+  second: "[1,Inf] %count% วินาที"
+  minute: "[1,Inf] %count% นาที"
+  hour: "[1,Inf] %count% ชั่วโมง"
+  day: "[1,Inf] %count% วัน"
+  week: "[1,Inf] %count% สัปดาห์"
+  month: "[1,Inf] %count% เดือน"
+  year: "[1,Inf] %count% ปี"
+  past: "%value%ที่แล้ว"
+  future: "อีก %value%"
