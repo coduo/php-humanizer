@@ -7,20 +7,7 @@ use Coduo\PHPHumanizer\Number;
 class NumberTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @dataProvider ordinalSuffixProvider
-     *
-     * @param $expected
-     * @param $number
-     * @param $locale
-     */
-    public function test_return_ordinal_suffix($expected, $number, $locale = 'en')
-    {
-        $this->assertEquals($expected, Number::ordinal($number, $locale));
-    }
-
-    /**
      * @dataProvider ordinalizeDataProvider
-     * @depends test_return_ordinal_suffix
      *
      * @param $expected
      * @param $number
@@ -147,6 +134,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
+    
     public function ordinalizeDataProvider()
     {
         return array(
@@ -159,24 +147,6 @@ class NumberTest extends \PHPUnit_Framework_TestCase
             //Locale cases
             array('ke-2', 2, 'id'),
             array('ke-41', 41, 'id'),
-        );
-    }
-
-    /**
-     * @return array
-     */
-    public function ordinalSuffixProvider()
-    {
-        return array(
-            array('st', 1),
-            array('nd', 2),
-            array('rd', 23),
-            array('nd', 1002),
-            array('th', -111),
-
-            //Locale cases
-            array('ke-', 2, 'id'),
-            array('ke-', 41, 'id'),
         );
     }
 
