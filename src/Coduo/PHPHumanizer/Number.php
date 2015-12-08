@@ -11,15 +11,9 @@ class Number
 {
     public static function ordinalize($number, $locale = 'en')
     {
-        if ($locale == 'id'){
-            return self::ordinal($number, 'id').$number;
-        }
-        return $number.self::ordinal($number, $locale);
-    }
+        $ordinalized = new Ordinal($number, $locale);
 
-    public static function ordinal($number, $locale = 'en')
-    {
-        return (string) new Ordinal($number, $locale);
+        return $ordinalized->ordinalize();
     }
 
     public static function binarySuffix($number, $locale = 'en')
