@@ -19,6 +19,23 @@ class NumberTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException \RuntimeException
+     */
+    public function test_statically_throw_exception_when_ordinalizing_negative_number()
+    {
+        Number::ordinalize(-111);
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function test_statically_throw_exception_when_ordinalizing_floating_number()
+    {
+
+        NUmber::ordinalize(2.876);
+    }
+
+    /**
      * @dataProvider binarySuffixDataProvider
      *
      * @param        $expected
@@ -142,11 +159,10 @@ class NumberTest extends \PHPUnit_Framework_TestCase
             array('2nd', 2),
             array('23rd', 23),
             array('1002nd', 1002),
-            array('-111th', -111),
 
             //Locale cases
             array('ke-2', 2, 'id'),
-            array('ke-41', 41, 'id'),
+            array('41.', 41, 'de'),
         );
     }
 
