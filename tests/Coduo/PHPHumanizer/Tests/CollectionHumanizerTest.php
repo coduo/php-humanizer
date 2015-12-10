@@ -2,16 +2,16 @@
 
 namespace Coduo\PHPHumanizer\Tests;
 
-use Coduo\PHPHumanizer\Collection;
+use Coduo\PHPHumanizer\CollectionHumanizer;
 
-final class CollectionTest extends \PHPUnit_Framework_TestCase
+final class CollectionHumanizerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider oxfordCollectionProvider
      */
     function test_oxford_collections_humanizing($collection, $limit, $locale, $expectedResult)
     {
-        $this->assertEquals($expectedResult, Collection::oxford($collection, $limit, $locale));
+        $this->assertEquals($expectedResult, CollectionHumanizer::oxford($collection, $limit, $locale));
     }
 
     public function oxfordCollectionProvider()

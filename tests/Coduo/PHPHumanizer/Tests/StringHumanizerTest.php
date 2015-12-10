@@ -2,10 +2,10 @@
 
 namespace Coduo\PHPHumanizer\Tests;
 
-use Coduo\PHPHumanizer\String;
+use Coduo\PHPHumanizer\StringHumanizer;
 use PHPUnit_Framework_TestCase;
 
-class StringTest extends PHPUnit_Framework_TestCase
+class StringHumanizerTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider humanizeStringProvider
@@ -18,7 +18,7 @@ class StringTest extends PHPUnit_Framework_TestCase
      */
     public function test_humanize_strings($input, $expected, $capitalize, $separator, array $forbiddenWords)
     {
-        $this->assertEquals($expected, String::humanize($input, $capitalize, $separator, $forbiddenWords));
+        $this->assertEquals($expected, StringHumanizer::humanize($input, $capitalize, $separator, $forbiddenWords));
     }
 
     /**
@@ -31,7 +31,7 @@ class StringTest extends PHPUnit_Framework_TestCase
      */
     function test_truncate_string_to_word_closest_to_a_certain_number_of_characters($text, $expected, $charactersCount, $append = '')
     {
-        $this->assertEquals($expected, String::truncate($text, $charactersCount, $append));
+        $this->assertEquals($expected, StringHumanizer::truncate($text, $charactersCount, $append));
     }
 
     /**
@@ -45,7 +45,7 @@ class StringTest extends PHPUnit_Framework_TestCase
      */
     function test_truncate_string_to_word_closest_to_a_certain_number_of_characters_with_html_tags($text, $charactersCount, $allowedTags, $expected, $append = '')
     {
-        $this->assertEquals($expected, String::truncateHtml($text, $charactersCount, $allowedTags, $append));
+        $this->assertEquals($expected, StringHumanizer::truncateHtml($text, $charactersCount, $allowedTags, $append));
     }
 
     /**
@@ -56,7 +56,7 @@ class StringTest extends PHPUnit_Framework_TestCase
      */
     function test_remove_all_shortcodes_from_text($text, $expected)
     {
-        $this->assertEquals($expected, String::removeShortcodes($text));
+        $this->assertEquals($expected, StringHumanizer::removeShortcodes($text));
     }
 
     /**
@@ -67,7 +67,7 @@ class StringTest extends PHPUnit_Framework_TestCase
      */
     function test_remove_only_shortcode_tags_from_text($text, $expected)
     {
-        $this->assertEquals($expected, String::removeShortcodeTags($text));
+        $this->assertEquals($expected, StringHumanizer::removeShortcodeTags($text));
     }
 
     public function removeAllShortcodesProvider()

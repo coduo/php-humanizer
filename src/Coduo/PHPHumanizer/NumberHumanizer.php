@@ -7,7 +7,7 @@ use Coduo\PHPHumanizer\Number\RomanNumeral;
 use Coduo\PHPHumanizer\String\BinarySuffix;
 use Coduo\PHPHumanizer\String\MetricSuffix;
 
-class Number
+class NumberHumanizer
 {
     /**
      * @param int|float $number

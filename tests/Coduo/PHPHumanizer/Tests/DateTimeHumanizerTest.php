@@ -2,9 +2,9 @@
 
 namespace Coduo\PHPHumanizer\Tests;
 
-use Coduo\PHPHumanizer\DateTime;
+use Coduo\PHPHumanizer\DateTimeHumanizer;
 
-class DateTimeTest extends \PHPUnit_Framework_TestCase
+class DateTimeHumanizerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
@@ -17,7 +17,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
      */
     public function test_humanize_difference_between_dates($firstDate, $secondDate, $expected, $locale)
     {
-        $this->assertEquals($expected, DateTime::difference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
+        $this->assertEquals($expected, DateTimeHumanizer::difference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
     }
 
     /**
@@ -30,7 +30,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
      */
     public function test_humanize_precise_difference_between_dates($firstDate, $secondDate, $expected, $locale)
     {
-        $this->assertEquals($expected, DateTime::preciseDifference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
+        $this->assertEquals($expected, DateTimeHumanizer::preciseDifference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
     }
 
     /**
