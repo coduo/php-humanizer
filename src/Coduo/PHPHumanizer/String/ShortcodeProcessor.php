@@ -10,7 +10,7 @@ use Thunder\Shortcode\Shortcode\ShortcodeInterface;
 class ShortcodeProcessor
 {
     /**
-     * Removes all shortcodes from given text
+     * Removes all shortcodes from given text.
      *
      * @param string $text
      *
@@ -18,15 +18,15 @@ class ShortcodeProcessor
      */
     public function removeShortcodes($text)
     {
-        $nullHandler = function() {
-            return null;
+        $nullHandler = function () {
+            return;
         };
 
         return $this->createShortcodeProcessor($nullHandler)->process($text);
     }
 
     /**
-     * Removes only shortcode tags from given text (leaves their content as it is)
+     * Removes only shortcode tags from given text (leaves their content as it is).
      *
      * @param string $text
      *
@@ -34,13 +34,17 @@ class ShortcodeProcessor
      */
     public function removeShortcodeTags($text)
     {
-        $contentHandler = function(ShortcodeInterface $s) {
+        $contentHandler = function (ShortcodeInterface $s) {
             return $s->getContent();
         };
 
         return $this->createShortcodeProcessor($contentHandler)->process($text);
     }
 
+    /**
+     * @param $defaultHandler
+     * @return Processor
+     */
     private function createShortcodeProcessor($defaultHandler)
     {
         $handlers = new HandlerContainer();

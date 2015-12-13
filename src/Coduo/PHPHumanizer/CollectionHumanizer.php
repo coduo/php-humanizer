@@ -8,6 +8,12 @@ use Coduo\PHPHumanizer\Translator\Builder;
 
 final class CollectionHumanizer
 {
+    /**
+     * @param $collection
+     * @param null $limit
+     * @param string $locale
+     * @return string
+     */
     public static function oxford($collection, $limit = null, $locale = 'en')
     {
         $oxford = new Oxford(

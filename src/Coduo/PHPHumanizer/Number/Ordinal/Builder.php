@@ -9,7 +9,9 @@ class Builder
 {
     /**
      * @param string $locale
+     *
      * @return StrategyInterface
+     *
      * @throws \RuntimeException
      */
     public static function build($locale)
@@ -27,7 +29,7 @@ class Builder
         $strategy = "\\Coduo\\PHPHumanizer\\Resources\\Ordinal\\{$strategy}Strategy";
 
         if (class_exists($strategy)) {
-            return new $strategy;
+            return new $strategy();
         }
 
         // Debatable: should we fallback to English?

@@ -10,7 +10,7 @@ class Humanize
     private $text;
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $capitalize;
 
@@ -21,9 +21,9 @@ class Humanize
 
     /**
      * @param $text
-     * @param bool $capitalize
+     * @param bool   $capitalize
      * @param string $separator
-     * @param array $forbiddenWords
+     * @param array  $forbiddenWords
      */
     public function __construct($text, $capitalize = true, $separator = '_', array $forbiddenWords = array('id'))
     {
@@ -34,14 +34,13 @@ class Humanize
     }
 
     /**
-     * @internal param bool $capitalize
      * @return string
      */
     public function __toString()
     {
         $humanized = trim(strtolower(preg_replace(array('/([A-Z])/', "/[{$this->separator}\\s]+/"), array('_$1', ' '), $this->text)));
-        $humanized = trim(str_replace($this->forbiddenWords, "", $humanized));
-        
+        $humanized = trim(str_replace($this->forbiddenWords, '', $humanized));
+
         return $this->capitalize ?  ucfirst($humanized) : $humanized;
     }
 }

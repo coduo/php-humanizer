@@ -16,7 +16,7 @@ class TextTruncate implements TruncateInterface
 
     /**
      * @param Breakpoint $breakpoint
-     * @param string $append
+     * @param string     $append
      */
     public function __construct(Breakpoint $breakpoint, $append = '')
     {
@@ -26,7 +26,8 @@ class TextTruncate implements TruncateInterface
 
     /**
      * @param string $text
-     * @param int $charactersCount
+     * @param int    $charactersCount
+     *
      * @return string
      */
     public function truncate($text, $charactersCount)
@@ -37,6 +38,6 @@ class TextTruncate implements TruncateInterface
 
         $truncatedText = rtrim(mb_substr($text, 0, $this->breakpoint->calculatePosition($text, $charactersCount)));
 
-        return ($truncatedText === $text) ? $truncatedText : $truncatedText . $this->append;
+        return ($truncatedText === $text) ? $truncatedText : $truncatedText.$this->append;
     }
 }

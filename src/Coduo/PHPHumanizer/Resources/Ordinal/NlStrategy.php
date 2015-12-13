@@ -6,9 +6,9 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
 class NlStrategy implements StrategyInterface
 {
-    /** @inheritdoc */
+    /** {@inheritdoc} */
     public function ordinalSuffix($number)
     {
-        return "e";
+        return 'e';
     }
 }

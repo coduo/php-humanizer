@@ -13,8 +13,8 @@ final class StringHumanizer
     /**
      * @param $text
      * @param bool|true $capitalize
-     * @param string $separator
-     * @param array $forbiddenWords
+     * @param string    $separator
+     * @param array     $forbiddenWords
      *
      * @return string
      */
@@ -52,6 +52,10 @@ final class StringHumanizer
         return $truncate->truncate($text, $charactersCount);
     }
 
+    /**
+     * @param $text
+     * @return string
+     */
     public static function removeShortcodes($text)
     {
         $processor = new ShortcodeProcessor();
@@ -59,6 +63,10 @@ final class StringHumanizer
         return $processor->removeShortcodes($text);
     }
 
+    /**
+     * @param $text
+     * @return string
+     */
     public static function removeShortcodeTags($text)
     {
         $processor = new ShortcodeProcessor();
