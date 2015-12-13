@@ -5,8 +5,12 @@ namespace Coduo\PHPHumanizer\Translator;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
 use Symfony\Component\Translation\Translator;
 
-class Builder
+final class Builder
 {
+    /**
+     * @param $locale
+     * @return Translator
+     */
     public static function build($locale)
     {
         $translator = new Translator($locale);

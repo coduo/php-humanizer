@@ -2,7 +2,7 @@
 
 namespace Coduo\PHPHumanizer\Number;
 
-class RomanNumeral
+final class RomanNumeral
 {
     const MIN_VALUE = 1;
     const MAX_VALUE = 3999;

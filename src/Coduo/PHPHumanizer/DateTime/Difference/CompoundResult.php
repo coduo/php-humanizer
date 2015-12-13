@@ -4,7 +4,7 @@ namespace Coduo\PHPHumanizer\DateTime\Difference;
 
 use Coduo\PHPHumanizer\DateTime\Unit;
 
-class CompoundResult
+final class CompoundResult
 {
     /**
      * @var \Coduo\PHPHumanizer\DateTime\Unit

@@ -4,7 +4,7 @@ namespace Coduo\PHPHumanizer\Resources\Ordinal;
 
 use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
-class EnStrategy implements StrategyInterface
+final class EnStrategy implements StrategyInterface
 {
     /** {@inheritdoc} */
     public function ordinalSuffix($number)

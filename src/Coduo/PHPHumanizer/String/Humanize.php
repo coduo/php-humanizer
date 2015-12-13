@@ -2,7 +2,7 @@
 
 namespace Coduo\PHPHumanizer\String;
 
-class Humanize
+final class Humanize
 {
     /**
      * @var string

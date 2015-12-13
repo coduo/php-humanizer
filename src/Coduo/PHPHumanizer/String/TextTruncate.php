@@ -2,7 +2,7 @@
 
 namespace Coduo\PHPHumanizer\String;
 
-class TextTruncate implements TruncateInterface
+final class TextTruncate implements TruncateInterface
 {
     /**
      * @var string

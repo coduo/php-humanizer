@@ -4,7 +4,7 @@ namespace Coduo\PHPHumanizer\DateTime;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-class Formatter
+final class Formatter
 {
     /**
      * @var \Symfony\Component\Translation\TranslatorInterface

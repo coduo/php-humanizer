@@ -11,7 +11,7 @@ use Coduo\PHPHumanizer\DateTime\Unit\Second;
 use Coduo\PHPHumanizer\DateTime\Unit\Week;
 use Coduo\PHPHumanizer\DateTime\Unit\Year;
 
-class Difference
+final class Difference
 {
     /**
      * @var \DateTime

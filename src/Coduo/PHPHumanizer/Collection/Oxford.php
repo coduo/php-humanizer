@@ -2,7 +2,7 @@
 
 namespace Coduo\PHPHumanizer\Collection;
 
-class Oxford
+final class Oxford
 {
     /**
      * @var Formatter

@@ -10,7 +10,7 @@ use Coduo\PHPHumanizer\DateTime\Unit\Second;
 use Coduo\PHPHumanizer\DateTime\Unit\Year;
 use Coduo\PHPHumanizer\DateTime\Difference\CompoundResult;
 
-class PreciseDifference
+final class PreciseDifference
 {
     /**
      * @var \DateTime

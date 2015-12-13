@@ -62,29 +62,23 @@ class PreciseFormatterSpec extends ObjectBehavior
         )->willReturn('через 10 дней, 5 часов');
     }
 
-    function it_format_compound_datetime_diff(PreciseDifference $diff, CompoundResult $dayResult,
-        CompoundResult $hourResult)
+    function it_format_compound_datetime_diff()
     {
-        $dayResult->getUnit()->willReturn(new Day());
-        $dayResult->getQuantity()->willReturn(10);
-        $hourResult->getUnit()->willReturn(new Hour());
-        $hourResult->getQuantity()->willReturn(5);
+        $diff = new PreciseDifference(
+            new \DateTime("2015-01-01 00:00:00"),
+            new \DateTime("2015-01-11 05:00:00")   
+        );
 
-        $diff->getCompoundResults()->willReturn(array($dayResult, $hourResult));
-        $diff->isPast()->willReturn(false);
         $this->formatDifference($diff)->shouldReturn('10 days, 5 hours from now');
     }
 
-    function it_format_compound_datetime_diff_for_specific_locale(PreciseDifference $diff,
-        CompoundResult $dayResult, CompoundResult $hourResult)
+    function it_format_compound_datetime_diff_for_specific_locale()
     {
-        $dayResult->getUnit()->willReturn(new Day());
-        $dayResult->getQuantity()->willReturn(10);
-        $hourResult->getUnit()->willReturn(new Hour());
-        $hourResult->getQuantity()->willReturn(5);
-
-        $diff->getCompoundResults()->willReturn(array($dayResult, $hourResult));
-        $diff->isPast()->willReturn(false);
+        $diff = new PreciseDifference(
+            new \DateTime("2015-01-01 00:00:00"),
+            new \DateTime("2015-01-11 05:00:00")
+        );
+        
         $this->formatDifference($diff, 'ru')->shouldReturn('через 10 дней, 5 часов');
     }
 }

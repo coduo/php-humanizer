@@ -2,8 +2,13 @@
 
 namespace Coduo\PHPHumanizer\String;
 
-class WordBreakpoint implements Breakpoint
+final class WordBreakpoint implements Breakpoint
 {
+    /**
+     * @param string $text
+     * @param int $charactersCount
+     * @return bool|int
+     */
     public function calculatePosition($text, $charactersCount)
     {
         if ($charactersCount < 0) {

@@ -2,7 +2,7 @@
 
 namespace Coduo\PHPHumanizer\String;
 
-class BinarySuffix
+final class BinarySuffix
 {
     const CONVERT_THRESHOLD = 1024;
 

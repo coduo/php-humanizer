@@ -30,19 +30,23 @@ class FormatterSpec extends ObjectBehavior
         )->willReturn('10 minut temu');
     }
 
-    function it_format_datetime_diff(Difference $diff)
+    function it_format_datetime_diff()
     {
-        $diff->getUnit()->willReturn(new Minute());
-        $diff->getQuantity()->willReturn(10);
-        $diff->isPast()->willReturn(true);
+        $diff = new Difference(
+            new \DateTime("2015-01-01 00:10:00"),
+            new \DateTime("2015-01-01 00:00:00")
+        );
+        
         $this->formatDifference($diff)->shouldReturn('10 minutes ago');
     }
 
-    function it_format_datetime_diff_for_specific_locale(Difference $diff)
+    function it_format_datetime_diff_for_specific_locale()
     {
-        $diff->getUnit()->willReturn(new Minute());
-        $diff->getQuantity()->willReturn(10);
-        $diff->isPast()->willReturn(true);
+        $diff = new Difference(
+            new \DateTime("2015-01-01 00:10:00"),
+            new \DateTime("2015-01-01 00:00:00")
+        );
+        
         $this->formatDifference($diff, 'pl')->shouldReturn('10 minut temu');
     }
 }

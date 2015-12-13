@@ -5,7 +5,7 @@ namespace Coduo\PHPHumanizer\Number\Ordinal;
 /**
  * Tries to find a proper  strategy for ordinal numbers.
  */
-class Builder
+final class Builder
 {
     /**
      * @param string $locale

@@ -7,7 +7,7 @@ use Thunder\Shortcode\Parser\RegularParser;
 use Thunder\Shortcode\Processor\Processor;
 use Thunder\Shortcode\Shortcode\ShortcodeInterface;
 
-class ShortcodeProcessor
+final class ShortcodeProcessor
 {
     /**
      * Removes all shortcodes from given text.
