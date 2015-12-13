@@ -8,7 +8,7 @@ use Coduo\PHPHumanizer\DateTime\Formatter;
 use Coduo\PHPHumanizer\DateTime\PreciseFormatter;
 use Coduo\PHPHumanizer\Translator\Builder;
 
-class DateTimeHumanizer
+final class DateTimeHumanizer
 {
     public static function difference(\DateTime $fromDate, \DateTime $toDate, $locale = 'en')
     {

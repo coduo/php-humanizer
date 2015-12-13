@@ -8,7 +8,7 @@ use Coduo\PHPHumanizer\String\TextTruncate;
 use Coduo\PHPHumanizer\String\HtmlTruncate;
 use Coduo\PHPHumanizer\String\WordBreakpoint;
 
-class StringHumanizer
+final class StringHumanizer
 {
     /**
      * @param $text
