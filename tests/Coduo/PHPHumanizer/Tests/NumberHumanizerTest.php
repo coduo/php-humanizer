@@ -2,9 +2,9 @@
 
 namespace Coduo\PHPHumanizer\Tests;
 
-use Coduo\PHPHumanizer\Number;
+use Coduo\PHPHumanizer\NumberHumanizer;
 
-class NumberTest extends \PHPUnit_Framework_TestCase
+class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider ordinalSuffixProvider
@@ -14,7 +14,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_return_ordinal_suffix($expected, $number)
     {
-        $this->assertEquals($expected, Number::ordinal($number));
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number));
     }
 
     /**
@@ -24,7 +24,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_return_ordinal_suffix_dutch($expected, $number)
     {
-        $this->assertEquals($expected, Number::ordinal($number, 'nl'));
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'nl'));
     }
 
     /**
@@ -36,7 +36,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_ordinalize_numbers($expected, $number)
     {
-        $this->assertEquals($expected, Number::ordinalize($number));
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number));
     }
 
     /**
@@ -48,7 +48,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_ordinalize_numbers_dutch($expected, $number)
     {
-        $this->assertEquals($expected, Number::ordinalize($number, 'nl'));
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'nl'));
     }
 
     /**
@@ -60,7 +60,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_convert_number_to_string_with_binary_suffix($expected, $number, $locale = 'en')
     {
-        $this->assertEquals($expected, Number::binarySuffix($number, $locale));
+        $this->assertEquals($expected, NumberHumanizer::binarySuffix($number, $locale));
     }
 
     /**
@@ -68,7 +68,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_statically_throw_exception_when_converting_to_string_with_binary_suffix_non_numeric_values()
     {
-        Number::binarySuffix('as12');
+        NumberHumanizer::binarySuffix('as12');
     }
 
     /**
@@ -81,7 +81,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_convert_number_to_string_with_precise_binary_suffix($expected, $number, $precision, $locale = 'en')
     {
-        $this->assertEquals($expected, Number::preciseBinarySuffix($number, $precision, $locale));
+        $this->assertEquals($expected, NumberHumanizer::preciseBinarySuffix($number, $precision, $locale));
     }
 
     /**
@@ -89,7 +89,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_negative_precision()
     {
-        Number::preciseBinarySuffix(1, -1);
+        NumberHumanizer::preciseBinarySuffix(1, -1);
     }
 
     /**
@@ -97,7 +97,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_large_precision()
     {
-        Number::preciseBinarySuffix(1, 4);
+        NumberHumanizer::preciseBinarySuffix(1, 4);
     }
 
     /**
@@ -109,7 +109,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_convert_number_to_string_with_metric_suffix($expected, $number, $locale = 'en')
     {
-        $this->assertEquals($expected, Number::metricSuffix($number, $locale));
+        $this->assertEquals($expected, NumberHumanizer::metricSuffix($number, $locale));
     }
 
     /**
@@ -117,7 +117,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_statically_throw_exception_when_converting_to_string_with_metric_suffix_non_numeric_values()
     {
-        Number::metricSuffix('as12');
+        NumberHumanizer::metricSuffix('as12');
     }
 
     /**
@@ -128,7 +128,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_converts_numbers_to_roman($expected, $number)
     {
-        $this->assertEquals($expected, Number::toRoman($number));
+        $this->assertEquals($expected, NumberHumanizer::toRoman($number));
     }
 
     /**
@@ -139,7 +139,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_convert_roman_numbers_to_arabic($number, $expected)
     {
-        $this->assertEquals($expected, Number::fromRoman($number));
+        $this->assertEquals($expected, NumberHumanizer::fromRoman($number));
     }
 
     /**
@@ -150,7 +150,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_statically_throw_exception_when_converting_number_is_out_of_range($number)
     {
-        Number::toRoman($number);
+        NumberHumanizer::toRoman($number);
     }
 
     /**
@@ -161,7 +161,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function test_statically_throw_exception_when_converting_roman_number_is_invalid($number)
     {
-        Number::fromRoman($number);
+        NumberHumanizer::fromRoman($number);
     }
 
     /**

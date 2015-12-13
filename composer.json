@@ -22,7 +22,7 @@
         "thunderer/shortcode": "~0.5"
     },
     "require-dev": {
-        "phpspec/phpspec": "2.0.*",
+        "phpspec/phpspec": "^2",
         "phpunit/phpunit": "^4.5|^5.0"
     },
     "config": {
