@@ -73,7 +73,7 @@ echo Number::ordinalize(0); // "0th"
 echo Number::ordinalize(1); // "1st"
 echo Number::ordinalize(2); // "2nd"
 echo Number::ordinalize(23); // "23rd"
-echo Number::ordinalize(1002); // "1002nd"
+echo Number::ordinalize(1002, 'nl'); // "1002e"
 echo Number::ordinalize(-111); // "-111th"
 
 ```
@@ -88,7 +88,7 @@ echo Number::ordinal(1); // "st"
 echo Number::ordinal(2); // "nd"
 echo Number::ordinal(23); // "rd"
 echo Number::ordinal(1002); // "nd"
-echo Number::ordinal(-111); // "th"
+echo Number::ordinal(-111, 'nl'); // "e"
 ```
 
 **Roman numbers**
@@ -238,6 +238,8 @@ Currently we support following languages:
 * [Chinese Simplified] (src/Coduo/PHPHumanizer/Resources/translations/difference.zh_CN.yml)
 * [Spanish] (src/Coduo/PHPHumanizer/Resources/translations/difference.es.yml)
 * [Ukrainian] (src/Coduo/PHPHumanizer/Resources/translations/difference.uk.yml)
+* [Danish] (src/Coduo/PHPHumanizer/Resources/translations/difference.da.yml)
+* [Thai] (src/Coduo/PHPHumanizer/Resources/translations/difference.th.yml)
 
 # Credits
 

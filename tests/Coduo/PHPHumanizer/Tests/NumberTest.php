@@ -36,6 +36,18 @@ class NumberTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider ordinalizeDataDutchProvider
+     * @depends test_return_ordinal_suffix_dutch
+     *
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_dutch($expected, $number)
+    {
+        $this->assertEquals($expected, Number::ordinalize($number, 'nl'));
+    }
+
+    /**
      * @dataProvider binarySuffixDataProvider
      *
      * @param        $expected
@@ -163,6 +175,21 @@ class NumberTest extends \PHPUnit_Framework_TestCase
             //Locale cases
             array('ke-2', 2, 'id'),
             array('41.', 41, 'de'),
+
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function ordinalSuffixDutchProvider()
+    {
+        return array(
+            array('e', 1),
+            array('e', 2),
+            array('e', 23),
+            array('e', 1002),
+            array('e', -111),
         );
     }
 
