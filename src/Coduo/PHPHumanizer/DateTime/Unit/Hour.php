@@ -4,7 +4,7 @@ namespace Coduo\PHPHumanizer\DateTime\Unit;
 
 use Coduo\PHPHumanizer\DateTime\Unit;
 
-class Hour implements Unit
+final class Hour implements Unit
 {
     /**
      * @return string

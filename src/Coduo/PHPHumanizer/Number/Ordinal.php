@@ -5,21 +5,21 @@ namespace Coduo\PHPHumanizer\Number;
 use Coduo\PHPHumanizer\Number\Ordinal\Builder;
 use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
-class Ordinal
+final class Ordinal
 {
     /**
-     * @type int|float
+     * @var int|float
      */
     private $number;
 
     /**
-     * @type StrategyInterface
+     * @var StrategyInterface
      */
     private $strategy;
 
     /**
      * @param int|float $number
-     * @param string $locale
+     * @param string    $locale
      */
     public function __construct($number, $locale)
     {

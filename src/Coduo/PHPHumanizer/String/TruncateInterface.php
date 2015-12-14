@@ -2,11 +2,12 @@
 
 namespace Coduo\PHPHumanizer\String;
 
-interface TruncateInterface 
+interface TruncateInterface
 {
     /**
      * @param string $text
-     * @param int $charactersCount
+     * @param int    $charactersCount
+     *
      * @return string mixed
      */
     public function truncate($text, $charactersCount);
