@@ -5,10 +5,10 @@ namespace Coduo\PHPHumanizer\Number;
 use Coduo\PHPHumanizer\Number\Ordinal\Builder;
 use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
-class Ordinal
+final class Ordinal
 {
     /**
-     * @var int
+     * @var int|float
      */
     private $number;
 

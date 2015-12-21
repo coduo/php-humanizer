@@ -4,7 +4,7 @@ namespace Coduo\PHPHumanizer\DateTime\Unit;
 
 use Coduo\PHPHumanizer\DateTime\Unit;
 
-class Week implements Unit
+final class Week implements Unit
 {
     /**
      * @return string

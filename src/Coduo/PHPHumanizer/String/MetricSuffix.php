@@ -2,7 +2,7 @@
 
 namespace Coduo\PHPHumanizer\String;
 
-class MetricSuffix
+final class MetricSuffix
 {
     const CONVERT_THRESHOLD = 1000;
 

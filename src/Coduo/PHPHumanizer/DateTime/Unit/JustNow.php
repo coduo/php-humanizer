@@ -4,7 +4,7 @@ namespace Coduo\PHPHumanizer\DateTime\Unit;
 
 use Coduo\PHPHumanizer\DateTime\Unit;
 
-class JustNow implements Unit
+final class JustNow implements Unit
 {
     /**
      * @return string

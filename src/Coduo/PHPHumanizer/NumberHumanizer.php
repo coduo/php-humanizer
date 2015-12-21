@@ -7,15 +7,37 @@ use Coduo\PHPHumanizer\Number\RomanNumeral;
 use Coduo\PHPHumanizer\String\BinarySuffix;
 use Coduo\PHPHumanizer\String\MetricSuffix;
 
-class Number
+final class NumberHumanizer
 {
+    /**
+     * @param int|float $number
+     * @param string    $locale
+     *
+     * @return string
+     */
     public static function ordinalize($number, $locale = 'en')
     {
         $ordinalized = new Ordinal($number, $locale);
-
         return $ordinalized->ordinalize();
     }
 
+    /**
+     * @param int|float $number
+     * @param string    $locale
+     *
+     * @return string
+     */
+    public static function ordinal($number, $locale = 'en')
+    {
+        $ordinal = new Ordinal($number, $locale);
+        return (string) $ordinal;
+    }
+
+    /**
+     * @param $number
+     * @param string $locale
+     * @return bool|int|string
+     */
     public static function binarySuffix($number, $locale = 'en')
     {
         $binarySuffix = new BinarySuffix($number, $locale);
@@ -23,6 +45,12 @@ class Number
         return $binarySuffix->convert();
     }
 
+    /**
+     * @param $number
+     * @param $precision
+     * @param string $locale
+     * @return bool|int|string
+     */
     public static function preciseBinarySuffix($number, $precision, $locale = 'en')
     {
         $binarySuffix = new BinarySuffix($number, $locale, $precision);
@@ -30,6 +58,11 @@ class Number
         return $binarySuffix->convert();
     }
 
+    /**
+     * @param $number
+     * @param string $locale
+     * @return bool|string
+     */
     public static function metricSuffix($number, $locale = 'en')
     {
         $binarySuffix = new MetricSuffix($number, $locale);
@@ -37,6 +70,10 @@ class Number
         return $binarySuffix->convert();
     }
 
+    /**
+     * @param $number
+     * @return string
+     */
     public static function toRoman($number)
     {
         $romanNumeral = new RomanNumeral();
@@ -44,6 +81,10 @@ class Number
         return $romanNumeral->toRoman($number);
     }
 
+    /**
+     * @param $number
+     * @return int
+     */
     public static function fromRoman($number)
     {
         $romanNumeral = new RomanNumeral();

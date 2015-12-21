@@ -5,7 +5,7 @@ namespace Coduo\PHPHumanizer\String;
 interface Breakpoint
 {
     /**
-     * Return the length of the truncated $text depending on the $characterCount
+     * Return the length of the truncated $text depending on the $characterCount.
      *
      * @param string $text
      * @param int    $charactersCount

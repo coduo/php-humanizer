@@ -6,6 +6,7 @@ interface StrategyInterface
 {
     /**
      * @param int|float $number
+     *
      * @return string
      */
     public function ordinalSuffix($number);
