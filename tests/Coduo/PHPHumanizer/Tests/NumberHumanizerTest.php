@@ -7,34 +7,29 @@ use Coduo\PHPHumanizer\NumberHumanizer;
 class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @dataProvider ordinalSuffixProvider
+     * @dataProvider ordinalizeDataProvider
      *
      * @param $expected
      * @param $number
+     * @param $locale
      */
-    public function test_return_ordinal_suffix($expected, $number)
+    public function test_ordinalize_numbers($expected, $number, $locale = 'en')
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number));
     }
 
     /**
-     * @dataProvider ordinalSuffixDutchProvider
-     * @param $expected
-     * @param $number
+     * @expectedException \RuntimeException
      */
-    public function test_return_ordinal_suffix_dutch($expected, $number)
+    public function test_statically_throw_exception_when_ordinalizing_negative_number()
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'nl'));
+            $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'nl'));
     }
 
     /**
-     * @dataProvider ordinalizeDataProvider
-     * @depends test_return_ordinal_suffix
-     *
-     * @param $expected
-     * @param $number
+     * @expectedException \RuntimeException
      */
-    public function test_ordinalize_numbers($expected, $number)
+    public function test_statically_throw_exception_when_ordinalizing_floating_number()
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number));
     }
@@ -167,6 +162,7 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
+    
     public function ordinalizeDataProvider()
     {
         return array(
@@ -174,35 +170,11 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array('2nd', 2),
             array('23rd', 23),
             array('1002nd', 1002),
-            array('-111th', -111),
-        );
-    }
 
-    /**
-     * @return array
-     */
-    public function ordinalizeDataDutchProvider()
-    {
-        return array(
-            array('1e', 1),
-            array('2e', 2),
-            array('23e', 23),
-            array('1002e', 1002),
-            array('-111e', -111),
-        );
-    }
+            //Locale cases
+            array('ke-2', 2, 'id'),
+            array('41.', 41, 'de'),
 
-    /**
-     * @return array
-     */
-    public function ordinalSuffixProvider()
-    {
-        return array(
-            array('st', 1),
-            array('nd', 2),
-            array('rd', 23),
-            array('nd', 1002),
-            array('th', -111),
         );
     }
 
