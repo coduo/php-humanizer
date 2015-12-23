@@ -26,11 +26,16 @@ final class Ordinal
         $this->number = $number;
         $this->strategy = Builder::build($locale);
     }
-    
+
+    public function isPrefix()
+    {
+        return $this->strategy->isPrefix();
+    }
+
     public function __toString()
     {
         return $this
             ->strategy
-            ->ordinalSuffix($this->number);
+            ->ordinalIndicator($this->number);
     }
 }

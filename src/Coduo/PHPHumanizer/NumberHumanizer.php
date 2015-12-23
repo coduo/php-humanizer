@@ -1,9 +1,12 @@
 <?php
+
 namespace Coduo\PHPHumanizer;
+
 use Coduo\PHPHumanizer\Number\Ordinal;
 use Coduo\PHPHumanizer\Number\RomanNumeral;
 use Coduo\PHPHumanizer\String\BinarySuffix;
 use Coduo\PHPHumanizer\String\MetricSuffix;
+
 final class NumberHumanizer
 {
     /**
@@ -14,7 +17,11 @@ final class NumberHumanizer
      */
     public static function ordinalize($number, $locale = 'en')
     {
-        return $number.self::ordinal($number, $locale);
+        $ordinal = new Ordinal($number, $locale);
+        if ($ordinal->isPrefix()) {
+            return (string) $ordinal.$number;
+        }
+        else return (string) $number.$ordinal;
     }
     /**
      * @param int|float $number
