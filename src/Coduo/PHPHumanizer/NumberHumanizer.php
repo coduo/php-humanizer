@@ -1,12 +1,9 @@
 <?php
-
 namespace Coduo\PHPHumanizer;
-
 use Coduo\PHPHumanizer\Number\Ordinal;
 use Coduo\PHPHumanizer\Number\RomanNumeral;
 use Coduo\PHPHumanizer\String\BinarySuffix;
 use Coduo\PHPHumanizer\String\MetricSuffix;
-
 final class NumberHumanizer
 {
     /**
@@ -17,10 +14,8 @@ final class NumberHumanizer
      */
     public static function ordinalize($number, $locale = 'en')
     {
-        $ordinalized = new Ordinal($number, $locale);
-        return $ordinalized->ordinalize();
+        return $number.self::ordinal($number, $locale);
     }
-
     /**
      * @param int|float $number
      * @param string    $locale
@@ -32,7 +27,6 @@ final class NumberHumanizer
         $ordinal = new Ordinal($number, $locale);
         return (string) $ordinal;
     }
-
     /**
      * @param $number
      * @param string $locale
@@ -41,10 +35,8 @@ final class NumberHumanizer
     public static function binarySuffix($number, $locale = 'en')
     {
         $binarySuffix = new BinarySuffix($number, $locale);
-
         return $binarySuffix->convert();
     }
-
     /**
      * @param $number
      * @param $precision
@@ -54,10 +46,8 @@ final class NumberHumanizer
     public static function preciseBinarySuffix($number, $precision, $locale = 'en')
     {
         $binarySuffix = new BinarySuffix($number, $locale, $precision);
-
         return $binarySuffix->convert();
     }
-
     /**
      * @param $number
      * @param string $locale
@@ -66,10 +56,8 @@ final class NumberHumanizer
     public static function metricSuffix($number, $locale = 'en')
     {
         $binarySuffix = new MetricSuffix($number, $locale);
-
         return $binarySuffix->convert();
     }
-
     /**
      * @param $number
      * @return string
@@ -77,10 +65,8 @@ final class NumberHumanizer
     public static function toRoman($number)
     {
         $romanNumeral = new RomanNumeral();
-
         return $romanNumeral->toRoman($number);
     }
-
     /**
      * @param $number
      * @return int
@@ -88,7 +74,6 @@ final class NumberHumanizer
     public static function fromRoman($number)
     {
         $romanNumeral = new RomanNumeral();
-
         return $romanNumeral->fromRoman($number);
     }
 }

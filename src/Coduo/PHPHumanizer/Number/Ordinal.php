@@ -13,51 +13,24 @@ final class Ordinal
     private $number;
 
     /**
-    *  @var string
-    */
-    private $locale;
+     * @var StrategyInterface
+     */
+    private $strategy;
 
     /**
-     * @param int $number
-     * @param string $locale
+     * @param int|float $number
+     * @param string    $locale
      */
-    public function __construct($number, $locale = 'en')
+    public function __construct($number, $locale)
     {
         $this->number = $number;
-        $this->locale = $locale;
+        $this->strategy = Builder::build($locale);
     }
     
-    private function build()
+    public function __toString()
     {
-    	if (!preg_match('/^([a-z]{2})(_([A-Z]{2}))?$/', $this->locale, $m)) {
-    		throw new \RuntimeException("Invalid locale specified: .'$this->locale'.");
-    	}
-    	$strategy = $m[1];
-    	if (!empty($m[3])) {
-    		$strategy .= "_$m[3]";
-    	}
-    	$strategy .= ".xml";
-    
-    	return $strategy;
-    }
-
-    public function ordinalize()
-    {
-        if ($this->number < 0){
-            throw new \RuntimeException("Cannot treat negative number as ordinal");
-        }
-
-        if (is_float($this->number)){
-            throw new \RuntimeException("Cannot treat float number as ordinal");
-        }
-
-        $xml = simplexml_load_file(__DIR__.'/Ordinal/'.$this->build());
-
-		foreach ($xml->irregular->children() as $numbers) {
-			if (preg_match($numbers['pattern'], $this->number)){
-				return $numbers->prefix. $this->number. $numbers->suffix;
-			}
-		}
-		return $xml->regular->prefix. $this->number. $xml->regular->suffix;
+        return $this
+            ->strategy
+            ->ordinalSuffix($this->number);
     }
 }

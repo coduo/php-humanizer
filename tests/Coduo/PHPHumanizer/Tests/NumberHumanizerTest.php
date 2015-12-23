@@ -1,39 +1,38 @@
 <?php
-
 namespace Coduo\PHPHumanizer\Tests;
-
 use Coduo\PHPHumanizer\NumberHumanizer;
-
 class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @dataProvider ordinalizeDataProvider
+     * @dataProvider ordinalSuffixProvider
      *
      * @param $expected
      * @param $number
-     * @param $locale
      */
-    public function test_ordinalize_numbers($expected, $number, $locale = 'en')
+    public function test_return_ordinal_suffix($expected, $number)
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number));
     }
-
     /**
-     * @expectedException \RuntimeException
+     * @dataProvider ordinalSuffixDutchProvider
+     * @param $expected
+     * @param $number
      */
-    public function test_statically_throw_exception_when_ordinalizing_negative_number()
+    public function test_return_ordinal_suffix_dutch($expected, $number)
     {
-            $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'nl'));
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'nl'));
     }
-
     /**
-     * @expectedException \RuntimeException
+     * @dataProvider ordinalizeDataProvider
+     * @depends test_return_ordinal_suffix
+     *
+     * @param $expected
+     * @param $number
      */
-    public function test_statically_throw_exception_when_ordinalizing_floating_number()
+    public function test_ordinalize_numbers($expected, $number)
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number));
     }
-
     /**
      * @dataProvider ordinalizeDataDutchProvider
      * @depends test_return_ordinal_suffix_dutch
@@ -45,7 +44,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'nl'));
     }
-
     /**
      * @dataProvider binarySuffixDataProvider
      *
@@ -57,7 +55,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($expected, NumberHumanizer::binarySuffix($number, $locale));
     }
-
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -65,7 +62,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         NumberHumanizer::binarySuffix('as12');
     }
-
     /**
      * @dataProvider preciseBinarySuffixDataProvider
      *
@@ -78,7 +74,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($expected, NumberHumanizer::preciseBinarySuffix($number, $precision, $locale));
     }
-
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -86,7 +81,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         NumberHumanizer::preciseBinarySuffix(1, -1);
     }
-
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -94,7 +88,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         NumberHumanizer::preciseBinarySuffix(1, 4);
     }
-
     /**
      * @dataProvider metricSuffixDataProvider
      *
@@ -106,7 +99,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($expected, NumberHumanizer::metricSuffix($number, $locale));
     }
-
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -114,7 +106,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         NumberHumanizer::metricSuffix('as12');
     }
-
     /**
      * @dataProvider romanDataProvider
      *
@@ -125,7 +116,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($expected, NumberHumanizer::toRoman($number));
     }
-
     /**
      * @dataProvider romanDataProvider
      *
@@ -136,7 +126,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($expected, NumberHumanizer::fromRoman($number));
     }
-
     /**
      * @dataProvider romanExceptionProvider
      * @expectedException \InvalidArgumentException
@@ -147,7 +136,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         NumberHumanizer::toRoman($number);
     }
-
     /**
      * @dataProvider arabicExceptionProvider
      * @expectedException \InvalidArgumentException
@@ -158,11 +146,9 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         NumberHumanizer::fromRoman($number);
     }
-
     /**
      * @return array
      */
-    
     public function ordinalizeDataProvider()
     {
         return array(
@@ -170,14 +156,35 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array('2nd', 2),
             array('23rd', 23),
             array('1002nd', 1002),
-
-            //Locale cases
-            array('ke-2', 2, 'id'),
-            array('41.', 41, 'de'),
-
+            array('-111th', -111),
         );
     }
-
+    /**
+     * @return array
+     */
+    public function ordinalizeDataDutchProvider()
+    {
+        return array(
+            array('1e', 1),
+            array('2e', 2),
+            array('23e', 23),
+            array('1002e', 1002),
+            array('-111e', -111),
+        );
+    }
+    /**
+     * @return array
+     */
+    public function ordinalSuffixProvider()
+    {
+        return array(
+            array('st', 1),
+            array('nd', 2),
+            array('rd', 23),
+            array('nd', 1002),
+            array('th', -111),
+        );
+    }
     /**
      * @return array
      */
@@ -191,7 +198,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array('e', -111),
         );
     }
-
     /**
      * @return array
      */
@@ -208,12 +214,10 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array("2 GB", 1073741824 * 2),
             array("3 TB", 1099511627776 * 3),
             array("1.18 PB", 1325899906842624),
-
             array("1,5 kB", 1536, 'pl'),
             array("1,18 PB", 1325899906842624, 'pl'),
         );
     }
-
     /**
      * @return array
      */
@@ -222,40 +226,32 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
         return array(
             // Negative case
             array(-1, -1, 3),
-
             // Byte Cases
             array("0 bytes", 0, 3),
             array("1 bytes", 1, 0),
             array("1023 bytes", 1023, 3),
-
             // Kilobyte Cases
             array('1.000 kB', 1024, 3),
             array("2 kB", 1588, 0),
             array("1.6 kB", 1588, 1),
             array("1.55 kB", 1588, 2),
             array("1.551 kB", 1588, 3),
-
             // Megabyte Cases
             array("5.00 MB", (1048576 * 5), 2),
             array("5.00 MB", (1048576 * 5) + 600, 2),
             array("5.001 MB", (1048576 * 5) + 600, 3),
-
             // Gigabyte Cases
             array("2 GB", 1073741824 * 2, 0),
             array("2.0 GB", 1073741824 * 2, 1),
-
             // Terabyte Cases
             array("3.00 TB", 1099511627776 * 3, 2),
-
             // Petabyte Case
             array("1.178 PB", 1325899906842624, 3),
-
             // Locale Cases
             array("1,500 kB", 1536, 3, 'pl'),
             array("1,178 PB", 1325899906842624, 3, 'pl'),
         );
     }
-
     /**
      * @return array
      */
@@ -270,13 +266,11 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array("1.2k", 1240),
             array("1.24M", 1240000),
             array("3.5M", 3500000),
-
             array("1,2k", 1240, 'pl'),
             array("1,24M", 1240000, 'pl'),
             array("3,5M", 3500000, 'pl'),
         );
     }
-
     /**
      * @return array
      */
@@ -292,7 +286,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array("MMMCMXCIX", 3999),
         );
     }
-
     /**
      * @return array
      */
@@ -303,7 +296,6 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array(4000),
         );
     }
-
     /**
      * @return array
      */
