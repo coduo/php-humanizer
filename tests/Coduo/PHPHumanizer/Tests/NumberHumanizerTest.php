@@ -138,6 +138,66 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider ordinalIndicatorIndonesianProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_indonesian($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'id'));
+    }
+
+    /*
+     * @dataProvider ordinalSuffixPtEsItProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_portuguese($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'pt'));
+    }
+
+    /**
+     * @dataProvider ordinalSuffixPtEsItProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_spanish($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'es'));
+    }
+
+    /**
+     * @dataProvider ordinalSuffixPtEsItProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_italian($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'it'));
+    }
+
+    /**
+     * @dataProvider ordinalSuffixGermanProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_german($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'de'));
+    }
+
+    /**
+     * @dataProvider ordinalSuffixFrenchProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_french($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'fr'));
+    }
+
+    /**
      * @dataProvider ordinalizeDataProvider
      * @depends test_return_ordinal_suffix
      *
@@ -162,6 +222,68 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider ordinalizeDataPtEsItProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_portuguese($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'pt'));
+    }
+
+    /**
+     * @dataProvider ordinalizeDataPtEsItProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_spanish($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'es'));
+    }
+
+    /**
+     * @dataProvider ordinalizeDataPtEsItProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_italian($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'it'));
+    }
+
+    /**
+     * @dataProvider ordinalizeDataGermanProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_german($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'de'));
+    }
+
+    /**
+     * @dataProvider ordinalizeDataFrenchProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_french($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'fr'));
+    }
+
+    /**
+     * @dataProvider ordinalizeDataIndonesianProvider
+     * @depends test_return_ordinal_suffix_indonesian
+     *
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_indonesian($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'id'));
+    }
+
+    /*
      * @dataProvider ordinalizeDataPtEsItProvider
      * @param $expected
      * @param $number
@@ -552,18 +674,45 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * @return array
+     */
+    public function ordinalizeDataPtEsItProvider()
+    {
+        return array(
+            array('1o', 1),
+            array('2o', 2),
+            array('23o', 23),
+            array('1002o', 1002),
+            array('-111o', -111),
+        );
+    }
 
     /**
      * @return array
      */
-    public function ordinalSuffixProvider()
+    public function ordinalizeDataGermanProvider()
     {
         return array(
-            array('ke-1', 1),
-            array('ke-2', 2),
-            array('ke-23', 23),
-            array('ke-1002', 1002),
-            array('ke--111', -111),
+            array('1.', 1),
+            array('2.', 2),
+            array('23.', 23),
+            array('1002.', 1002),
+            array('-111.', -111),
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function ordinalizeDataFrenchProvider()
+    {
+        return array(
+            array('1er', 1),
+            array('2e', 2),
+            array('23e', 23),
+            array('1002e', 1002),
+            array('-111e', -111),
         );
     }
 
