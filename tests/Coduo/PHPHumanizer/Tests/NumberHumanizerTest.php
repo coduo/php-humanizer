@@ -7,7 +7,7 @@ use Coduo\PHPHumanizer\NumberHumanizer;
 class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @dataProvider ordinalSuffixProvider
+     * @dataProvider ordinalIndicatorProvider
      *
      * @param $expected
      * @param $number
@@ -18,7 +18,7 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider ordinalSuffixDutchProvider
+     * @dataProvider ordinalIndicatorDutchProvider
      * @param $expected
      * @param $number
      */
@@ -75,6 +75,16 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     public function test_return_ordinal_suffix_french($expected, $number)
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'fr'));
+    }
+
+    /**
+     * @dataProvider ordinalIndicatorIndonesianProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_indonesian($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'id'));
     }
 
     /**
@@ -149,6 +159,18 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     public function test_ordinalize_numbers_french($expected, $number)
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'fr'));
+    }
+
+    /**
+     * @dataProvider ordinalizeDataIndonesianProvider
+     * @depends test_return_ordinal_suffix_indonesian
+     *
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_indonesian($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'id'));
     }
 
     /**
@@ -267,6 +289,48 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
+    public function ordinalIndicatorProvider()
+    {
+        return array(
+            array('st', 1),
+            array('nd', 2),
+            array('rd', 23),
+            array('nd', 1002),
+            array('th', -111),
+        );
+    }
+    
+    /**
+     * @return array
+     */
+    public function ordinalIndicatorDutchProvider()
+    {
+        return array(
+            array('e', 1),
+            array('e', 2),
+            array('e', 23),
+            array('e', 1002),
+            array('e', -111),
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function ordinalIndicatorIndonesianProvider()
+    {
+        return array(
+            array('ke-', 1),
+            array('ke-', 2),
+            array('ke-', 23),
+            array('ke-', 1002),
+            array('ke-', -111),
+        );
+    }
+
+    /**
+     * @return array
+     */
     public function ordinalizeDataProvider()
     {
         return array(
@@ -338,28 +402,14 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function ordinalSuffixProvider()
+    public function ordinalizeDataIndonesianProvider()
     {
         return array(
-            array('st', 1),
-            array('nd', 2),
-            array('rd', 23),
-            array('nd', 1002),
-            array('th', -111),
-        );
-    }
-
-    /**
-     * @return array
-     */
-    public function ordinalSuffixDutchProvider()
-    {
-        return array(
-            array('e', 1),
-            array('e', 2),
-            array('e', 23),
-            array('e', 1002),
-            array('e', -111),
+            array('ke-1', 1),
+            array('ke-2', 2),
+            array('ke-23', 23),
+            array('ke-1002', 1002),
+            array('ke--111', -111),
         );
     }
 

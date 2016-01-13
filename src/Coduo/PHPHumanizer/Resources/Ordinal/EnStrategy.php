@@ -6,8 +6,13 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
 final class EnStrategy implements StrategyInterface
 {
+    /** {@inheritdoc}*/
+    public function isPrefix(){
+        return False;
+    }
+
     /** {@inheritdoc} */
-    public function ordinalSuffix($number)
+    public function ordinalIndicator($number)
     {
         $absNumber = abs((integer) $number);
 

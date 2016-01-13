@@ -17,9 +17,13 @@ final class NumberHumanizer
      */
     public static function ordinalize($number, $locale = 'en')
     {
-        return $number.self::ordinal($number, $locale);
+        $ordinal = new Ordinal($number, $locale);
+        if ($ordinal->isPrefix()) {
+            return (string) $ordinal.$number;
+        }
+        else return (string) $number.$ordinal;
     }
-
+    
     /**
      * @param int|float $number
      * @param string    $locale
@@ -29,7 +33,6 @@ final class NumberHumanizer
     public static function ordinal($number, $locale = 'en')
     {
         $ordinal = new Ordinal($number, $locale);
-
         return (string) $ordinal;
     }
 
