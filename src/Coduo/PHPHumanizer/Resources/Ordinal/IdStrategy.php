@@ -4,16 +4,16 @@ namespace Coduo\PHPHumanizer\Resources\Ordinal;
 
 use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
-final class NlStrategy implements StrategyInterface
+final class IdStrategy implements StrategyInterface
 {
     /** {@inheritdoc}*/
     public function isPrefix(){
-        return False;
+        return True;
     }
-
+    
     /** {@inheritdoc} */
     public function ordinalIndicator($number)
     {
-        return 'e';
+        return 'ke-';
     }
 }
