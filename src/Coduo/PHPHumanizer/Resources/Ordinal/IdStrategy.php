@@ -6,12 +6,17 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
 final class IdStrategy implements StrategyInterface
 {
-    /** {@inheritdoc}*/
-    public function isPrefix(){
-        return True;
+    /**
+     * {@inheritdoc}
+     */
+    public function isPrefix()
+    {
+        return true;
     }
-    
-    /** {@inheritdoc} */
+
+    /**
+     * {@inheritdoc}
+     */
     public function ordinalIndicator($number)
     {
         return 'ke-';

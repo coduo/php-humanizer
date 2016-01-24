@@ -6,17 +6,22 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
 final class EnStrategy implements StrategyInterface
 {
-    /** {@inheritdoc}*/
-    public function isPrefix(){
-        return False;
+    /** 
+     * {@inheritdoc}
+     */
+    public function isPrefix()
+    {
+        return false;
     }
 
-    /** {@inheritdoc} */
+    /**
+     * {@inheritdoc}
+     */
     public function ordinalIndicator($number)
     {
         $absNumber = abs((integer) $number);
 
-        if (in_array(($absNumber % 100), array(11, 12, 13))) {
+        if (in_array(($absNumber % 100), array(11, 12, 13), true)) {
             return 'th';
         }
 
