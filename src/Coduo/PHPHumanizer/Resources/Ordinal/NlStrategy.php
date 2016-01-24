@@ -6,12 +6,17 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
 final class NlStrategy implements StrategyInterface
 {
-    /** {@inheritdoc}*/
-    public function isPrefix(){
+    /**
+     * {@inheritdoc}
+     */
+    public function isPrefix()
+    {
         return False;
     }
 
-    /** {@inheritdoc} */
+    /**
+     * {@inheritdoc}
+     */
     public function ordinalIndicator($number)
     {
         return 'e';
