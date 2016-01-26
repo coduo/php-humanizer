@@ -4,10 +4,10 @@ namespace Coduo\PHPHumanizer\Number\Ordinal;
 
 interface StrategyInterface
 {
-	/** 
-	 * @return boolean
-	 */
-	public function isPrefix();
+    /**
+     * @return boolean
+     */
+    public function isPrefix();
 
     /**
      * @param int|float $number
