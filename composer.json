@@ -39,6 +39,6 @@
         }
     },
     "suggest": {
-        "ext-intl": "Required if you are going to use humanizer with other locales than en_EN"
+        "ext-intl": "Required if you are going to use humanizer with different locales than en_EN"
     }
 }
