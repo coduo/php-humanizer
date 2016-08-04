@@ -8,7 +8,7 @@ minute:
   past: "%count% минуту назад|%count% минуты назад|%count% минут назад"
   future: "через %count% минуту|через %count% минуты|через %count% минут"
 hour:
-  past: "%count% час назад|через %count% часа|%count% часов назад"
+  past: "%count% час назад|%count% часа назад|%count% часов назад"
   future: "через %count% час|через %count% часа|через %count% часов"
 day:
   past: "%count% день назад|%count% дня назад|%count% дней назад"
