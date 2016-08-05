@@ -15,7 +15,7 @@ final class FrStrategy implements StrategyInterface
     }
 
     /** {@inheritdoc} */
-    public function ordinalIndicatorx($number)
+    public function ordinalIndicator($number)
     {
         $absNumber = abs((integer) $number);
 
