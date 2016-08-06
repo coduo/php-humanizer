@@ -156,7 +156,7 @@ class DateTimeHumanizerTest extends \PHPUnit_Framework_TestCase
             array("2014-05-01", "2014-04-01", '1 bulan yang lalu', 'id'),
             array("2015-05-01", "2014-04-01", '1 tahun yang lalu', 'id'),
             array("2014-05-01", "2016-04-01", '2 tahun dari sekarang', 'id'),
-            
+
             // Spanish
             array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'ahora mismo', 'es'),
             array("2014-04-26 13:00:00", "2014-04-26 13:00:05", 'dentro de 5 segundos', 'es'),
