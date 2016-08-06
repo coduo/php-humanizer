@@ -240,6 +240,7 @@ Currently we support following languages:
 * [Ukrainian] (src/Coduo/PHPHumanizer/Resources/translations/difference.uk.yml)
 * [Danish] (src/Coduo/PHPHumanizer/Resources/translations/difference.da.yml)
 * [Thai] (src/Coduo/PHPHumanizer/Resources/translations/difference.th.yml)
+* [Japanese] (src/Coduo/PHPHumanizer/Resources/translations/difference.ja.yml)
 
 # Credits
 
