@@ -289,7 +289,7 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array('th', -111),
         );
     }
-    
+
     /**
      * @return array
      */
@@ -455,6 +455,7 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array("1 kB", 1024),
             array("1 kB", 1025),
             array("1.5 kB", 1536),
+            array("84.4 kB", 86450),
             array("5 MB", 1048576 * 5),
             array("2 GB", 1073741824 * 2),
             array("3 TB", 1099511627776 * 3),
