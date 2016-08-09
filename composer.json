@@ -1,6 +1,7 @@
 {
     "name": "coduo/php-humanizer",
     "type": "library",
+    "description": "Humanize values that are readable only for developers",
     "keywords": ["php", "humanize", "humanizer"],
     "license": "MIT",
     "authors": [
@@ -39,6 +40,6 @@
         }
     },
     "suggest": {
-        "ext-intl": "Required if you are going to use humanizer with different locales than en_EN"
+        "ext-intl": "Required if you are going to use humanizer with locales different than en_EN"
     }
 }
