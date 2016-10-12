@@ -47,6 +47,12 @@ final class BinarySuffix
 
         $this->number = (int) $number;
         $this->locale = $locale;
+
+        /*
+         * Workaround for 32-bit systems which ignore array ordering when
+         * dropping values over 2^32-1
+         */
+        krsort($this->binaryPrefixes);
     }
 
     public function convert()
