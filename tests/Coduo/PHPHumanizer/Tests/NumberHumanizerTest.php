@@ -78,6 +78,16 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider ordinalSuffixCzechProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_czech($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'cs'));
+    }
+
+    /**
      * @dataProvider ordinalizeDataProvider
      * @depends test_return_ordinal_suffix
      *
@@ -161,6 +171,16 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     public function test_ordinalize_numbers_french($expected, $number)
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'fr'));
+    }
+
+    /**
+     * @dataProvider ordinalizeDataCzechProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_czech($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'cs'));
     }
 
     /**
@@ -401,6 +421,20 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array('-111e', -111),
         );
     }
+
+    /**
+     * @return array
+     */
+    public function ordinalizeDataCzechProvider()
+    {
+        return array(
+            array('1.', 1),
+            array('2.', 2),
+            array('23.', 23),
+            array('1002.', 1002),
+            array('-111.', -111),
+        );
+    }
     /**
      * @return array
      */
@@ -440,6 +474,20 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array('e', 23),
             array('e', 1002),
             array('e', -111),
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function ordinalSuffixCzechProvider()
+    {
+        return array(
+            array('.', 1),
+            array('.', 2),
+            array('.', 23),
+            array('.', 1002),
+            array('.', -111),
         );
     }
 

@@ -78,6 +78,13 @@ final class CollectionHumanizerTest extends \PHPUnit_Framework_TestCase
             array(array("Michal", "Norbert", "Lukasz"), 2, 'ja', 'Michal, Norbert ともうひとり'),
             array(array("Michal", "Norbert", "Lukasz", "Pawel"), 2, 'ja', 'Michal, Norbert ともう 2 人'),
             array(array("Michal", "Norbert", "Lukasz", "Pawel"), null, 'ja', 'Michal, Norbert, Lukasz と Pawel'),
+
+            // Czech
+            array(array("Michal"), null, 'cs', 'Michal'),
+            array(array("Michal", "Norbert"), null, 'cs', 'Michal a Norbert'),
+            array(array("Michal", "Norbert", "Lukasz"), 2, 'cs', 'Michal, Norbert a 1 další'),
+            array(array("Michal", "Norbert", "Lukasz", "Pawel"), 2, 'cs', 'Michal, Norbert a 2 další'),
+            array(array("Michal", "Norbert", "Lukasz", "Pawel"), null, 'cs', 'Michal, Norbert, Lukasz a Pawel'),
         );
     }
 }
