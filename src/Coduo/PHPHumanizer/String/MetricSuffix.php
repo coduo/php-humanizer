@@ -36,6 +36,10 @@ final class MetricSuffix
      */
     public function __construct($number, $locale = 'en')
     {
+        if (!class_exists('NumberFormatter')) {
+            throw new \RuntimeException('Metric suffix converter requires intl extension!');
+        }
+
         if (!is_numeric($number)) {
             throw new \InvalidArgumentException('Metric suffix converter accept only numeric values.');
         }

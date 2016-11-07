@@ -37,6 +37,10 @@ final class BinarySuffix
      */
     public function __construct($number, $locale = 'en', $precision = null)
     {
+        if (!class_exists('NumberFormatter')) {
+            throw new \RuntimeException('Binary suffix converter requires intl extension!');
+        }
+
         if (!is_numeric($number)) {
             throw new \InvalidArgumentException('Binary suffix converter accept only numeric values.');
         }
