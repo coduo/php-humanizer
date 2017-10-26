@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] épp most"
+  future: "[0,Inf] épp most"
+second:
+  past: "{1} %count% másodperccel ezelőtt|[2,Inf] %count% másodperccel ezelőtt"
+  future: "{1} %count% másodperc múlva|[2,Inf] %count% másodperc múlva"
+minute:
+  past: "{1} %count% perccel ezelőtt|[2,Inf] %count% perccel ezelőtt"
+  future: "{1} %count% perc múlva|[2,Inf] %count% perc múlva"
+hour:
+  past: "{1} %count% órával ezelőtt|[2,Inf] %count% órával ezelőtt"
+  future: "{1} %count% óra múlva|[2,Inf] %count% óra múlva"
+day:
+  past: "{1} %count% nappal ezelőtt|[2,Inf] %count% nappal ezelőtt"
+  future: "{1} %count% nap múlva|[2,Inf] %count% nap múlva"
+week:
+  past: "{1} %count% héttel ezelőtt|[2,Inf] %count% héttel ezelőtt"
+  future: "{1} %count% hét múlva|[2,Inf] %count% hét múlva"
+month:
+  past: "{1} %count% hónappal ezelőtt|[2,Inf] %count% hónappal ezelőtt"
+  future: "{1} %count% hónap múlva|[2,Inf] %count% hónap múlva"
+year:
+  past: "{1} %count% évvel ezelőtt|[2,Inf] %count% évvel ezelőtt"
+  future: "{1} %count% év múlva|[2,Inf] %count% év múlva"
+
+compound:
+  second: "{1} %count% másodperc|[2,Inf] %count% másodperc"
+  minute: "{1} %count% perc|[2,Inf] %count% perc"
+  hour: "{1} %count% óra|[2,Inf] %count% óra"
+  day: "{1} %count% nap|[2,Inf] %count% nap"
+  week: "{1} %count% hét|[2,Inf] %count% hét"
+  month: "{1} %count% hónap|[2,Inf] %count% hónap"
+  year: "{1} %count% év|[2,Inf] %count% év"
+  past: "%value%nyi idővel ezelőtt"
+  future: "%value% múlva"
