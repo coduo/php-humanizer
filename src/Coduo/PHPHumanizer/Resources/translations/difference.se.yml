@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] just nu"
+  future: "[0,Inf] just nu"
+second:
+  past: "{1} %count% sekund sedan|[2,Inf] %count% sekunder sedan"
+  future: "{1} i %count% sekund|[2,Inf] i %count% sekunder"
+minute:
+  past: "{1} %count% minut sedan|[2,Inf] %count% minuter sedan"
+  future: "{1} i %count% minut|[2,Inf] i %count% minuter"
+hour:
+  past: "{1} %count% tim sedan|[2,Inf] %count% timmar sedan"
+  future: "{1} i %count% tim|[2,Inf] i %count% timmar"
+day:
+  past: "{1} %count% dag sedan|[2,Inf] %count% dagar sedan"
+  future: "{1} i %count% dag|[2,Inf] i %count% dagar"
+week:
+  past: "{1} %count% vecka sedan|[2,Inf] %count% veckor sedan"
+  future: "{1} i %count% vecka|[2,Inf] i %count% veckor"
+month:
+  past: "{1} %count% månad sedan|[2,Inf] %count% månader sedan"
+  future: "{1} i %count% månad|[2,Inf] i %count% månader"
+year:
+  past: "{1} %count% år sedan|[2,Inf] %count% år sedan"
+  future: "{1} i %count% år|[2,Inf] i %count% år"
+
+compound:
+  second: "{1} %count% sekund|[2,Inf] %count% sekunder"
+  minute: "{1} %count% minut|[2,Inf] %count% minuter"
+  hour: "{1} %count% tim|[2,Inf] %count% timmar"
+  day: "{1} %count% dag|[2,Inf] %count% dagar"
+  week: "{1} %count% vecka|[2,Inf] %count% veckor"
+  month: "{1} %count% månad|[2,Inf] %count% månader"
+  year: "{1} %count% år|[2,Inf] %count% år"
+  past: "%value% sedan"
+  future: "i %value%"

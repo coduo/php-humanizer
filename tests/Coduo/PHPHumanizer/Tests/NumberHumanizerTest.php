@@ -78,6 +78,16 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider ordinalSuffixSwedishProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_return_ordinal_suffix_swedish($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'se'));
+    }
+
+    /**
      * @dataProvider ordinalizeDataProvider
      * @depends test_return_ordinal_suffix
      *
@@ -161,6 +171,16 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     public function test_ordinalize_numbers_french($expected, $number)
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'fr'));
+    }
+
+    /**
+     * @dataProvider ordinalizeDataSwedishProvider
+     * @param $expected
+     * @param $number
+     */
+    public function test_ordinalize_numbers_swedish($expected, $number)
+    {
+        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'se'));
     }
 
     /**
@@ -401,6 +421,20 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array('-111e', -111),
         );
     }
+
+    /**
+     * @return array
+     */
+    public function ordinalizeDataSwedishProvider()
+    {
+        return array(
+            array('1:a', 1),
+            array('2:a', 2),
+            array('23:e', 23),
+            array('1002:a', 1002),
+            array('-111:a', -111),
+        );
+    }
     /**
      * @return array
      */
@@ -440,6 +474,21 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
             array('e', 23),
             array('e', 1002),
             array('e', -111),
+        );
+    }
+
+
+    /**
+     * @return array
+     */
+    public function ordinalSuffixSwedishProvider()
+    {
+        return array(
+            array(':a', 1),
+            array(':a', 2),
+            array(':e', 23),
+            array(':a', 1002),
+            array(':a', -111),
         );
     }
 
