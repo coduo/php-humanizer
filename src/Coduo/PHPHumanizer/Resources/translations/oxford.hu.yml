@@ -1,0 +1,3 @@
+only_two: "%first% és %second%"
+comma_separated: "%list%, és %last%"
+comma_separated_with_limit: "{1} %list%, és 1 további|[2,Inf] %list%, és %count% további"

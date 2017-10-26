@@ -270,6 +270,25 @@ class DateTimeHumanizerTest extends \PHPUnit_Framework_TestCase
             array("2014-05-01", "2014-04-01", '1 månad sedan', 'se'),
             array("2015-05-01", "2014-04-01", '1 år sedan', 'se'),
             array("2014-05-01", "2016-04-01", 'i 2 år', 'se'),
+
+            // Hungarian
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:00", 'épp most', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:00:05", '5 másodperc múlva', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:59:00", '1 perccel ezelőtt', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:45:00", '15 perccel ezelőtt', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-26 13:15:00", '15 perc múlva', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-26 14:00:00", '1 óra múlva', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-26 15:00:00", '2 óra múlva', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-26 12:00:00", '1 órával ezelőtt', 'hu'),
+            array("2014-04-26", "2014-04-25", '1 nappal ezelőtt', 'hu'),
+            array("2014-04-26", "2014-04-24", '2 nappal ezelőtt', 'hu'),
+            array("2014-04-26", "2014-04-28", '2 nap múlva', 'hu'),
+            array("2014-04-01", "2014-04-15", '2 hét múlva', 'hu'),
+            array("2014-04-15", "2014-04-07", '1 héttel ezelőtt', 'hu'),
+            array("2014-01-01", "2014-04-01", '3 hónap múlva', 'hu'),
+            array("2014-05-01", "2014-04-01", '1 hónappal ezelőtt', 'hu'),
+            array("2015-05-01", "2014-04-01", '1 évvel ezelőtt', 'hu'),
+            array("2014-05-01", "2016-04-01", '2 év múlva', 'hu'),
         );
     }
 
@@ -468,6 +487,16 @@ class DateTimeHumanizerTest extends \PHPUnit_Framework_TestCase
             array("2014-04-26 13:00:00", "2014-04-28 23:00:00", 'i 2 dagar, 10 timmar', 'se'),
             array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 dag, 1 tim, 40 minuter sedan', 'se'),
             array("2014-04-26 13:00:00", "2016-04-27 13:00:00", 'i 2 år, 1 dag', 'se'),
+
+            // Hungarian
+            array("2014-04-26 13:00:00", "2014-04-26 12:58:15", '1 perc, 45 másodpercnyi idővel ezelőtt', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-26 11:20:00", '1 óra, 40 percnyi idővel ezelőtt', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-27 13:15:00", '1 nap, 15 perc múlva', 'hu'),
+            array("2014-04-26 13:00:00", "2014-05-03 15:00:00", '7 nap, 2 óra múlva', 'hu'),
+            array("2014-04-26 13:00:00", "2015-04-28 17:00:00", '1 év, 2 nap, 4 óra múlva', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-28 23:00:00", '2 nap, 10 óra múlva', 'hu'),
+            array("2014-04-26 13:00:00", "2014-04-25 11:20:00", '1 nap, 1 óra, 40 percnyi idővel ezelőtt', 'hu'),
+            array("2014-04-26 13:00:00", "2016-04-27 13:00:00", '2 év, 1 nap múlva', 'hu'),
         );
     }
 }
