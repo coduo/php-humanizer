@@ -63,7 +63,7 @@ final class Formatter
 
         $moreCount = $count - count($display);
 
-        return $this->translator->transChoice('comma_separated_with_limit', $moreCount, array(
+        return $this->translator->transChoice('comma_separated_with_limit', $count, array(
             '%list%' => implode(', ', $display),
             '%count%' => $moreCount,
         ), $this->catalogue);
