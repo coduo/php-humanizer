@@ -41,7 +41,7 @@ final class Formatter
             return $this->formatOnlyTwo($collection);
         }
 
-        if (null !== $limit) {
+        if (null !== $limit && $count > $limit) {
             return $this->formatCommaSeparatedWithLimit($collection, $limit, $count);
         }
 
