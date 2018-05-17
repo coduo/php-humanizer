@@ -1,4 +1,4 @@
-#PHP Humanizer
+# PHP Humanizer
 
 [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=master)](https://travis-ci.org/coduo/php-humanizer)
 [![Latest Stable Version](https://poser.pugx.org/coduo/php-humanizer/v/stable)](https://packagist.org/packages/coduo/php-humanizer)
@@ -8,7 +8,7 @@
 
 Humanize values to make them readable for regular people ;)
 
-#Installation
+# Installation
 
 Run the following command:
 
@@ -16,7 +16,7 @@ Run the following command:
 composer require coduo/php-humanizer
 ```
 
-#Usage
+# Usage
 
 ## Text
 
@@ -232,15 +232,15 @@ Currently we support following languages:
 * [Dutch](src/Coduo/PHPHumanizer/Resources/translations/difference.nl.yml)
 * [Русский](src/Coduo/PHPHumanizer/Resources/translations/difference.ru.yml)
 * [Norwegian](src/Coduo/PHPHumanizer/Resources/translations/difference.no.yml)
-* [Afrikaans] (src/Coduo/PHPHumanizer/Resources/translations/difference.af.yml)
-* [Bulgarian] (src/Coduo/PHPHumanizer/Resources/translations/difference.bg.yml)
-* [Indonesian] (src/Coduo/PHPHumanizer/Resources/translations/difference.id.yml)
-* [Chinese Simplified] (src/Coduo/PHPHumanizer/Resources/translations/difference.zh_CN.yml)
-* [Spanish] (src/Coduo/PHPHumanizer/Resources/translations/difference.es.yml)
-* [Ukrainian] (src/Coduo/PHPHumanizer/Resources/translations/difference.uk.yml)
-* [Danish] (src/Coduo/PHPHumanizer/Resources/translations/difference.da.yml)
-* [Thai] (src/Coduo/PHPHumanizer/Resources/translations/difference.th.yml)
-* [Japanese] (src/Coduo/PHPHumanizer/Resources/translations/difference.ja.yml)
+* [Afrikaans](src/Coduo/PHPHumanizer/Resources/translations/difference.af.yml)
+* [Bulgarian](src/Coduo/PHPHumanizer/Resources/translations/difference.bg.yml)
+* [Indonesian](src/Coduo/PHPHumanizer/Resources/translations/difference.id.yml)
+* [Chinese Simplified](src/Coduo/PHPHumanizer/Resources/translations/difference.zh_CN.yml)
+* [Spanish](src/Coduo/PHPHumanizer/Resources/translations/difference.es.yml)
+* [Ukrainian](src/Coduo/PHPHumanizer/Resources/translations/difference.uk.yml)
+* [Danish](src/Coduo/PHPHumanizer/Resources/translations/difference.da.yml)
+* [Thai](src/Coduo/PHPHumanizer/Resources/translations/difference.th.yml)
+* [Japanese](src/Coduo/PHPHumanizer/Resources/translations/difference.ja.yml)
 
 # Credits
 
