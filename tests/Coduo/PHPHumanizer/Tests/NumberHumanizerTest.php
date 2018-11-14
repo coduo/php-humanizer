@@ -395,10 +395,10 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('1er', 1),
-            array('2e', 2),
-            array('23e', 23),
-            array('1002e', 1002),
-            array('-111e', -111),
+            array('2ème', 2),
+            array('23ème', 23),
+            array('1002ème', 1002),
+            array('-111ème', -111),
         );
     }
     /**
@@ -436,10 +436,10 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('er', 1),
-            array('e', 2),
-            array('e', 23),
-            array('e', 1002),
-            array('e', -111),
+            array('ème', 2),
+            array('ème', 23),
+            array('ème', 1002),
+            array('ème', -111),
         );
     }
 

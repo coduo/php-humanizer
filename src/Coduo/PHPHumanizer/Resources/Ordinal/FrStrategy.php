@@ -22,7 +22,7 @@ final class FrStrategy implements StrategyInterface
         if ($absNumber == 1) {
             return 'er';
         } else {
-            return 'e';
+            return 'ème';
         }
     }
 }
