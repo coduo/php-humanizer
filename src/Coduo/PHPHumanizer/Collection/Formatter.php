@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer\Collection;
 
 use Symfony\Component\Translation\TranslatorInterface;
@@ -27,7 +29,7 @@ final class Formatter
 
     public function format($collection, $limit = null)
     {
-        $count = count($collection);
+        $count = \count($collection);
 
         if (0 === $count) {
             return '';
@@ -57,16 +59,16 @@ final class Formatter
      */
     private function formatCommaSeparatedWithLimit($collection, $limit, $count)
     {
-        $display = array_map(function ($element) {
+        $display = \array_map(function ($element) {
             return (string) $element;
-        }, array_slice($collection, 0, $limit));
+        }, \array_slice($collection, 0, $limit));
 
-        $moreCount = $count - count($display);
+        $moreCount = $count - \count($display);
 
-        return $this->translator->transChoice('comma_separated_with_limit', $moreCount, array(
-            '%list%' => implode(', ', $display),
+        return $this->translator->transChoice('comma_separated_with_limit', $moreCount, [
+            '%list%' => \implode(', ', $display),
             '%count%' => $moreCount,
-        ), $this->catalogue);
+        ], $this->catalogue);
     }
 
     /**
@@ -77,14 +79,14 @@ final class Formatter
      */
     private function formatCommaSeparated($collection, $count)
     {
-        $display = array_map(function ($element) {
+        $display = \array_map(function ($element) {
             return (string) $element;
-        }, array_slice($collection, 0, $count - 1));
+        }, \array_slice($collection, 0, $count - 1));
 
-        return $this->translator->trans('comma_separated', array(
-            '%list%' => implode(', ', $display),
-            '%last%' => (string) end($collection),
-        ), $this->catalogue);
+        return $this->translator->trans('comma_separated', [
+            '%list%' => \implode(', ', $display),
+            '%last%' => (string) \end($collection),
+        ], $this->catalogue);
     }
 
     /**
@@ -94,9 +96,9 @@ final class Formatter
      */
     private function formatOnlyTwo($collection)
     {
-        return $this->translator->trans('only_two', array(
+        return $this->translator->trans('only_two', [
             '%first%' => (string) $collection[0],
             '%second%' => (string) $collection[1],
-        ), $this->catalogue);
+        ], $this->catalogue);
     }
 }

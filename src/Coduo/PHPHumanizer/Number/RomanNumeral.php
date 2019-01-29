@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer\Number;
 
 final class RomanNumeral
@@ -8,7 +10,7 @@ final class RomanNumeral
     const MAX_VALUE = 3999;
     const ROMAN_STRING_MATCHER = '/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/';
 
-    private $map = array(
+    private $map = [
         'M' => 1000,
         'CM' => 900,
         'D' => 500,
@@ -22,7 +24,7 @@ final class RomanNumeral
         'V' => 5,
         'IV' => 4,
         'I' => 1,
-    );
+    ];
 
     /**
      * @param $number
@@ -61,12 +63,12 @@ final class RomanNumeral
      */
     public function fromRoman($string)
     {
-        if (mb_strlen($string) === 0 || 0 === preg_match(self::ROMAN_STRING_MATCHER, $string)) {
+        if (\mb_strlen($string) === 0 || 0 === \preg_match(self::ROMAN_STRING_MATCHER, $string)) {
             throw new \InvalidArgumentException();
         }
 
         $total = 0;
-        $i = mb_strlen($string);
+        $i = \mb_strlen($string);
 
         while ($i > 0) {
             $digit = $this->map[$string{--$i}];

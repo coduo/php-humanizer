@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer\DateTime;
 
 use Coduo\PHPHumanizer\DateTime\Unit\Day;
@@ -50,14 +52,14 @@ final class PreciseDifference
     private function calculate()
     {
         /* @var $units \Coduo\PHPHumanizer\DateTime\Unit[] */
-        $units = array(
+        $units = [
             new Year(),
             new Month(),
             new Day(),
             new Hour(),
             new Minute(),
             new Second(),
-        );
+        ];
 
         $diff = $this->fromDate->diff($this->toDate);
 
