@@ -1,4 +1,4 @@
-#PHP Humanizer
+# PHP Humanizer
 
 [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=master)](https://travis-ci.org/coduo/php-humanizer)
 [![Latest Stable Version](https://poser.pugx.org/coduo/php-humanizer/v/stable)](https://packagist.org/packages/coduo/php-humanizer)
@@ -18,7 +18,7 @@
 
 Humanize values to make them readable for regular people ;)
 
-#Installation
+# Installation
 
 Run the following command:
 
@@ -26,7 +26,7 @@ Run the following command:
 composer require coduo/php-humanizer
 ```
 
-#Usage
+# Usage
 
 ## Text
 
