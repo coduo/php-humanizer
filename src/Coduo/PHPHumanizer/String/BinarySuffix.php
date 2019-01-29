@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer\String;
 
 final class BinarySuffix
@@ -19,14 +21,14 @@ final class BinarySuffix
     /**
      * @var array
      */
-    private $binaryPrefixes = array(
+    private $binaryPrefixes = [
         1125899906842624 => '#.## PB',
         1099511627776 => '#.## TB',
         1073741824 => '#.## GB',
         1048576 => '#.## MB',
         1024 => '#.# kB',
         0 => '# bytes',
-    );
+    ];
 
     /**
      * @param int    $number
@@ -37,11 +39,11 @@ final class BinarySuffix
      */
     public function __construct($number, $locale = 'en', $precision = null)
     {
-        if (!is_numeric($number)) {
+        if (!\is_numeric($number)) {
             throw new \InvalidArgumentException('Binary suffix converter accept only numeric values.');
         }
 
-        if (!is_null($precision)) {
+        if (!\is_null($precision)) {
             $this->setSpecificPrecisionFormat($precision);
         }
 
@@ -52,7 +54,7 @@ final class BinarySuffix
          * Workaround for 32-bit systems which ignore array ordering when
          * dropping values over 2^32-1
          */
-        krsort($this->binaryPrefixes);
+        \krsort($this->binaryPrefixes);
     }
 
     public function convert()
@@ -94,12 +96,12 @@ final class BinarySuffix
 
         $icuFormat = '#';
         if ($precision > 0) {
-            $icuFormat .= str_pad('#.', (2 + $precision), '0');
+            $icuFormat .= \str_pad('#.', (2 + $precision), '0');
         }
 
         foreach ($this->binaryPrefixes as $size => $unitPattern) {
             if ($size >= 1024) {
-                $symbol = substr($unitPattern, strpos($unitPattern, ' '));
+                $symbol = \substr($unitPattern, \strpos($unitPattern, ' '));
                 $this->binaryPrefixes[$size] = $icuFormat.$symbol;
             }
         }

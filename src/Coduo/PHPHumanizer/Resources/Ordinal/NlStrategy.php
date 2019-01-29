@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer\Resources\Ordinal;
 
 use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
@@ -11,7 +13,7 @@ final class NlStrategy implements StrategyInterface
      */
     public function isPrefix()
     {
-        return False;
+        return false;
     }
 
     /**

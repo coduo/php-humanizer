@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer\DateTime;
 
 use Symfony\Component\Translation\TranslatorInterface;
@@ -27,12 +29,12 @@ final class Formatter
      */
     public function formatDifference(Difference $difference, $locale = 'en')
     {
-        $translationKey = sprintf('%s.%s', $difference->getUnit()->getName(), $difference->isPast() ? 'past' : 'future');
+        $translationKey = \sprintf('%s.%s', $difference->getUnit()->getName(), $difference->isPast() ? 'past' : 'future');
 
         return $this->translator->transChoice(
             $translationKey,
             $difference->getQuantity(),
-            array('%count%' => $difference->getQuantity()),
+            ['%count%' => $difference->getQuantity()],
             'difference',
             $locale
         );

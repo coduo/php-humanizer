@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer\String;
 
 final class WordBreakpoint implements Breakpoint
@@ -12,17 +14,17 @@ final class WordBreakpoint implements Breakpoint
     public function calculatePosition($text, $charactersCount)
     {
         if ($charactersCount < 0) {
-            return mb_strlen($text);
+            return \mb_strlen($text);
         }
 
-        if ($charactersCount > mb_strlen($text)) {
-            return mb_strlen($text);
+        if ($charactersCount > \mb_strlen($text)) {
+            return \mb_strlen($text);
         }
 
-        $breakpoint = mb_strpos($text, ' ', $charactersCount);
+        $breakpoint = \mb_strpos($text, ' ', $charactersCount);
 
         if (false === $breakpoint) {
-            return mb_strlen($text);
+            return \mb_strlen($text);
         }
 
         return $breakpoint;
