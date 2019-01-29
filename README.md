@@ -6,6 +6,16 @@
 [![Latest Unstable Version](https://poser.pugx.org/coduo/php-humanizer/v/unstable)](https://packagist.org/packages/coduo/php-humanizer)
 [![License](https://poser.pugx.org/coduo/php-humanizer/license)](https://packagist.org/packages/coduo/php-humanizer)
 
+### Tests
+* [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=master)](https://travis-ci.org/coduo/php-humanizer) - master (3.0)
+* [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=2.0)](https://travis-ci.org/coduo/php-humanizer) - 2.0
+* [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=1.0)](https://travis-ci.org/coduo/php-humanizer) - 1.0
+
+[Readme for master (3.0) version](https://github.com/coduo/php-humanizer/tree/master/README.md)  
+[Readme for 2.0 version](https://github.com/coduo/php-matcher/tree/2.0/README.md)  
+[Readme for 1.0 version](https://github.com/coduo/php-matcher/tree/1.0/README.md)  
+
+
 Humanize values to make them readable for regular people ;)
 
 #Installation
