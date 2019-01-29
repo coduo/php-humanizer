@@ -9,7 +9,6 @@ cache:
 matrix:
   include:
     - php: 7.0
-      env: DEPENDENCIES='low'
     - php: 7.1
     - php: 7.2
     - php: 7.3
@@ -19,8 +18,7 @@ before_install:
 
 install:
   - export COMPOSER_ROOT_VERSION=dev-master
-  - if [ "$DEPENDENCIES" != "low" ]; then composer update; fi;
-  - if [ "$DEPENDENCIES" == "low" ]; then composer update --prefer-lowest; fi;
+  - composer update
 
 script:
   - ./bin/phpspec run --format=pretty
