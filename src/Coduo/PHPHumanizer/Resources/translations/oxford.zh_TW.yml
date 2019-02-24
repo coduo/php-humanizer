@@ -1,0 +1,3 @@
+only_two: "%first% 和 %second%"
+comma_separated: "%list%, 和 %last%"
+comma_separated_with_limit: "{1} %list% 和另一個|[2,Inf] %list% 和另 %count% 個"

@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] 剛剛"
+  future: "[0,Inf] 剛剛"
+second:
+  past: "[1,Inf] %count% 秒前"
+  future: "[1,Inf] %count% 秒後"
+minute:
+  past: "[1,Inf] %count% 分鐘前"
+  future: "[1,Inf] %count% 分鐘後"
+hour:
+  past: "[1,Inf] %count% 小時前"
+  future: "[1,Inf] %count% 小時後"
+day:
+  past: "[1,Inf] %count% 天前"
+  future: "[1,Inf] %count% 天後"
+week:
+  past: "[1,Inf] %count% 週前"
+  future: "[1,Inf] %count% 週後"
+month:
+  past: "[1,Inf] %count% 個月前"
+  future: "[1,Inf] %count% 個月後"
+year:
+  past: "[1,Inf] %count% 年前"
+  future: "[1,Inf] %count% 年後"
+
+compound:
+  second: "[1,Inf] %count% 秒"
+  minute: "[1,Inf] %count% 分鐘"
+  hour: "[1,Inf] %count% 小時"
+  day: "[1,Inf] %count% 天"
+  week: "[1,Inf] %count% 週"
+  month: "[1,Inf] %count% 個月"
+  year: "[1,Inf] %count% 年"
+  past: "%value%前"
+  future: "%value%後"
