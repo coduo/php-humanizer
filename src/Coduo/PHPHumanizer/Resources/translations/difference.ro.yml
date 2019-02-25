@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] mai înainte"
+  future: "[0,Inf] imediat"
+second:
+  past: "{1} %count% secundă în urmă|[2,Inf] %count% secunde în urmă"
+  future: "{1} %count% secundă de acum|[2,Inf] %count% secundă de acum"
+minute:
+  past: "{1} %count% minut în urmă|[2,Inf] %count% minute în urmă"
+  future: "{1} %count% minut de acum|[2,Inf] %count% minute de acum"
+hour:
+  past: "{1} %count% oră în urmă|[2,Inf] %count% ore în urmă"
+  future: "{1} %count% oră de acum|[2,Inf] %count% ore de acum"
+day:
+  past: "{1} %count% zi în urmă|[2,Inf] %count% zile în urmă"
+  future: "{1} %count% zi de acum|[2,Inf] %count% zile de acum"
+week:
+  past: "{1} %count% săptămână în urmă|[2,Inf] %count% săptămâni în urmă"
+  future: "{1} %count% săptămână de acum|[2,Inf] %count% săptămâni de acum"
+month:
+  past: "{1} %count% lună în urmă|[2,Inf] %count% luni în urmă"
+  future: "{1} %count% lună de acum|[2,Inf] %count% luni de acum"
+year:
+  past: "{1} %count% an în urmă|[2,Inf] %count% ani în urmă"
+  future: "{1} %count% an de acum|[2,Inf] %count% ani de acum"
+
+compound:
+  second: "{1} %count% secundă|[2,Inf] %count% secunde"
+  minute: "{1} %count% minut|[2,Inf] %count% minute"
+  hour: "{1} %count% oră|[2,Inf] %count% ore"
+  day: "{1} %count% zi|[2,Inf] %count% zile"
+  week: "{1} %count% săptămană|[2,Inf] %count% săptămani"
+  month: "{1} %count% lună|[2,Inf] %count% luni"
+  year: "{1} %count% an|[2,Inf] %count% ani"
+  ago: "în urmă"
+  from_now: "de acum"
