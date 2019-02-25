@@ -1,4 +1,4 @@
-#PHP Humanizer
+# PHP Humanizer
 
 [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=master)](https://travis-ci.org/coduo/php-humanizer)
 [![Latest Stable Version](https://poser.pugx.org/coduo/php-humanizer/v/stable)](https://packagist.org/packages/coduo/php-humanizer)
@@ -6,9 +6,19 @@
 [![Latest Unstable Version](https://poser.pugx.org/coduo/php-humanizer/v/unstable)](https://packagist.org/packages/coduo/php-humanizer)
 [![License](https://poser.pugx.org/coduo/php-humanizer/license)](https://packagist.org/packages/coduo/php-humanizer)
 
+### Tests
+* [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=master)](https://travis-ci.org/coduo/php-humanizer) - master (3.0)
+* [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=2.0)](https://travis-ci.org/coduo/php-humanizer) - 2.0
+* [![Build Status](https://travis-ci.org/coduo/php-humanizer.svg?branch=1.0)](https://travis-ci.org/coduo/php-humanizer) - 1.0
+
+[Readme for master (3.0) version](https://github.com/coduo/php-humanizer/tree/master/README.md)  
+[Readme for 2.0 version](https://github.com/coduo/php-matcher/tree/2.0/README.md)  
+[Readme for 1.0 version](https://github.com/coduo/php-matcher/tree/1.0/README.md)  
+
+
 Humanize values to make them readable for regular people ;)
 
-#Installation
+# Installation
 
 Run the following command:
 
@@ -16,7 +26,7 @@ Run the following command:
 composer require coduo/php-humanizer
 ```
 
-#Usage
+# Usage
 
 ## Text
 
@@ -232,15 +242,17 @@ Currently we support following languages:
 * [Dutch](src/Coduo/PHPHumanizer/Resources/translations/difference.nl.yml)
 * [Русский](src/Coduo/PHPHumanizer/Resources/translations/difference.ru.yml)
 * [Norwegian](src/Coduo/PHPHumanizer/Resources/translations/difference.no.yml)
-* [Afrikaans] (src/Coduo/PHPHumanizer/Resources/translations/difference.af.yml)
-* [Bulgarian] (src/Coduo/PHPHumanizer/Resources/translations/difference.bg.yml)
-* [Indonesian] (src/Coduo/PHPHumanizer/Resources/translations/difference.id.yml)
-* [Chinese Simplified] (src/Coduo/PHPHumanizer/Resources/translations/difference.zh_CN.yml)
-* [Spanish] (src/Coduo/PHPHumanizer/Resources/translations/difference.es.yml)
-* [Ukrainian] (src/Coduo/PHPHumanizer/Resources/translations/difference.uk.yml)
-* [Danish] (src/Coduo/PHPHumanizer/Resources/translations/difference.da.yml)
-* [Thai] (src/Coduo/PHPHumanizer/Resources/translations/difference.th.yml)
-* [Japanese] (src/Coduo/PHPHumanizer/Resources/translations/difference.ja.yml)
+* [Afrikaans](src/Coduo/PHPHumanizer/Resources/translations/difference.af.yml)
+* [Bulgarian](src/Coduo/PHPHumanizer/Resources/translations/difference.bg.yml)
+* [Indonesian](src/Coduo/PHPHumanizer/Resources/translations/difference.id.yml)
+* [Chinese Simplified](src/Coduo/PHPHumanizer/Resources/translations/difference.zh_CN.yml)
+* [Chinese Taiwan](src/Coduo/PHPHumanizer/Resources/translations/difference.zh_TW.yml)
+* [Spanish](src/Coduo/PHPHumanizer/Resources/translations/difference.es.yml)
+* [Ukrainian](src/Coduo/PHPHumanizer/Resources/translations/difference.uk.yml)
+* [Danish](src/Coduo/PHPHumanizer/Resources/translations/difference.da.yml)
+* [Thai](src/Coduo/PHPHumanizer/Resources/translations/difference.th.yml)
+* [Japanese](src/Coduo/PHPHumanizer/Resources/translations/difference.ja.yml)
+* [Romanian](src/Coduo/PHPHumanizer/Resources/translations/difference.ro.yml)
 
 # Credits
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer\DateTime;
 
 use Symfony\Component\Translation\TranslatorInterface;
@@ -27,13 +29,13 @@ final class PreciseFormatter
      */
     public function formatDifference(PreciseDifference $difference, $locale = 'en')
     {
-        $diff = array();
+        $diff = [];
 
         foreach ($difference->getCompoundResults() as $result) {
             $diff[] = $this->translator->transChoice(
                 'compound.'.$result->getUnit()->getName(),
                 $result->getQuantity(),
-                array('%count%' => $result->getQuantity()),
+                ['%count%' => $result->getQuantity()],
                 'difference',
                 $locale
             );
@@ -41,7 +43,7 @@ final class PreciseFormatter
 
         return $this->translator->trans(
             'compound.'.($difference->isPast() ? 'past' : 'future'),
-            array('%value%' => implode(', ', $diff)),
+            ['%value%' => \implode(', ', $diff)],
             'difference',
             $locale
         );

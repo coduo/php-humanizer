@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer;
 
 use Coduo\PHPHumanizer\DateTime\Difference;

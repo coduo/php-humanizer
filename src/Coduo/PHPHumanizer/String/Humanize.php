@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coduo\PHPHumanizer\String;
 
 final class Humanize
@@ -25,7 +27,7 @@ final class Humanize
      * @param string $separator
      * @param array  $forbiddenWords
      */
-    public function __construct($text, $capitalize = true, $separator = '_', array $forbiddenWords = array('id'))
+    public function __construct($text, $capitalize = true, $separator = '_', array $forbiddenWords = ['id'])
     {
         $this->text = $text;
         $this->capitalize = $capitalize;
@@ -38,9 +40,9 @@ final class Humanize
      */
     public function __toString()
     {
-        $humanized = trim(strtolower(preg_replace(array('/([A-Z])/', "/[{$this->separator}\\s]+/"), array('_$1', ' '), $this->text)));
-        $humanized = trim(str_replace($this->forbiddenWords, '', $humanized));
+        $humanized = \trim(\strtolower(\preg_replace(['/([A-Z])/', "/[{$this->separator}\\s]+/"], ['_$1', ' '], $this->text)));
+        $humanized = \trim(\str_replace($this->forbiddenWords, '', $humanized));
 
-        return $this->capitalize ?  ucfirst($humanized) : $humanized;
+        return $this->capitalize ?  \ucfirst($humanized) : $humanized;
     }
 }
