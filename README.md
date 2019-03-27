@@ -72,6 +72,14 @@ StringHumanizer::truncateHtml($text, 75, '<b><i><u><em><strong><a><span>', '...'
 
 ```
 
+**Remove shortcodes**
+
+```php
+$text = 'A text with [short]random[/short] [codes]words[/codes].';
+StringHumanizer::removeShortcodes($text); // "A text with ."
+StringHumanizer::removeShortcodeTags($text); // "A text with random words."
+```
+
 ## Number
 
 **Ordinalize**
