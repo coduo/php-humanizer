@@ -42,5 +42,15 @@
     },
     "suggest": {
         "ext-intl": "Required if you are going to use humanizer with locales different than en_EN"
+    },
+    "scripts": {
+        "cs:php:fix": [
+            "php-cs-fixer fix --using-cache=no"
+        ],
+        "test": [
+            "phpspec run --format=pretty",
+            "phpunit",
+            "php-cs-fixer fix -v --dry-run"
+        ]
     }
 }
