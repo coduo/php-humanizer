@@ -22,7 +22,7 @@
         "friendsofphp/php-cs-fixer": "^2.14"
     },
     "require-dev": {
-        "thunderer/shortcode": "~0.5",
+        "thunderer/shortcode": "^0.7",
         "phpspec/phpspec": "^2",
         "phpunit/phpunit": "^4.5|^5.0"
     },

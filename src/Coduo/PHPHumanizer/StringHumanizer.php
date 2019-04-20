@@ -60,10 +60,10 @@ final class StringHumanizer
      */
     public static function removeShortcodes($text)
     {
-        if (!\class_exists('Thunder\Shortcode\Processor\Processor')) {
-            throw new \RuntimeException('Please add "thunderer/shortcode": ~0.5 to composer.json first');
+        if (!class_exists('Thunder\Shortcode\Processor\Processor')) {
+            throw new \RuntimeException('Please add "thunderer/shortcode": ^0.7 to composer.json first');
         }
-        
+
         $processor = new ShortcodeProcessor();
 
         return $processor->removeShortcodes($text);
@@ -75,10 +75,10 @@ final class StringHumanizer
      */
     public static function removeShortcodeTags($text)
     {
-        if (!\class_exists('Thunder\Shortcode\Processor\Processor')) {
-            throw new \RuntimeException('Please add "thunderer/shortcode": ~0.5 to composer.json first');
+        if (!class_exists('Thunder\Shortcode\Processor\Processor')) {
+            throw new \RuntimeException('Please add "thunderer/shortcode": ^0.7 to composer.json first');
         }
-        
+
         $processor = new ShortcodeProcessor();
 
         return $processor->removeShortcodeTags($text);
