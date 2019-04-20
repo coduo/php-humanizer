@@ -19,6 +19,4 @@ install:
   - composer update
 
 script:
-  - ./bin/phpspec run --format=pretty
-  - ./bin/phpunit
-  - ./bin/php-cs-fixer fix -v --dry-run
+  - composer run test

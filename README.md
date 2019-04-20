@@ -262,6 +262,33 @@ Currently we support following languages:
 * [Japanese](src/Coduo/PHPHumanizer/Resources/translations/difference.ja.yml)
 * [Romanian](src/Coduo/PHPHumanizer/Resources/translations/difference.ro.yml)
 
+# Development
+
+After downloading library update dependencies:
+
+```
+composer update
+```
+
+In order to check lowest possible versions of dependencies add 
+
+```
+composer update --prefer-lowest
+````
+
+Execute test suite:
+
+```
+composer run test
+```
+
+Run CS Fixer
+
+```
+composer run cs:php:fix
+```
+
+
 # Credits
 
 This lib was inspired by [Java Humanize Lib](https://github.com/mfornos/humanize) && [Rails Active Support](https://github.com/rails/rails/tree/master/activesupport/lib/active_support)
