@@ -31,7 +31,11 @@
     },
     "autoload": {
         "psr-4": {
-            "": "src",
+            "": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Coduo\\PHPHumanizer\\Tests\\": "tests/"
         }
     },
