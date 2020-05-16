@@ -16,9 +16,9 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "symfony/config": "^2.3|^3.0|^4",
-        "symfony/translation": "^2.3|^3.0|^4",
-        "symfony/yaml": "^2.3|^3.0|^4"
+        "symfony/config": "^2.3|^3.0|^4|^5",
+        "symfony/translation": "^2.3|^3.0|^4|^5",
+        "symfony/yaml": "^2.3|^3.0|^4|^5"
     },
     "require-dev": {
         "thunderer/shortcode": "^0.7",
