@@ -35,11 +35,6 @@
             "Coduo\\PHPHumanizer\\Tests\\": "tests/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "3.0-dev"
-        }
-    },
     "suggest": {
         "ext-intl": "Required if you are going to use humanizer with locales different than en_EN"
     },
