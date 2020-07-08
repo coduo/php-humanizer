@@ -11,12 +11,12 @@ declare(strict_types=1);
 
 namespace Coduo\PHPHumanizer\Collection;
 
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class Formatter
 {
     /**
-     * @var \Symfony\Component\Translation\TranslatorInterface
+     * @var TranslatorInterface
      */
     private $translator;
 
@@ -72,7 +72,7 @@ final class Formatter
 
         $moreCount = $count - \count($display);
 
-        return $this->translator->transChoice('comma_separated_with_limit', $moreCount, [
+        return $this->translator->trans('comma_separated_with_limit', [
             '%list%' => \implode(', ', $display),
             '%count%' => $moreCount,
         ], $this->catalogue);

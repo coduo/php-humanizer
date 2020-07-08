@@ -11,12 +11,12 @@ declare(strict_types=1);
 
 namespace Coduo\PHPHumanizer\DateTime;
 
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class Formatter
 {
     /**
-     * @var \Symfony\Component\Translation\TranslatorInterface
+     * @var TranslatorInterface
      */
     private $translator;
 
@@ -38,9 +38,8 @@ final class Formatter
     {
         $translationKey = \sprintf('%s.%s', $difference->getUnit()->getName(), $difference->isPast() ? 'past' : 'future');
 
-        return $this->translator->transChoice(
+        return $this->translator->trans(
             $translationKey,
-            $difference->getQuantity(),
             ['%count%' => $difference->getQuantity()],
             'difference',
             $locale

@@ -11,12 +11,12 @@ declare(strict_types=1);
 
 namespace Coduo\PHPHumanizer\DateTime;
 
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class PreciseFormatter
 {
     /**
-     * @var \Symfony\Component\Translation\TranslatorInterface
+     * @var TranslatorInterface
      */
     private $translator;
 
@@ -39,9 +39,8 @@ final class PreciseFormatter
         $diff = [];
 
         foreach ($difference->getCompoundResults() as $result) {
-            $diff[] = $this->translator->transChoice(
+            $diff[] = $this->translator->trans(
                 'compound.'.$result->getUnit()->getName(),
-                $result->getQuantity(),
                 ['%count%' => $result->getQuantity()],
                 'difference',
                 $locale

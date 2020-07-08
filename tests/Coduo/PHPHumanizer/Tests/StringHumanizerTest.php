@@ -12,9 +12,9 @@ declare(strict_types=1);
 namespace Coduo\PHPHumanizer\Tests;
 
 use Coduo\PHPHumanizer\StringHumanizer;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class StringHumanizerTest extends PHPUnit_Framework_TestCase
+class StringHumanizerTest extends TestCase
 {
     /**
      * @dataProvider humanizeStringProvider

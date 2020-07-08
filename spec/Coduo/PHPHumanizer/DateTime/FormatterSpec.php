@@ -13,17 +13,15 @@ class FormatterSpec extends ObjectBehavior
     function let(Translator $translator)
     {
         $this->beConstructedWith($translator);
-        $translator->transChoice(
+        $translator->trans(
             'minute.past',
-            10,
             array('%count%' => 10),
             'difference',
             'en'
         )->willReturn('10 minutes ago');
 
-        $translator->transChoice(
+        $translator->trans(
             'minute.past',
-            10,
             array('%count%' => 10),
             'difference',
             'pl'
@@ -36,7 +34,7 @@ class FormatterSpec extends ObjectBehavior
             new \DateTime("2015-01-01 00:10:00"),
             new \DateTime("2015-01-01 00:00:00")
         );
-        
+
         $this->formatDifference($diff)->shouldReturn('10 minutes ago');
     }
 
@@ -46,7 +44,7 @@ class FormatterSpec extends ObjectBehavior
             new \DateTime("2015-01-01 00:10:00"),
             new \DateTime("2015-01-01 00:00:00")
         );
-        
+
         $this->formatDifference($diff, 'pl')->shouldReturn('10 minut temu');
     }
 }

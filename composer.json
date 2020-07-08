@@ -15,16 +15,16 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "symfony/config": "^2.3|^3.0|^4|^5",
-        "symfony/translation": "^2.3|^3.0|^4|^5",
-        "symfony/yaml": "^2.3|^3.0|^4|^5"
+        "php": ">=7.3",
+        "symfony/config": "^4.4|^5.0",
+        "symfony/translation": "^4.4|^5.0",
+        "symfony/yaml": "^4.4|^5.0"
     },
     "require-dev": {
         "thunderer/shortcode": "^0.7",
-        "phpspec/phpspec": "^2",
-        "phpunit/phpunit": "^4.5|^5.0",
-        "friendsofphp/php-cs-fixer": "^2.14"
+        "phpspec/phpspec": "^6.0",
+        "phpunit/phpunit": "^8.4",
+        "friendsofphp/php-cs-fixer": "^2.16"
     },
     "config": {
         "bin-dir": "bin"
@@ -36,12 +36,12 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Coduo\\PHPHumanizer\\Tests\\": "tests/"
+            "": "tests/"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.1-dev"
+            "dev-master": "4.0-dev"
         }
     },
     "suggest": {

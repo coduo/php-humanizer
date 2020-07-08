@@ -12,8 +12,9 @@ declare(strict_types=1);
 namespace Coduo\PHPHumanizer\Tests;
 
 use Coduo\PHPHumanizer\CollectionHumanizer;
+use PHPUnit\Framework\TestCase;
 
-final class CollectionHumanizerTest extends \PHPUnit_Framework_TestCase
+final class CollectionHumanizerTest extends TestCase
 {
     /**
      * @dataProvider oxfordCollectionProvider

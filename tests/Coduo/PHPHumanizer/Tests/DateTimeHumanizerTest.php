@@ -12,8 +12,9 @@ declare(strict_types=1);
 namespace Coduo\PHPHumanizer\Tests;
 
 use Coduo\PHPHumanizer\DateTimeHumanizer;
+use PHPUnit\Framework\TestCase;
 
-class DateTimeHumanizerTest extends \PHPUnit_Framework_TestCase
+class DateTimeHumanizerTest extends TestCase
 {
     /**
      * @test

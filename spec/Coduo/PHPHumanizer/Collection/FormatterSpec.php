@@ -17,9 +17,8 @@ class FormatterSpec extends ObjectBehavior
             'oxford'
         )->willReturn('Michal and Norbert');
 
-        $translator->transChoice(
+        $translator->trans(
             'comma_separated_with_limit',
-            1,
             array('%count%' => 1, "%list%" => 'Michal, Norbert'),
             'oxford'
         )->willReturn('Michal, Norbert and 1 more');

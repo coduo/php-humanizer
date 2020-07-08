@@ -78,10 +78,10 @@ final class RomanNumeral
         $i = \mb_strlen($string);
 
         while ($i > 0) {
-            $digit = $this->map[$string{--$i}];
+            $digit = $this->map[$string[--$i]];
 
             if ($i > 0) {
-                $previousDigit = $this->map[$string{$i - 1}];
+                $previousDigit = $this->map[$string[$i - 1]];
 
                 if ($previousDigit < $digit) {
                     $digit -= $previousDigit;

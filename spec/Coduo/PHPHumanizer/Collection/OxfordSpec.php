@@ -5,7 +5,7 @@ namespace spec\Coduo\PHPHumanizer\Collection;
 use Coduo\PHPHumanizer\Collection\Formatter;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class OxfordSpec extends ObjectBehavior
 {

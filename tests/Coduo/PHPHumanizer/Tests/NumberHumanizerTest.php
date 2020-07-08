@@ -12,8 +12,9 @@ declare(strict_types=1);
 namespace Coduo\PHPHumanizer\Tests;
 
 use Coduo\PHPHumanizer\NumberHumanizer;
+use PHPUnit\Framework\TestCase;
 
-class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
+class NumberHumanizerTest extends TestCase
 {
     /**
      * @dataProvider ordinalIndicatorProvider
@@ -184,11 +185,9 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, NumberHumanizer::binarySuffix($number, $locale));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function test_statically_throw_exception_when_converting_to_string_with_binary_suffix_non_numeric_values()
     {
+        $this->expectException(\InvalidArgumentException::class);
         NumberHumanizer::binarySuffix('as12');
     }
 
@@ -205,19 +204,17 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, NumberHumanizer::preciseBinarySuffix($number, $precision, $locale));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_negative_precision()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         NumberHumanizer::preciseBinarySuffix(1, -1);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_large_precision()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         NumberHumanizer::preciseBinarySuffix(1, 4);
     }
 
@@ -233,11 +230,10 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, NumberHumanizer::metricSuffix($number, $locale));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function test_statically_throw_exception_when_converting_to_string_with_metric_suffix_non_numeric_values()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         NumberHumanizer::metricSuffix('as12');
     }
 
@@ -265,23 +261,25 @@ class NumberHumanizerTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider romanExceptionProvider
-     * @expectedException \InvalidArgumentException
      *
      * @param $number
      */
     public function test_statically_throw_exception_when_converting_number_is_out_of_range($number)
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         NumberHumanizer::toRoman($number);
     }
 
     /**
      * @dataProvider arabicExceptionProvider
-     * @expectedException \InvalidArgumentException
      *
      * @param $number
      */
     public function test_statically_throw_exception_when_converting_roman_number_is_invalid($number)
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         NumberHumanizer::fromRoman($number);
     }
 

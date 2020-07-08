@@ -15,17 +15,15 @@ class PreciseFormatterSpec extends ObjectBehavior
     function let(Translator $translator)
     {
         $this->beConstructedWith($translator);
-        $translator->transChoice(
+        $translator->trans(
             'compound.day',
-            10,
             array('%count%' => 10),
             'difference',
             'en'
         )->willReturn('10 days');
 
-        $translator->transChoice(
+        $translator->trans(
             'compound.hour',
-            5,
             array('%count%' => 5),
             'difference',
             'en'
@@ -38,17 +36,15 @@ class PreciseFormatterSpec extends ObjectBehavior
             'en'
         )->willReturn('10 days, 5 hours from now');
 
-        $translator->transChoice(
+        $translator->trans(
             'compound.day',
-            10,
             array('%count%' => 10),
             'difference',
             'ru'
         )->willReturn('10 дней');
 
-        $translator->transChoice(
+        $translator->trans(
             'compound.hour',
-            5,
             array('%count%' => 5),
             'difference',
             'ru'
@@ -66,7 +62,7 @@ class PreciseFormatterSpec extends ObjectBehavior
     {
         $diff = new PreciseDifference(
             new \DateTime("2015-01-01 00:00:00"),
-            new \DateTime("2015-01-11 05:00:00")   
+            new \DateTime("2015-01-11 05:00:00")
         );
 
         $this->formatDifference($diff)->shouldReturn('10 days, 5 hours from now');
@@ -78,7 +74,7 @@ class PreciseFormatterSpec extends ObjectBehavior
             new \DateTime("2015-01-01 00:00:00"),
             new \DateTime("2015-01-11 05:00:00")
         );
-        
+
         $this->formatDifference($diff, 'ru')->shouldReturn('через 10 дней, 5 часов');
     }
 }

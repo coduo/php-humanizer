@@ -1,16 +1,16 @@
 # PHP Humanizer
 
-[![Build Status](https://travis-ci.com/coduo/php-humanizer.svg?branch=master)](https://travis-ci.com/coduo/php-humanizer)
+[![Build Status](https://travis-ci.com/coduo/php-humanizer.svg?branch=4.x)](https://travis-ci.com/coduo/php-humanizer)
 [![Latest Stable Version](https://poser.pugx.org/coduo/php-humanizer/v/stable)](https://packagist.org/packages/coduo/php-humanizer)
 [![Total Downloads](https://poser.pugx.org/coduo/php-humanizer/downloads)](https://packagist.org/packages/coduo/php-humanizer)
 [![Latest Unstable Version](https://poser.pugx.org/coduo/php-humanizer/v/unstable)](https://packagist.org/packages/coduo/php-humanizer)
 [![License](https://poser.pugx.org/coduo/php-humanizer/license)](https://packagist.org/packages/coduo/php-humanizer)
 
 ### Tests
-* [![Build Status](https://travis-ci.com/coduo/php-humanizer.svg?branch=master)](https://travis-ci.com/coduo/php-humanizer) - master (3.1)
+* [![Build Status](https://travis-ci.com/coduo/php-humanizer.svg?branch=4.x)](https://travis-ci.com/coduo/php-humanizer) - 4.x 
 * [![Build Status](https://travis-ci.com/coduo/php-humanizer.svg?branch=3.0)](https://travis-ci.com/coduo/php-humanizer) - 3.0
 
-[Readme for master (3.1) version](https://github.com/coduo/php-humanizer/tree/master/README.md)  
+[Readme for 4.x version](https://github.com/coduo/php-humanizer/tree/4.x/README.md)  
 [Readme for 3.0 version](https://github.com/coduo/php-humanizer/tree/3.0/README.md)  
 
 
