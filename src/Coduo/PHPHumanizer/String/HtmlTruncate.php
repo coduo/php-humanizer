@@ -13,37 +13,20 @@ namespace Coduo\PHPHumanizer\String;
 
 final class HtmlTruncate implements TruncateInterface
 {
-    /**
-     * @var string
-     */
-    private $append;
+    private string $append;
 
-    /**
-     * @var string
-     */
-    private $allowedTags;
+    private string $allowedTags;
 
-    /**
-     * @var Breakpoint
-     */
-    private $breakpoint;
+    private Breakpoint $breakpoint;
 
-    /**
-     * @param Breakpoint $breakpoint
-     * @param string     $allowedTags
-     * @param string     $append
-     */
-    public function __construct(Breakpoint $breakpoint, $allowedTags = '', $append = '')
+    public function __construct(Breakpoint $breakpoint, string $allowedTags = '', string $append = '')
     {
         $this->breakpoint = $breakpoint;
         $this->append = $append;
         $this->allowedTags = $allowedTags;
     }
 
-    /**
-     * @return string
-     */
-    public function truncate($text, $charactersCount)
+    public function truncate(string $text, int $charactersCount): string
     {
         $strippedText = \strip_tags($text, $this->allowedTags);
 
@@ -55,20 +38,15 @@ final class HtmlTruncate implements TruncateInterface
      * HTML tags if $is_html is set to true.
      *
      * Adapted from FuelPHP Str::truncate (https://github.com/fuelphp/common/blob/master/src/Str.php)
-     *
-     * @param string $string
-     * @param int    $charactersCount
-     *
-     * @return string the truncated string
      */
-    private function truncateHtml($string, $charactersCount)
+    private function truncateHtml(string $string, int $charactersCount): string
     {
         $limit = $charactersCount;
         $offset = 0;
         $tags = [];
 
         // Handle special characters.
-        \preg_match_all('/&[a-z]+;/i', \strip_tags($string), $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
+        \preg_match_all('#&[a-z]+;#i', \strip_tags($string), $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
         foreach ($matches as $match) {
             if ($match[0][1] >= $limit) {
                 break;
@@ -77,13 +55,13 @@ final class HtmlTruncate implements TruncateInterface
         }
 
         // Handle all the html tags.
-        \preg_match_all('/<[^>]+>([^<]*)/', $string, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
+        \preg_match_all('#<[^>]+>([^<]*)#', $string, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
         foreach ($matches as $match) {
             if ($match[0][1] - $offset >= $limit) {
                 break;
             }
 
-            $tag = \mb_substr(\strtok($match[0][0], " \t\n\r\0\x0B>"), 1);
+            $tag = \mb_substr((string) \strtok($match[0][0], " \t\n\r\0\x0B>"), 1);
             if ($tag[0] != '/') {
                 $tags[] = $tag;
             } elseif (\end($tags) == \mb_substr($tag, 1)) {

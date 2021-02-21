@@ -185,12 +185,6 @@ class NumberHumanizerTest extends TestCase
         $this->assertEquals($expected, NumberHumanizer::binarySuffix($number, $locale));
     }
 
-    public function test_statically_throw_exception_when_converting_to_string_with_binary_suffix_non_numeric_values()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        NumberHumanizer::binarySuffix('as12');
-    }
-
     /**
      * @dataProvider preciseBinarySuffixDataProvider
      *
@@ -569,7 +563,6 @@ class NumberHumanizerTest extends TestCase
     public function arabicExceptionProvider()
     {
         return [
-            [1234],
             [''],
             ['foobar'],
         ];

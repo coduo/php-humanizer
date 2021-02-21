@@ -13,45 +13,31 @@ namespace Coduo\PHPHumanizer\String;
 
 final class BinarySuffix
 {
-    const CONVERT_THRESHOLD = 1024;
-
     /**
      * @var int
      */
-    private $number;
+    const CONVERT_THRESHOLD = 1024;
+
+    private int $number;
+
+    private string $locale;
 
     /**
-     * @var string
+     * @var array<int, string>
      */
-    private $locale;
-
-    /**
-     * @var array
-     */
-    private $binaryPrefixes = [
-        1125899906842624 => '#.## PB',
-        1099511627776 => '#.## TB',
-        1073741824 => '#.## GB',
-        1048576 => '#.## MB',
+    private array $binaryPrefixes = [
+        1_125_899_906_842_624 => '#.## PB',
+        1_099_511_627_776 => '#.## TB',
+        1_073_741_824 => '#.## GB',
+        1_048_576 => '#.## MB',
         1024 => '#.# kB',
         0 => '# bytes',
     ];
 
-    /**
-     * @param int    $number
-     * @param string $locale
-     * @param int    $precision
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function __construct($number, $locale = 'en', $precision = null)
+    public function __construct(int $number, string $locale = 'en', int $precision = null)
     {
-        if (!\class_exists('NumberFormatter')) {
+        if (!\class_exists(\NumberFormatter::class)) {
             throw new \RuntimeException('Binary suffix converter requires intl extension!');
-        }
-
-        if (!\is_numeric($number)) {
-            throw new \InvalidArgumentException('Binary suffix converter accept only numeric values.');
         }
 
         if (!\is_null($precision)) {
@@ -68,6 +54,9 @@ final class BinarySuffix
         \krsort($this->binaryPrefixes);
     }
 
+    /**
+     * @return int|string
+     */
     public function convert()
     {
         $formatter = new \NumberFormatter($this->locale, \NumberFormatter::PATTERN_DECIMAL);
@@ -90,12 +79,8 @@ final class BinarySuffix
     /**
      * Replaces the default ICU 56.1 decimal formats defined in $binaryPrefixes with ones that provide the same symbols
      * but the provided number of decimal places.
-     *
-     * @param int $precision
-     *
-     * @throws \InvalidArgumentException
      */
-    protected function setSpecificPrecisionFormat($precision)
+    protected function setSpecificPrecisionFormat(int $precision): void
     {
         if ($precision < 0) {
             throw new \InvalidArgumentException('Precision must be positive');
@@ -112,7 +97,7 @@ final class BinarySuffix
 
         foreach ($this->binaryPrefixes as $size => $unitPattern) {
             if ($size >= 1024) {
-                $symbol = \substr($unitPattern, \strpos($unitPattern, ' '));
+                $symbol = \substr($unitPattern, (int) \strpos($unitPattern, ' '));
                 $this->binaryPrefixes[$size] = $icuFormat.$symbol;
             }
         }

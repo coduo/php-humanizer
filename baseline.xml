@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="3.18.2@19aa905f7c3c7350569999a93c40ae91ae4e1626">
+  <file src="src/Coduo/PHPHumanizer/DateTime/PreciseDifference.php">
+    <MixedArgument occurrences="1">
+      <code>$diff-&gt;{$unit-&gt;getDateIntervalSymbol()}</code>
+    </MixedArgument>
+  </file>
+  <file src="src/Coduo/PHPHumanizer/Number/Ordinal/Builder.php">
+    <MixedMethodCall occurrences="1">
+      <code>new $strategy()</code>
+    </MixedMethodCall>
+  </file>
+  <file src="src/Coduo/PHPHumanizer/Translator/Builder.php">
+    <MixedArgument occurrences="1">
+      <code>$resourceName</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="2">
+      <code>$file</code>
+      <code>$resourceName</code>
+    </MixedAssignment>
+    <MixedMethodCall occurrences="2">
+      <code>getBasename</code>
+      <code>getPathname</code>
+    </MixedMethodCall>
+  </file>
+</files>

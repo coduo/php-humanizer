@@ -21,25 +21,19 @@ use Coduo\PHPHumanizer\DateTime\Difference\CompoundResult;
 
 final class PreciseDifference
 {
-    /**
-     * @var \DateTime
-     */
-    private $fromDate;
+    private \DateTime $fromDate;
+
+    private \DateTime $toDate;
 
     /**
-     * @var \DateTime
+     * @var array<Unit>
      */
-    private $toDate;
+    private array $units = [];
 
     /**
-     * @var \Coduo\PHPHumanizer\DateTime\Unit[]
+     * @var array<CompoundResult>
      */
-    private $units;
-
-    /**
-     * @var \Coduo\PHPHumanizer\DateTime\Difference\CompoundResult[]
-     */
-    private $compoundResults;
+    private array $compoundResults = [];
 
     public function __construct(\DateTime $fromDate, \DateTime $toDate)
     {
@@ -49,16 +43,16 @@ final class PreciseDifference
     }
 
     /**
-     * @return \Coduo\PHPHumanizer\DateTime\Difference\CompoundResult[]
+     * @return array<CompoundResult>
      */
-    public function getCompoundResults()
+    public function getCompoundResults(): array
     {
         return $this->compoundResults;
     }
 
-    private function calculate()
+    private function calculate(): void
     {
-        /* @var $units \Coduo\PHPHumanizer\DateTime\Unit[] */
+        /* @var $units Unit[] */
         $units = [
             new Year(),
             new Month(),
@@ -78,7 +72,7 @@ final class PreciseDifference
         }
     }
 
-    public function isPast()
+    public function isPast(): bool
     {
         $diff = $this->toDate->getTimestamp() - $this->fromDate->getTimestamp();
 

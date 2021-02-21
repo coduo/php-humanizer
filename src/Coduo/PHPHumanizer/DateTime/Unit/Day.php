@@ -15,22 +15,19 @@ use Coduo\PHPHumanizer\DateTime\Unit;
 
 final class Day implements Unit
 {
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return 'day';
     }
 
-    public function getMilliseconds()
+    public function getMilliseconds(): int
     {
         $hour = new Hour();
 
         return $hour->getMilliseconds() * 24;
     }
 
-    public function getDateIntervalSymbol()
+    public function getDateIntervalSymbol(): string
     {
         return 'd';
     }

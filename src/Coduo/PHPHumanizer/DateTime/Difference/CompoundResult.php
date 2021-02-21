@@ -15,46 +15,31 @@ use Coduo\PHPHumanizer\DateTime\Unit;
 
 final class CompoundResult
 {
-    /**
-     * @var \Coduo\PHPHumanizer\DateTime\Unit
-     */
-    private $unit;
-    private $quantity;
+    private Unit $unit;
+    private int $quantity;
 
-    public function __construct(Unit $unit, $quantity)
+    public function __construct(Unit $unit, int $quantity)
     {
         $this->unit = $unit;
         $this->quantity = $quantity;
     }
 
-    /**
-     * @param mixed $quantity
-     */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity): void
     {
         $this->quantity = $quantity;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getQuantity()
+    public function getQuantity() : int
     {
         return $this->quantity;
     }
 
-    /**
-     * @param \Coduo\PHPHumanizer\DateTime\Unit $unit
-     */
-    public function setUnit($unit)
+    public function setUnit(Unit $unit): void
     {
         $this->unit = $unit;
     }
 
-    /**
-     * @return \Coduo\PHPHumanizer\DateTime\Unit
-     */
-    public function getUnit()
+    public function getUnit(): Unit
     {
         return $this->unit;
     }

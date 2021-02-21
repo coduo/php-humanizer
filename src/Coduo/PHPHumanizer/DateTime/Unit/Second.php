@@ -15,20 +15,17 @@ use Coduo\PHPHumanizer\DateTime\Unit;
 
 final class Second implements Unit
 {
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return 'second';
     }
 
-    public function getMilliseconds()
+    public function getMilliseconds(): int
     {
         return 1000;
     }
 
-    public function getDateIntervalSymbol()
+    public function getDateIntervalSymbol(): string
     {
         return 's';
     }

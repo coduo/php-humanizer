@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/*
+ * This file is part of the PHP Humanizer Library.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Coduo\PHPHumanizer\Tests\DateTime;
 
 use Coduo\PHPHumanizer\DateTime\PreciseDifference;
@@ -14,8 +21,8 @@ final class PreciseFormatterTest extends TestCase
     public function test_format_compound_datetime_diff()
     {
         $diff = new PreciseDifference(
-            new \DateTime("2015-01-01 00:00:00"),
-            new \DateTime("2015-01-11 05:00:00")
+            new \DateTime('2015-01-01 00:00:00'),
+            new \DateTime('2015-01-11 05:00:00')
         );
 
         $formatter = new PreciseFormatter(Builder::build('en'));
@@ -26,8 +33,8 @@ final class PreciseFormatterTest extends TestCase
     public function test_format_compound_datetime_diff_for_specific_locale()
     {
         $diff = new PreciseDifference(
-            new \DateTime("2015-01-01 00:00:00"),
-            new \DateTime("2015-01-11 05:00:00")
+            new \DateTime('2015-01-01 00:00:00'),
+            new \DateTime('2015-01-11 05:00:00')
         );
 
         $formatter = new PreciseFormatter(Builder::build('en'));

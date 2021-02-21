@@ -13,11 +13,25 @@ namespace Coduo\PHPHumanizer\Number;
 
 final class RomanNumeral
 {
+    /**
+     * @var int
+     */
     const MIN_VALUE = 1;
+
+    /**
+     * @var int
+     */
     const MAX_VALUE = 3999;
+
+    /**
+     * @var string
+     */
     const ROMAN_STRING_MATCHER = '/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/';
 
-    private $map = [
+    /**
+     * @var array<string, int>
+     */
+    private array $map = [
         'M' => 1000,
         'CM' => 900,
         'D' => 500,
@@ -34,13 +48,13 @@ final class RomanNumeral
     ];
 
     /**
-     * @param $number
+     * @param numeric $number
+     *
      *
      * @return string
-     *
      * @throws \InvalidArgumentException
      */
-    public function toRoman($number)
+    public function toRoman($number): string
     {
         if (($number < self::MIN_VALUE) || ($number > self::MAX_VALUE)) {
             throw new \InvalidArgumentException();
@@ -62,13 +76,11 @@ final class RomanNumeral
     }
 
     /**
-     * @param $string
-     *
-     * @return int
+     * @return float|int
      *
      * @throws \InvalidArgumentException
      */
-    public function fromRoman($string)
+    public function fromRoman(string $string)
     {
         if (\mb_strlen((string) $string) === 0 || 0 === \preg_match(self::ROMAN_STRING_MATCHER, (string) $string)) {
             throw new \InvalidArgumentException();

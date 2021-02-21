@@ -20,54 +20,30 @@ use Coduo\PHPHumanizer\String\WordBreakpoint;
 final class StringHumanizer
 {
     /**
-     * @param $text
-     * @param bool|true $capitalize
-     * @param string    $separator
-     * @param array     $forbiddenWords
-     *
-     * @return string
+     * @param array<string> $forbiddenWords
      */
-    public static function humanize($text, $capitalize = true, $separator = '_', array $forbiddenWords = [])
+    public static function humanize(string $text, bool $capitalize = true, string $separator = '_', array $forbiddenWords = []): string
     {
         return (string) new Humanize($text, $capitalize, $separator, $forbiddenWords);
     }
 
-    /**
-     * @param $text
-     * @param $charactersCount
-     * @param string $append
-     *
-     * @return string
-     */
-    public static function truncate($text, $charactersCount, $append = '')
+    public static function truncate(string $text, int $charactersCount, string $append = ''): string
     {
         $truncate = new TextTruncate(new WordBreakpoint(), $append);
 
         return $truncate->truncate($text, $charactersCount);
     }
 
-    /**
-     * @param $text
-     * @param $charactersCount
-     * @param string $allowedTags
-     * @param string $append
-     *
-     * @return string
-     */
-    public static function truncateHtml($text, $charactersCount, $allowedTags = '', $append = '')
+    public static function truncateHtml(string $text, int $charactersCount, string $allowedTags = '', string $append = ''): string
     {
         $truncate = new HtmlTruncate(new WordBreakpoint(), $allowedTags, $append);
 
         return $truncate->truncate($text, $charactersCount);
     }
 
-    /**
-     * @param $text
-     * @return string
-     */
-    public static function removeShortcodes($text)
+    public static function removeShortcodes(string $text): string
     {
-        if (!\class_exists('Thunder\Shortcode\Processor\Processor')) {
+        if (!\class_exists('\Thunder\Shortcode\Processor\Processor')) {
             throw new \RuntimeException('Please add "thunderer/shortcode": ^0.7 to composer.json first');
         }
 
@@ -76,13 +52,9 @@ final class StringHumanizer
         return $processor->removeShortcodes($text);
     }
 
-    /**
-     * @param $text
-     * @return string
-     */
-    public static function removeShortcodeTags($text)
+    public static function removeShortcodeTags(string $text): string
     {
-        if (!\class_exists('Thunder\Shortcode\Processor\Processor')) {
+        if (!\class_exists('\Thunder\Shortcode\Processor\Processor')) {
             throw new \RuntimeException('Please add "thunderer/shortcode": ^0.7 to composer.json first');
         }
 

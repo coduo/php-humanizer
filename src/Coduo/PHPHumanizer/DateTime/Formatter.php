@@ -15,26 +15,14 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class Formatter
 {
-    /**
-     * @var TranslatorInterface
-     */
-    private $translator;
+    private TranslatorInterface $translator;
 
-    /**
-     * @param TranslatorInterface $translator
-     */
     public function __construct(TranslatorInterface $translator)
     {
         $this->translator = $translator;
     }
 
-    /**
-     * @param Difference $difference
-     * @param string     $locale
-     *
-     * @return string
-     */
-    public function formatDifference(Difference $difference, $locale = 'en')
+    public function formatDifference(Difference $difference, string $locale = 'en'): string
     {
         $translationKey = \sprintf('%s.%s', $difference->getUnit()->getName(), $difference->isPast() ? 'past' : 'future');
 

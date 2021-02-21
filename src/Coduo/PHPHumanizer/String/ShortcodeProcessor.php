@@ -20,41 +20,25 @@ final class ShortcodeProcessor
 {
     /**
      * Removes all shortcodes from given text.
-     *
-     * @param string $text
-     *
-     * @return string
      */
-    public function removeShortcodes($text)
+    public function removeShortcodes(string $text): string
     {
-        $nullHandler = function () {
-            return;
-        };
-
-        return $this->createShortcodeProcessor($nullHandler)->process($text);
+        return $this->createShortcodeProcessor(
+            function (): void {
+                return;
+            }
+        )->process($text);
     }
 
     /**
      * Removes only shortcode tags from given text (leaves their content as it is).
-     *
-     * @param string $text
-     *
-     * @return string
      */
-    public function removeShortcodeTags($text)
+    public function removeShortcodeTags(string $text): string
     {
-        $contentHandler = function (ShortcodeInterface $s) {
-            return $s->getContent();
-        };
-
-        return $this->createShortcodeProcessor($contentHandler)->process($text);
+        return $this->createShortcodeProcessor(fn (ShortcodeInterface $s) : ?string => $s->getContent())->process($text);
     }
 
-    /**
-     * @param $defaultHandler
-     * @return Processor
-     */
-    private function createShortcodeProcessor($defaultHandler)
+    private function createShortcodeProcessor(callable $defaultHandler): Processor
     {
         $handlers = new HandlerContainer();
         $handlers->setDefault($defaultHandler);

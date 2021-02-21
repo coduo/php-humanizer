@@ -15,22 +15,19 @@ use Coduo\PHPHumanizer\DateTime\Unit;
 
 final class Year implements Unit
 {
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return 'year';
     }
 
-    public function getMilliseconds()
+    public function getMilliseconds(): int
     {
         $day = new Day();
 
         return $day->getMilliseconds() * 356;
     }
 
-    public function getDateIntervalSymbol()
+    public function getDateIntervalSymbol(): string
     {
         return 'y';
     }

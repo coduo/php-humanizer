@@ -13,42 +13,42 @@ namespace Coduo\PHPHumanizer\String;
 
 final class MetricSuffix
 {
-    const CONVERT_THRESHOLD = 1000;
-
     /**
      * @var int
      */
-    private $number;
+    const CONVERT_THRESHOLD = 1000;
+
+    private int $number;
+
+    private string $locale;
 
     /**
-     * @var string
+     * @var array<int, string>
      */
-    private $locale;
-
-    /**
-     * @var array
-     */
-    private $binaryPrefixes = [
-        1000000000000000 => '#.##P',
-        1000000000000 => '#.##T',
-        1000000000 => '#.##G',
-        1000000 => '#.##M',
+    private array $binaryPrefixes = [
+        1_000_000_000_000_000 => '#.##P',
+        1_000_000_000_000 => '#.##T',
+        1_000_000_000 => '#.##G',
+        1_000_000 => '#.##M',
         1000 => '#.#k',
         0 => '#.#',
     ];
 
     /**
-     * @param $number
+     * @param numeric $number
      * @param string $locale
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct($number, $locale = 'en')
+    public function __construct($number, string $locale = 'en')
     {
-        if (!\class_exists('NumberFormatter')) {
+        if (!\class_exists(\NumberFormatter::class)) {
             throw new \RuntimeException('Metric suffix converter requires intl extension!');
         }
 
+        /**
+         * @psalm-suppress DocblockTypeContradiction
+         */
         if (!\is_numeric($number)) {
             throw new \InvalidArgumentException('Metric suffix converter accept only numeric values.');
         }
@@ -63,7 +63,7 @@ final class MetricSuffix
         \krsort($this->binaryPrefixes);
     }
 
-    public function convert()
+    public function convert(): string
     {
         $formatter = new \NumberFormatter($this->locale, \NumberFormatter::PATTERN_DECIMAL);
 

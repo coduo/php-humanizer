@@ -21,27 +21,24 @@ final class Ordinal
      */
     private $number;
 
-    /**
-     * @var StrategyInterface
-     */
-    private $strategy;
+    private StrategyInterface $strategy;
 
     /**
      * @param int|float $number
      * @param string    $locale
      */
-    public function __construct($number, $locale)
+    public function __construct($number, string $locale)
     {
         $this->number = $number;
         $this->strategy = Builder::build($locale);
     }
 
-    public function isPrefix()
+    public function isPrefix(): bool
     {
         return $this->strategy->isPrefix();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this
             ->strategy

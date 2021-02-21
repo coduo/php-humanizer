@@ -13,28 +13,21 @@ namespace Coduo\PHPHumanizer\String;
 
 final class Humanize
 {
-    /**
-     * @var string
-     */
-    private $text;
+    private string $text;
+
+    private bool $capitalize;
+
+    private string $separator;
 
     /**
-     * @var bool
+     * @var array<string>
      */
-    private $capitalize;
+    private array $forbiddenWords;
 
     /**
-     * @var string
+     * @param array<string> $forbiddenWords
      */
-    private $separator;
-
-    /**
-     * @param $text
-     * @param bool   $capitalize
-     * @param string $separator
-     * @param array  $forbiddenWords
-     */
-    public function __construct($text, $capitalize = true, $separator = '_', array $forbiddenWords = ['id'])
+    public function __construct(string $text, bool $capitalize = true, string $separator = '_', array $forbiddenWords = ['id'])
     {
         $this->text = $text;
         $this->capitalize = $capitalize;
@@ -42,12 +35,9 @@ final class Humanize
         $this->forbiddenWords = $forbiddenWords;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
-        $humanized = \trim(\strtolower(\preg_replace(['/([A-Z])/', "/[{$this->separator}\\s]+/"], ['_$1', ' '], $this->text)));
+        $humanized = \trim(\strtolower((string) \preg_replace(['/([A-Z])/', \sprintf('/[%s\s]+/', $this->separator)], ['_$1', ' '], $this->text)));
         $humanized = \trim(\str_replace($this->forbiddenWords, '', $humanized));
 
         return $this->capitalize ?  \ucfirst($humanized) : $humanized;
