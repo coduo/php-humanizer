@@ -15,16 +15,13 @@
         }
     ],
     "require": {
-        "php": ">=7.3",
-        "symfony/config": "^4.4|^5.0",
+        "php": "^7.4 | ^8.0",
         "symfony/translation": "^4.4|^5.0",
         "symfony/yaml": "^4.4|^5.0"
     },
     "require-dev": {
         "thunderer/shortcode": "^0.7",
-        "phpspec/phpspec": "^6.0",
-        "phpunit/phpunit": "^8.4",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "phpunit/phpunit": "^9.4"
     },
     "config": {
         "bin-dir": "bin"
@@ -39,22 +36,24 @@
             "": "tests/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "4.0-dev"
-        }
-    },
     "suggest": {
         "ext-intl": "Required if you are going to use humanizer with locales different than en_EN"
     },
     "scripts": {
         "cs:php:fix": [
-            "php-cs-fixer fix --using-cache=no"
+            "tools/php-cs-fixer fix --using-cache=no"
         ],
-        "test": [
-            "phpspec run --format=pretty",
-            "phpunit",
-            "php-cs-fixer fix -v --dry-run"
+        "test" : [
+            "phpunit"
+        ],
+        "test:mutation": [
+            "Composer\\Config::disableProcessTimeout",
+            "tools/infection"
+        ],
+        "static:analyze": [
+            "tools/psalm --shepherd --stats",
+            "tools/phpstan analyze -c phpstan.neon",
+            "tools/php-cs-fixer fix --dry-run"
         ]
     }
 }
