@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - "6.x"
+      - "4.x"
   schedule:
     - cron:  '* 8 * * *'
 
@@ -62,7 +62,7 @@ jobs:
             php-${{ matrix.php-version }}-${{ matrix.dependencies }}-composer-
 
       - name: "Install tools"
-        run: "phive install --trust-gpg-keys E82B2FB314E9906E,CF1A108D0E7AE720,8A03EA3B385DBAA1,C5095986493B4AA0 --force-accept-unsigned"
+        run: "phive install --trust-gpg-keys E82B2FB314E9906E,CF1A108D0E7AE720,12CE0F1D262429A5 --force-accept-unsigned"
 
       - name: "Install lowest dependencies"
         if: ${{ matrix.dependencies == 'lowest' }}
