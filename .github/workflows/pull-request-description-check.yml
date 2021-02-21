@@ -1,0 +1,20 @@
+name: "Pull Request Description Check"
+
+on:
+  pull_request:
+    types: ["opened", "edited", "reopened", "ready_for_review"]
+
+jobs:
+  pull-request-description-check:
+    name: "Pull Request Description"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Pull Request Description - Check"
+        uses: "docker://aeonphp/automation:latest"
+        env:
+          AEON_AUTOMATION_GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+          entrypoint: "/composer/vendor/bin/automation"
+          args: "pull-request:description:check ${{ github.repository }} ${{ github.event.pull_request.number }} --skip-from=\"dependabot[bot]\""
