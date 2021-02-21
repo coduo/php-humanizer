@@ -18,12 +18,9 @@ use Coduo\PHPHumanizer\Translator\Builder;
 final class CollectionHumanizer
 {
     /**
-     * @param $collection
-     * @param null $limit
-     * @param string $locale
-     * @return string
+     * @param array<string> $collection
      */
-    public static function oxford($collection, $limit = null, $locale = 'en')
+    public static function oxford(array $collection, int $limit = null, string $locale = 'en'): string
     {
         $oxford = new Oxford(
             new Formatter(Builder::build($locale))

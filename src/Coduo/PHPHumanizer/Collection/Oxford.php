@@ -13,28 +13,17 @@ namespace Coduo\PHPHumanizer\Collection;
 
 final class Oxford
 {
-    /**
-     * @var Formatter
-     */
-    private $formatter;
+    private Formatter $formatter;
 
-    /**
-     * Oxford constructor.
-     *
-     * @param Formatter $formatter
-     */
     public function __construct(Formatter $formatter)
     {
         $this->formatter = $formatter;
     }
 
     /**
-     * @param $collection
-     * @param null $limit
-     *
-     * @return string
+     * @param array<string> $collection
      */
-    public function format($collection, $limit = null)
+    public function format(array $collection, int $limit = null): string
     {
         return $this->formatter->format($collection, $limit);
     }

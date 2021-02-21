@@ -11,38 +11,37 @@ declare(strict_types=1);
 
 namespace Coduo\PHPHumanizer\Number\Ordinal;
 
-/**
- * Tries to find a proper  strategy for ordinal numbers.
- */
 final class Builder
 {
     /**
-     * @param string $locale
-     *
-     * @return StrategyInterface
-     *
-     * @throws \RuntimeException
+     * Find a proper strategy for ordinal numbers.
      */
-    public static function build($locale)
+    public static function build(string $locale): StrategyInterface
     {
         // $locale should be xx or xx_YY
-        if (!\preg_match('/^([a-z]{2})(_([A-Z]{2}))?$/', $locale, $m)) {
-            throw new \RuntimeException("Invalid locale specified: '$locale'.");
+        if (!\preg_match('#^([a-z]{2})(_([A-Z]{2}))?$#', $locale, $m)) {
+            throw new \RuntimeException(\sprintf("Invalid locale specified: '%s'.", $locale));
         }
 
         $strategy = \ucfirst($m[1]);
         if (!empty($m[3])) {
-            $strategy .= "_$m[3]";
+            $strategy .= \sprintf('_%s', $m[3]);
         }
 
-        $strategy = "\\Coduo\\PHPHumanizer\\Resources\\Ordinal\\{$strategy}Strategy";
+        $strategy = \sprintf('\Coduo\PHPHumanizer\Resources\Ordinal\%sStrategy', $strategy);
 
         if (\class_exists($strategy)) {
-            return new $strategy();
+            $strategyInstance = new $strategy();
+
+            if (!$strategyInstance instanceof StrategyInterface) {
+                throw new \RuntimeException(\sprintf('Strategy for locale %s does not implement Strategy Interface.', $locale));
+            }
+
+            return $strategyInstance;
         }
 
         // Debatable: should we fallback to English?
         // return self::build('en');
-        throw new \RuntimeException("Strategy for locale $locale not found.");
+        throw new \RuntimeException(\sprintf('Strategy for locale %s not found.', $locale));
     }
 }

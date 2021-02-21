@@ -15,20 +15,17 @@ use Coduo\PHPHumanizer\DateTime\Unit;
 
 final class JustNow implements Unit
 {
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return 'just_now';
     }
 
-    public function getMilliseconds()
+    public function getMilliseconds(): int
     {
         return 0;
     }
 
-    public function getDateIntervalSymbol()
+    public function getDateIntervalSymbol(): string
     {
         throw new \RuntimeException("JustNow doesn't have date interval symbol equivalent");
     }

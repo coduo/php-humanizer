@@ -13,33 +13,17 @@ namespace Coduo\PHPHumanizer\String;
 
 final class TextTruncate implements TruncateInterface
 {
-    /**
-     * @var string
-     */
-    private $append;
+    private string $append;
 
-    /**
-     * @var Breakpoint
-     */
-    private $breakpoint;
+    private Breakpoint $breakpoint;
 
-    /**
-     * @param Breakpoint $breakpoint
-     * @param string     $append
-     */
-    public function __construct(Breakpoint $breakpoint, $append = '')
+    public function __construct(Breakpoint $breakpoint, string $append = '')
     {
         $this->breakpoint = $breakpoint;
         $this->append = $append;
     }
 
-    /**
-     * @param string $text
-     * @param int    $charactersCount
-     *
-     * @return string
-     */
-    public function truncate($text, $charactersCount)
+    public function truncate(string $text, int $charactersCount): string
     {
         if ($charactersCount < 0 || \mb_strlen($text) <= $charactersCount) {
             return $text;

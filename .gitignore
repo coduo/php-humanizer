@@ -1,5 +1,4 @@
 vendor/
 bin/
-composer.lock
-composer.phar
-*.cache
+var/
+tools/

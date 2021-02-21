@@ -1,0 +1,25 @@
+name: "Release - Description Update"
+
+#########################################################
+# WARNING - THIS ACTION WILL UPDATE RELEASE DESCRIPTION #
+#########################################################
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  release-description-update:
+    name: "Release - Description Update"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Update CHANGELOG"
+        uses: "docker://aeonphp/automation:latest"
+        env:
+          AEON_AUTOMATION_GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+          entrypoint: "/composer/vendor/bin/automation"
+          args: "changelog:generate ${{ github.repository }} --tag=${{ github.event.release.tag_name }} --github-release-update --skip-from=\"dependabot[bot]\" --skip-from=\"aeon-automation\""

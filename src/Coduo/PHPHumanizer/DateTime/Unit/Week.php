@@ -15,22 +15,19 @@ use Coduo\PHPHumanizer\DateTime\Unit;
 
 final class Week implements Unit
 {
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return 'week';
     }
 
-    public function getMilliseconds()
+    public function getMilliseconds(): int
     {
         $day = new Day();
 
         return $day->getMilliseconds() * 7;
     }
 
-    public function getDateIntervalSymbol()
+    public function getDateIntervalSymbol(): string
     {
         throw new \RuntimeException("Week doesn't have date interval symbol equivalent");
     }

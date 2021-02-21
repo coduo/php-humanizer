@@ -15,26 +15,20 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class Formatter
 {
-    /**
-     * @var TranslatorInterface
-     */
-    private $translator;
+    private TranslatorInterface $translator;
 
-    /**
-     * @var string
-     */
-    private $catalogue;
+    private string $catalogue;
 
-    /**
-     * @param TranslatorInterface $translator
-     */
-    public function __construct(TranslatorInterface $translator, $catalogue = 'oxford')
+    public function __construct(TranslatorInterface $translator, string $catalogue = 'oxford')
     {
         $this->translator = $translator;
         $this->catalogue = $catalogue;
     }
 
-    public function format($collection, $limit = null)
+    /**
+     * @param array<string> $collection
+     */
+    public function format(array $collection, int $limit = null): string
     {
         $count = \count($collection);
 
@@ -58,17 +52,11 @@ final class Formatter
     }
 
     /**
-     * @param $collection
-     * @param $limit
-     * @param $count
-     *
-     * @return string
+     * @param array<string> $collection
      */
-    private function formatCommaSeparatedWithLimit($collection, $limit, $count)
+    private function formatCommaSeparatedWithLimit(array $collection, ?int $limit, int $count): string
     {
-        $display = \array_map(function ($element) {
-            return (string) $element;
-        }, \array_slice($collection, 0, $limit));
+        $display = \array_map(fn ($element) => (string) $element, \array_slice($collection, 0, $limit));
 
         $moreCount = $count - \count($display);
 
@@ -79,16 +67,11 @@ final class Formatter
     }
 
     /**
-     * @param $collection
-     * @param $count
-     *
-     * @return string
+     * @param array<string> $collection
      */
-    private function formatCommaSeparated($collection, $count)
+    private function formatCommaSeparated(array $collection, int $count): string
     {
-        $display = \array_map(function ($element) {
-            return (string) $element;
-        }, \array_slice($collection, 0, $count - 1));
+        $display = \array_map(fn ($element) => (string) $element, \array_slice($collection, 0, $count - 1));
 
         return $this->translator->trans('comma_separated', [
             '%list%' => \implode(', ', $display),
@@ -97,11 +80,9 @@ final class Formatter
     }
 
     /**
-     * @param $collection
-     *
-     * @return string
+     * @param array<string> $collection
      */
-    private function formatOnlyTwo($collection)
+    private function formatOnlyTwo(array $collection): string
     {
         return $this->translator->trans('only_two', [
             '%first%' => (string) $collection[0],

@@ -22,25 +22,16 @@ use Coduo\PHPHumanizer\DateTime\Unit\Year;
 
 final class Difference
 {
-    /**
-     * @var \DateTime
-     */
-    private $fromDate;
+    private \DateTime $fromDate;
+
+    private \DateTime $toDate;
 
     /**
-     * @var \DateTime
+     * @psalm-suppress PropertyNotSetInConstructor
      */
-    private $toDate;
+    private Unit $unit;
 
-    /**
-     * @var \Coduo\PHPHumanizer\DateTime\Unit
-     */
-    private $unit;
-
-    /**
-     * @var int
-     */
-    private $quantity;
+    private ?int $quantity = null;
 
     public function __construct(\DateTime $fromDate, \DateTime $toDate)
     {
@@ -49,25 +40,19 @@ final class Difference
         $this->calculate();
     }
 
-    /**
-     * @return Unit
-     */
-    public function getUnit()
+    public function getUnit(): Unit
     {
         return $this->unit;
     }
 
-    /**
-     * @return int
-     */
-    public function getQuantity()
+    public function getQuantity(): ?int
     {
         return $this->quantity;
     }
 
-    private function calculate()
+    private function calculate(): void
     {
-        /* @var $units \Coduo\PHPHumanizer\DateTime\Unit[] */
+        /* @var $units Unit[] */
         $units = [
             new Year(),
             new Month(),
@@ -92,7 +77,7 @@ final class Difference
             : (int) \round($absoluteMilliSecondsDiff / $this->unit->getMilliseconds());
     }
 
-    public function isPast()
+    public function isPast(): bool
     {
         $diff = $this->toDate->getTimestamp() - $this->fromDate->getTimestamp();
 

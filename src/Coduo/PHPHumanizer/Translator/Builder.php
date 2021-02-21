@@ -16,11 +16,7 @@ use Symfony\Component\Translation\Translator;
 
 final class Builder
 {
-    /**
-     * @param $locale
-     * @return Translator
-     */
-    public static function build($locale)
+    public static function build(string $locale): Translator
     {
         $translator = new Translator($locale);
         $translator->addLoader('yml', new YamlFileLoader());

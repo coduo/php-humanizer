@@ -1,0 +1,77 @@
+name: "Static Analyze"
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "4.x"
+  schedule:
+    - cron:  '* 8 * * *'
+
+jobs:
+  compatibility:
+    name: "Static Analyze"
+
+    runs-on: ${{ matrix.operating-system }}
+
+    strategy:
+      matrix:
+        dependencies:
+          - "locked"
+        php-version:
+          - "7.4"
+        operating-system:
+          - "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "pcov"
+          php-version: "${{ matrix.php-version }}"
+          ini-values: memory_limit=-1
+          tools: phive, composer:v2
+
+      - name: "Cache Phive dependencies"
+        uses: "actions/cache@v2"
+        with:
+          path: |
+            ~/.phive
+          key: "${{ runner.os }}-phive-${{ hashFiles('**/phars.xml') }}"
+          restore-keys: |
+            ${{ runner.os }}-phive-
+
+      - name: "Get Composer Cache Directory"
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Cache Composer dependencies"
+        uses: "actions/cache@v2"
+        with:
+          path: |
+            ${{ steps.composer-cache.outputs.dir }}
+          key: "php-${{ matrix.php-version }}-${{ matrix.dependencies }}-composer-${{ hashFiles('**/composer.lock') }}"
+          restore-keys: |
+            php-${{ matrix.php-version }}-${{ matrix.dependencies }}-composer-
+
+      - name: "Install tools"
+        run: "phive install --trust-gpg-keys E82B2FB314E9906E,CF1A108D0E7AE720,8A03EA3B385DBAA1,12CE0F1D262429A5 --force-accept-unsigned"
+
+      - name: "Install lowest dependencies"
+        if: ${{ matrix.dependencies == 'lowest' }}
+        run: "composer update --prefer-lowest --no-interaction --no-progress --no-suggest"
+
+      - name: "Install highest dependencies"
+        if: ${{ matrix.dependencies == 'highest' }}
+        run: "composer update --no-interaction --no-progress --no-suggest"
+
+      - name: "Install locked dependencies"
+        if: ${{ matrix.dependencies == 'locked' }}
+        run: "composer install --no-interaction --no-progress --no-suggest"
+
+      - name: "Static Analyze"
+        run: "composer static:analyze"

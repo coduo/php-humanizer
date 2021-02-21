@@ -1,0 +1,31 @@
+name: "Changelog - Release Unreleased"
+
+###################################################################
+# WARNING - THIS ACTION WILL PUSH COMMIT DIRECTLY INTO REPOSITORY #
+###################################################################
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  changelog-release-unreleased:
+    name: "Update Changelog - Release Unreleased"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Get tag name"
+        id: "tag-name"
+        run: |
+          tag=$(echo ${{ github.event.ref }} | cut -c11-)
+          echo "::set-output name=tag::$tag"
+
+      - name: "Update CHANGELOG"
+        uses: "docker://aeonphp/automation:latest"
+        env:
+          AEON_AUTOMATION_GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+          entrypoint: "/composer/vendor/bin/automation"
+          args: "changelog:release:unreleased ${{ github.repository }} CHANGELOG.md ${{ steps.tag-name.outputs.tag }} --github-file-changelog-update"

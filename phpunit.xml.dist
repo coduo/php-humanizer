@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false"
-         syntaxCheck="false"
-         bootstrap="tests/bootstrap.php"
-        >
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+     colors="true"
+     bootstrap="vendor/autoload.php"
+     cacheResultFile="var/phpunit/.result.cache"
+>
     <testsuites>
-        <testsuite name="PHP Humanizer Test Suite">
+        <testsuite name="unit">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist>
-            <directory>./src/Coduo/PHPHumanizer/</directory>
-        </whitelist>
-    </filter>
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./src/</directory>
+        </include>
+
+        <report>
+            <html outputDirectory="var/phpunit/coverage/html" lowUpperBound="80" highLowerBound="100"/>
+        </report>
+    </coverage>
 </phpunit>

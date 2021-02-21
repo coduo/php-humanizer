@@ -15,16 +15,12 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
 final class PtStrategy implements StrategyInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function isPrefix()
+    public function isPrefix(): bool
     {
         return false;
     }
 
-    /** {@inheritdoc} */
-    public function ordinalIndicator($number)
+    public function ordinalIndicator($number): string
     {
         return 'o';
     }

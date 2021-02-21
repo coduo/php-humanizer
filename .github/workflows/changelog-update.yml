@@ -1,0 +1,38 @@
+name: "Changelog - Update Unreleased"
+
+###################################################################
+# WARNING - THIS ACTION WILL PUSH COMMIT DIRECTLY INTO REPOSITORY #
+###################################################################
+
+on:
+  push:
+    branches:
+      - 6.x
+
+jobs:
+  changelog-update-unreleased:
+    name: "Changelog - Update Unreleased"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Restore Automation cache"
+        uses: "actions/cache@v2"
+        with:
+          path: |
+            cache
+          key: "${{ runner.os }}-automation-${{ hashFiles('**/CHANGELOG.md') }}"
+          restore-keys: |
+            ${{ runner.os }}-automation-
+
+      - name: "Update CHANGELOG"
+        uses: "docker://aeonphp/automation:latest"
+        env:
+          AEON_AUTOMATION_GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          EON_AUTOMATION_CACHE_DIR: "/github/workspace/cache"
+        with:
+          entrypoint: "/composer/vendor/bin/automation"
+          args: "changelog:generate ${{ github.repository }} --github-file-update-path=CHANGELOG.md --skip-from=\"dependabot[bot]\" --skip-from=\"aeon-automation\""

@@ -20,36 +20,34 @@ final class NumberHumanizer
 {
     /**
      * @param int|float $number
-     * @param string    $locale
-     *
+     * @param string $locale
      * @return string
      */
-    public static function ordinalize($number, $locale = 'en')
+    public static function ordinalize($number, string $locale = 'en'): string
     {
         $ordinal = new Ordinal($number, $locale);
-     
+
         return (string) ($ordinal->isPrefix()) ? $ordinal.$number : $number.$ordinal;
     }
-    
+
     /**
      * @param int|float $number
-     * @param string    $locale
-     *
+     * @param string $locale
      * @return string
      */
-    public static function ordinal($number, $locale = 'en')
+    public static function ordinal($number, string $locale = 'en'): string
     {
         $ordinal = new Ordinal($number, $locale);
-       
+
         return (string) $ordinal;
     }
 
     /**
-     * @param $number
+     * @param int $number
      * @param string $locale
      * @return bool|int|string
      */
-    public static function binarySuffix($number, $locale = 'en')
+    public static function binarySuffix(int $number, string $locale = 'en')
     {
         $binarySuffix = new BinarySuffix($number, $locale);
 
@@ -57,12 +55,9 @@ final class NumberHumanizer
     }
 
     /**
-     * @param $number
-     * @param $precision
-     * @param string $locale
      * @return bool|int|string
      */
-    public static function preciseBinarySuffix($number, $precision, $locale = 'en')
+    public static function preciseBinarySuffix(int $number, ?int $precision, string $locale = 'en')
     {
         $binarySuffix = new BinarySuffix($number, $locale, $precision);
 
@@ -70,11 +65,9 @@ final class NumberHumanizer
     }
 
     /**
-     * @param $number
-     * @param string $locale
-     * @return bool|string
+     * @param numeric $number
      */
-    public static function metricSuffix($number, $locale = 'en')
+    public static function metricSuffix($number, string $locale = 'en'): string
     {
         $binarySuffix = new MetricSuffix($number, $locale);
 
@@ -82,10 +75,10 @@ final class NumberHumanizer
     }
 
     /**
-     * @param $number
+     * @param numeric $number
      * @return string
      */
-    public static function toRoman($number)
+    public static function toRoman($number): string
     {
         $romanNumeral = new RomanNumeral();
 
@@ -93,10 +86,9 @@ final class NumberHumanizer
     }
 
     /**
-     * @param $number
-     * @return int
+     * @return float|int
      */
-    public static function fromRoman($number)
+    public static function fromRoman(string $number)
     {
         $romanNumeral = new RomanNumeral();
 
