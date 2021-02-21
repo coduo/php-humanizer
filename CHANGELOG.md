@@ -1,10 +1,19 @@
-## [Unreleased] - 2020-10-18
+## [Unreleased] - 2021-02-21
 
 ### Added
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **phpstan with highest possible requirements** - [@norberttech](https://github.com/norberttech)
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **psalm with highest possible requirements** - [@norberttech](https://github.com/norberttech)
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **arguments and return type hinting** - [@norberttech](https://github.com/norberttech)
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **PHP 8.0 support** - [@norberttech](https://github.com/norberttech)
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **More precise CS fixer rules** - [@norberttech](https://github.com/norberttech)
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **Full change log** - [@norberttech](https://github.com/norberttech)
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **integration with aeon-php/automation** - [@norberttech](https://github.com/norberttech)
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **Github actions integration** - [@norberttech](https://github.com/norberttech)
 - [#120](https://github.com/coduo/php-humanizer/pull/120) - **test for azerbaijani language** - [@4t87ux8](https://github.com/4t87ux8)
 - [#119](https://github.com/coduo/php-humanizer/pull/119) - **support azerbaijani language** - [@4t87ux8](https://github.com/4t87ux8)
 
 ### Changed
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **minimum required PHP version ^7.4** - [@norberttech](https://github.com/norberttech)
 - [#118](https://github.com/coduo/php-humanizer/pull/118) - **create azerbaijani translation** - [@4t87ux8](https://github.com/4t87ux8)
 - [fa52e6](https://github.com/coduo/php-humanizer/commit/fa52e6223eef2f19fbd0a290432b5a878317dca2) - **Fixxed issue with symfony translator dependency, upgraded php, phpunit and phpspec dependencies** - [@norberttech](https://github.com/norberttech)
 - [f989a9](https://github.com/coduo/php-humanizer/commit/f989a91d2d90f5d4bf4922ab9fec1674e7fe024e) - **Create FUNDING.yml** - [@norberttech](https://github.com/norberttech)
@@ -15,10 +24,14 @@
 - [1b2787](https://github.com/coduo/php-humanizer/commit/1b2787d28282247b3fe68cd5b9f6bf80f304fa63) - **dev-master branch aliast** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [4de08d](https://github.com/coduo/php-humanizer/commit/4de08de0b2463cfc498612a89189385b5de4f66d) - **updating changelog workflow** - [@norberttech](https://github.com/norberttech)
 - [fc3a04](https://github.com/coduo/php-humanizer/commit/fc3a043f6e03bc29e86d0cd58ae3a6b7daf40d69) - **travis configuration** - [@norberttech](https://github.com/norberttech)
 - [#115](https://github.com/coduo/php-humanizer/pull/115) - **composer autoloading deprecation notice; Support symfony 5** - [@brianwozeniak](https://github.com/brianwozeniak)
 
 ### Removed
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **phpspec** - [@norberttech](https://github.com/norberttech)
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **symfony/config dependency** - [@norberttech](https://github.com/norberttech)
+- [#122](https://github.com/coduo/php-humanizer/pull/122) - **travis CI integration** - [@norberttech](https://github.com/norberttech)
 - [83a180](https://github.com/coduo/php-humanizer/commit/83a1805da9a28a98a0bb932a5236becd44ea79b6) - **php 8.0 from matrix** - [@norberttech](https://github.com/norberttech)
 
 ## [3.0.2] - 2019-04-29
@@ -152,7 +165,7 @@
 - [dac446](https://github.com/coduo/php-humanizer/commit/dac446bb4bb0a959fb39466b3729bc97060f4449) - **refacto visibility and breakpoint** - [@smeeckaert](https://github.com/smeeckaert)
 - [#34](https://github.com/coduo/php-humanizer/pull/34) - **string functions into multibyte string functions** - [@norberttech](https://github.com/norberttech)
 - [#35](https://github.com/coduo/php-humanizer/pull/35) - **Oxford italian translations** - [@omissis](https://github.com/omissis)
-- [#22](https://github.com/coduo/php-humanizer/pull/22) - **Oxford collection +  phpcs fixer cleanup.** - [@defrag](https://github.com/defrag)
+- [#22](https://github.com/coduo/php-humanizer/pull/22) - **Oxford collection + phpcs fixer cleanup.** - [@defrag](https://github.com/defrag)
 - [#33](https://github.com/coduo/php-humanizer/pull/33) - **Truncate check length of append** - [@smeeckaert](https://github.com/smeeckaert)
 - [#31](https://github.com/coduo/php-humanizer/pull/31) - **Addition of Portuguese (pt) language translation (with spec tests)** - [@lightglitch](https://github.com/lightglitch)
 - [8cdeae](https://github.com/coduo/php-humanizer/commit/8cdeaef54f759d7e9a93c85cbf9e6e7b63dd6e76) - **truncate html** - [@smeeckaert](https://github.com/smeeckaert)
