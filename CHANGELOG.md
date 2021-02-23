@@ -28,6 +28,7 @@
 - [1b2787](https://github.com/coduo/php-humanizer/commit/1b2787d28282247b3fe68cd5b9f6bf80f304fa63) - **dev-master branch aliast** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [16074f](https://github.com/coduo/php-humanizer/commit/16074feea40f8d96e2a31d8d18e24425149a6086) - **missing .php_cs configuration file** - [@norberttech](https://github.com/norberttech)
 - [4de08d](https://github.com/coduo/php-humanizer/commit/4de08de0b2463cfc498612a89189385b5de4f66d) - **updating changelog workflow** - [@norberttech](https://github.com/norberttech)
 - [fc3a04](https://github.com/coduo/php-humanizer/commit/fc3a043f6e03bc29e86d0cd58ae3a6b7daf40d69) - **travis configuration** - [@norberttech](https://github.com/norberttech)
 - [#115](https://github.com/coduo/php-humanizer/pull/115) - **composer autoloading deprecation notice; Support symfony 5** - [@brianwozeniak](https://github.com/brianwozeniak)
