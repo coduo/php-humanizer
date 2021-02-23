@@ -1,6 +1,7 @@
 ## [Unreleased] - 2021-02-23
 
 ### Added
+- [0533da](https://github.com/coduo/php-humanizer/commit/0533da67e2a0ff97a8f504ebc8de469eaca150f1) - **more strict php cs fixer rules** - [@norberttech](https://github.com/norberttech)
 - [#123](https://github.com/coduo/php-humanizer/pull/123) - **Relative/Time Unit humanizer** - [@norberttech](https://github.com/norberttech)
 - [#123](https://github.com/coduo/php-humanizer/pull/123) - **TimePeriod humanizer** - [@norberttech](https://github.com/norberttech)
 - [#123](https://github.com/coduo/php-humanizer/pull/123) - **Support for \DateTimeInterface instead of legacy \DateTime in all DateTimeHumanizers** - [@norberttech](https://github.com/norberttech)
