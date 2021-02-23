@@ -16,27 +16,27 @@ use Coduo\PHPHumanizer\DateTime\Unit;
 final class CompoundResult
 {
     private Unit $unit;
-    private int $quantity;
 
-    public function __construct(Unit $unit, int $quantity)
+    /**
+     * @var int|float
+     */
+    private $quantity;
+
+    /**
+     * @param int|float $quantity
+     */
+    public function __construct(Unit $unit, $quantity)
     {
         $this->unit = $unit;
         $this->quantity = $quantity;
     }
 
-    public function setQuantity(int $quantity): void
-    {
-        $this->quantity = $quantity;
-    }
-
-    public function getQuantity() : int
+    /**
+     * @return int|float
+     */
+    public function getQuantity()
     {
         return $this->quantity;
-    }
-
-    public function setUnit(Unit $unit): void
-    {
-        $this->unit = $unit;
     }
 
     public function getUnit(): Unit

@@ -236,6 +236,22 @@ DateTimeHumanizer::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \
 DateTimeHumanizer::preciseDifference(new \DateTime("2014-04-26 13:00:00"), new \DateTime("2016-04-27 13:00:00")); // 2 years, 1 day from now
 ```
 
+## Aeon Calendar 
+
+[Aeon PHP](https://aeon-php.org/) is a date&time oriented set of libraries. 
+
+```php
+use Coduo\PHPHumanizer\DateTimeHumanizer;
+
+$timeUnit = TimeUnit::days(2)
+                ->add(TimeUnit::hours(3))
+                ->add(TimeUnit::minutes(25))
+                ->add(TimeUnit::seconds(30))
+                ->add(TimeUnit::milliseconds(200));
+            
+DateTimeHumanizer::timeUnit($timeUnit); // 2 days, 3 hours, 25 minutes, and 30.2 seconds
+```
+
 Currently we support following languages:
 * [Azerbaijani](src/Coduo/PHPHumanizer/Resources/translations/difference.az.yml)
 * [English](src/Coduo/PHPHumanizer/Resources/translations/difference.en.yml)
