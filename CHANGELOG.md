@@ -1,6 +1,9 @@
-## [Unreleased] - 2021-02-21
+## [Unreleased] - 2021-02-23
 
 ### Added
+- [#123](https://github.com/coduo/php-humanizer/pull/123) - **Relative/Time Unit humanizer** - [@norberttech](https://github.com/norberttech)
+- [#123](https://github.com/coduo/php-humanizer/pull/123) - **TimePeriod humanizer** - [@norberttech](https://github.com/norberttech)
+- [#123](https://github.com/coduo/php-humanizer/pull/123) - **Support for \DateTimeInterface instead of legacy \DateTime in all DateTimeHumanizers** - [@norberttech](https://github.com/norberttech)
 - [#122](https://github.com/coduo/php-humanizer/pull/122) - **phpstan with highest possible requirements** - [@norberttech](https://github.com/norberttech)
 - [#122](https://github.com/coduo/php-humanizer/pull/122) - **psalm with highest possible requirements** - [@norberttech](https://github.com/norberttech)
 - [#122](https://github.com/coduo/php-humanizer/pull/122) - **arguments and return type hinting** - [@norberttech](https://github.com/norberttech)
