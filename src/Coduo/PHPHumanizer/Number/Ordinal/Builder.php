@@ -16,7 +16,7 @@ final class Builder
     /**
      * Find a proper strategy for ordinal numbers.
      */
-    public static function build(string $locale): StrategyInterface
+    public static function build(string $locale) : StrategyInterface
     {
         // $locale should be xx or xx_YY
         if (!\preg_match('#^([a-z]{2})(_([A-Z]{2}))?$#', $locale, $m)) {
@@ -24,6 +24,7 @@ final class Builder
         }
 
         $strategy = \ucfirst($m[1]);
+
         if (!empty($m[3])) {
             $strategy .= \sprintf('_%s', $m[3]);
         }

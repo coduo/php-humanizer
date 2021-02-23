@@ -18,12 +18,12 @@ final class CompoundResult
     private Unit $unit;
 
     /**
-     * @var int|float
+     * @var float|int
      */
     private $quantity;
 
     /**
-     * @param int|float $quantity
+     * @param float|int $quantity
      */
     public function __construct(Unit $unit, $quantity)
     {
@@ -32,14 +32,14 @@ final class CompoundResult
     }
 
     /**
-     * @return int|float
+     * @return float|int
      */
     public function getQuantity()
     {
         return $this->quantity;
     }
 
-    public function getUnit(): Unit
+    public function getUnit() : Unit
     {
         return $this->unit;
     }

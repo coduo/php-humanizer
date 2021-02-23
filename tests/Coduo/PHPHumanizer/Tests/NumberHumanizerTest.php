@@ -22,67 +22,73 @@ class NumberHumanizerTest extends TestCase
      * @param $expected
      * @param $number
      */
-    public function test_return_ordinal_suffix($expected, $number)
+    public function test_return_ordinal_suffix($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number));
     }
 
     /**
      * @dataProvider ordinalIndicatorDutchProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_return_ordinal_suffix_dutch($expected, $number)
+    public function test_return_ordinal_suffix_dutch($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'nl'));
     }
 
     /**
      * @dataProvider ordinalIndicatorIndonesianProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_return_ordinal_suffix_indonesian($expected, $number)
+    public function test_return_ordinal_suffix_indonesian($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'id'));
     }
 
     /**
      * @dataProvider ordinalSuffixPtEsItProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_return_ordinal_suffix_spanish($expected, $number)
+    public function test_return_ordinal_suffix_spanish($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'es'));
     }
 
     /**
      * @dataProvider ordinalSuffixPtEsItProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_return_ordinal_suffix_italian($expected, $number)
+    public function test_return_ordinal_suffix_italian($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'it'));
     }
 
     /**
      * @dataProvider ordinalSuffixGermanProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_return_ordinal_suffix_german($expected, $number)
+    public function test_return_ordinal_suffix_german($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'de'));
     }
 
     /**
      * @dataProvider ordinalSuffixFrenchProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_return_ordinal_suffix_french($expected, $number)
+    public function test_return_ordinal_suffix_french($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'fr'));
     }
@@ -94,7 +100,7 @@ class NumberHumanizerTest extends TestCase
      * @param $expected
      * @param $number
      */
-    public function test_ordinalize_numbers($expected, $number)
+    public function test_ordinalize_numbers($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number));
     }
@@ -106,7 +112,7 @@ class NumberHumanizerTest extends TestCase
      * @param $expected
      * @param $number
      */
-    public function test_ordinalize_numbers_dutch($expected, $number)
+    public function test_ordinalize_numbers_dutch($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'nl'));
     }
@@ -118,57 +124,62 @@ class NumberHumanizerTest extends TestCase
      * @param $expected
      * @param $number
      */
-    public function test_ordinalize_numbers_indonesian($expected, $number)
+    public function test_ordinalize_numbers_indonesian($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'id'));
     }
 
     /**
      * @dataProvider ordinalizeDataPtEsItProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_ordinalize_numbers_portuguese($expected, $number)
+    public function test_ordinalize_numbers_portuguese($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'pt'));
     }
 
     /**
      * @dataProvider ordinalizeDataPtEsItProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_ordinalize_numbers_spanish($expected, $number)
+    public function test_ordinalize_numbers_spanish($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'es'));
     }
 
     /**
      * @dataProvider ordinalizeDataPtEsItProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_ordinalize_numbers_italian($expected, $number)
+    public function test_ordinalize_numbers_italian($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'it'));
     }
 
     /**
      * @dataProvider ordinalizeDataGermanProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_ordinalize_numbers_german($expected, $number)
+    public function test_ordinalize_numbers_german($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'de'));
     }
 
     /**
      * @dataProvider ordinalizeDataFrenchProvider
+     *
      * @param $expected
      * @param $number
      */
-    public function test_ordinalize_numbers_french($expected, $number)
+    public function test_ordinalize_numbers_french($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'fr'));
     }
@@ -176,11 +187,11 @@ class NumberHumanizerTest extends TestCase
     /**
      * @dataProvider binarySuffixDataProvider
      *
-     * @param        $expected
-     * @param        $number
+     * @param $expected
+     * @param $number
      * @param string $locale
      */
-    public function test_convert_number_to_string_with_binary_suffix($expected, $number, $locale = 'en')
+    public function test_convert_number_to_string_with_binary_suffix($expected, $number, $locale = 'en') : void
     {
         $this->assertEquals($expected, NumberHumanizer::binarySuffix($number, $locale));
     }
@@ -188,24 +199,24 @@ class NumberHumanizerTest extends TestCase
     /**
      * @dataProvider preciseBinarySuffixDataProvider
      *
-     * @param         $expected
-     * @param         $number
-     * @param string  $locale
-     * @param integer $precision
+     * @param $expected
+     * @param $number
+     * @param string $locale
+     * @param int $precision
      */
-    public function test_convert_number_to_string_with_precise_binary_suffix($expected, $number, $precision, $locale = 'en')
+    public function test_convert_number_to_string_with_precise_binary_suffix($expected, $number, $precision, $locale = 'en') : void
     {
         $this->assertEquals($expected, NumberHumanizer::preciseBinarySuffix($number, $precision, $locale));
     }
 
-    public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_negative_precision()
+    public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_negative_precision() : void
     {
         $this->expectException(\InvalidArgumentException::class);
 
         NumberHumanizer::preciseBinarySuffix(1, -1);
     }
 
-    public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_large_precision()
+    public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_large_precision() : void
     {
         $this->expectException(\InvalidArgumentException::class);
 
@@ -215,16 +226,16 @@ class NumberHumanizerTest extends TestCase
     /**
      * @dataProvider metricSuffixDataProvider
      *
-     * @param        $expected
-     * @param        $number
+     * @param $expected
+     * @param $number
      * @param string $locale
      */
-    public function test_convert_number_to_string_with_metric_suffix($expected, $number, $locale = 'en')
+    public function test_convert_number_to_string_with_metric_suffix($expected, $number, $locale = 'en') : void
     {
         $this->assertEquals($expected, NumberHumanizer::metricSuffix($number, $locale));
     }
 
-    public function test_statically_throw_exception_when_converting_to_string_with_metric_suffix_non_numeric_values()
+    public function test_statically_throw_exception_when_converting_to_string_with_metric_suffix_non_numeric_values() : void
     {
         $this->expectException(\InvalidArgumentException::class);
 
@@ -237,7 +248,7 @@ class NumberHumanizerTest extends TestCase
      * @param $expected
      * @param $number
      */
-    public function test_converts_numbers_to_roman($expected, $number)
+    public function test_converts_numbers_to_roman($expected, $number) : void
     {
         $this->assertEquals($expected, NumberHumanizer::toRoman($number));
     }
@@ -248,7 +259,7 @@ class NumberHumanizerTest extends TestCase
      * @param $expected
      * @param $number
      */
-    public function test_convert_roman_numbers_to_arabic($number, $expected)
+    public function test_convert_roman_numbers_to_arabic($number, $expected) : void
     {
         $this->assertEquals($expected, NumberHumanizer::fromRoman($number));
     }
@@ -258,7 +269,7 @@ class NumberHumanizerTest extends TestCase
      *
      * @param $number
      */
-    public function test_statically_throw_exception_when_converting_number_is_out_of_range($number)
+    public function test_statically_throw_exception_when_converting_number_is_out_of_range($number) : void
     {
         $this->expectException(\InvalidArgumentException::class);
 
@@ -270,7 +281,7 @@ class NumberHumanizerTest extends TestCase
      *
      * @param $number
      */
-    public function test_statically_throw_exception_when_converting_roman_number_is_invalid($number)
+    public function test_statically_throw_exception_when_converting_roman_number_is_invalid($number) : void
     {
         $this->expectException(\InvalidArgumentException::class);
 
@@ -402,6 +413,7 @@ class NumberHumanizerTest extends TestCase
             ['-111e', -111],
         ];
     }
+
     /**
      * @return array
      */

@@ -35,7 +35,7 @@ final class Humanize
         $this->forbiddenWords = $forbiddenWords;
     }
 
-    public function __toString(): string
+    public function __toString() : string
     {
         $humanized = \trim(\strtolower((string) \preg_replace(['/([A-Z])/', \sprintf('/[%s\s]+/', $this->separator)], ['_$1', ' '], $this->text)));
         $humanized = \trim(\str_replace($this->forbiddenWords, '', $humanized));

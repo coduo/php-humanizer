@@ -15,19 +15,19 @@ use Coduo\PHPHumanizer\DateTime\Unit;
 
 final class Minute implements Unit
 {
-    public function getName(): string
+    public function getName() : string
     {
         return 'minute';
     }
 
-    public function getMilliseconds(): int
+    public function getMilliseconds() : int
     {
         $second = new Second();
 
         return $second->getMilliseconds() * 60;
     }
 
-    public function getDateIntervalSymbol(): string
+    public function getDateIntervalSymbol() : string
     {
         return 'i';
     }

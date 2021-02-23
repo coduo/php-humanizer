@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 
 final class FormatterTest extends TestCase
 {
-    public function test_formats_two_elements()
+    public function test_formats_two_elements() : void
     {
         $formatter = new Formatter(Builder::build('en'));
 
@@ -27,7 +27,7 @@ final class FormatterTest extends TestCase
         );
     }
 
-    public function test_formats_elements_with_limit()
+    public function test_formats_elements_with_limit() : void
     {
         $formatter = new Formatter(Builder::build('en'));
 
@@ -37,7 +37,7 @@ final class FormatterTest extends TestCase
         );
     }
 
-    public function test_formats_elements_without_limit()
+    public function test_formats_elements_without_limit() : void
     {
         $formatter = new Formatter(Builder::build('en'));
 

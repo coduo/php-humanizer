@@ -22,7 +22,7 @@ final class Formatter
         $this->translator = $translator;
     }
 
-    public function formatDifference(Difference $difference, string $locale = 'en'): string
+    public function formatDifference(Difference $difference, string $locale = 'en') : string
     {
         $translationKey = \sprintf('%s.%s', $difference->getUnit()->getName(), $difference->isPast() ? 'past' : 'future');
 

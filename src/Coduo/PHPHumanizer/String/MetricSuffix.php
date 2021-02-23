@@ -16,7 +16,7 @@ final class MetricSuffix
     /**
      * @var int
      */
-    const CONVERT_THRESHOLD = 1000;
+    public const CONVERT_THRESHOLD = 1000;
 
     private int $number;
 
@@ -63,13 +63,13 @@ final class MetricSuffix
         \krsort($this->binaryPrefixes);
     }
 
-    public function convert(): string
+    public function convert() : string
     {
         $formatter = new \NumberFormatter($this->locale, \NumberFormatter::PATTERN_DECIMAL);
 
         foreach ($this->binaryPrefixes as $size => $unitPattern) {
             if ($size <= $this->number) {
-                $value = ($this->number >= self::CONVERT_THRESHOLD) ? $this->number / (double) $size : $this->number;
+                $value = ($this->number >= self::CONVERT_THRESHOLD) ? $this->number / (float) $size : $this->number;
                 $formatter->setPattern($unitPattern);
 
                 return $formatter->format($value);

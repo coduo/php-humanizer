@@ -16,5 +16,5 @@ interface Breakpoint
     /**
      * Return the length of the truncated $text depending on the $characterCount.
      */
-    public function calculatePosition(string $text, int $charactersCount): int;
+    public function calculatePosition(string $text, int $charactersCount) : int;
 }

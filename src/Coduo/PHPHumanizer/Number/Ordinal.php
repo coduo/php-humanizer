@@ -17,15 +17,15 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 final class Ordinal
 {
     /**
-     * @var int|float
+     * @var float|int
      */
     private $number;
 
     private StrategyInterface $strategy;
 
     /**
-     * @param int|float $number
-     * @param string    $locale
+     * @param float|int $number
+     * @param string $locale
      */
     public function __construct($number, string $locale)
     {
@@ -33,15 +33,15 @@ final class Ordinal
         $this->strategy = Builder::build($locale);
     }
 
-    public function isPrefix(): bool
-    {
-        return $this->strategy->isPrefix();
-    }
-
-    public function __toString(): string
+    public function __toString() : string
     {
         return $this
             ->strategy
             ->ordinalIndicator($this->number);
+    }
+
+    public function isPrefix() : bool
+    {
+        return $this->strategy->isPrefix();
     }
 }

@@ -20,7 +20,7 @@ final class CollectionHumanizer
     /**
      * @param array<string> $collection
      */
-    public static function oxford(array $collection, int $limit = null, string $locale = 'en'): string
+    public static function oxford(array $collection, int $limit = null, string $locale = 'en') : string
     {
         $oxford = new Oxford(
             new Formatter(Builder::build($locale))

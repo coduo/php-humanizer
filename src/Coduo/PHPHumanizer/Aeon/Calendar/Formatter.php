@@ -30,7 +30,7 @@ final class Formatter
 
         foreach ((new UnitCompound($unit))->components() as $component) {
             $parts[] = $this->translator->trans(
-                'compound.'.$component->getUnit()->getName(),
+                'compound.' . $component->getUnit()->getName(),
                 ['%count%' => $component->getQuantity()],
                 'difference',
                 $locale

@@ -21,11 +21,10 @@ final class ShortcodeProcessor
     /**
      * Removes all shortcodes from given text.
      */
-    public function removeShortcodes(string $text): string
+    public function removeShortcodes(string $text) : string
     {
         return $this->createShortcodeProcessor(
-            function (): void {
-                return;
+            function () : void {
             }
         )->process($text);
     }
@@ -33,12 +32,12 @@ final class ShortcodeProcessor
     /**
      * Removes only shortcode tags from given text (leaves their content as it is).
      */
-    public function removeShortcodeTags(string $text): string
+    public function removeShortcodeTags(string $text) : string
     {
         return $this->createShortcodeProcessor(fn (ShortcodeInterface $s) : ?string => $s->getContent())->process($text);
     }
 
-    private function createShortcodeProcessor(callable $defaultHandler): Processor
+    private function createShortcodeProcessor(callable $defaultHandler) : Processor
     {
         $handlers = new HandlerContainer();
         $handlers->setDefault($defaultHandler);

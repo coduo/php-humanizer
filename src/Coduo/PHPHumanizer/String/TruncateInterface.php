@@ -13,5 +13,5 @@ namespace Coduo\PHPHumanizer\String;
 
 interface TruncateInterface
 {
-    public function truncate(string $text, int $charactersCount): string;
+    public function truncate(string $text, int $charactersCount) : string;
 }

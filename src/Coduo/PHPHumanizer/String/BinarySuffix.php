@@ -16,7 +16,7 @@ final class BinarySuffix
     /**
      * @var int
      */
-    const CONVERT_THRESHOLD = 1024;
+    public const CONVERT_THRESHOLD = 1024;
 
     private int $number;
 
@@ -40,7 +40,7 @@ final class BinarySuffix
             throw new \RuntimeException('Binary suffix converter requires intl extension!');
         }
 
-        if (!\is_null($precision)) {
+        if (null !== $precision) {
             $this->setSpecificPrecisionFormat($precision);
         }
 
@@ -60,13 +60,14 @@ final class BinarySuffix
     public function convert()
     {
         $formatter = new \NumberFormatter($this->locale, \NumberFormatter::PATTERN_DECIMAL);
+
         if ($this->number < 0) {
             return $this->number;
         }
 
         foreach ($this->binaryPrefixes as $size => $unitPattern) {
             if ($size <= $this->number) {
-                $value = ($this->number >= self::CONVERT_THRESHOLD) ? $this->number / (double) $size : $this->number;
+                $value = ($this->number >= self::CONVERT_THRESHOLD) ? $this->number / (float) $size : $this->number;
                 $formatter->setPattern($unitPattern);
 
                 return $formatter->format($value);
@@ -80,17 +81,19 @@ final class BinarySuffix
      * Replaces the default ICU 56.1 decimal formats defined in $binaryPrefixes with ones that provide the same symbols
      * but the provided number of decimal places.
      */
-    protected function setSpecificPrecisionFormat(int $precision): void
+    private function setSpecificPrecisionFormat(int $precision) : void
     {
         if ($precision < 0) {
             throw new \InvalidArgumentException('Precision must be positive');
         }
+
         if ($precision > 3) {
-            throw new \InvalidArgumentException('Invalid precision. Binary suffix converter can only represent values in '.
+            throw new \InvalidArgumentException('Invalid precision. Binary suffix converter can only represent values in ' .
                 'up to three decimal places');
         }
 
         $icuFormat = '#';
+
         if ($precision > 0) {
             $icuFormat .= \str_pad('#.', (2 + $precision), '0');
         }
@@ -98,7 +101,7 @@ final class BinarySuffix
         foreach ($this->binaryPrefixes as $size => $unitPattern) {
             if ($size >= 1024) {
                 $symbol = \substr($unitPattern, (int) \strpos($unitPattern, ' '));
-                $this->binaryPrefixes[$size] = $icuFormat.$symbol;
+                $this->binaryPrefixes[$size] = $icuFormat . $symbol;
             }
         }
     }

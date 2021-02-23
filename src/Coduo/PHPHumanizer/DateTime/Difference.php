@@ -40,17 +40,24 @@ final class Difference
         $this->calculate();
     }
 
-    public function getUnit(): Unit
+    public function getUnit() : Unit
     {
         return $this->unit;
     }
 
-    public function getQuantity(): ?int
+    public function getQuantity() : ?int
     {
         return $this->quantity;
     }
 
-    private function calculate(): void
+    public function isPast() : bool
+    {
+        $diff = $this->toDate->getTimestamp() - $this->fromDate->getTimestamp();
+
+        return ($diff > 0) ? false : true;
+    }
+
+    private function calculate() : void
     {
         /* @var $units Unit[] */
         $units = [
@@ -65,9 +72,11 @@ final class Difference
         ];
 
         $absoluteMilliSecondsDiff = \abs($this->toDate->getTimestamp() - $this->fromDate->getTimestamp()) * 1000;
+
         foreach ($units as $unit) {
             if ($absoluteMilliSecondsDiff >= $unit->getMilliseconds()) {
                 $this->unit = $unit;
+
                 break;
             }
         }
@@ -75,12 +84,5 @@ final class Difference
         $this->quantity = ($absoluteMilliSecondsDiff == 0)
             ? $absoluteMilliSecondsDiff
             : (int) \round($absoluteMilliSecondsDiff / $this->unit->getMilliseconds());
-    }
-
-    public function isPast(): bool
-    {
-        $diff = $this->toDate->getTimestamp() - $this->fromDate->getTimestamp();
-
-        return ($diff > 0) ? false : true;
     }
 }

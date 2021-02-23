@@ -25,7 +25,7 @@ class StringHumanizerTest extends TestCase
      * @param $separator
      * @param array $forbiddenWords
      */
-    public function test_humanize_strings($input, $expected, $capitalize, $separator, array $forbiddenWords)
+    public function test_humanize_strings($input, $expected, $capitalize, $separator, array $forbiddenWords) : void
     {
         $this->assertEquals($expected, StringHumanizer::humanize($input, $capitalize, $separator, $forbiddenWords));
     }
@@ -38,7 +38,7 @@ class StringHumanizerTest extends TestCase
      * @param $charactersCount
      * @param string $append
      */
-    public function test_truncate_string_to_word_closest_to_a_certain_number_of_characters($text, $expected, $charactersCount, $append = '')
+    public function test_truncate_string_to_word_closest_to_a_certain_number_of_characters($text, $expected, $charactersCount, $append = '') : void
     {
         $this->assertEquals($expected, StringHumanizer::truncate($text, $charactersCount, $append));
     }
@@ -52,7 +52,7 @@ class StringHumanizerTest extends TestCase
      * @param $expected
      * @param $append
      */
-    public function test_truncate_string_to_word_closest_to_a_certain_number_of_characters_with_html_tags($text, $charactersCount, $allowedTags, $expected, $append = '')
+    public function test_truncate_string_to_word_closest_to_a_certain_number_of_characters_with_html_tags($text, $charactersCount, $allowedTags, $expected, $append = '') : void
     {
         $this->assertEquals($expected, StringHumanizer::truncateHtml($text, $charactersCount, $allowedTags, $append));
     }
@@ -63,7 +63,7 @@ class StringHumanizerTest extends TestCase
      * @param $text
      * @param $expected
      */
-    public function test_remove_all_shortcodes_from_text($text, $expected)
+    public function test_remove_all_shortcodes_from_text($text, $expected) : void
     {
         $this->assertEquals($expected, StringHumanizer::removeShortcodes($text));
     }
@@ -74,7 +74,7 @@ class StringHumanizerTest extends TestCase
      * @param $text
      * @param $expected
      */
-    public function test_remove_only_shortcode_tags_from_text($text, $expected)
+    public function test_remove_only_shortcode_tags_from_text($text, $expected) : void
     {
         $this->assertEquals($expected, StringHumanizer::removeShortcodeTags($text));
     }
@@ -107,12 +107,11 @@ class StringHumanizerTest extends TestCase
             ['customer_id', 'Customer id', true, '_', []],
             ['news_count', 'News count', true, '_', ['id']],
             ['news-count', 'News count', true, '-', ['id']],
-            ['news-count', 'news count', false, '-', ['id']]
+            ['news-count', 'news count', false, '-', ['id']],
         ];
     }
 
     /**
-     *
      * @return array
      */
     public function truncateStringProvider()
@@ -136,12 +135,11 @@ class StringHumanizerTest extends TestCase
             [$shortText, 'Short text', 7,  '...'],
             [$shortText, 'Short text', 8,  '...'],
             [$shortText, 'Short text', 9,  '...'],
-            [$shortText, 'Short text', 10, '...']
+            [$shortText, 'Short text', 10, '...'],
         ];
     }
 
     /**
-     *
      * @return array
      */
     public function truncateHtmlStringProvider()
@@ -154,14 +152,14 @@ class StringHumanizerTest extends TestCase
             [$text, 30, '<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly'],
             [$text, 50, '<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as'],
             [$text, 75, '<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup</a>'],
-            [$text, 100,'<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create'],
-            [$text, 3  , '', 'HyperText'],
-            [$text, 12 , '', 'HyperText Markup'],
-            [$text, 50 , '', 'HyperText Markup Language, commonly referred to as'],
-            [$text, 75 , '', 'HyperText Markup Language, commonly referred to as HTML, is the standard markup'],
+            [$text, 100, '<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup language</a> used to create'],
+            [$text, 3, '', 'HyperText'],
+            [$text, 12, '', 'HyperText Markup'],
+            [$text, 50, '', 'HyperText Markup Language, commonly referred to as'],
+            [$text, 75, '', 'HyperText Markup Language, commonly referred to as HTML, is the standard markup'],
             [$text, 100, '', 'HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to create'],
             [$text, 50, '', 'HyperText Markup Language, commonly referred to as...', '...'],
-            [$text, 75, '<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup...</a>', '...']
+            [$text, 75, '<b><i><u><em><strong><a><span>', '<b>HyperText Markup Language</b>, commonly referred to as <b>HTML</b>, is the standard <a href="/wiki/Markup_language" title="Markup language">markup...</a>', '...'],
         ];
     }
 }

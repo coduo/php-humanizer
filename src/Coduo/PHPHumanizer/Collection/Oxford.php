@@ -23,7 +23,7 @@ final class Oxford
     /**
      * @param array<string> $collection
      */
-    public function format(array $collection, int $limit = null): string
+    public function format(array $collection, int $limit = null) : string
     {
         return $this->formatter->format($collection, $limit);
     }

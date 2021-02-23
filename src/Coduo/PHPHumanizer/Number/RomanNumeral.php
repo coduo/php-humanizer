@@ -16,17 +16,17 @@ final class RomanNumeral
     /**
      * @var int
      */
-    const MIN_VALUE = 1;
+    public const MIN_VALUE = 1;
 
     /**
      * @var int
      */
-    const MAX_VALUE = 3999;
+    public const MAX_VALUE = 3999;
 
     /**
      * @var string
      */
-    const ROMAN_STRING_MATCHER = '/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/';
+    public const ROMAN_STRING_MATCHER = '/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/';
 
     /**
      * @var array<string, int>
@@ -50,11 +50,11 @@ final class RomanNumeral
     /**
      * @param numeric $number
      *
+     * @throws \InvalidArgumentException
      *
      * @return string
-     * @throws \InvalidArgumentException
      */
-    public function toRoman($number): string
+    public function toRoman($number) : string
     {
         if (($number < self::MIN_VALUE) || ($number > self::MAX_VALUE)) {
             throw new \InvalidArgumentException();
@@ -67,6 +67,7 @@ final class RomanNumeral
                 if ($number >= $value) {
                     $romanString .= $key;
                     $number -= $value;
+
                     break;
                 }
             }
@@ -76,9 +77,9 @@ final class RomanNumeral
     }
 
     /**
-     * @return float|int
-     *
      * @throws \InvalidArgumentException
+     *
+     * @return float|int
      */
     public function fromRoman(string $string)
     {
@@ -97,7 +98,7 @@ final class RomanNumeral
 
                 if ($previousDigit < $digit) {
                     $digit -= $previousDigit;
-                    --$i;
+                    $i--;
                 }
             }
 

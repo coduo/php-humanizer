@@ -15,19 +15,19 @@ use Coduo\PHPHumanizer\Number\Ordinal\StrategyInterface;
 
 final class FrStrategy implements StrategyInterface
 {
-    public function isPrefix(): bool
+    public function isPrefix() : bool
     {
         return false;
     }
 
-    public function ordinalIndicator($number): string
+    public function ordinalIndicator($number) : string
     {
-        $absNumber = \abs((integer) $number);
+        $absNumber = \abs((int) $number);
 
         if ($absNumber == 1) {
             return 'er';
-        } else {
-            return 'e';
         }
+
+        return 'e';
     }
 }

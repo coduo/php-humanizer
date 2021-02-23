@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 
 final class PreciseFormatterTest extends TestCase
 {
-    public function test_format_compound_datetime_diff()
+    public function test_format_compound_datetime_diff() : void
     {
         $diff = new PreciseDifference(
             new \DateTime('2015-01-01 00:00:00'),
@@ -30,7 +30,7 @@ final class PreciseFormatterTest extends TestCase
         $this->assertSame('10 days, 5 hours from now', $formatter->formatDifference($diff));
     }
 
-    public function test_format_compound_datetime_diff_for_specific_locale()
+    public function test_format_compound_datetime_diff_for_specific_locale() : void
     {
         $diff = new PreciseDifference(
             new \DateTime('2015-01-01 00:00:00'),

@@ -19,23 +19,25 @@ use Coduo\PHPHumanizer\String\MetricSuffix;
 final class NumberHumanizer
 {
     /**
-     * @param int|float $number
+     * @param float|int $number
      * @param string $locale
+     *
      * @return string
      */
-    public static function ordinalize($number, string $locale = 'en'): string
+    public static function ordinalize($number, string $locale = 'en') : string
     {
         $ordinal = new Ordinal($number, $locale);
 
-        return (string) ($ordinal->isPrefix()) ? $ordinal.$number : $number.$ordinal;
+        return (string) ($ordinal->isPrefix()) ? $ordinal . $number : $number . $ordinal;
     }
 
     /**
-     * @param int|float $number
+     * @param float|int $number
      * @param string $locale
+     *
      * @return string
      */
-    public static function ordinal($number, string $locale = 'en'): string
+    public static function ordinal($number, string $locale = 'en') : string
     {
         $ordinal = new Ordinal($number, $locale);
 
@@ -45,6 +47,7 @@ final class NumberHumanizer
     /**
      * @param int $number
      * @param string $locale
+     *
      * @return bool|int|string
      */
     public static function binarySuffix(int $number, string $locale = 'en')
@@ -67,7 +70,7 @@ final class NumberHumanizer
     /**
      * @param numeric $number
      */
-    public static function metricSuffix($number, string $locale = 'en'): string
+    public static function metricSuffix($number, string $locale = 'en') : string
     {
         $binarySuffix = new MetricSuffix($number, $locale);
 
@@ -76,9 +79,10 @@ final class NumberHumanizer
 
     /**
      * @param numeric $number
+     *
      * @return string
      */
-    public static function toRoman($number): string
+    public static function toRoman($number) : string
     {
         $romanNumeral = new RomanNumeral();
 

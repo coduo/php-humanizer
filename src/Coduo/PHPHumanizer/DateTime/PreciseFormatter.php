@@ -23,13 +23,13 @@ final class PreciseFormatter
         $this->translator = $translator;
     }
 
-    public function formatDifference(PreciseDifference $difference, string $locale = 'en'): string
+    public function formatDifference(PreciseDifference $difference, string $locale = 'en') : string
     {
         $diff = [];
 
         foreach ($difference->components() as $result) {
             $diff[] = $this->translator->trans(
-                'compound.'.$result->getUnit()->getName(),
+                'compound.' . $result->getUnit()->getName(),
                 ['%count%' => $result->getQuantity()],
                 'difference',
                 $locale
@@ -37,7 +37,7 @@ final class PreciseFormatter
         }
 
         return $this->translator->trans(
-            'compound.'.($difference->isPast() ? 'past' : 'future'),
+            'compound.' . ($difference->isPast() ? 'past' : 'future'),
             ['%value%' => \implode(', ', $diff)],
             'difference',
             $locale
@@ -50,7 +50,7 @@ final class PreciseFormatter
 
         foreach ((new DateIntervalCompound($dateInterval))->components() as $component) {
             $parts[] = $this->translator->trans(
-                'compound.'.$component->getUnit()->getName(),
+                'compound.' . $component->getUnit()->getName(),
                 ['%count%' => $component->getQuantity()],
                 'difference',
                 $locale

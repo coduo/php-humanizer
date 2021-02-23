@@ -13,11 +13,12 @@ namespace Coduo\PHPHumanizer\Number\Ordinal;
 
 interface StrategyInterface
 {
-    public function isPrefix(): bool;
+    public function isPrefix() : bool;
 
     /**
-     * @param int|float $number
+     * @param float|int $number
+     *
      * @return string
      */
-    public function ordinalIndicator($number): string;
+    public function ordinalIndicator($number) : string;
 }

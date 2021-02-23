@@ -43,7 +43,6 @@ final class DateIntervalCompound
             new Second(),
         ];
 
-
         /** @var array<CompoundResult> $compoundResults */
         $compoundResults = [];
 

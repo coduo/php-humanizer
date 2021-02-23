@@ -19,7 +19,7 @@ final class PreciseDifference
 
     private \DateTimeInterface $toDate;
 
-    private ?DateIntervalCompound $compoundResults ;
+    private ?DateIntervalCompound $compoundResults;
 
     public function __construct(\DateTimeInterface $fromDate, \DateTimeInterface $toDate)
     {
@@ -40,7 +40,7 @@ final class PreciseDifference
         return $this->compoundResults->components();
     }
 
-    public function isPast(): bool
+    public function isPast() : bool
     {
         $diff = $this->toDate->getTimestamp() - $this->fromDate->getTimestamp();
 

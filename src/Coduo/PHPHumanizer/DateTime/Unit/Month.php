@@ -15,19 +15,19 @@ use Coduo\PHPHumanizer\DateTime\Unit;
 
 final class Month implements Unit
 {
-    public function getName(): string
+    public function getName() : string
     {
         return 'month';
     }
 
-    public function getMilliseconds(): int
+    public function getMilliseconds() : int
     {
         $day = new Day();
 
         return $day->getMilliseconds() * 30;
     }
 
-    public function getDateIntervalSymbol(): string
+    public function getDateIntervalSymbol() : string
     {
         return 'm';
     }

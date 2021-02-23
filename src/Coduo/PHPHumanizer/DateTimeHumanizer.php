@@ -14,21 +14,21 @@ namespace Coduo\PHPHumanizer;
 use Aeon\Calendar\Gregorian\TimePeriod;
 use Aeon\Calendar\Unit;
 use Coduo\PHPHumanizer\DateTime\Difference;
-use Coduo\PHPHumanizer\DateTime\PreciseDifference;
 use Coduo\PHPHumanizer\DateTime\Formatter;
+use Coduo\PHPHumanizer\DateTime\PreciseDifference;
 use Coduo\PHPHumanizer\DateTime\PreciseFormatter;
 use Coduo\PHPHumanizer\Translator\Builder;
 
 final class DateTimeHumanizer
 {
-    public static function difference(\DateTimeInterface $fromDate, \DateTimeInterface $toDate, string $locale = 'en'): string
+    public static function difference(\DateTimeInterface $fromDate, \DateTimeInterface $toDate, string $locale = 'en') : string
     {
         $formatter = new Formatter(Builder::build($locale));
 
         return $formatter->formatDifference(new Difference($fromDate, $toDate), $locale);
     }
 
-    public static function preciseDifference(\DateTimeInterface $fromDate, \DateTimeInterface $toDate, string $locale = 'en'): string
+    public static function preciseDifference(\DateTimeInterface $fromDate, \DateTimeInterface $toDate, string $locale = 'en') : string
     {
         $formatter = new PreciseFormatter(Builder::build($locale));
 

@@ -28,7 +28,7 @@ final class Formatter
     /**
      * @param array<string> $collection
      */
-    public function format(array $collection, int $limit = null): string
+    public function format(array $collection, int $limit = null) : string
     {
         $count = \count($collection);
 
@@ -54,7 +54,7 @@ final class Formatter
     /**
      * @param array<string> $collection
      */
-    private function formatCommaSeparatedWithLimit(array $collection, ?int $limit, int $count): string
+    private function formatCommaSeparatedWithLimit(array $collection, ?int $limit, int $count) : string
     {
         $display = \array_map(fn ($element) => (string) $element, \array_slice($collection, 0, $limit));
 
@@ -69,7 +69,7 @@ final class Formatter
     /**
      * @param array<string> $collection
      */
-    private function formatCommaSeparated(array $collection, int $count): string
+    private function formatCommaSeparated(array $collection, int $count) : string
     {
         $display = \array_map(fn ($element) => (string) $element, \array_slice($collection, 0, $count - 1));
 
@@ -82,7 +82,7 @@ final class Formatter
     /**
      * @param array<string> $collection
      */
-    private function formatOnlyTwo(array $collection): string
+    private function formatOnlyTwo(array $collection) : string
     {
         return $this->translator->trans('only_two', [
             '%first%' => (string) $collection[0],

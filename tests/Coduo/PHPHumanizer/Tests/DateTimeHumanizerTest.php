@@ -282,7 +282,7 @@ class DateTimeHumanizerTest extends TestCase
     public function preciseDifferenceDataProvider() : array
     {
         return [
-             // Azerbaijani
+            // Azerbaijani
             ['2014-04-26 13:00:00', '2014-04-26 12:58:15', '1 dəqiqə, 45 saniyə əvvəl', 'az'],
             ['2014-04-26 13:00:00', '2014-04-26 11:20:00', '1 saat, 40 dəqiqə əvvəl', 'az'],
             ['2014-04-26 13:00:00', '2014-04-27 13:15:00', '1 gün, 15 dəqiqə sonra', 'az'],
@@ -488,7 +488,7 @@ class DateTimeHumanizerTest extends TestCase
                     ->add(TimeUnit::seconds(30))
                     ->add(TimeUnit::milliseconds(200)),
                 '2 days, 3 hours, 25 minutes, and 30.2 seconds',
-                'en'
+                'en',
             ],
             [RelativeTimeUnit::months(14), '1 year and 2 months', 'en'],
 
@@ -503,9 +503,9 @@ class DateTimeHumanizerTest extends TestCase
                     ->add(TimeUnit::seconds(30))
                     ->add(TimeUnit::milliseconds(200)),
                 '2 dni, 3 godziny, 25 minut i 30.2 sekund',
-                'pl'
+                'pl',
             ],
-            [RelativeTimeUnit::months(14), '1 rok i 2 miesiące', 'pl']
+            [RelativeTimeUnit::months(14), '1 rok i 2 miesiące', 'pl'],
         ];
     }
 }

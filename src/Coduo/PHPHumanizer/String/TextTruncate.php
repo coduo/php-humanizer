@@ -23,7 +23,7 @@ final class TextTruncate implements TruncateInterface
         $this->append = $append;
     }
 
-    public function truncate(string $text, int $charactersCount): string
+    public function truncate(string $text, int $charactersCount) : string
     {
         if ($charactersCount < 0 || \mb_strlen($text) <= $charactersCount) {
             return $text;
@@ -31,6 +31,6 @@ final class TextTruncate implements TruncateInterface
 
         $truncatedText = \rtrim(\mb_substr($text, 0, $this->breakpoint->calculatePosition($text, $charactersCount)));
 
-        return ($truncatedText === $text) ? $truncatedText : $truncatedText.$this->append;
+        return ($truncatedText === $text) ? $truncatedText : $truncatedText . $this->append;
     }
 }

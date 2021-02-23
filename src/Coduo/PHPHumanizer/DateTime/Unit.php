@@ -13,15 +13,15 @@ namespace Coduo\PHPHumanizer\DateTime;
 
 interface Unit
 {
-    public function getName(): string;
+    public function getName() : string;
 
     /**
      * Return millisecond that represents unit.
      */
-    public function getMilliseconds(): int;
+    public function getMilliseconds() : int;
 
     /**
      * Returns symbol of \DateInterval equivalent.
      */
-    public function getDateIntervalSymbol(): string;
+    public function getDateIntervalSymbol() : string;
 }

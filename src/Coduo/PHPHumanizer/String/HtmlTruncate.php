@@ -26,7 +26,7 @@ final class HtmlTruncate implements TruncateInterface
         $this->allowedTags = $allowedTags;
     }
 
-    public function truncate(string $text, int $charactersCount): string
+    public function truncate(string $text, int $charactersCount) : string
     {
         $strippedText = \strip_tags($text, $this->allowedTags);
 
@@ -39,7 +39,7 @@ final class HtmlTruncate implements TruncateInterface
      *
      * Adapted from FuelPHP Str::truncate (https://github.com/fuelphp/common/blob/master/src/Str.php)
      */
-    private function truncateHtml(string $string, int $charactersCount): string
+    private function truncateHtml(string $string, int $charactersCount) : string
     {
         $limit = $charactersCount;
         $offset = 0;
@@ -47,6 +47,7 @@ final class HtmlTruncate implements TruncateInterface
 
         // Handle special characters.
         \preg_match_all('#&[a-z]+;#i', \strip_tags($string), $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
+
         foreach ($matches as $match) {
             if ($match[0][1] >= $limit) {
                 break;
@@ -56,12 +57,14 @@ final class HtmlTruncate implements TruncateInterface
 
         // Handle all the html tags.
         \preg_match_all('#<[^>]+>([^<]*)#', $string, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
+
         foreach ($matches as $match) {
             if ($match[0][1] - $offset >= $limit) {
                 break;
             }
 
             $tag = \mb_substr((string) \strtok($match[0][0], " \t\n\r\0\x0B>"), 1);
+
             if ($tag[0] != '/') {
                 $tags[] = $tag;
             } elseif (\end($tags) == \mb_substr($tag, 1)) {
@@ -73,7 +76,7 @@ final class HtmlTruncate implements TruncateInterface
 
         $newString = \mb_substr($string, 0, $limit = \min(\mb_strlen($string), $this->breakpoint->calculatePosition($string, $limit + $offset)));
         $newString .= (\mb_strlen($string) > $limit ? $this->append : '');
-        $newString .= (\count($tags = \array_reverse($tags)) ? '</'.\implode('></', $tags).'>' : '');
+        $newString .= (\count($tags = \array_reverse($tags)) ? '</' . \implode('></', $tags) . '>' : '');
 
         return $newString;
     }
