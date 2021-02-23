@@ -11,42 +11,57 @@ declare(strict_types=1);
 
 namespace Coduo\PHPHumanizer\Tests;
 
+use Aeon\Calendar\Gregorian\DateTime;
+use Aeon\Calendar\Gregorian\TimePeriod;
+use Aeon\Calendar\RelativeTimeUnit;
+use Aeon\Calendar\TimeUnit;
+use Aeon\Calendar\Unit;
 use Coduo\PHPHumanizer\DateTimeHumanizer;
 use PHPUnit\Framework\TestCase;
 
 class DateTimeHumanizerTest extends TestCase
 {
     /**
-     * @test
      * @dataProvider humanizeDataProvider
-     *
-     * @param        $firstDate
-     * @param        $secondDate
-     * @param        $expected
-     * @param string $locale
      */
-    public function test_humanize_difference_between_dates($firstDate, $secondDate, $expected, $locale)
+    public function test_humanize_difference_between_dates(string $firstDate, string $secondDate, string $expected, string $locale) : void
     {
         $this->assertEquals($expected, DateTimeHumanizer::difference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
     }
 
     /**
-     * @dataProvider preciseDifferenceDataProvider
-     *
-     * @param        $firstDate
-     * @param        $secondDate
-     * @param        $expected
-     * @param string $locale
+     * @dataProvider humanizeDataProvider
      */
-    public function test_humanize_precise_difference_between_dates($firstDate, $secondDate, $expected, $locale)
+    public function test_humanize_time_period(string $firstDate, string $secondDate, string $expected, string $locale) : void
+    {
+        $this->assertEquals($expected, DateTimeHumanizer::timePeriod(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
+    }
+
+    /**
+     * @dataProvider preciseDifferenceDataProvider
+     */
+    public function test_humanize_precise_difference_between_dates(string $firstDate, string $secondDate, string $expected, string $locale) : void
+    {
+        $this->assertEquals($expected, DateTimeHumanizer::timePeriodPrecise(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
+    }
+
+    /**
+     * @dataProvider preciseDifferenceDataProvider
+     */
+    public function test_humanize_time_period_precise(string $firstDate, string $secondDate, string $expected, string $locale) : void
     {
         $this->assertEquals($expected, DateTimeHumanizer::preciseDifference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
     }
 
     /**
-     * @return array
+     * @dataProvider timeUnitDataProvider
      */
-    public function humanizeDataProvider()
+    public function test_humanize_time_unit(Unit $unit, string $expected, string $locale) : void
+    {
+        $this->assertSame($expected, DateTimeHumanizer::timeUnit($unit, $locale));
+    }
+
+    public function humanizeDataProvider() : array
     {
         return [
             // English
@@ -264,10 +279,7 @@ class DateTimeHumanizerTest extends TestCase
         ];
     }
 
-    /**
-     * @return array
-     */
-    public function preciseDifferenceDataProvider()
+    public function preciseDifferenceDataProvider() : array
     {
         return [
              // Azerbaijani
@@ -459,6 +471,41 @@ class DateTimeHumanizerTest extends TestCase
             ['2014-04-26 13:00:00', '2014-04-28 23:00:00', '2 日, 10 時間後', 'ja'],
             ['2014-04-26 13:00:00', '2014-04-25 11:20:00', '1 日, 1 時間, 40 分前', 'ja'],
             ['2014-04-26 13:00:00', '2016-04-27 13:00:00', '2 年, 1 日後', 'ja'],
+        ];
+    }
+
+    public function timeUnitDataProvider() : array
+    {
+        return [
+            // English
+            [TimeUnit::seconds(20), '20 seconds', 'en'],
+            [TimeUnit::minutes(20), '20 minutes', 'en'],
+            [TimeUnit::minutes(20)->add(TimeUnit::seconds(5)), '20 minutes and 5 seconds', 'en'],
+            [
+                TimeUnit::days(2)
+                    ->add(TimeUnit::hours(3))
+                    ->add(TimeUnit::minutes(25))
+                    ->add(TimeUnit::seconds(30))
+                    ->add(TimeUnit::milliseconds(200)),
+                '2 days, 3 hours, 25 minutes, and 30.2 seconds',
+                'en'
+            ],
+            [RelativeTimeUnit::months(14), '1 year and 2 months', 'en'],
+
+            // Polish
+            [TimeUnit::seconds(20), '20 sekund', 'pl'],
+            [TimeUnit::minutes(20), '20 minut', 'pl'],
+            [TimeUnit::minutes(20)->add(TimeUnit::seconds(5)), '20 minut i 5 sekund', 'pl'],
+            [
+                TimeUnit::days(2)
+                    ->add(TimeUnit::hours(3))
+                    ->add(TimeUnit::minutes(25))
+                    ->add(TimeUnit::seconds(30))
+                    ->add(TimeUnit::milliseconds(200)),
+                '2 dni, 3 godziny, 25 minut i 30.2 sekund',
+                'pl'
+            ],
+            [RelativeTimeUnit::months(14), '1 rok i 2 miesiące', 'pl']
         ];
     }
 }

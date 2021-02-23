@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Coduo\PHPHumanizer\DateTime;
 
+use Coduo\PHPHumanizer\CollectionHumanizer;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class PreciseFormatter
@@ -26,7 +27,7 @@ final class PreciseFormatter
     {
         $diff = [];
 
-        foreach ($difference->getCompoundResults() as $result) {
+        foreach ($difference->components() as $result) {
             $diff[] = $this->translator->trans(
                 'compound.'.$result->getUnit()->getName(),
                 ['%count%' => $result->getQuantity()],
@@ -41,5 +42,21 @@ final class PreciseFormatter
             'difference',
             $locale
         );
+    }
+
+    public function formatInterval(\DateInterval $dateInterval, string $locale = 'en') : string
+    {
+        $parts = [];
+
+        foreach ((new DateIntervalCompound($dateInterval))->components() as $component) {
+            $parts[] = $this->translator->trans(
+                'compound.'.$component->getUnit()->getName(),
+                ['%count%' => $component->getQuantity()],
+                'difference',
+                $locale
+            );
+        }
+
+        return CollectionHumanizer::oxford($parts, null, $locale);
     }
 }

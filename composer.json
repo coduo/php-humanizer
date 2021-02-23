@@ -17,7 +17,8 @@
     "require": {
         "php": "^7.4 | ^8.0",
         "symfony/translation": "^4.4|^5.0",
-        "symfony/yaml": "^4.4|^5.0"
+        "symfony/yaml": "^4.4|^5.0",
+        "aeon-php/calendar": ">=0.16.1"
     },
     "require-dev": {
         "thunderer/shortcode": "^0.7",
@@ -40,6 +41,10 @@
         "ext-intl": "Required if you are going to use humanizer with locales different than en_EN"
     },
     "scripts": {
+        "build": [
+            "@static:analyze",
+            "@test"
+        ],
         "cs:php:fix": [
             "tools/php-cs-fixer fix --using-cache=no"
         ],

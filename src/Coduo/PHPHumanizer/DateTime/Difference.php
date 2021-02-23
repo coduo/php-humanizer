@@ -22,9 +22,9 @@ use Coduo\PHPHumanizer\DateTime\Unit\Year;
 
 final class Difference
 {
-    private \DateTime $fromDate;
+    private \DateTimeInterface $fromDate;
 
-    private \DateTime $toDate;
+    private \DateTimeInterface $toDate;
 
     /**
      * @psalm-suppress PropertyNotSetInConstructor
@@ -33,7 +33,7 @@ final class Difference
 
     private ?int $quantity = null;
 
-    public function __construct(\DateTime $fromDate, \DateTime $toDate)
+    public function __construct(\DateTimeInterface $fromDate, \DateTimeInterface $toDate)
     {
         $this->fromDate = $fromDate;
         $this->toDate = $toDate;

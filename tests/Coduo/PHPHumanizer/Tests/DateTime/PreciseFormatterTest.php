@@ -41,4 +41,16 @@ final class PreciseFormatterTest extends TestCase
 
         $this->assertSame('через 10 дней, 5 часов', $formatter->formatDifference($diff, 'ru'));
     }
+
+    public function test_format_date_interval() : void
+    {
+        $interval = new \DateInterval('P1DT5H25M43S');
+
+        $formatter = new PreciseFormatter(Builder::build('en'));
+
+        $this->assertSame(
+            '1 day, 5 hours, 25 minutes, and 43 seconds',
+            $formatter->formatInterval($interval)
+        );
+    }
 }
