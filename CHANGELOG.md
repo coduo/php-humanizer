@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-02-23
+## [Unreleased] - 2021-02-24
 
 ### Added
 - [0533da](https://github.com/coduo/php-humanizer/commit/0533da67e2a0ff97a8f504ebc8de469eaca150f1) - **more strict php cs fixer rules** - [@norberttech](https://github.com/norberttech)
@@ -17,6 +17,7 @@
 - [#119](https://github.com/coduo/php-humanizer/pull/119) - **support azerbaijani language** - [@4t87ux8](https://github.com/4t87ux8)
 
 ### Changed
+- [#124](https://github.com/coduo/php-humanizer/pull/124) - **load Translator only once for given locale** - [@norberttech](https://github.com/norberttech)
 - [#122](https://github.com/coduo/php-humanizer/pull/122) - **minimum required PHP version ^7.4** - [@norberttech](https://github.com/norberttech)
 - [#118](https://github.com/coduo/php-humanizer/pull/118) - **create azerbaijani translation** - [@4t87ux8](https://github.com/4t87ux8)
 - [fa52e6](https://github.com/coduo/php-humanizer/commit/fa52e6223eef2f19fbd0a290432b5a878317dca2) - **Fixxed issue with symfony translator dependency, upgraded php, phpunit and phpspec dependencies** - [@norberttech](https://github.com/norberttech)
