@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-02-24
+## [4.0.0] - 2021-02-25
 
 ### Added
 - [0533da](https://github.com/coduo/php-humanizer/commit/0533da67e2a0ff97a8f504ebc8de469eaca150f1) - **more strict php cs fixer rules** - [@norberttech](https://github.com/norberttech)
