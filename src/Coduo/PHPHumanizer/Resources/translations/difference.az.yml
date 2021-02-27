@@ -2,8 +2,8 @@ just_now:
   past: "[0,Inf] indi"
   future: "[0,Inf] indi"
 second:
-  past: "{1} %count% saniyə əvvəl|[2,Inf] %count% saniyə əvvəl"
-  future: "{1} %count% saniyə sonra|[2,Inf] %count% saniyə sonra"
+  past: "[0,1] %count% saniyə əvvəl|[2,Inf] %count% saniyə əvvəl"
+  future: "[0,1] %count% saniyə sonra|[2,Inf] %count% saniyə sonra"
 minute:
   past: "{1} %count% dəqiqə əvvəl|[2,Inf] %count% dəqiqə əvvəl"
   future: "{1} %count% dəqiqə sonra|[2,Inf] %count% dəqiqə sonra"
@@ -24,7 +24,7 @@ year:
   future: "{1} %count% il sonra|[2,Inf] %count% il sonra"
 
 compound:
-  second: "{1} %count% saniyə|[2,Inf] %count% saniyə"
+  second: "[0,1] %count% saniyə|[2,Inf] %count% saniyə"
   minute: "{1} %count% dəqiqə|[2,Inf] %count% dəqiqə"
   hour: "{1} %count% saat|[2,Inf] %count% saat"
   day: "{1} %count% gün|[2,Inf] %count% gün"

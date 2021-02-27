@@ -65,7 +65,7 @@ final class UnitCompound
                 $compoundResults[] = new CompoundResult(new Minute(), $unit->inTimeMinutes());
             }
 
-            if ($unit->inTimeSeconds()) {
+            if ($unit->inTimeSeconds() || $unit->inTimeMilliseconds()) {
                 $seconds = $unit->inTimeSeconds();
 
                 if ($unit->inTimeMilliseconds() > 0) {

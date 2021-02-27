@@ -2,8 +2,8 @@ just_now:
   past: "[0,Inf] zojuist"
   future: "[0,Inf] zojuist"
 second:
-  past: "{1} %count% seconde geleden|[2,Inf] %count% seconden geleden"
-  future: "{1} over %count% seconde|[2,Inf] over %count% seconden"
+  past: "[0,1] %count% seconde geleden|[2,Inf] %count% seconden geleden"
+  future: "[0,1] over %count% seconde|[2,Inf] over %count% seconden"
 minute:
   past: "{1} %count% minuut geleden|[2,Inf] %count% minuten geleden"
   future: "{1} over %count% minuut|[2,Inf] over %count% minuten"
@@ -24,7 +24,7 @@ year:
   future: "{1} over %count% jaar|[2,Inf] over %count% jaren"
 
 compound:
-  second: "{1} %count% seconde|[2,Inf] %count% seconden"
+  second: "[0,1] %count% seconde|[2,Inf] %count% seconden"
   minute: "{1} %count% minuut|[2,Inf] %count% minuten"
   hour: "{1} %count% uur|[2,Inf] %count% uren"
   day: "{1} %count% dag|[2,Inf] %count% dagen"

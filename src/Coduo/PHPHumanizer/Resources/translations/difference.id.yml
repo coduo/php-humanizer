@@ -2,8 +2,8 @@ just_now:
   past: "[0,Inf] baru saja"
   future: "[0,Inf] baru saja"
 second:
-  past: "{1} %count% detik yang lalu|[2,Inf] %count% detik yang lalu"
-  future: "{1} %count% detik dari sekarang|[2,Inf] %count% detik dari sekarang"
+  past: "[0,1] %count% detik yang lalu|[2,Inf] %count% detik yang lalu"
+  future: "[0,1] %count% detik dari sekarang|[2,Inf] %count% detik dari sekarang"
 minute:
   past: "{1} %count% menit yang lalu|[2,Inf] %count% menit yang lalu"
   future: "{1} %count% menit dari sekarang|[2,Inf] %count% menit dari sekarang"
@@ -24,7 +24,7 @@ year:
   future: "{1} %count% tahun dari sekarang|[2,Inf] %count% tahun dari sekarang"
 
 compound:
-  second: "{1} %count% detik|[2,Inf] %count% detik"
+  second: "[0,1] %count% detik|[2,Inf] %count% detik"
   minute: "{1} %count% menit|[2,Inf] %count% menit"
   hour: "{1} %count% jam|[2,Inf] %count% jam"
   day: "{1} %count% hari|[2,Inf] %count% hari"

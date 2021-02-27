@@ -46,4 +46,16 @@ final class FormatterTest extends TestCase
             $formatter->timeUnit($timeUnit)
         );
     }
+
+    public function test_format_time_units_smaller_than_1_sec() : void
+    {
+        $timeUnit = TimeUnit::milliseconds(200);
+
+        $formatter = new Formatter(Builder::build('en'));
+
+        $this->assertSame(
+            '0.2 second',
+            $formatter->timeUnit($timeUnit)
+        );
+    }
 }
