@@ -58,4 +58,28 @@ final class FormatterTest extends TestCase
             $formatter->timeUnit($timeUnit)
         );
     }
+
+    public function test_format_time_units_smaller_than_1_ms() : void
+    {
+        $timeUnit = TimeUnit::precise(0.000002);
+
+        $formatter = new Formatter(Builder::build('en'));
+
+        $this->assertSame(
+            '0 second',
+            $formatter->timeUnit($timeUnit)
+        );
+    }
+
+    public function test_format_zero_seconds_time_unit() : void
+    {
+        $timeUnit = TimeUnit::precise(0);
+
+        $formatter = new Formatter(Builder::build('en'));
+
+        $this->assertSame(
+            '0 second',
+            $formatter->timeUnit($timeUnit)
+        );
+    }
 }

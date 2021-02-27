@@ -73,6 +73,8 @@ final class UnitCompound
                 }
 
                 $compoundResults[] = new CompoundResult(new Second(), $seconds);
+            } elseif (!\count($compoundResults)) {
+                $compoundResults[] = new CompoundResult(new Second(), 0);
             }
 
             return $compoundResults;
