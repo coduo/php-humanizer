@@ -1,3 +1,8 @@
+## [Unreleased] - 2021-02-27
+
+### Fixed
+- [#125](https://github.com/coduo/php-humanizer/pull/125) - **humanization of time unit less than 1 second** - [@norberttech](https://github.com/norberttech)
+
 ## [4.0.0] - 2021-02-25
 
 ### Added
