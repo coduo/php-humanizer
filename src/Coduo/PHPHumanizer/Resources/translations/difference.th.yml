@@ -24,7 +24,7 @@ year:
   future: "[1,Inf] อีก %count% ปี"
 
 compound:
-  second: "[1,Inf] %count% วินาที"
+  second: "[0,Inf] %count% วินาที"
   minute: "[1,Inf] %count% นาที"
   hour: "[1,Inf] %count% ชั่วโมง"
   day: "[1,Inf] %count% วัน"

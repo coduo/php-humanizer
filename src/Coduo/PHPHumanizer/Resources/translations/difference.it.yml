@@ -2,8 +2,8 @@ just_now:
   past: "[0,Inf] adesso"
   future: "[0,Inf] adesso"
 second:
-  past: "{1} %count% secondo fa|[2,Inf] %count% secondi fa"
-  future: "{1} %count% secondo da adesso|[2,Inf] %count% secondi da adesso"
+  past: "[0,1] %count% secondo fa|[2,Inf] %count% secondi fa"
+  future: "[0,1] %count% secondo da adesso|[2,Inf] %count% secondi da adesso"
 minute:
   past: "{1} %count% minuto fa|[2,Inf] %count% minuti fa"
   future: "{1} %count% minuto da adesso|[2,Inf] %count% minuti da adesso"
@@ -24,7 +24,7 @@ year:
   future: "{1} %count% anno da adesso|[2,Inf] %count% anni da adesso"
 
 compound:
-  second: "{1} %count% secondo|[2,Inf] %count% secondi"
+  second: "[0,1] %count% secondo|[2,Inf] %count% secondi"
   minute: "{1} %count% minuto|[2,Inf] %count% minuti"
   hour: "{1} %count% ora|[2,Inf] %count% ore"
   day: "{1} %count% giorno|[2,Inf] %count% giorni"
