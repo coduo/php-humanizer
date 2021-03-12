@@ -1,3 +1,9 @@
+## [Unreleased] - 2021-03-12
+
+### Changed
+- [#126](https://github.com/coduo/php-humanizer/pull/126) - **Using the `assertTrue` to assert expected is `true`.** - [@peter279k](https://github.com/peter279k)
+- [#126](https://github.com/coduo/php-humanizer/pull/126) - **Using the `assertFalse` to assert expected is `false`.** - [@peter279k](https://github.com/peter279k)
+
 ## [4.0.1] - 2021-02-27
 
 ### Fixed
