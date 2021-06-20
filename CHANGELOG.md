@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-06-20
+## [4.0.2] - 2021-06-20
 
 ### Changed
 - [fb264c](https://github.com/coduo/php-humanizer/commit/fb264c8fbfb94f7a10272ac9fca576d8aa053b4a) - **Aeon Calendar dependency** - [@norberttech](https://github.com/norberttech)
