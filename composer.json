@@ -18,7 +18,7 @@
         "php": "^7.4 | ^8.0",
         "symfony/translation": "^4.4|^5.0",
         "symfony/yaml": "^4.4|^5.0",
-        "aeon-php/calendar": ">=0.16.1"
+        "aeon-php/calendar": "^0.16.1 || ^1.0"
     },
     "require-dev": {
         "thunderer/shortcode": "^0.7",
