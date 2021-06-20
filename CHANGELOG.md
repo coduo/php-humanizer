@@ -1,6 +1,7 @@
-## [Unreleased] - 2021-03-12
+## [Unreleased] - 2021-06-20
 
 ### Changed
+- [fb264c](https://github.com/coduo/php-humanizer/commit/fb264c8fbfb94f7a10272ac9fca576d8aa053b4a) - **Aeon Calendar dependency** - [@norberttech](https://github.com/norberttech)
 - [#126](https://github.com/coduo/php-humanizer/pull/126) - **Using the `assertTrue` to assert expected is `true`.** - [@peter279k](https://github.com/peter279k)
 - [#126](https://github.com/coduo/php-humanizer/pull/126) - **Using the `assertFalse` to assert expected is `false`.** - [@peter279k](https://github.com/peter279k)
 
