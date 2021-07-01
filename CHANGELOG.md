@@ -1,3 +1,8 @@
+## [Unreleased] - 2021-07-01
+
+### Changed
+- [57c6ed](https://github.com/coduo/php-humanizer/commit/57c6ed978f48dc810e5e4540cbec022c57fecb3c) - **Delete FUNDING.yml** - [@norberttech](https://github.com/norberttech)
+
 ## [4.0.2] - 2021-06-20
 
 ### Changed
