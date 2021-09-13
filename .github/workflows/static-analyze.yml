@@ -6,7 +6,7 @@ on:
     branches:
       - "4.x"
   schedule:
-    - cron:  '* 8 * * *'
+    - cron:  '0 8 * * *'
 
 jobs:
   compatibility:
