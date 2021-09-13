@@ -1,6 +1,8 @@
-## [Unreleased] - 2021-07-01
+## [Unreleased] - 2021-09-13
 
 ### Changed
+- [3107e2](https://github.com/coduo/php-humanizer/commit/3107e2b6a568726f4cd40a23847ce1e305c99c95) - **Update static-analyze.yml** - [@norberttech](https://github.com/norberttech)
+- [6a369d](https://github.com/coduo/php-humanizer/commit/6a369d9f17855736c5f38261f6765d084e177da2) - **Update tests.yml** - [@norberttech](https://github.com/norberttech)
 - [57c6ed](https://github.com/coduo/php-humanizer/commit/57c6ed978f48dc810e5e4540cbec022c57fecb3c) - **Delete FUNDING.yml** - [@norberttech](https://github.com/norberttech)
 
 ## [4.0.2] - 2021-06-20
