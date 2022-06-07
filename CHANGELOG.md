@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-06-07
+## [4.0.3] - 2022-06-07
 
 ### Added
 - [#129](https://github.com/coduo/php-humanizer/pull/129) - **support for PHP 8.1 and symfony 6 dependencies** - [@norberttech](https://github.com/norberttech)
