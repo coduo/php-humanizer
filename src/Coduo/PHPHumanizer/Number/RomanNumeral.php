@@ -83,7 +83,7 @@ final class RomanNumeral
      */
     public function fromRoman(string $string)
     {
-        if (\mb_strlen((string) $string) === 0 || 0 === \preg_match(self::ROMAN_STRING_MATCHER, (string) $string)) {
+        if (\mb_strlen($string) === 0 || 0 === \preg_match(self::ROMAN_STRING_MATCHER, $string)) {
             throw new \InvalidArgumentException();
         }
 

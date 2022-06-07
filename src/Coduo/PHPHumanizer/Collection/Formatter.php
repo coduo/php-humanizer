@@ -26,6 +26,8 @@ final class Formatter
     }
 
     /**
+     * @psalm-suppress RedundantCastGivenDocblockType
+     *
      * @param array<string> $collection
      */
     public function format(array $collection, int $limit = null) : string
@@ -52,6 +54,8 @@ final class Formatter
     }
 
     /**
+     * @psalm-suppress RedundantCastGivenDocblockType
+     *
      * @param array<string> $collection
      */
     private function formatCommaSeparatedWithLimit(array $collection, ?int $limit, int $count) : string
@@ -67,6 +71,8 @@ final class Formatter
     }
 
     /**
+     * @psalm-suppress RedundantCastGivenDocblockType
+     *
      * @param array<string> $collection
      */
     private function formatCommaSeparated(array $collection, int $count) : string
@@ -80,6 +86,8 @@ final class Formatter
     }
 
     /**
+     * @psalm-suppress RedundantCastGivenDocblockType
+     *
      * @param array<string> $collection
      */
     private function formatOnlyTwo(array $collection) : string

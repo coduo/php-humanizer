@@ -16,19 +16,19 @@ final class WordBreakpoint implements Breakpoint
     public function calculatePosition(string $text, int $charactersCount) : int
     {
         if ($charactersCount < 0) {
-            return (int) \mb_strlen($text);
+            return \mb_strlen($text);
         }
 
         if ($charactersCount > \mb_strlen($text)) {
-            return (int) \mb_strlen($text);
+            return \mb_strlen($text);
         }
 
         $breakpoint = \mb_strpos($text, ' ', $charactersCount);
 
         if (false === $breakpoint) {
-            return (int) \mb_strlen($text);
+            return \mb_strlen($text);
         }
 
-        return (int) $breakpoint;
+        return $breakpoint;
     }
 }

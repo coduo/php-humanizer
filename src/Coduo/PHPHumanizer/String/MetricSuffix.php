@@ -72,10 +72,12 @@ final class MetricSuffix
                 $value = ($this->number >= self::CONVERT_THRESHOLD) ? $this->number / (float) $size : $this->number;
                 $formatter->setPattern($unitPattern);
 
+                /** @phpstan-ignore-next-line  */
                 return $formatter->format($value);
             }
         }
 
+        /** @phpstan-ignore-next-line  */
         return $formatter->format($this->number);
     }
 }
