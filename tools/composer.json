@@ -1,0 +1,11 @@
+{
+  "name": "coduo/php-humanizer",
+  "description": "PHP Humanizer - Tools",
+  "autoload": {},
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "vimeo/psalm": "^4.6",
+    "phpstan/phpstan": "^1.0.0",
+    "friendsofphp/php-cs-fixer": "^3.1"
+  }
+}

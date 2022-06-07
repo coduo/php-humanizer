@@ -23,7 +23,7 @@ jobs:
         php-version:
           - "7.4"
           - "8.0"
-          - "8.0"
+          - "8.1"
         operating-system:
           - "ubuntu-latest"
 
@@ -37,16 +37,7 @@ jobs:
           coverage: "pcov"
           php-version: "${{ matrix.php-version }}"
           ini-values: memory_limit=-1
-          tools: phive, composer:v2
-
-      - name: "Cache Phive dependencies"
-        uses: "actions/cache@v2"
-        with:
-          path: |
-            ~/.phive
-          key: "${{ runner.os }}-phive-${{ hashFiles('**/phars.xml') }}"
-          restore-keys: |
-            ${{ runner.os }}-phive-
+          tools: composer:v2
 
       - name: "Get Composer Cache Directory"
         id: composer-cache
@@ -61,9 +52,6 @@ jobs:
           key: "php-${{ matrix.php-version }}-${{ matrix.dependencies }}-composer-${{ hashFiles('**/composer.lock') }}"
           restore-keys: |
             php-${{ matrix.php-version }}-${{ matrix.dependencies }}-composer-
-
-      - name: "Install tools"
-        run: "phive install --trust-gpg-keys E82B2FB314E9906E,CF1A108D0E7AE720,8A03EA3B385DBAA1,12CE0F1D262429A5 --force-accept-unsigned"
 
       - name: "Install lowest dependencies"
         if: ${{ matrix.dependencies == 'lowest' }}

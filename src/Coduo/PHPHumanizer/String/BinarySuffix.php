@@ -44,7 +44,7 @@ final class BinarySuffix
             $this->setSpecificPrecisionFormat($precision);
         }
 
-        $this->number = (int) $number;
+        $this->number = $number;
         $this->locale = $locale;
 
         /*
@@ -70,10 +70,12 @@ final class BinarySuffix
                 $value = ($this->number >= self::CONVERT_THRESHOLD) ? $this->number / (float) $size : $this->number;
                 $formatter->setPattern($unitPattern);
 
+                /** @phpstan-ignore-next-line  */
                 return $formatter->format($value);
             }
         }
 
+        /** @phpstan-ignore-next-line  */
         return $formatter->format($this->number);
     }
 

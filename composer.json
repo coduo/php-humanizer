@@ -45,20 +45,21 @@
             "@static:analyze",
             "@test"
         ],
-        "cs:php:fix": [
-            "tools/php-cs-fixer fix --using-cache=no"
-        ],
-        "test" : [
-            "phpunit"
-        ],
-        "test:mutation": [
-            "Composer\\Config::disableProcessTimeout",
-            "tools/infection"
+        "test": [
+            "tools/vendor/bin/phpunit"
         ],
         "static:analyze": [
-            "tools/psalm --shepherd --stats",
-            "tools/phpstan analyze -c phpstan.neon",
-            "tools/php-cs-fixer fix --dry-run"
+            "tools/vendor/bin/psalm --output-format=compact",
+            "tools/vendor/bin/phpstan analyze -c phpstan.neon",
+            "tools/vendor/bin/php-cs-fixer fix --dry-run"
+        ],
+        "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix",
+        "tools:install": "composer install --working-dir=./tools",
+        "post-install-cmd": [
+            "@tools:install"
+        ],
+        "post-update-cmd": [
+            "@tools:install"
         ]
     }
 }
