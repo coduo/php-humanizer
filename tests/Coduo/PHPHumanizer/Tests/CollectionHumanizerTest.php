@@ -21,7 +21,7 @@ final class CollectionHumanizerTest extends TestCase
      */
     public function test_oxford_collections_humanizing($collection, $limit, $locale, $expectedResult) : void
     {
-        $this->assertEquals($expectedResult, CollectionHumanizer::oxford($collection, $limit, $locale));
+        $this->assertSame($expectedResult, CollectionHumanizer::oxford($collection, $limit, $locale));
     }
 
     public function oxfordCollectionProvider()

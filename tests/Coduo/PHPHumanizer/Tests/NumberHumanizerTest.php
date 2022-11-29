@@ -24,7 +24,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_return_ordinal_suffix($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinal($number));
+        $this->assertSame($expected, NumberHumanizer::ordinal($number));
     }
 
     /**
@@ -35,7 +35,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_return_ordinal_suffix_dutch($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'nl'));
+        $this->assertSame($expected, NumberHumanizer::ordinal($number, 'nl'));
     }
 
     /**
@@ -46,7 +46,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_return_ordinal_suffix_indonesian($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'id'));
+        $this->assertSame($expected, NumberHumanizer::ordinal($number, 'id'));
     }
 
     /**
@@ -57,7 +57,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_return_ordinal_suffix_spanish($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'es'));
+        $this->assertSame($expected, NumberHumanizer::ordinal($number, 'es'));
     }
 
     /**
@@ -68,7 +68,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_return_ordinal_suffix_italian($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'it'));
+        $this->assertSame($expected, NumberHumanizer::ordinal($number, 'it'));
     }
 
     /**
@@ -79,7 +79,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_return_ordinal_suffix_german($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'de'));
+        $this->assertSame($expected, NumberHumanizer::ordinal($number, 'de'));
     }
 
     /**
@@ -90,7 +90,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_return_ordinal_suffix_french($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinal($number, 'fr'));
+        $this->assertSame($expected, NumberHumanizer::ordinal($number, 'fr'));
     }
 
     /**
@@ -102,7 +102,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_ordinalize_numbers($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinalize($number));
+        $this->assertSame($expected, NumberHumanizer::ordinalize($number));
     }
 
     /**
@@ -114,7 +114,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_ordinalize_numbers_dutch($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'nl'));
+        $this->assertSame($expected, NumberHumanizer::ordinalize($number, 'nl'));
     }
 
     /**
@@ -126,7 +126,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_ordinalize_numbers_indonesian($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'id'));
+        $this->assertSame($expected, NumberHumanizer::ordinalize($number, 'id'));
     }
 
     /**
@@ -137,7 +137,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_ordinalize_numbers_portuguese($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'pt'));
+        $this->assertSame($expected, NumberHumanizer::ordinalize($number, 'pt'));
     }
 
     /**
@@ -148,7 +148,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_ordinalize_numbers_spanish($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'es'));
+        $this->assertSame($expected, NumberHumanizer::ordinalize($number, 'es'));
     }
 
     /**
@@ -159,7 +159,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_ordinalize_numbers_italian($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'it'));
+        $this->assertSame($expected, NumberHumanizer::ordinalize($number, 'it'));
     }
 
     /**
@@ -170,7 +170,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_ordinalize_numbers_german($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'de'));
+        $this->assertSame($expected, NumberHumanizer::ordinalize($number, 'de'));
     }
 
     /**
@@ -181,7 +181,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_ordinalize_numbers_french($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::ordinalize($number, 'fr'));
+        $this->assertSame($expected, NumberHumanizer::ordinalize($number, 'fr'));
     }
 
     /**
@@ -193,7 +193,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_convert_number_to_string_with_binary_suffix($expected, $number, $locale = 'en') : void
     {
-        $this->assertEquals($expected, NumberHumanizer::binarySuffix($number, $locale));
+        $this->assertSame($expected, NumberHumanizer::binarySuffix($number, $locale));
     }
 
     /**
@@ -206,7 +206,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_convert_number_to_string_with_precise_binary_suffix($expected, $number, $precision, $locale = 'en') : void
     {
-        $this->assertEquals($expected, NumberHumanizer::preciseBinarySuffix($number, $precision, $locale));
+        $this->assertSame($expected, NumberHumanizer::preciseBinarySuffix($number, $precision, $locale));
     }
 
     public function test_statically_throw_exception_when_converting_to_string_with_precise_binary_suffix_negative_precision() : void
@@ -232,7 +232,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_convert_number_to_string_with_metric_suffix($expected, $number, $locale = 'en') : void
     {
-        $this->assertEquals($expected, NumberHumanizer::metricSuffix($number, $locale));
+        $this->assertSame($expected, NumberHumanizer::metricSuffix($number, $locale));
     }
 
     public function test_statically_throw_exception_when_converting_to_string_with_metric_suffix_non_numeric_values() : void
@@ -250,7 +250,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_converts_numbers_to_roman($expected, $number) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::toRoman($number));
+        $this->assertSame($expected, NumberHumanizer::toRoman($number));
     }
 
     /**
@@ -261,7 +261,7 @@ class NumberHumanizerTest extends TestCase
      */
     public function test_convert_roman_numbers_to_arabic($number, $expected) : void
     {
-        $this->assertEquals($expected, NumberHumanizer::fromRoman($number));
+        $this->assertSame($expected, NumberHumanizer::fromRoman($number));
     }
 
     /**
