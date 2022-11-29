@@ -27,7 +27,7 @@ class StringHumanizerTest extends TestCase
      */
     public function test_humanize_strings($input, $expected, $capitalize, $separator, array $forbiddenWords) : void
     {
-        $this->assertEquals($expected, StringHumanizer::humanize($input, $capitalize, $separator, $forbiddenWords));
+        $this->assertSame($expected, StringHumanizer::humanize($input, $capitalize, $separator, $forbiddenWords));
     }
 
     /**
@@ -40,7 +40,7 @@ class StringHumanizerTest extends TestCase
      */
     public function test_truncate_string_to_word_closest_to_a_certain_number_of_characters($text, $expected, $charactersCount, $append = '') : void
     {
-        $this->assertEquals($expected, StringHumanizer::truncate($text, $charactersCount, $append));
+        $this->assertSame($expected, StringHumanizer::truncate($text, $charactersCount, $append));
     }
 
     /**
@@ -54,7 +54,7 @@ class StringHumanizerTest extends TestCase
      */
     public function test_truncate_string_to_word_closest_to_a_certain_number_of_characters_with_html_tags($text, $charactersCount, $allowedTags, $expected, $append = '') : void
     {
-        $this->assertEquals($expected, StringHumanizer::truncateHtml($text, $charactersCount, $allowedTags, $append));
+        $this->assertSame($expected, StringHumanizer::truncateHtml($text, $charactersCount, $allowedTags, $append));
     }
 
     /**
@@ -65,7 +65,7 @@ class StringHumanizerTest extends TestCase
      */
     public function test_remove_all_shortcodes_from_text($text, $expected) : void
     {
-        $this->assertEquals($expected, StringHumanizer::removeShortcodes($text));
+        $this->assertSame($expected, StringHumanizer::removeShortcodes($text));
     }
 
     /**
@@ -76,7 +76,7 @@ class StringHumanizerTest extends TestCase
      */
     public function test_remove_only_shortcode_tags_from_text($text, $expected) : void
     {
-        $this->assertEquals($expected, StringHumanizer::removeShortcodeTags($text));
+        $this->assertSame($expected, StringHumanizer::removeShortcodeTags($text));
     }
 
     public function removeAllShortcodesProvider()

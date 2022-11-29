@@ -26,7 +26,7 @@ class DateTimeHumanizerTest extends TestCase
      */
     public function test_humanize_difference_between_dates(string $firstDate, string $secondDate, string $expected, string $locale) : void
     {
-        $this->assertEquals($expected, DateTimeHumanizer::difference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
+        $this->assertSame($expected, DateTimeHumanizer::difference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
     }
 
     /**
@@ -34,7 +34,7 @@ class DateTimeHumanizerTest extends TestCase
      */
     public function test_humanize_time_period(string $firstDate, string $secondDate, string $expected, string $locale) : void
     {
-        $this->assertEquals($expected, DateTimeHumanizer::timePeriod(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
+        $this->assertSame($expected, DateTimeHumanizer::timePeriod(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
     }
 
     /**
@@ -42,7 +42,7 @@ class DateTimeHumanizerTest extends TestCase
      */
     public function test_humanize_precise_difference_between_dates(string $firstDate, string $secondDate, string $expected, string $locale) : void
     {
-        $this->assertEquals($expected, DateTimeHumanizer::timePeriodPrecise(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
+        $this->assertSame($expected, DateTimeHumanizer::timePeriodPrecise(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
     }
 
     /**
@@ -50,7 +50,7 @@ class DateTimeHumanizerTest extends TestCase
      */
     public function test_humanize_time_period_precise(string $firstDate, string $secondDate, string $expected, string $locale) : void
     {
-        $this->assertEquals($expected, DateTimeHumanizer::preciseDifference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
+        $this->assertSame($expected, DateTimeHumanizer::preciseDifference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
     }
 
     /**
