@@ -1,7 +1,10 @@
-## [Unreleased] - 2022-11-29
+## [Unreleased] - 2022-11-30
 
 ### Changed
 - [#131](https://github.com/coduo/php-humanizer/pull/131) - **Using the assertSame to make assert equals restricted.** - [@peter279k](https://github.com/peter279k)
+
+### Fixed
+- [#132](https://github.com/coduo/php-humanizer/pull/132) - **Fix the CI status badge URL.** - [@peter279k](https://github.com/peter279k)
 
 ## [4.0.3] - 2022-06-07
 
