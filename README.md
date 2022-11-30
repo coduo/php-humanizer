@@ -7,7 +7,7 @@
 [![License](https://poser.pugx.org/coduo/php-humanizer/license)](https://packagist.org/packages/coduo/php-humanizer)
 
 ### Tests
-* [![Build Status](https://travis-ci.com/coduo/php-humanizer.svg?branch=4.x)](https://travis-ci.com/coduo/php-humanizer) - 4.x 
+* ![Tests](https://github.com/coduo/php-humanizer/workflows/Tests/badge.svg?branch=4.x) - 4.x
 
 [Readme for 4.x version](https://github.com/coduo/php-humanizer/tree/4.x/README.md)  
 
