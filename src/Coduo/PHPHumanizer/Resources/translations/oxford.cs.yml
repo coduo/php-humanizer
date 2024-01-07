@@ -1,0 +1,3 @@
+only_two: "%first% a %second%"
+comma_separated: "%list%, a %last%"
+comma_separated_with_limit: "[1,4] %list%, a %count% další|[5,Inf] %list%, a %count% dalších"
