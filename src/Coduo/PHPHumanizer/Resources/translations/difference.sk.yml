@@ -1,0 +1,35 @@
+just_now:
+  past: "[0,Inf] práve teraz"
+  future: "[0,Inf] práve teraz"
+second:
+  past: "{1} pred sekundou|[2, 4] pred %count% sekundami|[5,Inf] pred %count% sekundami"
+  future: "{1} o sekundu|[2, 4] o %count% sekundy|[5,Inf] o %count% sekúnd"
+minute:
+  past: "{1} pred minútou|[2, Inf] pred %count% minútami"
+  future: "{1} o minútu|[2, 4] o %count% minúty|[5,Inf] o %count% minút"
+hour:
+  past: "{1} pred hodinou|[2, Inf] pred %count% hodinami"
+  future: "{1} o hodinu|[2, 4] o %count% hodiny|[5,Inf] o %count% hodín"
+day:
+  past: "{1} včera|[2, Inf] pred %count% dňami"
+  future: "{1} zajtra|[2, 4] o %count% dni|[5,Inf] o %count% dní"
+week:
+  past: "{1} minulý týždeň|[2, Inf] pred %count% týždňami"
+  future: "{1} o týždeň|[2, 4] o %count% týždne|[5,Inf] o %count% týždňov"
+month:
+  past: "{1} minulý mesiac|[2, Inf] pred %count% mesiacmi"
+  future: "{1} o mesiac|[2, 4] o %count% mesiace|[5,Inf] o %count% mesiacov"
+year:
+  past: "{1} minulý rok|[2, Inf] pred %count% rokmi"
+  future: "{1} za rok|[2, 4] o %count% roky|[5,Inf] o %count% rokov"
+
+compound:
+  second: "{1} %count% sekunda|[2,4] %count% sekundy|[5,Inf] %count% sekúnd"
+  minute: "{1} %count% minúta|[2,4] %count% minúty|[5,Inf] %count% minút"
+  hour: "{1} %count% hodina|[2,4] %count% hodiny|[5,Inf] %count% hodín"
+  day: "{1} %count% deň|[2,4] %count% dni|[5,Inf] %count% dní"
+  week: "{1} %count% týždeň|[2,4] %count% týždne|[5,Inf] %count% týždňov"
+  month: "{1} %count% mesiac|[2,4] %count% mesiace|[5,Inf] %count% mesiacov"
+  year: "{1} %count% rok|[2,4] %count% roky|[5,Inf] %count% rokov"
+  past: "%value% dozadu"
+  future: "%value% od teraz"
