@@ -21,47 +21,7 @@ use PHPUnit\Framework\TestCase;
 
 class DateTimeHumanizerTest extends TestCase
 {
-    /**
-     * @dataProvider humanizeDataProvider
-     */
-    public function test_humanize_difference_between_dates(string $firstDate, string $secondDate, string $expected, string $locale) : void
-    {
-        $this->assertSame($expected, DateTimeHumanizer::difference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
-    }
-
-    /**
-     * @dataProvider humanizeDataProvider
-     */
-    public function test_humanize_time_period(string $firstDate, string $secondDate, string $expected, string $locale) : void
-    {
-        $this->assertSame($expected, DateTimeHumanizer::timePeriod(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
-    }
-
-    /**
-     * @dataProvider preciseDifferenceDataProvider
-     */
-    public function test_humanize_precise_difference_between_dates(string $firstDate, string $secondDate, string $expected, string $locale) : void
-    {
-        $this->assertSame($expected, DateTimeHumanizer::timePeriodPrecise(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
-    }
-
-    /**
-     * @dataProvider preciseDifferenceDataProvider
-     */
-    public function test_humanize_time_period_precise(string $firstDate, string $secondDate, string $expected, string $locale) : void
-    {
-        $this->assertSame($expected, DateTimeHumanizer::preciseDifference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
-    }
-
-    /**
-     * @dataProvider timeUnitDataProvider
-     */
-    public function test_humanize_time_unit(Unit $unit, string $expected, string $locale) : void
-    {
-        $this->assertSame($expected, DateTimeHumanizer::timeUnit($unit, $locale));
-    }
-
-    public function humanizeDataProvider() : array
+    public static function humanizeDataProvider() : array
     {
         return [
             // English
@@ -279,7 +239,7 @@ class DateTimeHumanizerTest extends TestCase
         ];
     }
 
-    public function preciseDifferenceDataProvider() : array
+    public static function preciseDifferenceDataProvider() : array
     {
         return [
             // Azerbaijani
@@ -474,7 +434,7 @@ class DateTimeHumanizerTest extends TestCase
         ];
     }
 
-    public function timeUnitDataProvider() : array
+    public static function timeUnitDataProvider() : array
     {
         return [
             // English
@@ -507,5 +467,45 @@ class DateTimeHumanizerTest extends TestCase
             ],
             [RelativeTimeUnit::months(14), '1 rok i 2 miesiące', 'pl'],
         ];
+    }
+
+    /**
+     * @dataProvider humanizeDataProvider
+     */
+    public function test_humanize_difference_between_dates(string $firstDate, string $secondDate, string $expected, string $locale) : void
+    {
+        $this->assertSame($expected, DateTimeHumanizer::difference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
+    }
+
+    /**
+     * @dataProvider humanizeDataProvider
+     */
+    public function test_humanize_time_period(string $firstDate, string $secondDate, string $expected, string $locale) : void
+    {
+        $this->assertSame($expected, DateTimeHumanizer::timePeriod(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
+    }
+
+    /**
+     * @dataProvider preciseDifferenceDataProvider
+     */
+    public function test_humanize_precise_difference_between_dates(string $firstDate, string $secondDate, string $expected, string $locale) : void
+    {
+        $this->assertSame($expected, DateTimeHumanizer::timePeriodPrecise(new TimePeriod(DateTime::fromString($firstDate), DateTime::fromString($secondDate)), $locale));
+    }
+
+    /**
+     * @dataProvider preciseDifferenceDataProvider
+     */
+    public function test_humanize_time_period_precise(string $firstDate, string $secondDate, string $expected, string $locale) : void
+    {
+        $this->assertSame($expected, DateTimeHumanizer::preciseDifference(new \DateTime($firstDate), new \DateTime($secondDate), $locale));
+    }
+
+    /**
+     * @dataProvider timeUnitDataProvider
+     */
+    public function test_humanize_time_unit(Unit $unit, string $expected, string $locale) : void
+    {
+        $this->assertSame($expected, DateTimeHumanizer::timeUnit($unit, $locale));
     }
 }

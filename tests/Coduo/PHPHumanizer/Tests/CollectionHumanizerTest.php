@@ -16,15 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 final class CollectionHumanizerTest extends TestCase
 {
-    /**
-     * @dataProvider oxfordCollectionProvider
-     */
-    public function test_oxford_collections_humanizing($collection, $limit, $locale, $expectedResult) : void
-    {
-        $this->assertSame($expectedResult, CollectionHumanizer::oxford($collection, $limit, $locale));
-    }
-
-    public function oxfordCollectionProvider()
+    public static function oxfordCollectionProvider()
     {
         return [
             // English
@@ -89,5 +81,13 @@ final class CollectionHumanizerTest extends TestCase
             [['Michal', 'Norbert', 'Lukasz', 'Pawel'], 2, 'ja', 'Michal, Norbert ともう 2 人'],
             [['Michal', 'Norbert', 'Lukasz', 'Pawel'], null, 'ja', 'Michal, Norbert, Lukasz と Pawel'],
         ];
+    }
+
+    /**
+     * @dataProvider oxfordCollectionProvider
+     */
+    public function test_oxford_collections_humanizing($collection, $limit, $locale, $expectedResult) : void
+    {
+        $this->assertSame($expectedResult, CollectionHumanizer::oxford($collection, $limit, $locale));
     }
 }

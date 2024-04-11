@@ -21,8 +21,7 @@
         "aeon-php/calendar": "^1.0"
     },
     "require-dev": {
-        "thunderer/shortcode": "^0.7",
-        "phpunit/phpunit": "^9.4"
+        "thunderer/shortcode": "^0.7"
     },
     "config": {
         "bin-dir": "bin"
@@ -55,11 +54,12 @@
         ],
         "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix",
         "tools:install": "composer install --working-dir=./tools",
+        "tools:update": "composer update --working-dir=./tools",
         "post-install-cmd": [
             "@tools:install"
         ],
         "post-update-cmd": [
-            "@tools:install"
+            "@tools:update"
         ]
     }
 }
