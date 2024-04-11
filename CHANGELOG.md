@@ -1,4 +1,4 @@
-## [Unreleased] - 2024-04-11
+## [5.0.0] - 2024-04-11
 
 ### Added
 - [#133](https://github.com/coduo/php-humanizer/pull/133) - **Slovak translation added for Oxford and Datetime** - [@jerony-mo](https://github.com/jerony-mo)
