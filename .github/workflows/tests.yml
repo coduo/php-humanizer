@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - "4.x"
+      - "5.x"
   schedule:
     - cron:  '0 8 * * *'
 
@@ -21,9 +21,9 @@ jobs:
           - "lowest"
           - "highest"
         php-version:
-          - "7.4"
-          - "8.0"
           - "8.1"
+          - "8.2"
+          - "8.3"
         operating-system:
           - "ubuntu-latest"
 

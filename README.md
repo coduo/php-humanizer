@@ -1,15 +1,15 @@
 # PHP Humanizer
 
-![Tests](https://github.com/coduo/php-humanizer/workflows/Tests/badge.svg?branch=4.x)
+![Tests](https://github.com/coduo/php-humanizer/workflows/Tests/badge.svg?branch=5.x)
 [![Latest Stable Version](https://poser.pugx.org/coduo/php-humanizer/v/stable)](https://packagist.org/packages/coduo/php-humanizer)
 [![Total Downloads](https://poser.pugx.org/coduo/php-humanizer/downloads)](https://packagist.org/packages/coduo/php-humanizer)
 [![Latest Unstable Version](https://poser.pugx.org/coduo/php-humanizer/v/unstable)](https://packagist.org/packages/coduo/php-humanizer)
 [![License](https://poser.pugx.org/coduo/php-humanizer/license)](https://packagist.org/packages/coduo/php-humanizer)
 
 ### Tests
-* ![Tests](https://github.com/coduo/php-humanizer/workflows/Tests/badge.svg?branch=4.x) - 4.x
+* ![Tests](https://github.com/coduo/php-humanizer/workflows/Tests/badge.svg?branch=5.x) - 5.x
 
-[Readme for 4.x version](https://github.com/coduo/php-humanizer/tree/4.x/README.md)  
+[Readme for 5.x version](https://github.com/coduo/php-humanizer/tree/5.x/README.md)
 
 
 
