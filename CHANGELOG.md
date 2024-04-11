@@ -13,6 +13,7 @@
 - [#132](https://github.com/coduo/php-humanizer/pull/132) - **Fix the CI status badge URL.** - [@peter279k](https://github.com/peter279k)
 
 ### Updated
+- [b18a11](https://github.com/coduo/php-humanizer/commit/b18a11af5c694d8041fe585d687a6d5c4b8f78db) - **README.md** - [@norberttech](https://github.com/norberttech)
 - [c5023f](https://github.com/coduo/php-humanizer/commit/c5023fa601eca56a39f23e9a8274d80f4a4a6c6a) - **project to latest versio of php and dependencies** - [@norberttech](https://github.com/norberttech)
 
 ## [4.0.3] - 2022-06-07
