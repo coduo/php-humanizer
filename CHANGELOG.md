@@ -1,4 +1,4 @@
-## [Unreleased] - 2024-01-08
+## [Unreleased] - 2024-04-11
 
 ### Added
 - [#133](https://github.com/coduo/php-humanizer/pull/133) - **Slovak translation added for Oxford and Datetime** - [@jerony-mo](https://github.com/jerony-mo)
@@ -8,7 +8,12 @@
 - [#131](https://github.com/coduo/php-humanizer/pull/131) - **Using the assertSame to make assert equals restricted.** - [@peter279k](https://github.com/peter279k)
 
 ### Fixed
+- [90efee](https://github.com/coduo/php-humanizer/commit/90efee54b12d083d7d4ec62d52cdb7f2a5c9641d) - **development tools dependencies configuration** - [@norberttech](https://github.com/norberttech)
+- [fe058c](https://github.com/coduo/php-humanizer/commit/fe058ca2ecb9aa90f8c688a25a9327b7c2050156) - **static analyze github workflow php version** - [@norberttech](https://github.com/norberttech)
 - [#132](https://github.com/coduo/php-humanizer/pull/132) - **Fix the CI status badge URL.** - [@peter279k](https://github.com/peter279k)
+
+### Updated
+- [c5023f](https://github.com/coduo/php-humanizer/commit/c5023fa601eca56a39f23e9a8274d80f4a4a6c6a) - **project to latest versio of php and dependencies** - [@norberttech](https://github.com/norberttech)
 
 ## [4.0.3] - 2022-06-07
 
