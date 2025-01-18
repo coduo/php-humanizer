@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": "~8.1 || ~8.2 || ~8.3",
+        "php": "~8.1 || ~8.2 || ~8.3 || ~8.4",
         "symfony/translation": "~5.4||~6.4||~7",
         "symfony/yaml": "~5.4||~6.4||~7",
         "aeon-php/calendar": "^1.0"

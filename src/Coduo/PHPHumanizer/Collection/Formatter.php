@@ -30,7 +30,7 @@ final class Formatter
      *
      * @param array<string> $collection
      */
-    public function format(array $collection, int $limit = null) : string
+    public function format(array $collection, ?int $limit = null) : string
     {
         $count = \count($collection);
 
