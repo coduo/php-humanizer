@@ -26,7 +26,7 @@ final class Formatter
 
     public function timeUnit(Unit $unit, string $locale = 'en') : string
     {
-        if (!\class_exists('\Aeon\Calendar\Gregorian\Calendar')) {
+        if (!\interface_exists('\Aeon\Calendar\Gregorian\Calendar')) {
             throw new \RuntimeException('Please add "aeon-php/calendar": ^1.0 to composer.json first');
         }
 
