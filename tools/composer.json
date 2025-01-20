@@ -4,7 +4,6 @@
   "autoload": {},
   "require-dev": {
     "phpunit/phpunit": "^10",
-    "vimeo/psalm": "^5",
     "phpstan/phpstan": "^1",
     "friendsofphp/php-cs-fixer": "^3.53"
   }
