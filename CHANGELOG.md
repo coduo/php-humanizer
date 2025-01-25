@@ -1,10 +1,13 @@
-## [Unreleased] - 2025-01-20
+## [Unreleased] - 2025-01-25
 
 ### Fixed
 - [76e7b6](https://github.com/coduo/php-humanizer/commit/76e7b6a7bec97e095b14e7dbfb7aa19ae1cb7fc9) - **failing tests** - [@norberttech](https://github.com/norberttech)
 
 ### Updated
 - [fb621f](https://github.com/coduo/php-humanizer/commit/fb621fda3e73428af8bba55f697c51daf002580b) - **project to PHP 8.4** - [@norberttech](https://github.com/norberttech)
+
+### Removed
+- [#136](https://github.com/coduo/php-humanizer/pull/136) - **symfony/yaml dependency** - [@norberttech](https://github.com/norberttech)
 
 ## [5.0.0] - 2024-04-11
 
