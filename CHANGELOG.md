@@ -1,4 +1,4 @@
-## [Unreleased] - 2025-01-25
+## [5.0.1] - 2025-01-25
 
 ### Fixed
 - [76e7b6](https://github.com/coduo/php-humanizer/commit/76e7b6a7bec97e095b14e7dbfb7aa19ae1cb7fc9) - **failing tests** - [@norberttech](https://github.com/norberttech)
