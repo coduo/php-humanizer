@@ -1,0 +1,47 @@
+<?php declare(strict_types=1);
+
+return  [
+    'just_now' => [
+        'past' => '[0,Inf] zojuist',
+        'future' => '[0,Inf] zojuist',
+    ],
+    'second' => [
+        'past' => '[0,1] %count% seconde geleden|[2,Inf] %count% seconden geleden',
+        'future' => '[0,1] over %count% seconde|[2,Inf] over %count% seconden',
+    ],
+    'minute' => [
+        'past' => '{1} %count% minuut geleden|[2,Inf] %count% minuten geleden',
+        'future' => '{1} over %count% minuut|[2,Inf] over %count% minuten',
+    ],
+    'hour' => [
+        'past' => '{1} %count% uur geleden|[2,Inf] %count% uren geleden',
+        'future' => '{1} over %count% uur|[2,Inf] over %count% uren',
+    ],
+    'day' => [
+        'past' => '{1} %count% dag geleden|[2,Inf] %count% dagen geleden',
+        'future' => '{1} over %count% dag|[2,Inf] over %count% dagen',
+    ],
+    'week' => [
+        'past' => '{1} %count% week geleden|[2,Inf] %count% weken geleden',
+        'future' => '{1} over %count% week|[2,Inf] over %count% weken',
+    ],
+    'month' => [
+        'past' => '{1} %count% maand geleden|[2,Inf] %count% maanden geleden',
+        'future' => '{1} over %count% maand|[2,Inf] over %count% maanden',
+    ],
+    'year' => [
+        'past' => '{1} %count% jaar geleden|[2,Inf] %count% jaren geleden',
+        'future' => '{1} over %count% jaar|[2,Inf] over %count% jaren',
+    ],
+    'compound' => [
+        'second' => '[0,1] %count% seconde|[2,Inf] %count% seconden',
+        'minute' => '{1} %count% minuut|[2,Inf] %count% minuten',
+        'hour' => '{1} %count% uur|[2,Inf] %count% uren',
+        'day' => '{1} %count% dag|[2,Inf] %count% dagen',
+        'week' => '{1} %count% week|[2,Inf] %count% weken',
+        'month' => '{1} %count% maand|[2,Inf] %count% maanden',
+        'year' => '{1} %count% jaar|[2,Inf] %count% jaren',
+        'past' => '%value% geleden',
+        'future' => '%value% vanaf nu',
+    ],
+];

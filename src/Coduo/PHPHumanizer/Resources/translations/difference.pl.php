@@ -1,0 +1,47 @@
+<?php declare(strict_types=1);
+
+return  [
+    'just_now' => [
+        'past' => '[0,Inf] w tym momencie',
+        'future' => '[0,Inf] w tym momencie',
+    ],
+    'second' => [
+        'past' => '[0,1] sekundę temu|[2, 4] %count% sekundy temu|[5,Inf] %count% sekund temu',
+        'future' => '[0,1] za sekundę|[2, 4] za %count% sekund|[5,Inf] za %count% sekund',
+    ],
+    'minute' => [
+        'past' => '{1} minutę temu|[2, 4] %count% minuty temu|[5,Inf] %count% minut temu',
+        'future' => '{1} za minutę|[2, 4] za %count% minuty|[5,Inf] za %count% minut',
+    ],
+    'hour' => [
+        'past' => '{1} godzinę temu|[2, 4] %count% godziny temu|[5,Inf] %count% godzin temu',
+        'future' => '{1} za godzinę|[2, 4] za %count% godziny|[5,Inf] za %count% godzin',
+    ],
+    'day' => [
+        'past' => '{1} wczoraj|[2, Inf] %count% dni temu',
+        'future' => '{1} jutro|[2, Inf] za %count% dni',
+    ],
+    'week' => [
+        'past' => '{1} tydzień temu|[2, 4] %count% tygodnie temu|[5,Inf] %count% tygodni temu',
+        'future' => '{1} za tydzień|[2, 4] za %count% tygodnie|[5,Inf] za %count% tygodni',
+    ],
+    'month' => [
+        'past' => '{1} miesiąc temu|[2, 4] %count% miesiące temu|[5,Inf] %count% miesięcy temu',
+        'future' => '{1} za miesiąc|[2, 4] za %count% miesiące|[5,Inf] za %count% miesięcy',
+    ],
+    'year' => [
+        'past' => '{1} rok temu|[2, 4] %count% lata temu|[5,Inf] %count% lat temu',
+        'future' => '{1} za rok|[2, 4] za %count% lata|[5,Inf] za %count% lat',
+    ],
+    'compound' => [
+        'second' => '[0,1] %count% sekunda|[2,4] %count% sekundy|[5,Inf] %count% sekund',
+        'minute' => '{1} %count% minuta|[2,4] %count% minuty|[5,Inf] %count% minut',
+        'hour' => '{1} %count% godzina|[2,4] %count% godziny|[5,Inf] %count% godzin',
+        'day' => '{1} %count% dzień|[2,Inf] %count% dni',
+        'week' => '{1} %count% tydzień|[2,4] %count% tygodnie|[5,Inf] %count% tygodni',
+        'month' => '{1} %count% miesiąc|[2,4] %count% miesiące|[5,Inf] %count% miesięcy',
+        'year' => '{1} %count% rok|[2,4] %count% lata|[5,Inf] %count% lat',
+        'past' => '%value% temu',
+        'future' => '%value% od teraz',
+    ],
+];

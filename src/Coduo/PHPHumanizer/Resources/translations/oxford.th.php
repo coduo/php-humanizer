@@ -1,0 +1,7 @@
+<?php declare(strict_types=1);
+
+return  [
+    'only_two' => '%first% และ %second%',
+    'comma_separated' => '%list% และ %last%',
+    'comma_separated_with_limit' => '{1} %list% และอีก 1|[2,Inf] %list% และอีก %count%',
+];
