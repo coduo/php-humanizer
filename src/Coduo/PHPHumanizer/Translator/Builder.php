@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Coduo\PHPHumanizer\Translator;
 
-use Symfony\Component\Translation\Loader\YamlFileLoader;
+use Symfony\Component\Translation\Loader\PhpFileLoader;
 use Symfony\Component\Translation\Translator;
 
 final class Builder
@@ -25,16 +25,16 @@ final class Builder
     {
         if (!isset(self::$translators[$locale])) {
             $translator = new Translator($locale);
-            $translator->addLoader('yml', new YamlFileLoader());
+            $translator->addLoader('php', new PhpFileLoader());
 
             $iterator = new \FilesystemIterator(__DIR__ . '/../Resources/translations');
-            $filter = new \RegexIterator($iterator, '/[aA-zZ]+\.([a-z]{2}|[a-z]{2}\_[A-Z]{2})\.yml$/');
+            $filter = new \RegexIterator($iterator, '/[aA-zZ]+\.([a-z]{2}|[a-z]{2}\_[A-Z]{2})\.php$/');
 
             /** @var \SplFileInfo $file */
             foreach ($filter as $file) {
-                $resourceName = $file->getBasename('.yml');
+                $resourceName = $file->getBasename('.php');
                 [$fileDomain, $fileLocale] = \explode('.', $resourceName);
-                $translator->addResource('yml', $file->getPathname(), $fileLocale, $fileDomain);
+                $translator->addResource('php', $file->getPathname(), $fileLocale, $fileDomain);
             }
 
             self::$translators[$locale] = $translator;

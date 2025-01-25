@@ -1,0 +1,7 @@
+<?php declare(strict_types=1);
+
+return  [
+    'only_two' => '%first% と %second%',
+    'comma_separated' => '%list% と %last%',
+    'comma_separated_with_limit' => '{1} %list% ともうひとり|[2,Inf] %list% ともう %count% 人',
+];
