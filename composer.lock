@@ -330,20 +330,20 @@
     "packages-dev": [
         {
             "name": "aeon-php/calendar",
-            "version": "1.0.9",
+            "version": "1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aeon-php/calendar.git",
-                "reference": "2cfc45a2cd28b78f1450d8155a1c62df2efe45de"
+                "reference": "41f4b0ff07247c36b232ddfbcddc62af738be6fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aeon-php/calendar/zipball/2cfc45a2cd28b78f1450d8155a1c62df2efe45de",
-                "reference": "2cfc45a2cd28b78f1450d8155a1c62df2efe45de",
+                "url": "https://api.github.com/repos/aeon-php/calendar/zipball/41f4b0ff07247c36b232ddfbcddc62af738be6fe",
+                "reference": "41f4b0ff07247c36b232ddfbcddc62af738be6fe",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.1.10 || ~8.2"
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0"
             },
             "require-dev": {
                 "ext-bcmath": "*",
@@ -374,9 +374,19 @@
             ],
             "support": {
                 "issues": "https://github.com/aeon-php/calendar/issues",
-                "source": "https://github.com/aeon-php/calendar/tree/1.0.9"
+                "source": "https://github.com/aeon-php/calendar/tree/1.0.11"
             },
-            "time": "2023-08-29T09:47:37+00:00"
+            "funding": [
+                {
+                    "url": "https://flow-php.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/norberttech",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-24T04:47:09+00:00"
         },
         {
             "name": "thunderer/shortcode",
@@ -437,12 +447,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "~8.2 || ~8.3 || ~8.4"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
