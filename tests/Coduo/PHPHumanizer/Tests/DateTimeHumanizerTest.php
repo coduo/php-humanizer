@@ -236,6 +236,25 @@ class DateTimeHumanizerTest extends TestCase
             ['2014-05-01', '2014-04-01', '1 ヶ月前', 'ja'],
             ['2015-05-01', '2014-04-01', '1 年前', 'ja'],
             ['2014-05-01', '2016-04-01', '2 年後', 'ja'],
+
+            // Swedish
+            ['2014-04-26 13:00:00', '2014-04-26 13:00:00', 'nyss', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-26 13:00:05', 'om 5 sekunder', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-26 12:59:00', 'för 1 minut sedan', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-26 12:45:00', 'för 15 minuter sedan', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-26 13:15:00', 'om 15 minuter', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-26 14:00:00', 'om 1 timme', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-26 15:00:00', 'om 2 timmar', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-26 12:00:00', 'för 1 timme sedan', 'sv'],
+            ['2014-04-26', '2014-04-25', 'för 1 dag sedan', 'sv'],
+            ['2014-04-26', '2014-04-24', 'för 2 dagar sedan', 'sv'],
+            ['2014-04-26', '2014-04-28', 'om 2 dagar', 'sv'],
+            ['2014-04-01', '2014-04-15', 'om 2 veckor', 'sv'],
+            ['2014-04-15', '2014-04-07', 'för 1 vecka sedan', 'sv'],
+            ['2014-01-01', '2014-04-01', 'om 3 månader', 'sv'],
+            ['2014-05-01', '2014-04-01', 'för 1 månad sedan', 'sv'],
+            ['2015-05-01', '2014-04-01', 'för 1 år sedan', 'sv'],
+            ['2014-05-01', '2016-04-01', 'om 2 år', 'sv'],
         ];
     }
 
@@ -431,6 +450,16 @@ class DateTimeHumanizerTest extends TestCase
             ['2014-04-26 13:00:00', '2014-04-28 23:00:00', '2 日, 10 時間後', 'ja'],
             ['2014-04-26 13:00:00', '2014-04-25 11:20:00', '1 日, 1 時間, 40 分前', 'ja'],
             ['2014-04-26 13:00:00', '2016-04-27 13:00:00', '2 年, 1 日後', 'ja'],
+
+            // Swedish
+            ['2014-04-26 13:00:00', '2014-04-26 12:58:15', 'för 1 minut, 45 sekunder sedan', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-26 11:20:00', 'för 1 timme, 40 minuter sedan', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-27 13:15:00', 'om 1 dag, 15 minuter', 'sv'],
+            ['2014-04-26 13:00:00', '2014-05-03 15:00:00', 'om 7 dagar, 2 timmar', 'sv'],
+            ['2014-04-26 13:00:00', '2015-04-28 17:00:00', 'om 1 år, 2 dagar, 4 timmar', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-28 23:00:00', 'om 2 dagar, 10 timmar', 'sv'],
+            ['2014-04-26 13:00:00', '2014-04-25 11:20:00', 'för 1 dag, 1 timme, 40 minuter sedan', 'sv'],
+            ['2014-04-26 13:00:00', '2016-04-27 13:00:00', 'om 2 år, 1 dag', 'sv'],
         ];
     }
 
@@ -466,6 +495,21 @@ class DateTimeHumanizerTest extends TestCase
                 'pl',
             ],
             [RelativeTimeUnit::months(14), '1 rok i 2 miesiące', 'pl'],
+
+            // Swedish
+            [TimeUnit::seconds(20), '20 sekunder', 'sv'],
+            [TimeUnit::minutes(20), '20 minuter', 'sv'],
+            [TimeUnit::minutes(20)->add(TimeUnit::seconds(5)), '20 minuter och 5 sekunder', 'sv'],
+            [
+                TimeUnit::days(2)
+                    ->add(TimeUnit::hours(3))
+                    ->add(TimeUnit::minutes(25))
+                    ->add(TimeUnit::seconds(30))
+                    ->add(TimeUnit::milliseconds(200)),
+                '2 dagar, 3 timmar, 25 minuter, och 30.2 sekunder',
+                'sv',
+            ],
+            [RelativeTimeUnit::months(14), '1 år och 2 månader', 'sv'],
         ];
     }
 
