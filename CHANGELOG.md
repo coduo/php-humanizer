@@ -1,3 +1,8 @@
+## [Unreleased] - 2025-02-06
+
+### Added
+- [#138](https://github.com/coduo/php-humanizer/pull/138) - **Add Swedish translations** - [@adevade](https://github.com/adevade)
+
 ## [5.0.1] - 2025-01-25
 
 ### Fixed
@@ -341,6 +346,7 @@
 
 - @4t87ux8
 - @a-ungurianu
+- @adevade
 - @arrowrowe
 - @Borales
 - @brianwozeniak
