@@ -30,7 +30,7 @@ composer require coduo/php-humanizer
 use Coduo\PHPHumanizer\StringHumanizer;
 
 StringHumanizer::humanize('field_name'); // "Field Name"
-StringHumanizer::humanize('user_id'); // "User"
+StringHumanizer::humanize('user_id'); // "User id"
 StringHumanizer::humanize('field_name', false); // "field name"
 ```
 
