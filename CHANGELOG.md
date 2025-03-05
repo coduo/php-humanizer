@@ -1,4 +1,7 @@
-## [Unreleased] - 2025-02-19
+## [Unreleased] - 2025-03-05
+
+### Changed
+- [#141](https://github.com/coduo/php-humanizer/pull/141) - **Update action cache from @v2 to @v4 in Github Action workflows** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
 - [#139](https://github.com/coduo/php-humanizer/pull/139) - **Readme typo** - [@WatheqAlshowaiter](https://github.com/WatheqAlshowaiter)
