@@ -340,20 +340,20 @@
     "packages-dev": [
         {
             "name": "aeon-php/calendar",
-            "version": "1.0.11",
+            "version": "1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aeon-php/calendar.git",
-                "reference": "41f4b0ff07247c36b232ddfbcddc62af738be6fe"
+                "reference": "10387ea0944ce9ce071a12d60c398ee852de70b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aeon-php/calendar/zipball/41f4b0ff07247c36b232ddfbcddc62af738be6fe",
-                "reference": "41f4b0ff07247c36b232ddfbcddc62af738be6fe",
+                "url": "https://api.github.com/repos/aeon-php/calendar/zipball/10387ea0944ce9ce071a12d60c398ee852de70b8",
+                "reference": "10387ea0944ce9ce071a12d60c398ee852de70b8",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.2.0 || ~8.3.0 || ~8.4.0"
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
             },
             "require-dev": {
                 "ext-bcmath": "*",
@@ -384,7 +384,7 @@
             ],
             "support": {
                 "issues": "https://github.com/aeon-php/calendar/issues",
-                "source": "https://github.com/aeon-php/calendar/tree/1.0.11"
+                "source": "https://github.com/aeon-php/calendar/tree/1.0.12"
             },
             "funding": [
                 {
@@ -396,7 +396,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-24T04:47:09+00:00"
+            "time": "2025-12-08T14:44:05+00:00"
         },
         {
             "name": "thunderer/shortcode",
