@@ -1,4 +1,4 @@
-## [Unreleased] - 2025-12-11
+## [5.0.3] - 2025-12-11
 
 ### Added
 - [#149](https://github.com/coduo/php-humanizer/pull/149) - **Symfony 8+ support** - [@bpolaszek](https://github.com/bpolaszek)
