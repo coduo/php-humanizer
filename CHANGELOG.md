@@ -1,10 +1,18 @@
-## [Unreleased] - 2025-03-05
+## [Unreleased] - 2025-12-11
+
+### Added
+- [#149](https://github.com/coduo/php-humanizer/pull/149) - **Symfony 8+ support** - [@bpolaszek](https://github.com/bpolaszek)
+- [#149](https://github.com/coduo/php-humanizer/pull/149) - **PHP 8.5 support** - [@bpolaszek](https://github.com/bpolaszek)
 
 ### Changed
 - [#141](https://github.com/coduo/php-humanizer/pull/141) - **Update action cache from @v2 to @v4 in Github Action workflows** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#149](https://github.com/coduo/php-humanizer/pull/149) - **Incorrect nullable types as of PHP 8.4** - [@bpolaszek](https://github.com/bpolaszek)
 - [#139](https://github.com/coduo/php-humanizer/pull/139) - **Readme typo** - [@WatheqAlshowaiter](https://github.com/WatheqAlshowaiter)
+
+### Removed
+- [#149](https://github.com/coduo/php-humanizer/pull/149) - **Removed `composer.lock` from git and added it to `.gitignore` (lock file not required in packages, helps CI to pass)** - [@bpolaszek](https://github.com/bpolaszek)
 
 ## [5.0.2] - 2025-02-06
 
@@ -357,6 +365,7 @@
 - @adevade
 - @arrowrowe
 - @Borales
+- @bpolaszek
 - @brianwozeniak
 - @cnkt
 - @dagaa
