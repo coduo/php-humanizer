@@ -34,7 +34,7 @@ final class BinarySuffix
         0 => '# bytes',
     ];
 
-    public function __construct(int $number, string $locale = 'en', int $precision = null)
+    public function __construct(int $number, string $locale = 'en', ?int $precision = null)
     {
         if (!\class_exists(\NumberFormatter::class)) {
             throw new \RuntimeException('Binary suffix converter requires intl extension!');

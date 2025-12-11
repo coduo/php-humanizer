@@ -15,8 +15,8 @@
         }
     ],
     "require": {
-        "php": "~8.2 || ~8.3 || ~8.4",
-        "symfony/translation": "~5.4||~6.4||~7"
+        "php": "~8.2 || ~8.3 || ~8.4 || ~8.5",
+        "symfony/translation": "~5.4||~6.4||~7||~8"
     },
     "require-dev": {
         "thunderer/shortcode": "^0.7",
